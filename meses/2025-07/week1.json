@@ -1,0 +1,92 @@
+{
+  "Ana Silva": {
+    "name": "Ana Silva",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": true,
+    "thursday": false,
+    "objective": ""
+  },
+  "Bruno Costa": {
+    "name": "Bruno Costa",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Carlos Mendes": {
+    "name": "Carlos Mendes",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": true,
+    "thursday": true,
+    "objective": ""
+  },
+  "Diana Rocha": {
+    "name": "Diana Rocha",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Eduardo Lima": {
+    "name": "Eduardo Lima",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Fernanda Alves": {
+    "name": "Fernanda Alves",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Gabriel Santos": {
+    "name": "Gabriel Santos",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Helena Martins": {
+    "name": "Helena Martins",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": true,
+    "thursday": true,
+    "objective": ""
+  },
+  "Igor Pereira": {
+    "name": "Igor Pereira",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Julia Ferreira": {
+    "name": "Julia Ferreira",
+    "active": true,
+    "videocall": true,
+    "sentToGroup": false,
+    "tuesday": true,
+    "thursday": false,
+    "objective": ""
+  }
+}
