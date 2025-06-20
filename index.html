@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parede da Vitória - VD40</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+       
+    
+    <div class="container">
+        <button id="setupFileSystemBtn" title="Configurar sistema de arquivos">📁 Configurar</button>
+        <div class="header">
+            <h1>🎯</h1>
+            <h1><span class="gradient-text">Parede da Vitória - VD40</span><span class="no-gradient">🎸</span></h1>
+            <p>Acompanhe o progresso dos alunos semana a semana</p>
+        </div>
+
+        
+
+        <div class="controls">
+            <button id="toggleDetailsBtn" class="toggle-btn">📊 Ver Detalhes Alunos</button>
+            
+            <div class="month-controls">
+                <select id="monthSelect">
+                    <option value="2025-06">Junho 2025</option>
+                    <option value="2025-05">Maio 2025</option>
+                    <option value="2025-04">Abril 2025</option>
+                </select>
+                <select id="weekSelect">
+                    <option value="general">📊 Geral do Mês</option>
+                    <option value="1">Semana 1</option>
+                    <option value="2">Semana 2</option>
+                    <option value="3">Semana 3</option>
+                    <option value="4">Semana 4</option>
+                </select>
+                <button type="button" class="icon-btn" id="addMonthBtn" title="Adicionar mês">➕</button>
+                <button class="icon-btn" id="editMonthBtn" title="Editar mês">✏️</button>
+                <button type="button" class="icon-btn" id="deleteMonthBtn" title="Excluir mês">🗑️</button>
+
+                
+            </div>
+            
+            
+        </div>
+
+        <div class="chart-container">
+            <div class="chart" id="chart"></div>
+        </div>
+
+        <div id="producerPanel" class="producer-panel active">
+            <div class="section">
+                <h3>➕ Adicionar Aluno</h3>
+                <div class="add-student">
+                    <input type="text" id="newStudentName" placeholder="Nome do aluno">
+                    <button type="button" onclick="addStudent()">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>📋 Ferramentas</h3>
+                <button type="button" class="toggle-btn" onclick="copyFromPreviousWeek()" style="margin-right: 10px;">
+                    ⬅️ Copiar Ativos da Semana Anterior
+                </button>
+            </div>
+
+            <div class="section">
+                <h3>🎯 Objetivos da Semana</h3>
+                <div class="add-student">
+                    <input type="text" id="objectiveText" placeholder="Digite o objetivo da semana">
+                    <select id="studentObjectiveSelect">
+                        <option value="">Selecione o aluno</option>
+                    </select>
+                    <button type="button" onclick="addObjective()">Confirmar</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>👥 Gerenciar Alunos</h3>
+                <div class="student-list" id="studentList"></div>
+            </div>
+
+            <!-- Adicione depois dos botões de mês existentes -->
+            <div class="section" style="margin-top: 10px;">
+                <button id="sensitiveSettingsToggle" class="toggle-btn sensitive-toggle">⚠️ Configurações Sensíveis</button>
+                <div id="sensitiveSettingsPanel" class="sensitive-panel" style="display: none;">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <button id="listFilesBtn" class="icon-btn">📁</button>
+                        <span style="font-size: 12px; margin-top: 5px; text-align: center;">Listar</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <button id="clearMonthBtn" class="icon-btn danger">🗑️</button>
+                        <span style="font-size: 12px; margin-top: 5px; text-align: center;">Limpar Mês</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <button id="clearAllBtn" class="icon-btn danger">⚠️</button>
+                        <span style="font-size: 12px; margin-top: 5px; text-align: center;">Limpar Tudo</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="student-details">
+            <h3>📊 Detalhes dos Alunos</h3>
+            <div class="details-grid" id="detailsGrid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
