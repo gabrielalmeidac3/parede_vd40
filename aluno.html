@@ -157,22 +157,29 @@
             });
         }
 
-        function calculateScore(student) {
-            if (!student.active) return 0;
-            let score = 0;
-            if (student.videocall || student.sentToGroup) score += 33.33;
-            if (student.tuesday) score += 33.33;
-            if (student.thursday) score += 33.33;
-            return Math.round(score);
-        }
+        const calculateScore = (function() {
+            const cache = new Map();
+            return function(student) {
+                if (!student.active) return 0;
+                const key = `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}-${student.objective}`;
+                if (cache.has(key)) return cache.get(key);
+                let score = 0;
+                if (student.videocall || student.sentToGroup) score += 25;
+                if (student.tuesday) score += 25;
+                if (student.thursday) score += 25;
+                if (student.objective?.trim()) score += 25;
+                const result = Math.round(score);
+                cache.set(key, result);
+                return result;
+            };
+        })();
 
         function countStudentItems(student) {
             let count = 0;
-            if (student.videocall) count++;
-            if (student.sentToGroup) count++;
+            if (student.videocall || student.sentToGroup) count++;
             if (student.tuesday) count++;
             if (student.thursday) count++;
-            if (student.objective) count++;
+            if (student.objective?.trim()) count++;
             return count;
         }
 

@@ -37,7 +37,7 @@
   },
   "Alessandro": {
     "name": "Alessandro",
-    "active": true,
+    "active": false,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
@@ -103,7 +103,7 @@
     "active": true,
     "videocall": false,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": true,
     "objective": "Pegar músicas usando acordes com pestana com segurança"
   },

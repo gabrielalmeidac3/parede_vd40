@@ -1,4 +1,4 @@
-
+const DEBUG = false; // Ative para debugging
 let globalListenerAdded = false;
 
 function addGlobalEventListener() {
@@ -165,24 +165,23 @@ async function restoreDirectoryHandle() {
 
 // Inicializar dados se não existirem
 async function initData() {
-    console.log('Inicializando dados...');
+   
     
-    // Apenas inicializar dados padrão em memória se não existirem
-    if (!memoryStorage['months.json']) {
+    if (!(await loadJsonFile('months.json'))) {
         const defaultMonths = [
             { id: "2025-06", name: "Junho 2025", monthNumber: 6, year: 2025 },
             { id: "2025-05", name: "Maio 2025", monthNumber: 5, year: 2025 },
             { id: "2025-04", name: "Abril 2025", monthNumber: 4, year: 2025 }
         ];
-        memoryStorage['months.json'] = defaultMonths;
+        await saveJsonFile('months.json', defaultMonths);
     }
     
-    if (!memoryStorage['globalStudents.json']) {
+    if (!(await loadJsonFile('globalStudents.json'))) {
         const defaultStudents = [
             "Ana Silva", "Bruno Costa", "Carlos Mendes", "Diana Rocha", "Eduardo Lima",
             "Fernanda Alves", "Gabriel Santos", "Helena Martins", "Igor Pereira", "Julia Ferreira"
         ];
-        memoryStorage['globalStudents.json'] = defaultStudents;
+        await saveJsonFile('globalStudents.json', defaultStudents);
     }
 }
 
@@ -198,7 +197,7 @@ async function loadStudents() {
     const weekNum = document.getElementById('weekSelect').value;
     const fileName = `${monthId}-week${weekNum}.json`;
     
-    const weekData = await loadJsonFileWithFallback(fileName, {});
+    const weekData = await loadJsonFile(`${monthId}-week${weekNum}.json`, {});
     
     // Retornar todos os alunos globais com seus dados da semana atual
     const globalStudents = await loadGlobalStudents();
@@ -244,7 +243,7 @@ async function loadMonthlyData() {
     
     for (let week = 1; week <= 4; week++) {
         const fileName = `${monthId}-week${week}.json`;
-        const weekData = await loadJsonFileWithFallback(fileName, {});
+        const weekData = await loadJsonFile(fileName, {});
         
         globalStudents.forEach(name => {
             const studentData = weekData[name] || {
@@ -294,14 +293,12 @@ async function saveStudents(students) {
         weekData[student.name] = student;
     });
     
-    console.log(`Salvando dados para ${fileName}:`, weekData); // Log para depuração
+   
     
     const success = await saveJsonFile(fileName, weekData);
     if (success) {
-        console.log(`Dados salvos com sucesso para ${fileName}`);
         await updateStudentList(); // Mantém apenas a atualização da lista
     } else {
-        console.error(`Falha ao salvar ${fileName}`);
     }
 }
 // Calcular pontuação
@@ -309,14 +306,15 @@ const calculateScore = (function() {
     const cache = new Map();
     return function(student) {
         if (!student.active) return 0;
-        const key = `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}`;
+        const key = `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}-${student.objective}`;
         if (cache.has(key)) {
             return cache.get(key);
         }
         let score = 0;
-        if (student.videocall || student.sentToGroup) score += 33.33;
-        if (student.tuesday) score += 33.33;
-        if (student.thursday) score += 33.33;
+        if (student.videocall || student.sentToGroup) score += 25;
+        if (student.tuesday) score += 25;
+        if (student.thursday) score += 25;
+        if (student.objective?.trim()) score += 25;
         const result = Math.round(score);
         cache.set(key, result);
         return result;
@@ -331,14 +329,13 @@ async function loadMonths() {
         { id: "2025-05", name: "Maio 2025", monthNumber: 5, year: 2025 },
         { id: "2025-04", name: "Abril 2025", monthNumber: 4, year: 2025 }
     ];
-    return await loadJsonFileWithFallback('months.json', defaultMonths);
+    return await loadJsonFile('months.json', defaultMonths);
 }
 
 // Salvar meses
 async function saveMonths(months) {
     console.log('Salvando meses...');
     const success = await saveJsonFile('months.json', months);
-    if (success) showSaveStatus('success', '✅ Meses salvos!');
 }
 // Carregar lista global de alunos
 async function loadGlobalStudents() {
@@ -346,13 +343,12 @@ async function loadGlobalStudents() {
         "Ana Silva", "Bruno Costa", "Carlos Mendes", "Diana Rocha", "Eduardo Lima",
         "Fernanda Alves", "Gabriel Santos", "Helena Martins", "Igor Pereira", "Julia Ferreira"
     ];
-    return await loadJsonFileWithFallback('globalStudents.json', defaultStudents);
+    return await loadJsonFile('globalStudents.json', defaultStudents);
 }
 
 // Salvar lista global de alunos
 async function saveGlobalStudents(students) {
     const success = await saveJsonFile('globalStudents.json', students);
-    if (success) showSaveStatus('success', '✅ Alunos globais salvos!');
 }
 
 // Verificar se aluno já existe globalmente
@@ -542,11 +538,10 @@ async function updateStudentList() {
 
 function countStudentItems(student) {
     let count = 0;
-    if (student.videocall) count++;
-    if (student.sentToGroup) count++;
+    if (student.videocall || student.sentToGroup) count++;
     if (student.tuesday) count++;
     if (student.thursday) count++;
-    if (student.objective) count++;
+    if (student.objective?.trim()) count++;
     return count;
 }
 
@@ -659,7 +654,6 @@ async function updateStudent(studentName, field, value) {
         await saveStudents(students); // Salva apenas uma vez
     } else {
         console.error(`Aluno ${studentName} não encontrado`);
-        showSaveStatus('error', `❌ Aluno ${studentName} não encontrado`);
     }
 }
 
@@ -878,54 +872,28 @@ document.getElementById('setupFileSystemBtn').addEventListener('click', setupFil
 // Inicializar
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM carregado, inicializando app...');
-    invalidateFileCache('months.json');
-    
-    const isAlunoPage = window.location.pathname.includes('aluno.html');
-    const panel = document.getElementById('sensitiveSettingsPanel');
-    const toggleBtn = document.getElementById('sensitiveSettingsToggle');
-    
-    if (panel && toggleBtn) {
-        panel.style.display = 'none';
-        panel.classList.remove('active');
-        toggleBtn.classList.remove('active');
-        toggleBtn.textContent = '⚠️ Configurações Sensíveis';
-    }
-    
-    if (isAlunoPage) {
-        const detailsPanel = document.getElementById('detailsGrid')?.parentElement;
-        if (detailsPanel) {
-            detailsPanel.classList.add('active');
-        }
-    }
+    const mainContent = document.querySelector('main') || document.body;
+    const setupBtn = document.getElementById('setupFileSystemBtn');
     
     const restored = await restoreDirectoryHandle();
-    if (!restored) {
-        showSaveStatus('warning', '⚠️ Dados temporários - Configurar salvamento');
+    if (restored && directoryHandle) {
+        setupBtn.style.display = 'none';
+        mainContent.style.display = 'block';
+        await initData();
+        await updateMonthSelect();
+        await loadViewState();
+        await updateChart();
+        await updateDetails();
+        if (!window.location.pathname.includes('aluno.html')) {
+            await updateStudentList();
+        }
+        updateFileSystemStatusFixed();
     } else {
-        await migrateMemoryToFilesFixed();
-    }
-    
-    await initData();
-    await updateMonthSelect();
-    await loadViewState();
-    await updateChart();
-    await updateDetails();
-    
-    if (!isAlunoPage) {
-        await updateStudentList();
-    }
-    
-    updateFileSystemStatusFixed();
-});
-
-window.addEventListener('beforeunload', (e) => {
-    if (!directoryHandle && Object.keys(memoryStorage).length > 0) {
-        e.preventDefault();
-        e.returnValue = '⚠️ Dados não salvos no sistema de arquivos! Deseja sair sem salvar?';
-        return e.returnValue;
+        setupBtn.style.display = 'block';
+        mainContent.style.display = 'none';
+        showSaveStatus('warning', '⚠️ Configure o sistema de arquivos para começar');
     }
 });
-
 // 3. ADICIONE event listeners para salvar quando mudar:
 document.getElementById('monthSelect').addEventListener('change', async function() {
     // Forçar seleção da aba "geral" quando mudar mês
@@ -1185,7 +1153,7 @@ async function saveViewState() {
 
 // Carregar estado salvo da visualização
 async function loadViewState() {
-    const viewState = await loadJsonFileWithFallback('viewState.json', {});
+    const viewState = await loadJsonFile('viewState.json', {});
     const monthSelect = document.getElementById('monthSelect');
     const weekSelect = document.getElementById('weekSelect');
 
@@ -1401,7 +1369,7 @@ async function initializeFileSystem() {
 }
 
 // Sistema de fallback usando memória quando File System não está disponível
-let memoryStorage = {};
+
 let fileCache = {};
 let processedDataCache = {};
 
@@ -1461,40 +1429,31 @@ function getFilePath(fileName) {
 
 async function saveJsonFile(fileName, data) {
     try {
-        if (directoryHandle) {
-            console.log(`💾 Salvando ${fileName} no File System...`);
-            
-           
-            
-            const filePath = getFilePath(fileName);
-            let targetHandle = directoryHandle;
-            
-            // Navegar para a pasta correta se necessário
-            if (filePath.folder) {
-                const folderParts = filePath.folder.split('/');
-                for (const part of folderParts) {
-                    targetHandle = await targetHandle.getDirectoryHandle(part, { create: true });
-                }
-            }
-            
-            const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: true });
-            const writable = await fileHandle.createWritable();
-            await writable.write(JSON.stringify(data, null, 2));
-            await writable.close();
-            invalidateFileCache(fileName);
-
-            
-            showSaveStatus('success', `✅ ${fileName} salvo com sucesso!`);
-            return true;
-        } else {
-            console.warn(`⚠️ Salvando ${fileName} em memória (File System não configurado)`);
-            memoryStorage[fileName] = JSON.parse(JSON.stringify(data));
-            invalidateFileCache(fileName);
-            showSaveStatus('warning', `⚠️ ${fileName} salvo apenas em memória`);
-            return true;
+        if (DEBUG) console.log(`💾 Salvando ${fileName} no File System...`);
+        if (!directoryHandle) {
+            showSaveStatus('error', '❌ Configure o sistema de arquivos primeiro!');
+            return false;
         }
+        
+        const filePath = getFilePath(fileName);
+        let targetHandle = directoryHandle;
+        
+        if (filePath.folder) {
+            const folderParts = filePath.folder.split('/');
+            for (const part of folderParts) {
+                targetHandle = await targetHandle.getDirectoryHandle(part, { create: true });
+            }
+        }
+        
+        const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: true });
+        const writable = await fileHandle.createWritable();
+        await writable.write(JSON.stringify(data, null, 2));
+        await writable.close();
+        invalidateFileCache(fileName);
+        
+        return true;
     } catch (err) {
-        console.error(`❌ Erro ao salvar ${fileName}:`, err);
+        if (DEBUG) console.error(`❌ Erro ao salvar ${fileName}:`, err);
         let message = '❌ Erro ao salvar';
         if (err.name === 'NotAllowedError') {
             message = '❌ Permissão negada para salvar';
@@ -1507,121 +1466,55 @@ async function saveJsonFile(fileName, data) {
 }
 
 async function loadJsonFile(fileName, defaultValue = {}) {
-    if (processedDataCache[fileName]) {
-        console.log(`📂 Carregando ${fileName} do cache processado...`);
-        return JSON.parse(JSON.stringify(processedDataCache[fileName]));
-    }
-    
     if (fileCache[fileName]) {
-        console.log(`📂 Carregando ${fileName} do cache bruto...`);
+        if (DEBUG) console.log(`📂 Carregando ${fileName} do cache bruto...`);
         return JSON.parse(JSON.stringify(fileCache[fileName]));
     }
     
     try {
-        if (directoryHandle) {
-            console.log(`📂 Carregando ${fileName} do File System...`);
-            const filePath = getFilePath(fileName);
-            let targetHandle = directoryHandle;
-            
-            if (filePath.folder) {
-                const folderParts = filePath.folder.split('/');
-                for (const part of folderParts) {
-                    try {
-                        targetHandle = await targetHandle.getDirectoryHandle(part, { create: false });
-                    } catch (err) {
-                        if (err.name === 'NotFoundError') {
-                            console.log(`ℹ️ Pasta ${part} não encontrada, retornando valor padrão`);
-                            return defaultValue;
-                        }
-                        throw err;
+        if (!directoryHandle) {
+            if (DEBUG) console.log(`ℹ️ ${fileName} não encontrado, retornando valor padrão`);
+            return defaultValue;
+        }
+        
+        const filePath = getFilePath(fileName);
+        let targetHandle = directoryHandle;
+        
+        if (filePath.folder) {
+            const folderParts = filePath.folder.split('/');
+            for (const part of folderParts) {
+                try {
+                    targetHandle = await targetHandle.getDirectoryHandle(part, { create: false });
+                } catch (err) {
+                    if (err.name === 'NotFoundError') {
+                        if (DEBUG) console.log(`ℹ️ Pasta ${part} não encontrada, retornando valor padrão`);
+                        return defaultValue;
                     }
-                }
-            }
-            
-            const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: false });
-            const file = await fileHandle.getFile();
-            const text = await file.text();
-            const data = JSON.parse(text);
-            fileCache[fileName] = data;
-            processedDataCache[fileName] = data;
-            console.log(`✅ ${fileName} carregado com sucesso`);
-            return data;
-        } else if (memoryStorage[fileName]) {
-            console.warn(`⚠️ Carregando ${fileName} da memória`);
-            fileCache[fileName] = memoryStorage[fileName];
-            processedDataCache[fileName] = memoryStorage[fileName];
-            return JSON.parse(JSON.stringify(memoryStorage[fileName]));
-        } else {
-            console.log(`ℹ️ ${fileName} não encontrado, retornando valor padrão`);
-            return defaultValue;
-        }
-    } catch (err) {
-        if (err.name === 'NotFoundError') {
-            console.log(`ℹ️ ${fileName} não encontrado, retornando valor padrão`);
-            return defaultValue;
-        }
-        console.error(`❌ Erro ao carregar ${fileName}:`, err);
-        showSaveStatus('error', `❌ Erro ao carregar ${fileName}`);
-        return defaultValue;
-    }
-}
-
-// Função para migrar arquivos da estrutura antiga para nova
-async function migrateToNewStructure() {
-    if (!directoryHandle) return;
-    
-    console.log('🔄 Verificando migração para nova estrutura...');
-    
-    try {
-        // Listar todos os arquivos na raiz
-        for await (const [name, handle] of directoryHandle.entries()) {
-            if (handle.kind === 'file' && name.endsWith('.json')) {
-                // Se é um arquivo que deveria estar em pasta
-                const filePath = getFilePath(name);
-                if (filePath.folder) {
-                    console.log(`📦 Migrando ${name} para ${filePath.folder}/${filePath.fileName}`);
-                    
-                    // Ler arquivo antigo
-                    const file = await handle.getFile();
-                    const data = JSON.parse(await file.text());
-                    
-                    // Salvar na nova estrutura
-                    await saveJsonFile(name, data);
-                    
-                    // Opcional: remover arquivo antigo (descomente se quiser)
-                    // await directoryHandle.removeEntry(name);
+                    throw err;
                 }
             }
         }
         
-        console.log('✅ Migração concluída');
+        const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: false });
+        const file = await fileHandle.getFile();
+        const text = await file.text();
+        const data = JSON.parse(text);
+        if (DEBUG) console.log(`✅ ${fileName} carregado com sucesso`);
+        fileCache[fileName] = data;
+        return data;
     } catch (err) {
-        console.error('❌ Erro na migração:', err);
-    }
-}
-
-async function saveJsonFileWithFallback(fileName, data) {
-    if (directoryHandle) {
-        return await saveJsonFile(fileName, data);
-    } else {
-        // Fallback: salvar em memória
-        memoryStorage[fileName] = JSON.parse(JSON.stringify(data));
-        console.warn(`Salvando ${fileName} apenas em memória`);
-        return true;
-    }
-}
-
-async function loadJsonFileWithFallback(fileName, defaultValue = {}) {
-    if (directoryHandle) {
-        return await loadJsonFile(fileName, defaultValue);
-    } else {
-        // Fallback: carregar da memória
-        if (memoryStorage[fileName]) {
-            return JSON.parse(JSON.stringify(memoryStorage[fileName]));
+        if (err.name === 'NotFoundError') {
+            if (DEBUG) console.error(`❌ Erro ao carregar ${fileName}:`, err);
+            console.log(`ℹ️ ${fileName} não encontrado, retornando valor padrão`);
+            return defaultValue;
         }
         return defaultValue;
     }
 }
+
+
+
+
 
 function showSaveStatus(type, message) {
     let statusDiv = document.getElementById('saveStatus');
@@ -1648,10 +1541,11 @@ async function setupFileSystem(event) {
     event?.preventDefault();
     if (directoryHandle) {
         showSaveStatus('success', '✅ Sistema já configurado!');
+        updateFileSystemStatusFixed();
         return;
     }
     if (!('showDirectoryPicker' in window)) {
-        alert('❌ Navegador não suporta File System API.');
+        showSaveStatus('error', '❌ Navegador não suporta File System API.');
         return;
     }
     if (!window.isSecureContext) {
@@ -1663,9 +1557,21 @@ async function setupFileSystem(event) {
             mode: 'readwrite',
             startIn: 'documents'
         });
+        directoryHandle = newHandle; // Atribuir imediatamente para evitar duplicação
         await saveDirectoryHandle(newHandle);
         await ensureDirectoryStructure();
-        await migrateMemoryToFilesFixed();
+        await initData();
+        await updateMonthSelect();
+        await loadViewState();
+        await updateChart();
+        await updateDetails();
+        if (!window.location.pathname.includes('aluno.html')) {
+            await updateStudentList();
+        }
+        const mainContent = document.querySelector('main') || document.body;
+        const setupBtn = document.getElementById('setupFileSystemBtn');
+        setupBtn.style.display = 'none';
+        mainContent.style.display = 'block';
         showSaveStatus('success', `✅ Configurado! Salvando em: ${newHandle.name}`);
         updateFileSystemStatusFixed();
     } catch (err) {
@@ -1674,47 +1580,29 @@ async function setupFileSystem(event) {
     }
 }
 
-async function migrateMemoryToFilesFixed() {
-    console.log('📦 Iniciando migração...');
-    
-    // Primeiro migrar estrutura antiga se existir
-    await migrateToNewStructure();
-    
-    let migratedCount = 0;
-    const filesToMigrate = Object.keys(memoryStorage);
-
-    for (const fileName of filesToMigrate) {
-        if (memoryStorage[fileName] && typeof memoryStorage[fileName] === 'object') {
-            const success = await saveJsonFile(fileName, memoryStorage[fileName]);
-            if (success) migratedCount++;
-        } else {
-            console.warn(`⚠️ Dados inválidos em ${fileName}, pulando...`);
-        }
-    }
-
-    console.log(`✅ Migração concluída: ${migratedCount}/${filesToMigrate.length} arquivos`);
-    showSaveStatus('success', `✅ ${migratedCount} arquivo(s) migrado(s)`);
-}
 
 // PROBLEMA 3: Função para atualizar status do sistema de arquivos
 function updateFileSystemStatusFixed() {
     const setupBtn = document.getElementById('setupFileSystemBtn');
     const statusDiv = document.getElementById('saveStatus');
+    const mainContent = document.querySelector('main') || document.body;
 
     if (directoryHandle) {
-        setupBtn.textContent = '✅ Configurado';
-        setupBtn.style.background = 'linear-gradient(45deg,rgb(23, 121, 89),rgb(16, 91, 68))';
+        setupBtn.style.display = 'none';
+        mainContent.style.display = 'block';
         if (statusDiv) {
             statusDiv.className = 'save-status-success';
             statusDiv.textContent = `💾 Salvando em: ${directoryHandle.name}`;
             statusDiv.style.display = 'block';
         }
     } else {
+        setupBtn.style.display = 'block';
         setupBtn.textContent = '📁 Configurar';
         setupBtn.style.background = 'linear-gradient(45deg, #f59e0b, #d97706)';
+        mainContent.style.display = 'none';
         if (statusDiv) {
             statusDiv.className = 'save-status-warning';
-            statusDiv.textContent = '⚠️ Dados em memória';
+            statusDiv.textContent = '⚠️ Configure o sistema de arquivos para começar';
             statusDiv.style.display = 'block';
         }
     }
