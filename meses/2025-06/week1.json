@@ -1,4 +1,13 @@
 {
+  "Ivo": {
+    "name": "Ivo",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": true,
+    "thursday": true,
+    "objective": ""
+  },
   "Carlos": {
     "name": "Carlos",
     "active": false,
@@ -80,13 +89,58 @@
     "thursday": false,
     "objective": ""
   },
-  "Ivo": {
-    "name": "Ivo",
+  "Daia": {
+    "name": "Daia",
     "active": false,
     "videocall": false,
-    "sentToGroup": true,
-    "tuesday": true,
-    "thursday": true,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Denilson": {
+    "name": "Denilson",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Geni": {
+    "name": "Geni",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Luciene": {
+    "name": "Luciene",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Regina": {
+    "name": "Regina",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Maguida": {
+    "name": "Maguida",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
     "objective": ""
   }
 }

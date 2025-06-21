@@ -232,13 +232,13 @@ async function loadMonthlyData() {
     // Coletar dados de todas as 4 semanas do mês
     const monthlyStats = {};
     
-    // Inicializar todos os alunos globais
     globalStudents.forEach(name => {
         monthlyStats[name] = {
             name: name,
             weeks: [],
             totalScore: 0,
-            weekCount: 0
+            weekCount: 0,
+            objectiveCount: 0
         };
     });
     
@@ -252,7 +252,8 @@ async function loadMonthlyData() {
                 active: false,
                 videocall: false,
                 tuesday: false,
-                thursday: false
+                thursday: false,
+                objective: ''
             };
             
             const score = calculateScore(studentData);
@@ -266,22 +267,17 @@ async function loadMonthlyData() {
                 monthlyStats[name].totalScore += score;
                 monthlyStats[name].weekCount++;
             }
+            
+            if (studentData.objective?.trim()) {
+                monthlyStats[name].objectiveCount++;
+            }
         });
     }
     
-    // Calcular médias e objetivos
+    // Calcular médias
     Object.values(monthlyStats).forEach(student => {
         student.averageScore = student.weekCount > 0 ? 
             Math.round(student.totalScore / student.weekCount) : 0;
-        
-        student.objectiveCount = 0;
-        
-        // Contar objetivos em todas as 4 semanas
-        for (let week = 1; week <= 4; week++) {
-            const fileName = `${monthId}-week${week}.json`;
-            // Usar loadJsonFile de forma síncrona aqui seria problemático, 
-            // então vamos contar depois na interface
-        }
     });
 
     return Object.values(monthlyStats);
@@ -394,11 +390,18 @@ async function updateChart() {
     const fragment = document.createDocumentFragment();
     
     if (week === 'general') {
+        invalidateFileCache('months.json');
         const monthlyData = await loadMonthlyData();
-        monthlyData.sort((a, b) => b.averageScore - a.averageScore);
-        
-        monthlyData.forEach(student => {
-            if (student.weekCount > 0) {
+        console.log('Dados de loadMonthlyData:', JSON.stringify(monthlyData, null, 2));
+        monthlyData
+            .filter(student => student.weekCount > 0)
+            .sort((a, b) => {
+                if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
+                if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
+                if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
+                return a.name.localeCompare(b.name);
+            })
+            .forEach(student => {
                 const bar = document.createElement('div');
                 bar.className = 'bar';
                 
@@ -429,11 +432,16 @@ async function updateChart() {
                 bar.appendChild(barFill);
                 bar.appendChild(barName);
                 fragment.appendChild(bar);
-            }
-        });
+            });
     } else {
         const students = (await loadStudents()).filter(s => s.active);
-        students.sort((a, b) => calculateScore(b) - calculateScore(a));
+        // Em updateChart, substitua a ordenação no modo de semana específica
+        students.sort((a, b) => {
+            const scoreA = calculateScore(a);
+            const scoreB = calculateScore(b);
+            if (scoreB !== scoreA) return scoreB - scoreA;
+            return a.name.localeCompare(b.name);
+        });
         
         students.forEach(student => {
             const score = calculateScore(student);
@@ -549,7 +557,6 @@ async function updateDetails() {
     const detailsTitle = document.querySelector('.student-details h3');
     
     if (week === 'general') {
-        // Modo geral - mostrar resumo mensal
         detailsTitle.textContent = '📊 Resumo Mensal';
         const monthlyData = await loadMonthlyData();
         
@@ -562,7 +569,12 @@ async function updateDetails() {
         
         monthlyData
             .filter(student => student.weekCount > 0)
-            .sort((a, b) => b.averageScore - a.averageScore)
+            .sort((a, b) => {
+                if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
+                if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
+                if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
+                return a.name.localeCompare(b.name);
+            })
             .forEach(student => {
                 const detailItem = document.createElement('div');
                 detailItem.className = 'detail-item';
@@ -586,7 +598,7 @@ async function updateDetails() {
                         </span>
                     </div>
                 `;
-
+                
                 detailsGrid.appendChild(detailItem);
             });
     } else {
@@ -866,13 +878,24 @@ document.getElementById('setupFileSystemBtn').addEventListener('click', setupFil
 // Inicializar
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM carregado, inicializando app...');
+    invalidateFileCache('months.json');
+    
+    const isAlunoPage = window.location.pathname.includes('aluno.html');
     const panel = document.getElementById('sensitiveSettingsPanel');
     const toggleBtn = document.getElementById('sensitiveSettingsToggle');
+    
     if (panel && toggleBtn) {
         panel.style.display = 'none';
         panel.classList.remove('active');
         toggleBtn.classList.remove('active');
         toggleBtn.textContent = '⚠️ Configurações Sensíveis';
+    }
+    
+    if (isAlunoPage) {
+        const detailsPanel = document.getElementById('detailsGrid')?.parentElement;
+        if (detailsPanel) {
+            detailsPanel.classList.add('active');
+        }
     }
     
     const restored = await restoreDirectoryHandle();
@@ -881,12 +904,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
         await migrateMemoryToFilesFixed();
     }
+    
     await initData();
     await updateMonthSelect();
     await loadViewState();
     await updateChart();
     await updateDetails();
-    await updateStudentList();
+    
+    if (!isAlunoPage) {
+        await updateStudentList();
+    }
+    
     updateFileSystemStatusFixed();
 });
 
@@ -1089,6 +1117,7 @@ const debouncedUpdate = debounce(async () => {
 }, 100);
 
 async function onMonthOrWeekChange() {
+    invalidateFileCache(`${document.getElementById('monthSelect').value}-week${document.getElementById('weekSelect').value}.json`);
     await debouncedUpdate();
 }
 
@@ -1157,25 +1186,32 @@ async function saveViewState() {
 // Carregar estado salvo da visualização
 async function loadViewState() {
     const viewState = await loadJsonFileWithFallback('viewState.json', {});
-    
-    if (viewState.selectedMonth) {
-        const monthSelect = document.getElementById('monthSelect');
-        if (monthSelect.querySelector(`option[value="${viewState.selectedMonth}"]`)) {
-            monthSelect.value = viewState.selectedMonth;
+    const monthSelect = document.getElementById('monthSelect');
+    const weekSelect = document.getElementById('weekSelect');
+
+    if (viewState.selectedMonth && monthSelect.querySelector(`option[value="${viewState.selectedMonth}"]`)) {
+        monthSelect.value = viewState.selectedMonth;
+    } else {
+        const months = await loadMonths();
+        if (months.length > 0) {
+            monthSelect.value = months[0].id;
         }
     }
-    
+
     if (viewState.selectedWeek) {
-        document.getElementById('weekSelect').value = viewState.selectedWeek;
+        weekSelect.value = viewState.selectedWeek;
+    } else {
+        weekSelect.value = 'general';
     }
-    
+
     if (viewState.detailsView) {
         const producerPanel = document.getElementById('producerPanel');
-        const detailsPanel = document.getElementById('detailsGrid').parentElement;
-        const toggleBtn = document.getElementById('toggleDetailsBtn');
-        producerPanel.classList.remove('active');
-        detailsPanel.classList.add('active');
-        toggleBtn.textContent = '🛠️ Voltar ao Modo Produtor';
+        const detailsPanel = document.getElementById('detailsGrid')?.parentElement;
+        if (producerPanel && detailsPanel) {
+            producerPanel.classList.remove('active');
+            detailsPanel.classList.add('active');
+            document.getElementById('toggleDetailsBtn').textContent = '🛠️ Voltar ao Modo Produtor';
+        }
     }
 }
 

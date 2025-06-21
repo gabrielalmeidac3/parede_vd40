@@ -679,3 +679,7 @@ select {
 #setupFileSystemBtn.configured:hover {
     background: linear-gradient(45deg, #0b6b4d, #06563f);
 }
+/* Garantir que student-details esteja visível no aluno.html */
+html[aluno-page] .student-details {
+    display: block;
+}

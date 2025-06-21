@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" aluno-page>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +15,10 @@
         </div>
 
         <div class="controls">
-            <select id="monthSelect" onchange="onMonthOrWeekChange()">
+            <select id="monthSelect">
                 <!-- Meses carregados via JavaScript -->
             </select>
-            <select id="weekSelect" onchange="onMonthOrWeekChange()">
+            <select id="weekSelect">
                 <option value="general">📊 Geral do Mês</option>
                 <option value="1">Semana 1</option>
                 <option value="2">Semana 2</option>
@@ -35,8 +35,7 @@
 
     <section class="student-details active">
         <h3 id="detailsTitle">📊 Detalhes dos Alunos</h3>
-        <div id="detailsGrid" class="details-grid">
-        </div>
+        <div id="detailsGrid" class="details-grid"></div>
     </section>
 
     <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
@@ -47,111 +46,9 @@
     <div id="saveStatus"></div>
 
     <script>
-        // IndexedDB para persistência do directoryHandle
-        const DB_NAME = 'FileSystemPersistence';
-        const STORE_NAME = 'directoryHandles';
-        const DB_VERSION = 1;
-
-        async function openDB() {
-            return new Promise((resolve, reject) => {
-                const request = indexedDB.open(DB_NAME, DB_VERSION);
-                request.onupgradeneeded = (event) => {
-                    const db = event.target.result;
-                    if (!db.objectStoreNames.contains(STORE_NAME)) {
-                        db.createObjectStore(STORE_NAME, { keyPath: 'id' });
-                    }
-                };
-                request.onsuccess = () => resolve(request.result);
-                request.onerror = () => reject(request.error);
-            });
-        }
-
-        let directoryHandle = null;
-        let memoryStorage = {};
-
-        async function restoreDirectoryHandle() {
-            try {
-                const db = await openDB();
-                const tx = db.transaction(STORE_NAME, 'readonly');
-                const store = tx.objectStore(STORE_NAME);
-                const request = store.get('directoryHandle');
-                return new Promise((resolve) => {
-                    request.onsuccess = async () => {
-                        const saved = request.result;
-                        if (saved?.handle) {
-                            const permission = await saved.handle.queryPermission({ mode: 'read' });
-                            if (permission === 'granted') {
-                                directoryHandle = saved.handle;
-                                showSaveStatus('success', `✅ Conectado a: ${saved.name}`);
-                                resolve(true);
-                            } else if (permission === 'prompt') {
-                                const granted = await saved.handle.requestPermission({ mode: 'read' });
-                                if (granted === 'granted') {
-                                    directoryHandle = saved.handle;
-                                    showSaveStatus('success', `✅ Conectado a: ${saved.name}`);
-                                    resolve(true);
-                                } else {
-                                    resolve(false);
-                                }
-                            } else {
-                                resolve(false);
-                            }
-                        } else {
-                            resolve(false);
-                        }
-                    };
-                    request.onerror = () => resolve(false);
-                });
-            } catch (err) {
-                return false;
-            }
-        }
-
-        async function getFilePath(fileName) {
-            if (['months.json', 'globalStudents.json', 'viewState.json'].includes(fileName)) {
-                return { folder: 'config', fileName: fileName };
-            }
-            if (fileName.includes('-week')) {
-                const monthId = fileName.split('-week')[0];
-                const weekFileName = fileName.split('-')[2];
-                return { folder: `meses/${monthId}`, fileName: weekFileName };
-            }
-            return { folder: null, fileName: fileName };
-        }
-
-        async function loadJsonFile(fileName, defaultValue = {}) {
-            try {
-                if (directoryHandle) {
-                    const filePath = await getFilePath(fileName);
-                    let targetHandle = directoryHandle;
-                    if (filePath.folder) {
-                        const folderParts = filePath.folder.split('/');
-                        for (const part of folderParts) {
-                            try {
-                                targetHandle = await targetHandle.getDirectoryHandle(part, { create: false });
-                            } catch (err) {
-                                return defaultValue;
-                            }
-                        }
-                    }
-                    const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: false });
-                    const file = await fileHandle.getFile();
-                    const text = await file.text();
-                    return JSON.parse(text);
-                } else if (memoryStorage[fileName]) {
-                    return JSON.parse(JSON.stringify(memoryStorage[fileName]));
-                } else {
-                    return defaultValue;
-                }
-            } catch (err) {
-                return defaultValue;
-            }
-        }
-
-        async function loadJsonFileWithFallback(fileName, defaultValue = {}) {
-            return await loadJsonFile(fileName, defaultValue);
-        }
-
+        // Cache para armazenar dados carregados
+        let dataCache = {};
+        
         function showSaveStatus(type, message) {
             let statusDiv = document.getElementById('saveStatus');
             if (!statusDiv) {
@@ -167,13 +64,64 @@
             }, 3000);
         }
 
+        async function loadJsonFile(fileName, defaultValue = {}) {
+            // Verificar se já está no cache
+            if (dataCache[fileName]) {
+                return JSON.parse(JSON.stringify(dataCache[fileName]));
+            }
+
+            try {
+                let url;
+                
+                // Determinar o caminho do arquivo
+                if (['months.json', 'globalStudents.json', 'viewState.json'].includes(fileName)) {
+                    url = `config/${fileName}`;
+                } else if (fileName.includes('-week')) {
+                    const monthId = fileName.split('-week')[0];
+                    const weekFileName = fileName.split('-')[2];
+                    url = `meses/${monthId}/${weekFileName}`;
+                } else {
+                    url = fileName;
+                }
+
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    console.warn(`Arquivo ${fileName} não encontrado, usando valor padrão`);
+                    dataCache[fileName] = defaultValue;
+                    return defaultValue;
+                }
+
+                const data = await response.json();
+                dataCache[fileName] = data;
+                return data;
+                
+            } catch (error) {
+                console.warn(`Erro ao carregar ${fileName}:`, error.message);
+                dataCache[fileName] = defaultValue;
+                return defaultValue;
+            }
+        }
+
+        function debounce(func, wait = 100) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
         async function loadMonths() {
             const defaultMonths = [
                 { id: "2025-06", name: "Junho 2025", monthNumber: 6, year: 2025 },
                 { id: "2025-05", name: "Maio 2025", monthNumber: 5, year: 2025 },
                 { id: "2025-04", name: "Abril 2025", monthNumber: 4, year: 2025 }
             ];
-            return await loadJsonFileWithFallback('months.json', defaultMonths);
+            return await loadJsonFile('months.json', defaultMonths);
         }
 
         async function loadGlobalStudents() {
@@ -181,7 +129,7 @@
                 "Ana Silva", "Bruno Costa", "Carlos Mendes", "Diana Rocha", "Eduardo Lima",
                 "Fernanda Alves", "Gabriel Santos", "Helena Martins", "Igor Pereira", "Julia Ferreira"
             ];
-            return await loadJsonFileWithFallback('globalStudents.json', defaultStudents);
+            return await loadJsonFile('globalStudents.json', defaultStudents);
         }
 
         async function loadStudents() {
@@ -192,8 +140,9 @@
             const monthId = document.getElementById('monthSelect').value;
             const weekNum = document.getElementById('weekSelect').value;
             const fileName = `${monthId}-week${weekNum}.json`;
-            const weekData = await loadJsonFileWithFallback(fileName, {});
+            const weekData = await loadJsonFile(fileName, {});
             const globalStudents = await loadGlobalStudents();
+            
             return globalStudents.map(name => {
                 const student = weekData[name] || {
                     name: name,
@@ -217,10 +166,21 @@
             return Math.round(score);
         }
 
+        function countStudentItems(student) {
+            let count = 0;
+            if (student.videocall) count++;
+            if (student.sentToGroup) count++;
+            if (student.tuesday) count++;
+            if (student.thursday) count++;
+            if (student.objective) count++;
+            return count;
+        }
+
         async function loadMonthlyData() {
             const monthId = document.getElementById('monthSelect').value;
             const globalStudents = await loadGlobalStudents();
             const monthlyStats = {};
+            
             globalStudents.forEach(name => {
                 monthlyStats[name] = {
                     name: name,
@@ -230,9 +190,11 @@
                     objectiveCount: 0
                 };
             });
+
             for (let week = 1; week <= 4; week++) {
                 const fileName = `${monthId}-week${week}.json`;
-                const weekData = await loadJsonFileWithFallback(fileName, {});
+                const weekData = await loadJsonFile(fileName, {});
+                
                 globalStudents.forEach(name => {
                     const studentData = weekData[name] || {
                         name: name,
@@ -242,54 +204,104 @@
                         thursday: false,
                         objective: ''
                     };
+                    
                     const score = calculateScore(studentData);
                     monthlyStats[name].weeks.push({
                         week: week,
                         score: score,
                         active: studentData.active
                     });
+                    
                     if (studentData.active) {
                         monthlyStats[name].totalScore += score;
                         monthlyStats[name].weekCount++;
                     }
-                    if (studentData.objective) {
+                    
+                    if (studentData.objective?.trim()) {
                         monthlyStats[name].objectiveCount++;
                     }
                 });
             }
+
             Object.values(monthlyStats).forEach(student => {
                 student.averageScore = student.weekCount > 0 ? 
                     Math.round(student.totalScore / student.weekCount) : 0;
             });
+
             return Object.values(monthlyStats);
+        }
+
+        async function loadViewState() {
+            const viewState = await loadJsonFile('viewState.json', {});
+            const monthSelect = document.getElementById('monthSelect');
+            const weekSelect = document.getElementById('weekSelect');
+            
+            if (viewState.selectedMonth && monthSelect.querySelector(`option[value="${viewState.selectedMonth}"]`)) {
+                monthSelect.value = viewState.selectedMonth;
+            } else {
+                const months = await loadMonths();
+                if (months.length > 0) {
+                    monthSelect.value = months[0].id;
+                }
+            }
+            
+            if (viewState.selectedWeek) {
+                weekSelect.value = viewState.selectedWeek;
+            } else {
+                weekSelect.value = 'general';
+            }
+            
+            if (viewState.detailsView) {
+                const detailsPanel = document.getElementById('detailsGrid').parentElement;
+                detailsPanel.classList.add('active');
+            }
         }
 
         async function updateMonthSelect() {
             const months = await loadMonths();
             const monthSelect = document.getElementById('monthSelect');
+            const currentValue = monthSelect.value;
+            
             monthSelect.innerHTML = '';
             months.forEach(month => {
                 const option = new Option(month.name, month.id);
                 monthSelect.add(option);
             });
+            
+            if (currentValue && months.find(m => m.id === currentValue)) {
+                monthSelect.value = currentValue;
+            } else if (months.length > 0) {
+                monthSelect.value = months[0].id;
+            }
         }
 
         async function updateChart() {
             const week = document.getElementById('weekSelect').value;
             const chart = document.getElementById('chart');
-            chart.innerHTML = '';
-            document.getElementById('chartTitle').textContent = week === 'general' ? '📊 Resumo Mensal' : `📊 Semana ${week}`;
-
+            
+            // Criar fragmento para minimizar manipulações do DOM
+            const fragment = document.createDocumentFragment();
+            
             if (week === 'general') {
                 const monthlyData = await loadMonthlyData();
-                monthlyData.sort((a, b) => b.averageScore - a.averageScore);
-                monthlyData.forEach(student => {
-                    if (student.weekCount > 0) {
+                console.log('Dados de loadMonthlyData:', JSON.stringify(monthlyData, null, 2));
+                
+                monthlyData
+                    .filter(student => student.weekCount > 0)
+                    .sort((a, b) => {
+                        if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
+                        if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
+                        if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
+                        return a.name.localeCompare(b.name);
+                    })
+                    .forEach(student => {
                         const bar = document.createElement('div');
                         bar.className = 'bar';
+                        
                         const barFill = document.createElement('div');
                         barFill.className = 'bar-fill';
                         barFill.style.height = `${Math.max(student.averageScore * 2.5, 20)}px`;
+                        
                         if (student.averageScore >= 80) {
                             barFill.classList.add('high');
                             if (student.averageScore === 100) {
@@ -303,25 +315,36 @@
                         } else {
                             barFill.classList.add('low');
                         }
+                        
                         barFill.textContent = `${student.averageScore}%`;
+                        
                         const barName = document.createElement('div');
                         barName.className = 'bar-name';
                         barName.textContent = student.name;
+                        
                         bar.appendChild(barFill);
                         bar.appendChild(barName);
-                        chart.appendChild(bar);
-                    }
-                });
+                        fragment.appendChild(bar);
+                    });
             } else {
                 const students = (await loadStudents()).filter(s => s.active);
-                students.sort((a, b) => calculateScore(b) - calculateScore(a));
+                
+                students.sort((a, b) => {
+                    const scoreA = calculateScore(a);
+                    const scoreB = calculateScore(b);
+                    if (scoreB !== scoreA) return scoreB - scoreA;
+                    return a.name.localeCompare(b.name);
+                });
+                
                 students.forEach(student => {
                     const score = calculateScore(student);
                     const bar = document.createElement('div');
                     bar.className = 'bar';
+                    
                     const barFill = document.createElement('div');
                     barFill.className = 'bar-fill';
                     barFill.style.height = `${Math.max(score * 2.5, 20)}px`;
+                    
                     if (score >= 80) {
                         barFill.classList.add('high');
                         if (score === 100) {
@@ -335,15 +358,22 @@
                     } else {
                         barFill.classList.add('low');
                     }
+                    
                     barFill.textContent = `${score}%`;
+                    
                     const barName = document.createElement('div');
                     barName.className = 'bar-name';
                     barName.textContent = student.name;
+                    
                     bar.appendChild(barFill);
                     bar.appendChild(barName);
-                    chart.appendChild(bar);
+                    fragment.appendChild(bar);
                 });
             }
+            
+            // Limpar e adicionar ao DOM de uma vez
+            chart.innerHTML = '';
+            chart.appendChild(fragment);
         }
 
         async function updateDetails() {
@@ -352,7 +382,6 @@
             const detailsTitle = document.querySelector('.student-details h3');
             
             if (week === 'general') {
-                // Modo geral - mostrar resumo mensal
                 detailsTitle.textContent = '📊 Resumo Mensal';
                 const monthlyData = await loadMonthlyData();
                 
@@ -362,19 +391,21 @@
                 }
                 
                 detailsGrid.innerHTML = '';
-                
                 monthlyData
                     .filter(student => student.weekCount > 0)
-                    .sort((a, b) => b.averageScore - a.averageScore || a.name.localeCompare(b.name))
+                    .sort((a, b) => {
+                        if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
+                        if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
+                        if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
+                        return a.name.localeCompare(b.name);
+                    })
                     .forEach(student => {
                         const detailItem = document.createElement('div');
                         detailItem.className = 'detail-item';
-                        
                         const weeksInfo = student.weeks
                             .filter(w => w.active)
                             .map(w => `S${w.week}: ${w.score}%`)
                             .join(' | ');
-                        
                         detailItem.innerHTML = `
                             <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
                             <div class="detail-activities">
@@ -389,12 +420,10 @@
                                 </span>
                             </div>
                         `;
-
                         detailsGrid.appendChild(detailItem);
                     });
             } else {
-                // Modo semana individual
-                detailsTitle.textContent = '📊 Detalhes dos Alunos';
+                detailsTitle.textContent = `📊 Detalhes da Semana ${week}`;
                 const students = (await loadStudents()).filter(s => s.active);
                 
                 if (students.length === 0) {
@@ -403,15 +432,17 @@
                 }
                 
                 detailsGrid.innerHTML = '';
-
                 students
-                    .sort((a, b) => calculateScore(b) - calculateScore(a) || a.name.localeCompare(b.name))
+                    .sort((a, b) => {
+                        const scoreA = calculateScore(a);
+                        const scoreB = calculateScore(b);
+                        if (scoreB !== scoreA) return scoreB - scoreA;
+                        return a.name.localeCompare(b.name);
+                    })
                     .forEach(student => {
                         const detailItem = document.createElement('div');
                         detailItem.className = 'detail-item';
-
                         const score = calculateScore(student);
-                        
                         detailItem.innerHTML = `
                             <div class="detail-name">${student.name} - ${score}%</div>
                             ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
@@ -429,21 +460,57 @@
                                 </span>
                             </div>
                         `;
-
                         detailsGrid.appendChild(detailItem);
                     });
             }
         }
 
         async function onMonthOrWeekChange() {
-            await updateChart();
-            await updateDetails();
+            const monthId = document.getElementById('monthSelect').value;
+            const week = document.getElementById('weekSelect').value;
+            
+            // Limpar cache para forçar reload dos dados
+            if (week !== 'general') {
+                delete dataCache[`${monthId}-week${week}.json`];
+            }
+            
+            await debouncedUpdate();
         }
 
-        document.addEventListener('DOMContentLoaded', async () => {
-            await restoreDirectoryHandle();
-            await updateMonthSelect();
+        const debouncedUpdate = debounce(async () => {
             await updateChart();
             await updateDetails();
+        }, 100);
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                showSaveStatus('info', '📡 Carregando dados...');
+                
+                await updateMonthSelect();
+                await loadViewState();
+                await updateChart();
+                await updateDetails();
+                
+                // Adicionar event listeners
+                document.getElementById('monthSelect').addEventListener('change', onMonthOrWeekChange);
+                document.getElementById('weekSelect').addEventListener('change', onMonthOrWeekChange);
+                
+                showSaveStatus('success', '✅ Dados carregados com sucesso!');
+            } catch (error) {
+                console.error('Erro ao inicializar:', error);
+                showSaveStatus('error', '❌ Erro ao carregar dados');
+            }
         });
+
+        // Função para limpar cache (útil para desenvolvimento)
+        function clearCache() {
+            dataCache = {};
+            showSaveStatus('info', '🗑️ Cache limpo');
+        }
+
+        // Expor função para depuração
+        window.clearCache = clearCache;
     </script>
+</body>
+</html>
