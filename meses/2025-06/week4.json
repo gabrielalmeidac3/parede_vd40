@@ -1,146 +1,173 @@
 {
   "Ivo": {
     "name": "Ivo",
-    "active": false,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
     "thursday": false,
-    "objective": ""
+    "sentToGroup": false,
+    "objective": "Acertar a altura da voz na música Tocando em Frente - Procurar outra pra treinar"
   },
   "Carlos": {
     "name": "Carlos",
-    "active": false,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
     "thursday": false,
-    "objective": ""
+    "sentToGroup": false,
+    "objective": "Meu lugar é aqui / O Baile da Fazenda / Vem me Amar"
   },
   "Antônia": {
     "name": "Antônia",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
-    "objective": ""
+    "sentToGroup": true,
+    "objective": "Acertar ritmo e encaixe da voz da música Porque Ele Vive"
   },
   "Paulo": {
     "name": "Paulo",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": true,
     "objective": ""
   },
   "Alessandro": {
     "name": "Alessandro",
     "active": false,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Valéria": {
     "name": "Valéria",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Cleide": {
     "name": "Cleide",
-    "active": false,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
     "thursday": false,
-    "objective": ""
+    "sentToGroup": false,
+    "objective": "Acertar ritmo e encaixe da voz da música \"Nada me separa desse amor\""
   },
   "Nazir": {
     "name": "Nazir",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Heloá": {
     "name": "Heloá",
     "active": false,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Nadir": {
     "name": "Nadir",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Daia": {
     "name": "Daia",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Denilson": {
     "name": "Denilson",
-    "active": false,
-    "videocall": false,
-    "sentToGroup": false,
+    "active": true,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
-    "objective": ""
+    "sentToGroup": false,
+    "objective": "Escolher uma música que contenha o F pra treinar (Página de Amigos)"
   },
   "Geni": {
     "name": "Geni",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Luciene": {
     "name": "Luciene",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Regina": {
     "name": "Regina",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   },
   "Maguida": {
     "name": "Maguida",
-    "active": false,
+    "active": true,
     "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Adilson": {
+    "name": "Adilson",
+    "active": true,
+    "videocall": true,
     "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
-    "objective": ""
+    "objective": "Escrever uma música e cifrar"
+  },
+  "Neusa": {
+    "name": "Neusa",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Ver quais músicas já consegue tocar e quais ainda não consegue"
+  },
+  "Célia": {
+    "name": "Célia",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Listar tudo o que sabe no violão hoje. Ou começar pelos 3 primeiros acordes e 1 ritmo."
   }
 }
