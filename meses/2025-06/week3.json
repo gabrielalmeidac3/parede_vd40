@@ -26,8 +26,8 @@
     "sentToGroup": true,
     "objective": "Acertar ritmo e encaixe da voz da música Porque Ele Vive"
   },
-  "Paulo": {
-    "name": "Paulo",
+  "Paulo Soares": {
+    "name": "Paulo Soares",
     "active": true,
     "videocall": false,
     "tuesday": false,
@@ -141,6 +141,33 @@
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
+    "objective": ""
+  },
+  "Adilson": {
+    "name": "Adilson",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Neusa": {
+    "name": "Neusa",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Célia": {
+    "name": "Célia",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
     "objective": ""
   }
 }

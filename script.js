@@ -392,8 +392,6 @@ async function updateChart() {
         monthlyData
             .filter(student => student.weekCount > 0)
             .sort((a, b) => {
-                if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
-                if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
                 if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
                 return a.name.localeCompare(b.name);
             })

@@ -4,7 +4,7 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Acertar a altura da voz na música Tocando em Frente - Procurar outra pra treinar"
   },
@@ -13,7 +13,7 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Meu lugar é aqui / O Baile da Fazenda / Vem me Amar"
   },
@@ -22,18 +22,9 @@
     "active": true,
     "videocall": false,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": true,
     "objective": "Acertar ritmo e encaixe da voz da música Porque Ele Vive"
-  },
-  "Paulo": {
-    "name": "Paulo",
-    "active": true,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
-    "sentToGroup": true,
-    "objective": ""
   },
   "Alessandro": {
     "name": "Alessandro",
@@ -58,7 +49,7 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Acertar ritmo e encaixe da voz da música \"Nada me separa desse amor\""
   },
@@ -102,8 +93,8 @@
     "name": "Denilson",
     "active": true,
     "videocall": true,
-    "tuesday": false,
-    "thursday": false,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Escolher uma música que contenha o F pra treinar (Página de Amigos)"
   },
@@ -169,5 +160,14 @@
     "tuesday": false,
     "thursday": false,
     "objective": "Listar tudo o que sabe no violão hoje. Ou começar pelos 3 primeiros acordes e 1 ritmo."
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": ""
   }
 }

@@ -26,15 +26,6 @@
     "thursday": false,
     "objective": ""
   },
-  "Paulo": {
-    "name": "Paulo",
-    "active": false,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
-    "thursday": false,
-    "objective": ""
-  },
   "Alessandro": {
     "name": "Alessandro",
     "active": false,
@@ -136,6 +127,15 @@
   },
   "Maguida": {
     "name": "Maguida",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
     "active": false,
     "videocall": false,
     "sentToGroup": false,
