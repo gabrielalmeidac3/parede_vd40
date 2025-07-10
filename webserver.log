@@ -1,0 +1,394 @@
+2025-07-02 14:15:30,652 - INFO - Aplicação iniciada
+2025-07-02 14:15:30,947 - INFO - Servidor iniciado na porta 8003
+2025-07-02 14:15:31,599 - INFO - 127.0.0.1 - - [02/Jul/2025 14:15:31] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:17:20,338 - INFO - Aplicação iniciada
+2025-07-02 14:17:20,608 - INFO - Servidor iniciado na porta 8003
+2025-07-02 14:17:21,276 - INFO - 127.0.0.1 - - [02/Jul/2025 14:17:21] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:17:27,692 - INFO - Servidor parado
+2025-07-02 14:17:27,693 - INFO - Aplicação encerrada
+2025-07-02 14:18:00,606 - INFO - Aplicação iniciada
+2025-07-02 14:18:00,906 - INFO - Servidor iniciado na porta 8003
+2025-07-02 14:18:01,060 - INFO - 127.0.0.1 - - [02/Jul/2025 14:18:01] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:18:46,717 - INFO - Servidor parado
+2025-07-02 14:18:46,718 - INFO - Aplicação encerrada
+2025-07-02 14:18:50,166 - INFO - Servidor parado
+2025-07-02 14:18:50,166 - INFO - Aplicação encerrada
+2025-07-02 14:19:02,535 - INFO - Aplicação iniciada
+2025-07-02 14:19:02,956 - INFO - Servidor iniciado na porta 8005
+2025-07-02 14:19:03,604 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:03] "GET / HTTP/1.1" 200 -
+
+2025-07-02 14:19:03,659 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:03] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 14:19:03,942 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:03] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 14:19:04,180 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:04] code 404, message File not found
+
+2025-07-02 14:19:04,180 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:04] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-02 14:19:24,581 - INFO - Aplicação iniciada
+2025-07-02 14:19:24,947 - INFO - Servidor iniciado na porta 8003
+2025-07-02 14:19:25,604 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:25] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:19:34,978 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:34] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:19:43,186 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:43] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:19:44,697 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:44] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:19:45,710 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:45] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:19:54,036 - INFO - 127.0.0.1 - - [02/Jul/2025 14:19:54] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:21:48,459 - INFO - Servidor parado
+2025-07-02 14:21:48,460 - INFO - Aplicação encerrada
+2025-07-02 14:21:51,862 - INFO - Servidor parado
+2025-07-02 14:21:51,863 - INFO - Aplicação encerrada
+2025-07-02 14:23:55,964 - INFO - Aplicação iniciada
+2025-07-02 14:23:56,254 - INFO - Servidor iniciado na porta 8003 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 14:23:56,908 - INFO - 127.0.0.1 - - [02/Jul/2025 14:23:56] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:24:19,616 - INFO - Aplicação iniciada
+2025-07-02 14:24:19,877 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 14:24:20,490 - INFO - 127.0.0.1 - - [02/Jul/2025 14:24:20] "GET / HTTP/1.1" 200 -
+
+2025-07-02 14:24:20,558 - INFO - 127.0.0.1 - - [02/Jul/2025 14:24:20] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 14:24:20,823 - INFO - 127.0.0.1 - - [02/Jul/2025 14:24:20] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 14:24:21,162 - INFO - 127.0.0.1 - - [02/Jul/2025 14:24:21] code 404, message File not found
+
+2025-07-02 14:24:21,162 - INFO - 127.0.0.1 - - [02/Jul/2025 14:24:21] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-02 14:26:27,920 - INFO - Aplicação iniciada
+2025-07-02 14:26:28,198 - INFO - Servidor iniciado na porta 8003 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 14:26:28,830 - INFO - 127.0.0.1 - - [02/Jul/2025 14:26:28] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:30:54,411 - INFO - Aplicação iniciada
+2025-07-02 14:30:54,734 - INFO - Servidor iniciado na porta 8003 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 14:30:55,386 - INFO - 127.0.0.1 - - [02/Jul/2025 14:30:55] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:31:11,582 - INFO - 127.0.0.1 - - [02/Jul/2025 14:31:11] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:31:29,856 - INFO - Aplicação iniciada
+2025-07-02 14:31:33,726 - ERROR - Erro ao iniciar servidor: name 'socket' is not defined
+2025-07-02 14:31:44,524 - INFO - Aplicação iniciada
+2025-07-02 14:32:37,241 - ERROR - Erro ao iniciar servidor: name 'socket' is not defined
+2025-07-02 14:33:28,817 - INFO - Aplicação iniciada
+2025-07-02 14:35:10,962 - INFO - Aplicação iniciada
+2025-07-02 14:35:11,280 - INFO - Servidor iniciado na porta 8003 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 14:35:11,948 - INFO - 127.0.0.1 - - [02/Jul/2025 14:35:11] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:35:21,820 - ERROR - Erro ao iniciar servidor: 'WebServerTray' object has no attribute 'check_port'
+2025-07-02 14:35:28,522 - INFO - Aplicação iniciada
+2025-07-02 14:35:28,829 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 14:35:37,121 - INFO - Aplicação encerrada
+2025-07-02 14:35:49,430 - INFO - 127.0.0.1 - - [02/Jul/2025 14:35:49] "GET / HTTP/1.1" 304 -
+
+2025-07-02 14:35:51,093 - INFO - 127.0.0.1 - - [02/Jul/2025 14:35:51] "GET / HTTP/1.1" 304 -
+
+2025-07-02 15:13:49,355 - INFO - Aplicação iniciada
+2025-07-02 15:13:49,571 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 15:14:02,148 - INFO - 127.0.0.1 - - [02/Jul/2025 15:14:02] "GET / HTTP/1.1" 304 -
+
+2025-07-02 15:14:53,390 - INFO - Aplicação iniciada
+2025-07-02 15:14:53,598 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 15:15:05,143 - INFO - Servidor parado
+2025-07-02 15:15:05,143 - INFO - Aplicação encerrada
+2025-07-02 15:24:12,644 - INFO - Aplicação iniciada
+2025-07-02 15:24:13,064 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 15:24:13,614 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:13] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:24:13,713 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:13] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:24:13,933 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:13] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:24:13,950 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:13] code 404, message File not found
+
+2025-07-02 15:24:13,950 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:13] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-02 15:24:22,818 - INFO - Iniciando encerramento rápido da aplicação
+2025-07-02 15:24:51,062 - INFO - Aplicação iniciada
+2025-07-02 15:24:51,483 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 15:24:52,017 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:52] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:24:52,130 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:52] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:24:52,335 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:52] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:24:59,774 - INFO - 127.0.0.1 - - [02/Jul/2025 15:24:59] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:25:00,106 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:00] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:25:00,108 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:00] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:25:00,732 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:00] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:25:01,070 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:01] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:25:01,071 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:01] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:25:02,684 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:02] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:25:03,008 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:03] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:25:03,009 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:03] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:25:06,621 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:06] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:25:06,966 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:06] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:25:06,967 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:06] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:25:07,663 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:07] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:25:07,993 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:07] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:25:07,994 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:07] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:25:09,739 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:09] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:25:10,072 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:25:10,073 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:25:20,394 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:20] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:25:20,724 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:20] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:25:20,727 - INFO - 127.0.0.1 - - [02/Jul/2025 15:25:20] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:25:44,654 - INFO - Iniciando encerramento rápido da aplicação
+2025-07-02 15:53:26,967 - INFO - Aplicação iniciada
+2025-07-02 15:53:27,388 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 15:53:27,947 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:27] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:53:28,060 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:28] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:53:28,265 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:28] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:53:39,092 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:39] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:53:39,409 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:39] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:53:39,411 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:39] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:53:45,811 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:45] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:53:46,156 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:46] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:53:46,158 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:46] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:53:46,948 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:46] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:53:47,275 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:47] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:53:47,276 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:47] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:53:48,157 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:48] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:53:48,491 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:48] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:53:48,492 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:48] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:53:49,097 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:49] "GET / HTTP/1.1" 200 -
+
+2025-07-02 15:53:49,418 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:49] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 15:53:49,420 - INFO - 127.0.0.1 - - [02/Jul/2025 15:53:49] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 15:54:52,490 - INFO - Aplicação iniciada
+2025-07-02 15:54:52,897 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 15:55:23,316 - INFO - Servidor parado
+2025-07-02 16:10:15,418 - INFO - Aplicação iniciada
+2025-07-02 16:10:15,832 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 16:10:19,726 - INFO - Servidor parado
+2025-07-02 16:18:56,342 - INFO - Aplicação iniciada
+2025-07-02 16:18:56,774 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-02 16:18:57,306 - INFO - 127.0.0.1 - - [02/Jul/2025 16:18:57] "GET / HTTP/1.1" 200 -
+
+2025-07-02 16:18:57,411 - INFO - 127.0.0.1 - - [02/Jul/2025 16:18:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-02 16:18:57,632 - INFO - 127.0.0.1 - - [02/Jul/2025 16:18:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-02 16:19:16,202 - INFO - Servidor parado
+2025-07-03 10:14:09,866 - INFO - Aplicação iniciada
+2025-07-03 10:14:10,416 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-03 10:14:12,786 - INFO - 127.0.0.1 - - [03/Jul/2025 10:14:12] "GET /script.js HTTP/1.1" 304 -
+
+2025-07-03 10:14:13,262 - INFO - 127.0.0.1 - - [03/Jul/2025 10:14:13] code 404, message File not found
+
+2025-07-03 10:14:13,262 - INFO - 127.0.0.1 - - [03/Jul/2025 10:14:13] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-03 10:14:15,226 - INFO - Servidor parado
+2025-07-03 10:26:35,608 - INFO - Aplicação iniciada
+2025-07-03 10:26:36,019 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-03 10:26:36,633 - INFO - 127.0.0.1 - - [03/Jul/2025 10:26:36] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-03 10:26:57,075 - INFO - Servidor parado
+2025-07-03 12:50:07,443 - INFO - Aplicação iniciada
+2025-07-03 12:50:07,649 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-03 12:50:11,546 - INFO - 127.0.0.1 - - [03/Jul/2025 12:50:11] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-03 12:50:11,821 - INFO - 127.0.0.1 - - [03/Jul/2025 12:50:11] code 404, message File not found
+
+2025-07-03 12:50:11,821 - INFO - 127.0.0.1 - - [03/Jul/2025 12:50:11] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-03 16:56:14,877 - INFO - 127.0.0.1 - - [03/Jul/2025 16:56:14] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-03 16:56:15,328 - INFO - 127.0.0.1 - - [03/Jul/2025 16:56:15] code 404, message File not found
+
+2025-07-03 16:56:15,328 - INFO - 127.0.0.1 - - [03/Jul/2025 16:56:15] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-03 17:39:20,080 - INFO - 127.0.0.1 - - [03/Jul/2025 17:39:20] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-03 21:50:20,905 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:20] "GET / HTTP/1.1" 304 -
+
+2025-07-03 21:50:21,171 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:21] "GET /styles.css HTTP/1.1" 304 -
+
+2025-07-03 21:50:21,265 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:21] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-03 21:50:21,543 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:21] code 404, message File not found
+
+2025-07-03 21:50:21,543 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:21] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-03 21:50:25,702 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:25] "GET / HTTP/1.1" 200 -
+
+2025-07-03 21:50:25,967 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:25] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-03 21:50:26,047 - INFO - 127.0.0.1 - - [03/Jul/2025 21:50:26] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-03 21:54:50,365 - INFO - 127.0.0.1 - - [03/Jul/2025 21:54:50] code 404, message File not found
+
+2025-07-03 21:54:50,366 - INFO - 127.0.0.1 - - [03/Jul/2025 21:54:50] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-04 09:16:44,505 - INFO - Aplicação iniciada
+2025-07-04 09:16:44,709 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-04 09:17:10,760 - INFO - 127.0.0.1 - - [04/Jul/2025 09:17:10] "GET / HTTP/1.1" 200 -
+
+2025-07-04 09:17:10,870 - INFO - 127.0.0.1 - - [04/Jul/2025 09:17:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-04 09:17:11,093 - INFO - 127.0.0.1 - - [04/Jul/2025 09:17:11] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-04 09:17:11,210 - INFO - 127.0.0.1 - - [04/Jul/2025 09:17:11] code 404, message File not found
+
+2025-07-04 09:17:11,210 - INFO - 127.0.0.1 - - [04/Jul/2025 09:17:11] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-05 11:11:50,324 - INFO - Aplicação iniciada
+2025-07-05 11:11:50,537 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-05 11:12:28,825 - INFO - 127.0.0.1 - - [05/Jul/2025 11:12:28] "GET / HTTP/1.1" 200 -
+
+2025-07-05 11:12:28,876 - INFO - 127.0.0.1 - - [05/Jul/2025 11:12:28] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-05 11:12:29,176 - INFO - 127.0.0.1 - - [05/Jul/2025 11:12:29] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-05 11:12:29,771 - INFO - 127.0.0.1 - - [05/Jul/2025 11:12:29] code 404, message File not found
+
+2025-07-05 11:12:29,771 - INFO - 127.0.0.1 - - [05/Jul/2025 11:12:29] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-05 18:23:39,444 - INFO - Aplicação iniciada
+2025-07-05 18:23:39,653 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-06 00:41:14,534 - INFO - Aplicação iniciada
+2025-07-06 00:41:14,754 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-06 08:46:28,178 - INFO - Aplicação iniciada
+2025-07-06 08:46:28,393 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-06 23:15:12,251 - INFO - Aplicação iniciada
+2025-07-06 23:15:12,462 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-07 11:01:48,099 - INFO - Aplicação iniciada
+2025-07-07 11:01:48,305 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-07 11:10:40,326 - INFO - 127.0.0.1 - - [07/Jul/2025 11:10:40] "GET / HTTP/1.1" 200 -
+
+2025-07-07 11:10:40,369 - INFO - 127.0.0.1 - - [07/Jul/2025 11:10:40] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-07 11:10:40,684 - INFO - 127.0.0.1 - - [07/Jul/2025 11:10:40] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-07 11:10:41,565 - INFO - 127.0.0.1 - - [07/Jul/2025 11:10:41] code 404, message File not found
+
+2025-07-07 11:10:41,566 - INFO - 127.0.0.1 - - [07/Jul/2025 11:10:41] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-07 11:59:32,377 - INFO - 127.0.0.1 - - [07/Jul/2025 11:59:32] "GET / HTTP/1.1" 200 -
+
+2025-07-07 11:59:32,631 - INFO - 127.0.0.1 - - [07/Jul/2025 11:59:32] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-07 11:59:32,743 - INFO - 127.0.0.1 - - [07/Jul/2025 11:59:32] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-07 12:00:43,008 - INFO - 127.0.0.1 - - [07/Jul/2025 12:00:43] "GET / HTTP/1.1" 200 -
+
+2025-07-07 12:00:43,262 - INFO - 127.0.0.1 - - [07/Jul/2025 12:00:43] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-07 12:00:43,373 - INFO - 127.0.0.1 - - [07/Jul/2025 12:00:43] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-07 12:05:22,797 - INFO - 127.0.0.1 - - [07/Jul/2025 12:05:22] "GET / HTTP/1.1" 200 -
+
+2025-07-07 12:05:23,050 - INFO - 127.0.0.1 - - [07/Jul/2025 12:05:23] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-07 12:05:23,162 - INFO - 127.0.0.1 - - [07/Jul/2025 12:05:23] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-07 15:16:18,999 - INFO - 127.0.0.1 - - [07/Jul/2025 15:16:18] "GET / HTTP/1.1" 200 -
+
+2025-07-07 15:16:19,266 - INFO - 127.0.0.1 - - [07/Jul/2025 15:16:19] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-07 15:16:19,391 - INFO - 127.0.0.1 - - [07/Jul/2025 15:16:19] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-07 15:16:19,621 - INFO - 127.0.0.1 - - [07/Jul/2025 15:16:19] code 404, message File not found
+
+2025-07-07 15:16:19,622 - INFO - 127.0.0.1 - - [07/Jul/2025 15:16:19] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-07 18:55:18,753 - INFO - 127.0.0.1 - - [07/Jul/2025 18:55:18] "GET / HTTP/1.1" 200 -
+
+2025-07-07 18:55:18,994 - INFO - 127.0.0.1 - - [07/Jul/2025 18:55:18] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-07 18:55:19,136 - INFO - 127.0.0.1 - - [07/Jul/2025 18:55:19] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-07 18:55:19,651 - INFO - 127.0.0.1 - - [07/Jul/2025 18:55:19] code 404, message File not found
+
+2025-07-07 18:55:19,651 - INFO - 127.0.0.1 - - [07/Jul/2025 18:55:19] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-07 21:37:57,346 - INFO - 127.0.0.1 - - [07/Jul/2025 21:37:57] "GET / HTTP/1.1" 200 -
+
+2025-07-07 21:37:57,602 - INFO - 127.0.0.1 - - [07/Jul/2025 21:37:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-07 21:37:57,714 - INFO - 127.0.0.1 - - [07/Jul/2025 21:37:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-08 09:45:12,096 - INFO - 127.0.0.1 - - [08/Jul/2025 09:45:12] "GET / HTTP/1.1" 200 -
+
+2025-07-08 09:45:12,363 - INFO - 127.0.0.1 - - [08/Jul/2025 09:45:12] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-08 09:45:12,440 - INFO - 127.0.0.1 - - [08/Jul/2025 09:45:12] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-08 09:45:12,617 - INFO - 127.0.0.1 - - [08/Jul/2025 09:45:12] code 404, message File not found
+
+2025-07-08 09:45:12,617 - INFO - 127.0.0.1 - - [08/Jul/2025 09:45:12] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-09 07:14:24,311 - INFO - Aplicação iniciada
+2025-07-09 07:14:24,518 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-09 09:28:09,913 - INFO - 127.0.0.1 - - [09/Jul/2025 09:28:09] "GET / HTTP/1.1" 200 -
+
+2025-07-09 09:28:09,979 - INFO - 127.0.0.1 - - [09/Jul/2025 09:28:09] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-09 09:28:10,264 - INFO - 127.0.0.1 - - [09/Jul/2025 09:28:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-09 09:28:10,464 - INFO - 127.0.0.1 - - [09/Jul/2025 09:28:10] code 404, message File not found
+
+2025-07-09 09:28:10,464 - INFO - 127.0.0.1 - - [09/Jul/2025 09:28:10] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-09 11:23:30,313 - INFO - 127.0.0.1 - - [09/Jul/2025 11:23:30] "GET / HTTP/1.1" 200 -
+
+2025-07-09 11:23:30,566 - INFO - 127.0.0.1 - - [09/Jul/2025 11:23:30] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-09 11:23:30,677 - INFO - 127.0.0.1 - - [09/Jul/2025 11:23:30] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-10 09:42:17,040 - INFO - Aplicação iniciada
+2025-07-10 09:42:17,252 - INFO - Servidor iniciado na porta 8004 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-07-10 15:46:36,265 - INFO - 127.0.0.1 - - [10/Jul/2025 15:46:36] "GET / HTTP/1.1" 200 -
+
+2025-07-10 15:46:36,315 - INFO - 127.0.0.1 - - [10/Jul/2025 15:46:36] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-10 15:46:36,618 - INFO - 127.0.0.1 - - [10/Jul/2025 15:46:36] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-10 15:46:37,258 - INFO - 127.0.0.1 - - [10/Jul/2025 15:46:37] code 404, message File not found
+
+2025-07-10 15:46:37,258 - INFO - 127.0.0.1 - - [10/Jul/2025 15:46:37] "GET /favicon.ico HTTP/1.1" 404 -
+
