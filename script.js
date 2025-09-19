@@ -1,5 +1,6 @@
 const DEBUG = false; // Ative para debugging
 let globalListenerAdded = false;
+let currentFilter = "active"; // padrão: mostrar apenas alunos ativos
 
 function addGlobalEventListener() {
     if (globalListenerAdded) return;
@@ -15,19 +16,27 @@ function addGlobalEventListener() {
             
             console.log(`Checkbox ${field} changed to ${value} for ${studentName}`);
             
+            // Mostrar indicador de salvamento
+            showSaveStatus('saving', '💾 Salvando...');
+            
+            // Atualizar dados
             if (field === 'videocall' || field === 'sentToGroup') {
                 await updateStudentWithExclusion(studentName, field, value);
             } else {
                 await updateStudent(studentName, field, value);
             }
             
-            // Atualizar apenas o necessário
+            // Atualizar gráfico imediatamente
             const week = document.getElementById('weekSelect').value;
             if (week !== 'general') {
                 await updateChart();
-                await updateDetails();
             }
+            
+            // Atualizar lista (para pontuação)
             await updateStudentList();
+            
+            // Mostrar sucesso
+            showSaveStatus('success', '✅ Salvo!');
         }
     }, 50);
     
@@ -483,7 +492,15 @@ async function updateStudentList() {
     addGlobalEventListener();
     
     updateStudentObjectiveSelect();
-    const students = await loadStudents();
+    let students = await loadStudents();
+
+    // aplicar filtro
+    if (currentFilter === "active") {
+        students = students.filter(s => s.active);
+    } else if (currentFilter === "inactive") {
+        students = students.filter(s => !s.active);
+    }
+
     students.sort((a, b) => a.name.localeCompare(b.name));
 
     const studentList = document.getElementById('studentList');
@@ -497,8 +514,32 @@ async function updateStudentList() {
 
         studentItem.innerHTML = `
             <div class="student-header">
-                <span class="student-name">${student.name}</span>
-                <div style="display: flex; gap: 5px; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    <span class="student-name">${student.name}</span>
+                    <div class="checkboxes" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="active-${index}" data-field="active" data-student="${student.name}" ${student.active ? 'checked' : ''}>
+                            <label for="active-${index}">Ativo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${student.name}" ${student.videocall ? 'checked' : ''}>
+                            <label for="videocall-${index}">Videochamada</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${student.name}" ${student.sentToGroup ? 'checked' : ''}>
+                            <label for="sentToGroup-${index}">Mandou no grupo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${student.name}" ${student.tuesday ? 'checked' : ''}>
+                            <label for="tuesday-${index}">Terça</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${student.name}" ${student.thursday ? 'checked' : ''}>
+                            <label for="thursday-${index}">Quinta</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-actions">
                     ${!student.objective ? `<button class="icon-btn objective-btn" title="Adicionar objetivo" style="width: 25px; height: 25px; font-size: 10px;">🎯</button>` : ''}
                     <button class="icon-btn edit-btn" title="Editar nome" style="width: 25px; height: 25px; font-size: 10px;">✏️</button>
                     <button class="icon-btn delete-btn" title="Apagar aluno" style="width: 25px; height: 25px; font-size: 10px; background: linear-gradient(45deg, #ef4444, #dc2626);">🗑️</button>
@@ -506,28 +547,6 @@ async function updateStudentList() {
                 </div>
             </div>
             ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; display: flex; justify-content: space-between; align-items: center;"><div><strong>🎯 Objetivo:</strong> ${student.objective}</div><button class="icon-btn objective-btn" title="Editar objetivo" style="width: 20px; height: 20px; font-size: 8px;">✏️</button></div>` : ''}
-            <div class="checkboxes">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="active-${index}" data-field="active" data-student="${student.name}" ${student.active ? 'checked' : ''}>
-                    <label for="active-${index}">Ativo</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${student.name}" ${student.videocall ? 'checked' : ''}>
-                    <label for="videocall-${index}">Videochamada</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${student.name}" ${student.sentToGroup ? 'checked' : ''}>
-                    <label for="sentToGroup-${index}">Mandou no grupo</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${student.name}" ${student.tuesday ? 'checked' : ''}>
-                    <label for="tuesday-${index}">Terça-feira</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${student.name}" ${student.thursday ? 'checked' : ''}>
-                    <label for="thursday-${index}">Quinta-feira</label>
-                </div>
-            </div>
         `;
 
         studentList.appendChild(studentItem);
@@ -1522,13 +1541,18 @@ function showSaveStatus(type, message) {
         document.body.appendChild(statusDiv);
     }
     
-    statusDiv.className = `save-status-${type}`;
+    statusDiv.className = `save-status-${type} visible`;
     statusDiv.textContent = message;
-    statusDiv.style.display = 'block';
     
+    // Se for 'saving', manter visível
+    if (type === 'saving') {
+        return;
+    }
+    
+    // Para outros tipos, esconder após 2 segundos
     setTimeout(() => {
-        statusDiv.style.display = 'none';
-    }, 3000);
+        statusDiv.classList.remove('visible');
+    }, 2000);
 }
 
 
@@ -1649,4 +1673,25 @@ function toggleDetailsView() {
 }
 
 document.getElementById('toggleDetailsBtn').addEventListener('click', toggleDetailsView);
+// Filtro de alunos
+document.getElementById('filterActive').addEventListener('click', () => setFilter("active"));
+document.getElementById('filterAll').addEventListener('click', () => setFilter("all"));
+document.getElementById('filterInactive').addEventListener('click', () => setFilter("inactive"));
 
+function setFilter(type) {
+    currentFilter = type;
+
+    // resetar estado visual dos botões
+    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+    if (type === "active") document.getElementById("filterActive").classList.add("active");
+    if (type === "all") document.getElementById("filterAll").classList.add("active");
+    if (type === "inactive") document.getElementById("filterInactive").classList.add("active");
+
+    updateStudentList();
+}
+
+// BOTÃO SUBIR //
+
+
+
+// FIM BOTÃO SUBIR //

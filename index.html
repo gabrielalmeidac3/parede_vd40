@@ -7,42 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-       
+
     
+<button id="setupFileSystemBtn">📁 Configurar</button>
+<main>
     <div class="container">
-        <button id="setupFileSystemBtn" title="Configurar sistema de arquivos">📁 Configurar</button>
-        <div class="header">
-            <h1>🎯</h1>
-            <h1><span class="gradient-text">Parede da Vitória - VD40</span><span class="no-gradient">🎸</span></h1>
-            <p>Acompanhe o progresso dos alunos semana a semana</p>
-        </div>
-
         
-
-        <div class="controls">
-            <button id="toggleDetailsBtn" class="toggle-btn">📊 Ver Detalhes Alunos</button>
-            
-            <div class="month-controls">
-                <select id="monthSelect">
-                    <option value="2025-06">Junho 2025</option>
-                    <option value="2025-05">Maio 2025</option>
-                    <option value="2025-04">Abril 2025</option>
-                </select>
-                <select id="weekSelect">
-                    <option value="general">📊 Geral do Mês</option>
-                    <option value="1">Semana 1</option>
-                    <option value="2">Semana 2</option>
-                    <option value="3">Semana 3</option>
-                    <option value="4">Semana 4</option>
-                </select>
-                <button type="button" class="icon-btn" id="addMonthBtn" title="Adicionar mês">➕</button>
-                <button class="icon-btn" id="editMonthBtn" title="Editar mês">✏️</button>
-                <button type="button" class="icon-btn" id="deleteMonthBtn" title="Excluir mês">🗑️</button>
-
-                
+        <div class="header">
+            <div>
+                <h1>🎯 <span class="gradient-text">Parede da Vitória - VD40</span><span class="no-gradient">🎸</span></h1>
             </div>
-            
-            
+            <div class="header-controls">
+                <button id="toggleDetailsBtn" class="toggle-btn">📊 Ver Detalhes Alunos</button>
+                
+                <div class="month-controls">
+                    <select id="monthSelect">
+                        <option value="2025-06">Junho 2025</option>
+                        <option value="2025-05">Maio 2025</option>
+                        <option value="2025-04">Abril 2025</option>
+                    </select>
+                    <select id="weekSelect">
+                        <option value="general">📊 Geral do Mês</option>
+                        <option value="1">Semana 1</option>
+                        <option value="2">Semana 2</option>
+                        <option value="3">Semana 3</option>
+                        <option value="4">Semana 4</option>
+                    </select>
+                    <button type="button" class="icon-btn" id="addMonthBtn" title="Adicionar mês">➕</button>
+                    <button class="icon-btn" id="editMonthBtn" title="Editar mês">✏️</button>
+                    <button type="button" class="icon-btn" id="deleteMonthBtn" title="Excluir mês">🗑️</button>
+                </div>
+            </div>
         </div>
 
         <div class="chart-container">
@@ -50,22 +45,17 @@
         </div>
 
         <div id="producerPanel" class="producer-panel active">
-            <div class="section">
-                <h3>➕ Adicionar Aluno</h3>
-                <div class="add-student">
+            
+            <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                <div class="section" style="flex: 0 0 250px;">
+                    <h3>➕ Adicionar Aluno</h3>
+                    <div class="add-student">
                     <input type="text" id="newStudentName" placeholder="Nome do aluno">
                     <button type="button" onclick="addStudent()">Adicionar</button>
                 </div>
             </div>
 
-            <div class="section">
-                <h3>📋 Ferramentas</h3>
-                <button type="button" class="toggle-btn" onclick="copyFromPreviousWeek()" style="margin-right: 10px;">
-                    ⬅️ Copiar Ativos da Semana Anterior
-                </button>
-            </div>
-
-            <div class="section">
+            <div class="section" style="flex: 1;">
                 <h3>🎯 Objetivos da Semana</h3>
                 <div class="add-student">
                     <input type="text" id="objectiveText" placeholder="Digite o objetivo da semana">
@@ -75,10 +65,26 @@
                     <button type="button" onclick="addObjective()">Confirmar</button>
                 </div>
             </div>
+        </div>
 
             <div class="section">
-                <h3>👥 Gerenciar Alunos</h3>
+                <div class="section-header">
+                    <h3>👥 Alunos</h3>
+                    <div style="position: relative; flex: 1; min-width: 200px; max-width: 400px; display: flex; align-items: center; margin: 0 15px;">
+                        <input type="text" id="searchStudents" placeholder="Pesquisar alunos..." style="flex: 1; padding: 12px 30px 12px 15px; border: 1px solid #4a5568; border-radius: 8px; background: #2d3748; color: white; font-size: 16px; box-sizing: border-box;">
+                        <button id="clearSearch" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #888; cursor: pointer; font-size: 18px;">×</button>
+                    </div>
+                    <div class="filter-buttons">
+                        <button id="filterActive" class="filter-btn active">Alunos Ativos</button>
+                        <button id="filterAll" class="filter-btn">Todos os Alunos</button>
+                        <button id="filterInactive" class="filter-btn">Alunos Inativos</button>
+                        <button id="copyFromPreviousBtn" class="toggle-btn" onclick="copyFromPreviousWeek()" style="padding: 6px 12px; font-size: 12px;">← Copiar Ativos da semana anterior</button>
+                    </div>
+                </div>
+                
+
                 <div class="student-list" id="studentList"></div>
+
             </div>
 
             <!-- Adicione depois dos botões de mês existentes -->
@@ -107,7 +113,7 @@
             <div class="details-grid" id="detailsGrid"></div>
         </div>
     </div>
-
+</main>
     <script src="script.js"></script>
 </body>
 </html>
