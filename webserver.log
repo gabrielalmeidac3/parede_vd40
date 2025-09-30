@@ -2157,3 +2157,28 @@ Teste 4: Script finalizado com sucesso!
 
 2025-09-30 14:12:10,050 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:10] "GET /config.json HTTP/1.1" 200 -
 
+2025-09-30 14:12:17,676 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:17] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-30 14:12:17,676 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2025-09-30 14:16:37,870 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:37] "GET / HTTP/1.1" 200 -
+
+2025-09-30 14:16:38,124 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:38] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 14:16:38,219 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:38] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 14:16:38,235 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:38] code 404, message File not found
+
+2025-09-30 14:16:38,235 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:38] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 14:16:42,398 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:42] "GET / HTTP/1.1" 200 -
+
+2025-09-30 14:16:42,729 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:42] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 14:16:42,731 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:42] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 14:16:42,733 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:42] code 404, message File not found
+
+2025-09-30 14:16:42,733 - INFO - 127.0.0.1 - - [30/Sep/2025 14:16:42] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 14:17:06,020 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:06] "GET /config.json HTTP/1.1" 200 -
+

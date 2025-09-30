@@ -2475,12 +2475,9 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
     showSaveStatus('saving', 'Upando para GitHub...');
     
     try {
-        // Buscar porta atual do servidor dinamicamente
         const configResponse = await fetch('/config.json');
         const config = await configResponse.json();
         const serverPort = config.port || window.location.port || 8005;
-        
-        console.log('Executando upload na porta:', serverPort);
         
         const response = await fetch(`http://localhost:${serverPort}/executar-python`, {
             method: 'POST',
@@ -2493,13 +2490,36 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
         }
         
         const result = await response.json();
-        console.log('Resposta do servidor:', result);
         
         if (result.sucesso) {
             showSaveStatus('success', '✅ Upload concluído com sucesso!');
-            console.log('Saida do script:', result.stdout);
+            
+            // Aguardar o arquivo ser atualizado
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            // Invalidar cache e recarregar
+            invalidateFileCache('ultima_execucao.json');
+            const uploadData = await loadJsonFile('ultima_execucao.json', null, true);
+            
+            if (uploadData?.ultima_execucao) {
+                // Sincronizar timestamps
+                const uploadDate = new Date(uploadData.ultima_execucao.replace(' às ', ' '));
+                const syncData = {
+                    ultima_modificacao: uploadData.ultima_execucao,
+                    timestamp_unix: uploadDate.getTime()
+                };
+                
+                const configHandle = await directoryHandle.getDirectoryHandle('config', { create: true });
+                const fileHandle = await configHandle.getFileHandle('local_modification.json', { create: true });
+                const writable = await fileHandle.createWritable({ keepExistingData: false });
+                await writable.write(JSON.stringify(syncData, null, 2));
+                await writable.close();
+                
+                invalidateFileCache('local_modification.json');
+            }
+            
+            // Atualizar visual
             await updateLastUploadTime();
-            await updateLocalModificationTime();
         } else {
             showSaveStatus('error', '❌ Erro no upload!');
             console.error('Erro do script:', result.stderr || result.erro);

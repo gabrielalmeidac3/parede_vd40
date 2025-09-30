@@ -12,7 +12,7 @@ from datetime import datetime
 
 REPO_SSH = "git@github.com:gabrielalmeidac3/parede_vd40.git"
 BRANCH = "main"
-EXCLUIR = ["subir_arquivos_parede.py"]
+EXCLUIR = [""]
 
 def salvar_execucao():
     agora = datetime.now()
@@ -24,15 +24,16 @@ def salvar_execucao():
 
 def copiar_conteudo(origem, destino):
     for item in os.listdir(origem):
-        if item in EXCLUIR:
+        if item in EXCLUIR or item == ".git":
             continue
         origem_item = os.path.join(origem, item)
         destino_item = os.path.join(destino, item)
 
         if os.path.isdir(origem_item):
-            if os.path.exists(destino_item):
+            if os.path.exists(destino_item) and destino_item.endswith(".git") == False:
                 shutil.rmtree(destino_item)
-            shutil.copytree(origem_item, destino_item)
+            if not os.path.exists(destino_item):
+                shutil.copytree(origem_item, destino_item)
         else:
             shutil.copy2(origem_item, destino_item)
 
