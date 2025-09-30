@@ -1,0 +1,173 @@
+{
+  "Carlos": {
+    "name": "Carlos",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Meu lugar é aqui / O Baile da Fazenda / Fica Jesus"
+  },
+  "Antônia": {
+    "name": "Antônia",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Acertar ritmo e encaixe da voz da música Porque Ele Vive"
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Alessandro": {
+    "name": "Alessandro",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Valéria": {
+    "name": "Valéria",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Cleide": {
+    "name": "Cleide",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Acertar ritmo e encaixe da voz da música \"Nada me separa desse amor\""
+  },
+  "Nazir": {
+    "name": "Nazir",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Heloá": {
+    "name": "Heloá",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Nadir": {
+    "name": "Nadir",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Daia": {
+    "name": "Daia",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Música Fio de Cabelo - Acertar Encaixe da Voz"
+  },
+  "Denilson": {
+    "name": "Denilson",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Pegar músicas usando acordes com pestana com segurança"
+  },
+  "Geni": {
+    "name": "Geni",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": true,
+    "objective": ""
+  },
+  "Luciene": {
+    "name": "Luciene",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Regina": {
+    "name": "Regina",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Maguida": {
+    "name": "Maguida",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Adilson": {
+    "name": "Adilson",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Neusa": {
+    "name": "Neusa",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Célia": {
+    "name": "Célia",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Ivo Ferreira": {
+    "name": "Ivo Ferreira",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Acertar a altura da voz na música Tocando em Frente"
+  }
+}

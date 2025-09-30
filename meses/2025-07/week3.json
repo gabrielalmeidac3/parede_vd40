@@ -1,0 +1,281 @@
+{
+  "Carlos": {
+    "name": "Carlos",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Melhorar afinação da voz"
+  },
+  "Antônia": {
+    "name": "Antônia",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Deus enviou"
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Melhorar acordes"
+  },
+  "Alessandro": {
+    "name": "Alessandro",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Valéria": {
+    "name": "Valéria",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Cleide": {
+    "name": "Cleide",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Nossa Canção"
+  },
+  "Nazir": {
+    "name": "Nazir",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Heloá": {
+    "name": "Heloá",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Nadir": {
+    "name": "Nadir",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Daia": {
+    "name": "Daia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Denilson": {
+    "name": "Denilson",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Treinar o F nas músicas e fazer o treino de troca"
+  },
+  "Geni": {
+    "name": "Geni",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "É o amor / Pegar uma mais no Pop Rock"
+  },
+  "Luciene": {
+    "name": "Luciene",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Regina": {
+    "name": "Regina",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Maguida": {
+    "name": "Maguida",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Adilson": {
+    "name": "Adilson",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Neusa": {
+    "name": "Neusa",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Célia": {
+    "name": "Célia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Analu": {
+    "name": "Analu",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Gilson": {
+    "name": "Gilson",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Telefone Mudo"
+  },
+  "Paulo Ricardo": {
+    "name": "Paulo Ricardo",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Porque Ele Vive - Tocar não precisa cantar ainda"
+  },
+  "Isabel": {
+    "name": "Isabel",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Marina": {
+    "name": "Marina",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Adelina": {
+    "name": "Adelina",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Pegar as aulas pra iniciantes e fazer os exercícios"
+  },
+  "José Hilton": {
+    "name": "José Hilton",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Cabecinha no ombro - encaixe da voz"
+  },
+  "Amélia": {
+    "name": "Amélia",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Cavalo Preto"
+  },
+  "Gracie": {
+    "name": "Gracie",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
+  },
+  "Clerionise": {
+    "name": "Clerionise",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": true,
+    "objective": "Cabecinha no ombro"
+  },
+  "Dete Mendes": {
+    "name": "Dete Mendes",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Escolher 2 músicas pra treinar"
+  },
+  "Ivo Ferreira": {
+    "name": "Ivo Ferreira",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Escolher música nova pra treinar - Altura da Voz"
+  },
+  "Márcia Maria Ribeiro": {
+    "name": "Márcia Maria Ribeiro",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  }
+}

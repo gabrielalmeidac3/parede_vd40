@@ -1,0 +1,146 @@
+{
+  "Carlos": {
+    "name": "Carlos",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": true,
+    "thursday": true,
+    "objective": ""
+  },
+  "Antônia": {
+    "name": "Antônia",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Alessandro": {
+    "name": "Alessandro",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Valéria": {
+    "name": "Valéria",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Cleide": {
+    "name": "Cleide",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": true,
+    "thursday": true,
+    "objective": ""
+  },
+  "Nazir": {
+    "name": "Nazir",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Heloá": {
+    "name": "Heloá",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Nadir": {
+    "name": "Nadir",
+    "active": false,
+    "videocall": true,
+    "sentToGroup": false,
+    "tuesday": true,
+    "thursday": false,
+    "objective": ""
+  },
+  "Daia": {
+    "name": "Daia",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Denilson": {
+    "name": "Denilson",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Geni": {
+    "name": "Geni",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Luciene": {
+    "name": "Luciene",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Regina": {
+    "name": "Regina",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Maguida": {
+    "name": "Maguida",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Ivo Ferreira": {
+    "name": "Ivo Ferreira",
+    "active": false,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": true,
+    "thursday": true,
+    "objective": ""
+  }
+}

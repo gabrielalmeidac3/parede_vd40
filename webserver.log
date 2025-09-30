@@ -1,0 +1,1899 @@
+"POST /executar-python HTTP/1.1" 500 -
+
+2025-07-13 10:23:02,648 - ERROR - Erro ao executar script: stdout and stderr arguments may not be used with capture_output.
+2025-07-13 10:26:45,787 - INFO - 127.0.0.1 - - [13/Jul/2025 10:26:45] "POST /executar-python HTTP/1.1" 500 -
+
+2025-07-13 10:26:45,787 - ERROR - Erro ao executar script: stdout and stderr arguments may not be used with capture_output.
+2025-07-13 10:27:15,015 - INFO - Servidor parado
+2025-07-13 10:27:35,158 - INFO - AplicaÁ„o iniciada
+2025-07-13 10:27:35,369 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 10:27:35,522 - INFO - 127.0.0.1 - - [13/Jul/2025 10:27:35] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:27:35,593 - INFO - 127.0.0.1 - - [13/Jul/2025 10:27:35] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:27:35,871 - INFO - 127.0.0.1 - - [13/Jul/2025 10:27:35] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:27:39,706 - INFO - 127.0.0.1 - - [13/Jul/2025 10:27:39] "POST /executar-python HTTP/1.1" 500 -
+
+2025-07-13 10:27:39,707 - ERROR - Erro ao executar script: stdout and stderr arguments may not be used with capture_output.
+2025-07-13 10:28:44,125 - INFO - Servidor parado
+2025-07-13 10:28:49,427 - INFO - AplicaÁ„o iniciada
+2025-07-13 10:28:49,633 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 10:28:53,783 - INFO - 127.0.0.1 - - [13/Jul/2025 10:28:53] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:28:53,881 - INFO - 127.0.0.1 - - [13/Jul/2025 10:28:53] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:28:54,119 - INFO - 127.0.0.1 - - [13/Jul/2025 10:28:54] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:28:55,209 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:28:55,215 - INFO - 127.0.0.1 - - [13/Jul/2025 10:28:55] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:28:55,216 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:28:55,216 - INFO - SaÌda bruta: Nenhuma saÌda
+2025-07-13 10:28:55,216 - INFO - Erro bruto: Nenhum erro
+2025-07-13 10:29:55,238 - INFO - Servidor parado
+2025-07-13 10:29:59,041 - INFO - AplicaÁ„o iniciada
+2025-07-13 10:29:59,259 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 10:30:05,972 - INFO - 127.0.0.1 - - [13/Jul/2025 10:30:05] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:30:06,073 - INFO - 127.0.0.1 - - [13/Jul/2025 10:30:06] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:30:06,328 - INFO - 127.0.0.1 - - [13/Jul/2025 10:30:06] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:30:07,695 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:30:07,701 - INFO - 127.0.0.1 - - [13/Jul/2025 10:30:07] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:30:07,701 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:30:15,773 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:30:15,779 - INFO - 127.0.0.1 - - [13/Jul/2025 10:30:15] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:30:15,779 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:30:22,953 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:30:22,959 - INFO - 127.0.0.1 - - [13/Jul/2025 10:30:22] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:30:22,959 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:30:27,593 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:30:27,599 - INFO - 127.0.0.1 - - [13/Jul/2025 10:30:27] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:30:27,599 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:31:43,533 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:31:43,539 - INFO - 127.0.0.1 - - [13/Jul/2025 10:31:43] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:31:43,539 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:31:54,087 - INFO - 127.0.0.1 - - [13/Jul/2025 10:31:54] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:31:54,428 - INFO - 127.0.0.1 - - [13/Jul/2025 10:31:54] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:31:54,444 - INFO - 127.0.0.1 - - [13/Jul/2025 10:31:54] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:31:56,202 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:31:56,208 - INFO - 127.0.0.1 - - [13/Jul/2025 10:31:56] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:31:56,209 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:32:58,017 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:32:58,023 - INFO - 127.0.0.1 - - [13/Jul/2025 10:32:58] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:32:58,024 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:33:35,033 - INFO - \U0001f50d Iniciando teste do Git...
+2025-07-13 10:33:35,038 - INFO - 127.0.0.1 - - [13/Jul/2025 10:33:35] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:33:35,039 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:34:07,783 - INFO - 127.0.0.1 - - [13/Jul/2025 10:34:07] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:34:07,784 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:34:45,956 - INFO - 127.0.0.1 - - [13/Jul/2025 10:34:45] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:34:45,956 - INFO - Script subir_arquivos.py executado, cÛdigo: 0
+2025-07-13 10:36:00,897 - INFO - Servidor parado
+2025-07-13 10:36:11,186 - INFO - AplicaÁ„o iniciada
+2025-07-13 10:36:11,401 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 10:36:12,276 - INFO - 127.0.0.1 - - [13/Jul/2025 10:36:12] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:36:12,625 - INFO - 127.0.0.1 - - [13/Jul/2025 10:36:12] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:36:12,626 - INFO - 127.0.0.1 - - [13/Jul/2025 10:36:12] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:36:14,859 - INFO - 127.0.0.1 - - [13/Jul/2025 10:36:14] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:36:15,195 - INFO - 127.0.0.1 - - [13/Jul/2025 10:36:15] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:36:15,196 - INFO - 127.0.0.1 - - [13/Jul/2025 10:36:15] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:36:17,400 - INFO - 127.0.0.1 - - [13/Jul/2025 10:36:17] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:36:17,401 - INFO - Script subir_arquivos.py executado, cÛdigo: 0
+2025-07-13 10:36:17,401 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:36:17,401 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:37:16,328 - INFO - Servidor parado
+2025-07-13 10:37:42,452 - INFO - AplicaÁ„o iniciada
+2025-07-13 10:37:42,669 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 10:37:44,868 - INFO - 127.0.0.1 - - [13/Jul/2025 10:37:44] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:37:44,975 - INFO - 127.0.0.1 - - [13/Jul/2025 10:37:44] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:37:45,215 - INFO - 127.0.0.1 - - [13/Jul/2025 10:37:45] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:37:47,344 - INFO - 127.0.0.1 - - [13/Jul/2025 10:37:47] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:37:47,344 - INFO - Script subir_arquivos.py executado, cÛdigo: 0
+2025-07-13 10:37:47,344 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:37:47,344 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:38:40,088 - INFO - üîç Iniciando teste do Git...
+2025-07-13 10:38:40,110 - INFO - ‚úÖ Vers√£o do Git: git version 2.48.1.windows.1
+2025-07-13 10:38:42,465 - INFO - üîë Resultado SSH: 
+2025-07-13 10:38:42,465 - INFO - ‚ö†Ô∏è Erro SSH: Hi viocomg! You've successfully authenticated, but GitHub does not provide shell access.
+2025-07-13 10:38:42,465 - INFO - üèÅ Teste conclu√≠do.
+2025-07-13 10:38:42,469 - INFO - 127.0.0.1 - - [13/Jul/2025 10:38:42] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:38:42,470 - INFO - Script subir_arquivos.py executado, cÛdigo: 0
+2025-07-13 10:38:42,470 - INFO - SaÌda do script: Teste executado com sucesso!
+
+2025-07-13 10:38:42,470 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:40:27,961 - INFO - 127.0.0.1 - - [13/Jul/2025 10:40:27] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:40:28,226 - INFO - 127.0.0.1 - - [13/Jul/2025 10:40:28] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:40:28,303 - INFO - 127.0.0.1 - - [13/Jul/2025 10:40:28] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:40:40,114 - INFO - 127.0.0.1 - - [13/Jul/2025 10:40:40] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:40:40,114 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:40:40,114 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:40:40,114 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:41:48,508 - INFO - 127.0.0.1 - - [13/Jul/2025 10:41:48] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:41:48,509 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:41:48,509 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:41:48,509 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:43:18,142 - INFO - 127.0.0.1 - - [13/Jul/2025 10:43:18] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:43:18,142 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:43:18,142 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:43:18,142 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:51:06,649 - INFO - Servidor parado
+2025-07-13 10:51:10,432 - INFO - AplicaÁ„o iniciada
+2025-07-13 10:51:10,634 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 10:51:15,374 - INFO - 127.0.0.1 - - [13/Jul/2025 10:51:15] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:51:15,375 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:51:15,375 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:51:15,375 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:51:26,440 - INFO - 127.0.0.1 - - [13/Jul/2025 10:51:26] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:51:26,570 - INFO - 127.0.0.1 - - [13/Jul/2025 10:51:26] code 404, message File not found
+
+2025-07-13 10:51:26,571 - INFO - 127.0.0.1 - - [13/Jul/2025 10:51:26] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 10:51:30,434 - INFO - 127.0.0.1 - - [13/Jul/2025 10:51:30] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:51:30,435 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:51:30,435 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:51:30,435 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:51:50,614 - INFO - 127.0.0.1 - - [13/Jul/2025 10:51:50] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:51:50,615 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:51:50,615 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:51:50,615 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:53:59,964 - INFO - 127.0.0.1 - - [13/Jul/2025 10:53:59] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:53:59,965 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:53:59,965 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:53:59,965 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:55:47,889 - INFO - 127.0.0.1 - - [13/Jul/2025 10:55:47] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:55:47,889 - INFO - Script subir_arquivos.py executado, cÛdigo: 0
+2025-07-13 10:55:47,889 - INFO - SaÌda do script: Teste 1: Script iniciado
+Teste 2: Aguardando...
+Teste 3: Quase terminando...
+Teste 4: Script finalizado com sucesso!
+
+2025-07-13 10:55:47,889 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:55:51,646 - INFO - 127.0.0.1 - - [13/Jul/2025 10:55:51] code 404, message File not found
+
+2025-07-13 10:55:51,647 - INFO - 127.0.0.1 - - [13/Jul/2025 10:55:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 10:57:34,137 - INFO - Servidor parado
+2025-07-13 10:57:48,673 - INFO - AplicaÁ„o iniciada
+2025-07-13 10:57:48,889 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 10:57:48,988 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:48] "GET / HTTP/1.1" 200 -
+
+2025-07-13 10:57:49,065 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:49] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:57:49,324 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:49] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 10:57:49,325 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:49] code 404, message File not found
+
+2025-07-13 10:57:49,326 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:49] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 10:57:51,413 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:51] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:57:51,414 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:57:51,414 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:57:51,414 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:57:51,734 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:51] code 404, message File not found
+
+2025-07-13 10:57:51,734 - INFO - 127.0.0.1 - - [13/Jul/2025 10:57:51] "GET /logs HTTP/1.1" 404 -
+
+2025-07-13 10:58:01,370 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:01] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:58:01,370 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:58:01,371 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:58:01,371 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:58:01,693 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:01] code 404, message File not found
+
+2025-07-13 10:58:01,693 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:01] "GET /logs HTTP/1.1" 404 -
+
+2025-07-13 10:58:12,430 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:12] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 10:58:12,430 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 10:58:12,430 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 10:58:12,430 - INFO - Erro do script: Nenhum erro
+2025-07-13 10:58:12,747 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:12] code 404, message File not found
+
+2025-07-13 10:58:12,747 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:12] "GET /logs HTTP/1.1" 404 -
+
+2025-07-13 10:58:26,433 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:26] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 10:58:26,762 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:26] code 404, message File not found
+
+2025-07-13 10:58:26,762 - INFO - 127.0.0.1 - - [13/Jul/2025 10:58:26] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 11:00:13,884 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 11:00:13,886 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:13] "GET / HTTP/1.1" 200 -
+
+2025-07-13 11:00:15,009 - INFO - Servidor parado
+2025-07-13 11:00:16,011 - INFO - Servidor parado
+2025-07-13 11:00:26,099 - INFO - AplicaÁ„o iniciada
+2025-07-13 11:00:26,300 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 11:00:31,112 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:31] "GET / HTTP/1.1" 200 -
+
+2025-07-13 11:00:31,431 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:31] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 11:00:31,447 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:31] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 11:00:31,448 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:31] code 404, message File not found
+
+2025-07-13 11:00:31,448 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:31] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 11:00:33,561 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:33] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 11:00:33,561 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 11:00:33,562 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 11:00:33,562 - INFO - Erro do script: Nenhum erro
+2025-07-13 11:00:33,890 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:33] code 404, message File not found
+
+2025-07-13 11:00:33,890 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:33] "GET /logs HTTP/1.1" 404 -
+
+2025-07-13 11:00:41,803 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:41] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 11:00:41,803 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 11:00:41,803 - INFO - SaÌda do script: Nenhuma saÌda
+2025-07-13 11:00:41,803 - INFO - Erro do script: Nenhum erro
+2025-07-13 11:00:42,134 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:42] code 404, message File not found
+
+2025-07-13 11:00:42,134 - INFO - 127.0.0.1 - - [13/Jul/2025 11:00:42] "GET /logs HTTP/1.1" 404 -
+
+2025-07-13 11:01:02,933 - INFO - 127.0.0.1 - - [13/Jul/2025 11:01:02] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 11:01:03,245 - INFO - 127.0.0.1 - - [13/Jul/2025 11:01:03] code 404, message File not found
+
+2025-07-13 11:01:03,245 - INFO - 127.0.0.1 - - [13/Jul/2025 11:01:03] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 11:06:52,248 - INFO - Servidor parado
+2025-07-13 11:06:56,103 - INFO - AplicaÁ„o iniciada
+2025-07-13 11:06:56,306 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-13 11:06:56,431 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:56] "GET / HTTP/1.1" 200 -
+
+2025-07-13 11:06:56,482 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:56] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 11:06:56,766 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:56] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 11:06:56,767 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:56] code 404, message File not found
+
+2025-07-13 11:06:56,767 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:56] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 11:06:57,744 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:57] "GET / HTTP/1.1" 200 -
+
+2025-07-13 11:06:58,082 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:58] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 11:06:58,084 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:58] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 11:06:58,085 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:58] code 404, message File not found
+
+2025-07-13 11:06:58,085 - INFO - 127.0.0.1 - - [13/Jul/2025 11:06:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 11:07:00,135 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:00] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 11:07:00,135 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 11:07:00,458 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:00] code 404, message File not found
+
+2025-07-13 11:07:00,458 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:00] "GET /logs HTTP/1.1" 404 -
+
+2025-07-13 11:07:51,471 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:51] "GET / HTTP/1.1" 200 -
+
+2025-07-13 11:07:51,818 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-13 11:07:51,850 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:51] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-13 11:07:51,852 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:51] code 404, message File not found
+
+2025-07-13 11:07:51,852 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-07-13 11:07:52,987 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:52] "POST /executar-python HTTP/1.1" 200 -
+
+2025-07-13 11:07:52,988 - INFO - Script subir_arquivos.py executado, cÛdigo: 1
+2025-07-13 11:07:53,316 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:53] code 404, message File not found
+
+2025-07-13 11:07:53,316 - INFO - 127.0.0.1 - - [13/Jul/2025 11:07:53] "GET /logs HTTP/1.1" 404 -
+
+2025-07-13 11:11:44,228 - INFO - Servidor parado
+2025-07-14 11:33:26,491 - INFO - AplicaÁ„o iniciada
+2025-07-14 11:33:26,693 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-14 11:33:29,301 - INFO - 127.0.0.1 - - [14/Jul/2025 11:33:29] "GET / HTTP/1.1" 200 -
+
+2025-07-14 11:33:29,415 - INFO - 127.0.0.1 - - [14/Jul/2025 11:33:29] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-14 11:33:29,640 - INFO - 127.0.0.1 - - [14/Jul/2025 11:33:29] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-14 19:07:11,840 - INFO - 127.0.0.1 - - [14/Jul/2025 19:07:11] "GET / HTTP/1.1" 200 -
+
+2025-07-14 19:07:12,096 - INFO - 127.0.0.1 - - [14/Jul/2025 19:07:12] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-14 19:07:12,239 - INFO - 127.0.0.1 - - [14/Jul/2025 19:07:12] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-14 20:47:26,567 - INFO - 127.0.0.1 - - [14/Jul/2025 20:47:26] "GET / HTTP/1.1" 200 -
+
+2025-07-14 20:47:26,834 - INFO - 127.0.0.1 - - [14/Jul/2025 20:47:26] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-14 20:47:26,944 - INFO - 127.0.0.1 - - [14/Jul/2025 20:47:26] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-14 20:59:48,383 - INFO - 127.0.0.1 - - [14/Jul/2025 20:59:48] "GET /aluno.html HTTP/1.1" 200 -
+
+2025-07-14 20:59:48,656 - INFO - 127.0.0.1 - - [14/Jul/2025 20:59:48] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-14 20:59:48,867 - INFO - 127.0.0.1 - - [14/Jul/2025 20:59:48] "GET /config/months.json HTTP/1.1" 200 -
+
+2025-07-14 20:59:48,873 - INFO - 127.0.0.1 - - [14/Jul/2025 20:59:48] "GET /img2.png HTTP/1.1" 200 -
+
+2025-07-14 20:59:49,424 - INFO - 127.0.0.1 - - [14/Jul/2025 20:59:49] "GET /config/viewState.json HTTP/1.1" 200 -
+
+2025-07-14 20:59:49,757 - INFO - 127.0.0.1 - - [14/Jul/2025 20:59:49] "GET /meses/2025-07/week2.json HTTP/1.1" 200 -
+
+2025-07-14 20:59:50,025 - INFO - 127.0.0.1 - - [14/Jul/2025 20:59:50] "GET /config/globalStudents.json HTTP/1.1" 200 -
+
+2025-07-14 21:01:30,935 - INFO - 127.0.0.1 - - [14/Jul/2025 21:01:30] "GET / HTTP/1.1" 200 -
+
+2025-07-14 21:01:31,209 - INFO - 127.0.0.1 - - [14/Jul/2025 21:01:31] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-14 21:01:31,408 - INFO - 127.0.0.1 - - [14/Jul/2025 21:01:31] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-15 10:17:50,450 - INFO - AplicaÁ„o iniciada
+2025-07-15 10:17:50,659 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-15 17:05:59,091 - INFO - 127.0.0.1 - - [15/Jul/2025 17:05:59] "GET / HTTP/1.1" 200 -
+
+2025-07-15 17:05:59,173 - INFO - 127.0.0.1 - - [15/Jul/2025 17:05:59] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-15 17:05:59,448 - INFO - 127.0.0.1 - - [15/Jul/2025 17:05:59] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-15 17:05:59,645 - INFO - 127.0.0.1 - - [15/Jul/2025 17:05:59] code 404, message File not found
+
+2025-07-15 17:05:59,645 - INFO - 127.0.0.1 - - [15/Jul/2025 17:05:59] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-17 23:21:55,256 - INFO - 127.0.0.1 - - [17/Jul/2025 23:21:55] "GET / HTTP/1.1" 200 -
+
+2025-07-17 23:21:55,510 - INFO - 127.0.0.1 - - [17/Jul/2025 23:21:55] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-17 23:21:55,615 - INFO - 127.0.0.1 - - [17/Jul/2025 23:21:55] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-17 23:21:55,887 - INFO - 127.0.0.1 - - [17/Jul/2025 23:21:55] code 404, message File not found
+
+2025-07-17 23:21:55,887 - INFO - 127.0.0.1 - - [17/Jul/2025 23:21:55] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-18 10:04:17,656 - INFO - 127.0.0.1 - - [18/Jul/2025 10:04:17] "GET / HTTP/1.1" 200 -
+
+2025-07-18 10:04:17,905 - INFO - 127.0.0.1 - - [18/Jul/2025 10:04:17] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-18 10:04:18,032 - INFO - 127.0.0.1 - - [18/Jul/2025 10:04:18] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-19 09:55:17,167 - INFO - AplicaÁ„o iniciada
+2025-07-19 09:55:17,374 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-20 12:20:46,380 - INFO - AplicaÁ„o iniciada
+2025-07-20 12:20:46,596 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-20 17:09:16,996 - INFO - AplicaÁ„o iniciada
+2025-07-20 17:09:17,208 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-21 02:04:28,852 - INFO - AplicaÁ„o iniciada
+2025-07-21 02:04:29,061 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-21 18:54:03,584 - INFO - 127.0.0.1 - - [21/Jul/2025 18:54:03] "GET / HTTP/1.1" 200 -
+
+2025-07-21 18:54:03,639 - INFO - 127.0.0.1 - - [21/Jul/2025 18:54:03] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-21 18:54:03,943 - INFO - 127.0.0.1 - - [21/Jul/2025 18:54:03] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-21 18:54:04,712 - INFO - 127.0.0.1 - - [21/Jul/2025 18:54:04] code 404, message File not found
+
+2025-07-21 18:54:04,713 - INFO - 127.0.0.1 - - [21/Jul/2025 18:54:04] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-22 10:32:34,814 - INFO - AplicaÁ„o iniciada
+2025-07-22 10:32:35,018 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-22 17:59:59,901 - INFO - 127.0.0.1 - - [22/Jul/2025 17:59:59] "GET / HTTP/1.1" 200 -
+
+2025-07-22 17:59:59,955 - INFO - 127.0.0.1 - - [22/Jul/2025 17:59:59] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-22 18:00:00,265 - INFO - 127.0.0.1 - - [22/Jul/2025 18:00:00] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-22 18:00:00,780 - INFO - 127.0.0.1 - - [22/Jul/2025 18:00:00] code 404, message File not found
+
+2025-07-22 18:00:00,780 - INFO - 127.0.0.1 - - [22/Jul/2025 18:00:00] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-23 10:33:37,826 - INFO - AplicaÁ„o iniciada
+2025-07-23 10:33:38,053 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 11:04:08,110 - INFO - 127.0.0.1 - - [23/Jul/2025 11:04:08] "GET / HTTP/1.1" 200 -
+
+2025-07-23 11:04:08,193 - INFO - 127.0.0.1 - - [23/Jul/2025 11:04:08] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-23 11:04:08,464 - INFO - 127.0.0.1 - - [23/Jul/2025 11:04:08] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-23 11:04:08,654 - INFO - 127.0.0.1 - - [23/Jul/2025 11:04:08] code 404, message File not found
+
+2025-07-23 11:04:08,654 - INFO - 127.0.0.1 - - [23/Jul/2025 11:04:08] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-23 13:07:51,957 - INFO - 127.0.0.1 - - [23/Jul/2025 13:07:51] "GET / HTTP/1.1" 200 -
+
+2025-07-23 13:07:52,220 - INFO - 127.0.0.1 - - [23/Jul/2025 13:07:52] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-23 13:07:52,314 - INFO - 127.0.0.1 - - [23/Jul/2025 13:07:52] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-23 16:43:04,906 - INFO - AplicaÁ„o iniciada
+2025-07-23 16:43:05,121 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 16:48:48,555 - INFO - AplicaÁ„o iniciada
+2025-07-23 16:48:48,769 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 16:54:05,570 - INFO - AplicaÁ„o iniciada
+2025-07-23 16:54:05,784 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 17:25:46,535 - INFO - AplicaÁ„o iniciada
+2025-07-23 17:25:46,747 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 17:36:34,721 - INFO - AplicaÁ„o iniciada
+2025-07-23 17:36:34,937 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 18:21:54,878 - INFO - AplicaÁ„o iniciada
+2025-07-23 18:21:55,081 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 18:30:02,023 - INFO - AplicaÁ„o iniciada
+2025-07-23 18:30:02,235 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 18:43:58,734 - INFO - AplicaÁ„o iniciada
+2025-07-23 18:43:58,941 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-23 18:47:16,457 - INFO - AplicaÁ„o iniciada
+2025-07-23 18:47:16,667 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-24 09:14:10,189 - INFO - AplicaÁ„o iniciada
+2025-07-24 09:14:10,396 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-24 09:17:30,457 - INFO - 127.0.0.1 - - [24/Jul/2025 09:17:30] "GET / HTTP/1.1" 200 -
+
+2025-07-24 09:17:30,493 - INFO - 127.0.0.1 - - [24/Jul/2025 09:17:30] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-24 09:17:30,795 - INFO - 127.0.0.1 - - [24/Jul/2025 09:17:30] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-24 09:17:31,398 - INFO - 127.0.0.1 - - [24/Jul/2025 09:17:31] code 404, message File not found
+
+2025-07-24 09:17:31,398 - INFO - 127.0.0.1 - - [24/Jul/2025 09:17:31] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-24 18:36:44,712 - INFO - 127.0.0.1 - - [24/Jul/2025 18:36:44] "GET / HTTP/1.1" 200 -
+
+2025-07-24 18:36:44,971 - INFO - 127.0.0.1 - - [24/Jul/2025 18:36:44] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-24 18:36:45,073 - INFO - 127.0.0.1 - - [24/Jul/2025 18:36:45] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-24 18:36:45,234 - INFO - 127.0.0.1 - - [24/Jul/2025 18:36:45] code 404, message File not found
+
+2025-07-24 18:36:45,234 - INFO - 127.0.0.1 - - [24/Jul/2025 18:36:45] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-25 12:01:31,552 - INFO - AplicaÁ„o iniciada
+2025-07-25 12:01:31,770 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-26 08:53:16,042 - INFO - AplicaÁ„o iniciada
+2025-07-26 08:53:16,250 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-27 12:00:51,350 - INFO - AplicaÁ„o iniciada
+2025-07-27 12:00:51,568 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-28 06:40:16,324 - INFO - AplicaÁ„o iniciada
+2025-07-28 06:40:16,540 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-28 10:48:13,984 - INFO - AplicaÁ„o iniciada
+2025-07-28 10:48:14,190 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-28 15:26:22,825 - INFO - 127.0.0.1 - - [28/Jul/2025 15:26:22] "GET / HTTP/1.1" 200 -
+
+2025-07-28 15:26:22,915 - INFO - 127.0.0.1 - - [28/Jul/2025 15:26:22] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-28 15:26:23,195 - INFO - 127.0.0.1 - - [28/Jul/2025 15:26:23] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-28 15:26:23,404 - INFO - 127.0.0.1 - - [28/Jul/2025 15:26:23] code 404, message File not found
+
+2025-07-28 15:26:23,404 - INFO - 127.0.0.1 - - [28/Jul/2025 15:26:23] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-28 16:34:54,850 - INFO - 127.0.0.1 - - [28/Jul/2025 16:34:54] "GET / HTTP/1.1" 200 -
+
+2025-07-28 16:34:55,101 - INFO - 127.0.0.1 - - [28/Jul/2025 16:34:55] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-28 16:34:55,197 - INFO - 127.0.0.1 - - [28/Jul/2025 16:34:55] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-28 16:34:55,335 - INFO - 127.0.0.1 - - [28/Jul/2025 16:34:55] code 404, message File not found
+
+2025-07-28 16:34:55,335 - INFO - 127.0.0.1 - - [28/Jul/2025 16:34:55] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-29 09:54:39,196 - INFO - AplicaÁ„o iniciada
+2025-07-29 09:54:39,404 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-29 17:02:23,854 - INFO - 127.0.0.1 - - [29/Jul/2025 17:02:23] "GET / HTTP/1.1" 200 -
+
+2025-07-29 17:02:23,949 - INFO - 127.0.0.1 - - [29/Jul/2025 17:02:23] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-29 17:02:24,187 - INFO - 127.0.0.1 - - [29/Jul/2025 17:02:24] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-29 17:02:24,349 - INFO - 127.0.0.1 - - [29/Jul/2025 17:02:24] code 404, message File not found
+
+2025-07-29 17:02:24,349 - INFO - 127.0.0.1 - - [29/Jul/2025 17:02:24] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-30 09:18:50,325 - INFO - AplicaÁ„o iniciada
+2025-07-30 09:18:50,534 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-30 09:58:31,330 - INFO - 127.0.0.1 - - [30/Jul/2025 09:58:31] "GET / HTTP/1.1" 200 -
+
+2025-07-30 09:58:31,401 - INFO - 127.0.0.1 - - [30/Jul/2025 09:58:31] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-30 09:58:31,682 - INFO - 127.0.0.1 - - [30/Jul/2025 09:58:31] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-30 09:58:31,880 - INFO - 127.0.0.1 - - [30/Jul/2025 09:58:31] code 404, message File not found
+
+2025-07-30 09:58:31,880 - INFO - 127.0.0.1 - - [30/Jul/2025 09:58:31] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-31 10:48:27,978 - INFO - AplicaÁ„o iniciada
+2025-07-31 10:48:28,185 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-07-31 16:40:52,576 - INFO - 127.0.0.1 - - [31/Jul/2025 16:40:52] "GET / HTTP/1.1" 200 -
+
+2025-07-31 16:40:52,656 - INFO - 127.0.0.1 - - [31/Jul/2025 16:40:52] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-31 16:40:52,943 - INFO - 127.0.0.1 - - [31/Jul/2025 16:40:52] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-31 16:40:53,098 - INFO - 127.0.0.1 - - [31/Jul/2025 16:40:53] code 404, message File not found
+
+2025-07-31 16:40:53,098 - INFO - 127.0.0.1 - - [31/Jul/2025 16:40:53] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-31 20:40:42,865 - INFO - 127.0.0.1 - - [31/Jul/2025 20:40:42] "GET / HTTP/1.1" 200 -
+
+2025-07-31 20:40:43,116 - INFO - 127.0.0.1 - - [31/Jul/2025 20:40:43] "GET /styles.css HTTP/1.1" 200 -
+
+2025-07-31 20:40:43,226 - INFO - 127.0.0.1 - - [31/Jul/2025 20:40:43] "GET /script.js HTTP/1.1" 200 -
+
+2025-07-31 20:40:43,514 - INFO - 127.0.0.1 - - [31/Jul/2025 20:40:43] code 404, message File not found
+
+2025-07-31 20:40:43,514 - INFO - 127.0.0.1 - - [31/Jul/2025 20:40:43] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-07-31 21:53:36,508 - INFO - AplicaÁ„o iniciada
+2025-07-31 21:53:36,720 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-01 09:45:59,647 - INFO - AplicaÁ„o iniciada
+2025-08-01 09:45:59,866 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-01 10:26:20,145 - INFO - 127.0.0.1 - - [01/Aug/2025 10:26:20] "GET / HTTP/1.1" 200 -
+
+2025-08-01 10:26:20,503 - INFO - 127.0.0.1 - - [01/Aug/2025 10:26:20] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-01 10:26:20,505 - INFO - 127.0.0.1 - - [01/Aug/2025 10:26:20] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-01 10:26:20,894 - INFO - 127.0.0.1 - - [01/Aug/2025 10:26:20] code 404, message File not found
+
+2025-08-01 10:26:20,895 - INFO - 127.0.0.1 - - [01/Aug/2025 10:26:20] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-01 23:47:05,581 - INFO - AplicaÁ„o iniciada
+2025-08-01 23:47:05,794 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-03 09:57:43,437 - INFO - AplicaÁ„o iniciada
+2025-08-03 09:57:43,644 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-03 14:16:14,134 - INFO - AplicaÁ„o iniciada
+2025-08-03 14:16:14,338 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-04 07:04:38,318 - INFO - AplicaÁ„o iniciada
+2025-08-04 07:04:38,536 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-04 09:45:34,311 - INFO - 127.0.0.1 - - [04/Aug/2025 09:45:34] "GET / HTTP/1.1" 200 -
+
+2025-08-04 09:45:34,379 - INFO - 127.0.0.1 - - [04/Aug/2025 09:45:34] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-04 09:45:34,703 - INFO - 127.0.0.1 - - [04/Aug/2025 09:45:34] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-04 09:45:34,904 - INFO - 127.0.0.1 - - [04/Aug/2025 09:45:34] code 404, message File not found
+
+2025-08-04 09:45:34,904 - INFO - 127.0.0.1 - - [04/Aug/2025 09:45:34] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-04 19:22:44,618 - INFO - 127.0.0.1 - - [04/Aug/2025 19:22:44] "GET / HTTP/1.1" 200 -
+
+2025-08-04 19:22:44,869 - INFO - 127.0.0.1 - - [04/Aug/2025 19:22:44] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-04 19:22:45,146 - INFO - 127.0.0.1 - - [04/Aug/2025 19:22:45] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-04 19:22:45,832 - INFO - 127.0.0.1 - - [04/Aug/2025 19:22:45] code 404, message File not found
+
+2025-08-04 19:22:45,832 - INFO - 127.0.0.1 - - [04/Aug/2025 19:22:45] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-05 07:33:34,513 - INFO - AplicaÁ„o iniciada
+2025-08-05 07:33:34,720 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-05 10:17:51,879 - INFO - 127.0.0.1 - - [05/Aug/2025 10:17:51] "GET / HTTP/1.1" 200 -
+
+2025-08-05 10:17:51,937 - INFO - 127.0.0.1 - - [05/Aug/2025 10:17:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-05 10:17:52,245 - INFO - 127.0.0.1 - - [05/Aug/2025 10:17:52] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-05 10:17:52,937 - INFO - 127.0.0.1 - - [05/Aug/2025 10:17:52] code 404, message File not found
+
+2025-08-05 10:17:52,937 - INFO - 127.0.0.1 - - [05/Aug/2025 10:17:52] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-05 14:58:13,553 - INFO - 127.0.0.1 - - [05/Aug/2025 14:58:13] "GET / HTTP/1.1" 200 -
+
+2025-08-05 14:58:13,815 - INFO - 127.0.0.1 - - [05/Aug/2025 14:58:13] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-05 14:58:13,910 - INFO - 127.0.0.1 - - [05/Aug/2025 14:58:13] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-05 14:58:14,216 - INFO - 127.0.0.1 - - [05/Aug/2025 14:58:14] code 404, message File not found
+
+2025-08-05 14:58:14,216 - INFO - 127.0.0.1 - - [05/Aug/2025 14:58:14] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-06 10:21:07,886 - INFO - 127.0.0.1 - - [06/Aug/2025 10:21:07] "GET / HTTP/1.1" 200 -
+
+2025-08-06 10:21:08,153 - INFO - 127.0.0.1 - - [06/Aug/2025 10:21:08] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-06 10:21:08,231 - INFO - 127.0.0.1 - - [06/Aug/2025 10:21:08] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-06 10:21:08,425 - INFO - 127.0.0.1 - - [06/Aug/2025 10:21:08] code 404, message File not found
+
+2025-08-06 10:21:08,425 - INFO - 127.0.0.1 - - [06/Aug/2025 10:21:08] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-07 08:57:08,640 - INFO - AplicaÁ„o iniciada
+2025-08-07 08:57:08,847 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-07 17:06:34,320 - INFO - 127.0.0.1 - - [07/Aug/2025 17:06:34] "GET / HTTP/1.1" 200 -
+
+2025-08-07 17:06:34,385 - INFO - 127.0.0.1 - - [07/Aug/2025 17:06:34] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-07 17:06:34,666 - INFO - 127.0.0.1 - - [07/Aug/2025 17:06:34] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-07 17:06:34,828 - INFO - 127.0.0.1 - - [07/Aug/2025 17:06:34] code 404, message File not found
+
+2025-08-07 17:06:34,828 - INFO - 127.0.0.1 - - [07/Aug/2025 17:06:34] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-07 17:07:19,523 - INFO - 127.0.0.1 - - [07/Aug/2025 17:07:19] "GET / HTTP/1.1" 200 -
+
+2025-08-07 17:07:19,790 - INFO - 127.0.0.1 - - [07/Aug/2025 17:07:19] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-07 17:07:19,885 - INFO - 127.0.0.1 - - [07/Aug/2025 17:07:19] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-07 17:12:49,292 - INFO - 127.0.0.1 - - [07/Aug/2025 17:12:49] "GET / HTTP/1.1" 200 -
+
+2025-08-07 17:12:49,560 - INFO - 127.0.0.1 - - [07/Aug/2025 17:12:49] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-07 17:12:49,655 - INFO - 127.0.0.1 - - [07/Aug/2025 17:12:49] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-07 18:20:04,280 - INFO - 127.0.0.1 - - [07/Aug/2025 18:20:04] "GET / HTTP/1.1" 200 -
+
+2025-08-07 18:20:04,548 - INFO - 127.0.0.1 - - [07/Aug/2025 18:20:04] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-07 18:20:04,611 - INFO - 127.0.0.1 - - [07/Aug/2025 18:20:04] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-08 07:59:23,747 - INFO - AplicaÁ„o iniciada
+2025-08-08 07:59:23,960 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-08 15:59:39,981 - INFO - 127.0.0.1 - - [08/Aug/2025 15:59:39] "GET / HTTP/1.1" 200 -
+
+2025-08-08 15:59:40,064 - INFO - 127.0.0.1 - - [08/Aug/2025 15:59:40] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-08 15:59:40,343 - INFO - 127.0.0.1 - - [08/Aug/2025 15:59:40] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-08 15:59:40,622 - INFO - 127.0.0.1 - - [08/Aug/2025 15:59:40] code 404, message File not found
+
+2025-08-08 15:59:40,622 - INFO - 127.0.0.1 - - [08/Aug/2025 15:59:40] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-08 19:38:12,191 - INFO - AplicaÁ„o iniciada
+2025-08-08 19:38:12,406 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-09 11:56:29,746 - INFO - AplicaÁ„o iniciada
+2025-08-09 11:56:29,953 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-10 02:34:05,706 - INFO - AplicaÁ„o iniciada
+2025-08-10 02:34:05,914 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-10 12:22:33,451 - INFO - AplicaÁ„o iniciada
+2025-08-10 12:22:33,657 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-10 19:32:08,527 - INFO - AplicaÁ„o iniciada
+2025-08-10 19:32:08,732 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-11 09:15:33,032 - INFO - AplicaÁ„o iniciada
+2025-08-11 09:15:33,237 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-11 18:55:57,147 - INFO - 127.0.0.1 - - [11/Aug/2025 18:55:57] "GET / HTTP/1.1" 200 -
+
+2025-08-11 18:55:57,202 - INFO - 127.0.0.1 - - [11/Aug/2025 18:55:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-11 18:55:57,507 - INFO - 127.0.0.1 - - [11/Aug/2025 18:55:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-11 18:55:58,291 - INFO - 127.0.0.1 - - [11/Aug/2025 18:55:58] code 404, message File not found
+
+2025-08-11 18:55:58,291 - INFO - 127.0.0.1 - - [11/Aug/2025 18:55:58] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-11 20:31:42,410 - INFO - 127.0.0.1 - - [11/Aug/2025 20:31:42] "GET / HTTP/1.1" 200 -
+
+2025-08-11 20:31:42,663 - INFO - 127.0.0.1 - - [11/Aug/2025 20:31:42] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-11 20:31:42,789 - INFO - 127.0.0.1 - - [11/Aug/2025 20:31:42] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-11 20:31:42,940 - INFO - 127.0.0.1 - - [11/Aug/2025 20:31:42] code 404, message File not found
+
+2025-08-11 20:31:42,940 - INFO - 127.0.0.1 - - [11/Aug/2025 20:31:42] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-12 08:59:06,790 - INFO - AplicaÁ„o iniciada
+2025-08-12 08:59:06,996 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-12 09:15:20,674 - INFO - 127.0.0.1 - - [12/Aug/2025 09:15:20] "GET / HTTP/1.1" 200 -
+
+2025-08-12 09:15:20,759 - INFO - 127.0.0.1 - - [12/Aug/2025 09:15:20] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-12 09:15:21,021 - INFO - 127.0.0.1 - - [12/Aug/2025 09:15:21] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-12 09:15:21,226 - INFO - 127.0.0.1 - - [12/Aug/2025 09:15:21] code 404, message File not found
+
+2025-08-12 09:15:21,226 - INFO - 127.0.0.1 - - [12/Aug/2025 09:15:21] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-12 14:35:59,872 - INFO - 127.0.0.1 - - [12/Aug/2025 14:35:59] "GET / HTTP/1.1" 200 -
+
+2025-08-12 14:36:00,129 - INFO - 127.0.0.1 - - [12/Aug/2025 14:36:00] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-12 14:36:00,215 - INFO - 127.0.0.1 - - [12/Aug/2025 14:36:00] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-12 14:36:00,882 - INFO - 127.0.0.1 - - [12/Aug/2025 14:36:00] code 404, message File not found
+
+2025-08-12 14:36:00,882 - INFO - 127.0.0.1 - - [12/Aug/2025 14:36:00] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-12 14:36:09,657 - INFO - 127.0.0.1 - - [12/Aug/2025 14:36:09] "GET / HTTP/1.1" 200 -
+
+2025-08-12 14:36:10,029 - INFO - 127.0.0.1 - - [12/Aug/2025 14:36:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-12 14:36:10,042 - INFO - 127.0.0.1 - - [12/Aug/2025 14:36:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-12 14:50:28,819 - INFO - 127.0.0.1 - - [12/Aug/2025 14:50:28] "GET / HTTP/1.1" 200 -
+
+2025-08-12 14:50:29,071 - INFO - 127.0.0.1 - - [12/Aug/2025 14:50:29] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-12 14:50:29,166 - INFO - 127.0.0.1 - - [12/Aug/2025 14:50:29] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-12 20:13:40,150 - INFO - AplicaÁ„o iniciada
+2025-08-12 20:13:40,356 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-13 09:41:10,966 - INFO - AplicaÁ„o iniciada
+2025-08-13 09:41:11,170 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-13 17:18:47,639 - INFO - 127.0.0.1 - - [13/Aug/2025 17:18:47] "GET / HTTP/1.1" 200 -
+
+2025-08-13 17:18:47,735 - INFO - 127.0.0.1 - - [13/Aug/2025 17:18:47] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-13 17:18:48,020 - INFO - 127.0.0.1 - - [13/Aug/2025 17:18:48] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-13 17:18:48,242 - INFO - 127.0.0.1 - - [13/Aug/2025 17:18:48] code 404, message File not found
+
+2025-08-13 17:18:48,242 - INFO - 127.0.0.1 - - [13/Aug/2025 17:18:48] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-14 07:16:36,102 - INFO - AplicaÁ„o iniciada
+2025-08-14 07:16:36,313 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-14 14:02:51,614 - INFO - 127.0.0.1 - - [14/Aug/2025 14:02:51] "GET / HTTP/1.1" 200 -
+
+2025-08-14 14:02:51,697 - INFO - 127.0.0.1 - - [14/Aug/2025 14:02:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-14 14:02:51,969 - INFO - 127.0.0.1 - - [14/Aug/2025 14:02:51] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-14 14:02:52,171 - INFO - 127.0.0.1 - - [14/Aug/2025 14:02:52] code 404, message File not found
+
+2025-08-14 14:02:52,171 - INFO - 127.0.0.1 - - [14/Aug/2025 14:02:52] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-14 14:25:17,681 - INFO - 127.0.0.1 - - [14/Aug/2025 14:25:17] "GET / HTTP/1.1" 200 -
+
+2025-08-14 14:25:17,925 - INFO - 127.0.0.1 - - [14/Aug/2025 14:25:17] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-14 14:25:18,034 - INFO - 127.0.0.1 - - [14/Aug/2025 14:25:18] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-14 14:25:55,785 - INFO - 127.0.0.1 - - [14/Aug/2025 14:25:55] "GET / HTTP/1.1" 200 -
+
+2025-08-14 14:25:56,121 - INFO - 127.0.0.1 - - [14/Aug/2025 14:25:56] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-14 14:25:56,123 - INFO - 127.0.0.1 - - [14/Aug/2025 14:25:56] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-14 18:52:03,626 - INFO - 127.0.0.1 - - [14/Aug/2025 18:52:03] "GET / HTTP/1.1" 200 -
+
+2025-08-14 18:52:03,894 - INFO - 127.0.0.1 - - [14/Aug/2025 18:52:03] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-14 18:52:03,974 - INFO - 127.0.0.1 - - [14/Aug/2025 18:52:03] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-15 07:33:10,762 - INFO - AplicaÁ„o iniciada
+2025-08-15 07:33:10,968 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-15 18:19:38,861 - INFO - AplicaÁ„o iniciada
+2025-08-15 18:19:39,068 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-15 18:58:54,219 - INFO - AplicaÁ„o iniciada
+2025-08-15 18:58:54,437 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-16 08:49:30,430 - INFO - AplicaÁ„o iniciada
+2025-08-16 08:49:30,636 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-17 09:13:44,318 - INFO - AplicaÁ„o iniciada
+2025-08-17 09:13:44,537 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-18 19:03:30,311 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:30] "GET / HTTP/1.1" 200 -
+
+2025-08-18 19:03:30,372 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:30] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-18 19:03:30,678 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:30] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-18 19:03:31,339 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:31] code 404, message File not found
+
+2025-08-18 19:03:31,339 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:31] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-18 19:03:38,066 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:38] "GET / HTTP/1.1" 200 -
+
+2025-08-18 19:03:38,425 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:38] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-18 19:03:38,429 - INFO - 127.0.0.1 - - [18/Aug/2025 19:03:38] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-19 08:08:23,645 - INFO - AplicaÁ„o iniciada
+2025-08-19 08:08:23,853 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-19 09:21:08,714 - INFO - 127.0.0.1 - - [19/Aug/2025 09:21:08] "GET / HTTP/1.1" 200 -
+
+2025-08-19 09:21:08,810 - INFO - 127.0.0.1 - - [19/Aug/2025 09:21:08] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-19 09:21:09,055 - INFO - 127.0.0.1 - - [19/Aug/2025 09:21:09] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-19 09:21:09,206 - INFO - 127.0.0.1 - - [19/Aug/2025 09:21:09] code 404, message File not found
+
+2025-08-19 09:21:09,206 - INFO - 127.0.0.1 - - [19/Aug/2025 09:21:09] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-19 13:20:13,725 - INFO - 127.0.0.1 - - [19/Aug/2025 13:20:13] "GET / HTTP/1.1" 200 -
+
+2025-08-19 13:20:13,980 - INFO - 127.0.0.1 - - [19/Aug/2025 13:20:13] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-19 13:20:14,086 - INFO - 127.0.0.1 - - [19/Aug/2025 13:20:14] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-19 13:20:14,239 - INFO - 127.0.0.1 - - [19/Aug/2025 13:20:14] code 404, message File not found
+
+2025-08-19 13:20:14,239 - INFO - 127.0.0.1 - - [19/Aug/2025 13:20:14] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-19 19:10:45,342 - INFO - Servidor parado
+2025-08-19 19:10:59,049 - INFO - AplicaÁ„o iniciada
+2025-08-19 19:10:59,262 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-19 19:11:15,918 - INFO - 127.0.0.1 - - [19/Aug/2025 19:11:15] "GET / HTTP/1.1" 200 -
+
+2025-08-19 19:11:16,001 - INFO - 127.0.0.1 - - [19/Aug/2025 19:11:16] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-19 19:11:16,278 - INFO - 127.0.0.1 - - [19/Aug/2025 19:11:16] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-19 22:14:19,536 - INFO - AplicaÁ„o iniciada
+2025-08-19 22:14:19,749 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-20 09:44:27,559 - INFO - AplicaÁ„o iniciada
+2025-08-20 09:44:27,771 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-21 11:09:25,149 - INFO - AplicaÁ„o iniciada
+2025-08-21 11:09:25,355 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 07:52:30,159 - INFO - AplicaÁ„o iniciada
+2025-08-23 07:52:30,374 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 08:30:45,806 - INFO - AplicaÁ„o iniciada
+2025-08-23 08:30:46,017 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 12:41:59,183 - INFO - AplicaÁ„o iniciada
+2025-08-23 12:41:59,401 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 13:23:40,449 - INFO - AplicaÁ„o iniciada
+2025-08-23 13:23:40,667 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 14:38:59,336 - INFO - AplicaÁ„o iniciada
+2025-08-23 14:38:59,553 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 15:45:02,496 - INFO - AplicaÁ„o iniciada
+2025-08-23 15:45:02,701 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 15:50:38,597 - INFO - AplicaÁ„o iniciada
+2025-08-23 15:50:38,806 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-23 17:07:24,322 - INFO - AplicaÁ„o iniciada
+2025-08-23 17:07:24,536 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-24 11:16:42,302 - INFO - AplicaÁ„o iniciada
+2025-08-24 11:16:42,509 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-24 20:10:13,006 - INFO - AplicaÁ„o iniciada
+2025-08-24 20:10:13,223 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-24 23:29:22,840 - INFO - AplicaÁ„o iniciada
+2025-08-24 23:29:23,055 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-25 00:51:35,929 - INFO - AplicaÁ„o iniciada
+2025-08-25 00:51:36,136 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-25 00:58:45,095 - INFO - AplicaÁ„o iniciada
+2025-08-25 00:58:45,311 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-25 10:09:54,796 - INFO - AplicaÁ„o iniciada
+2025-08-25 10:09:55,009 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-25 19:12:04,148 - INFO - 127.0.0.1 - - [25/Aug/2025 19:12:04] "GET / HTTP/1.1" 200 -
+
+2025-08-25 19:12:04,331 - INFO - 127.0.0.1 - - [25/Aug/2025 19:12:04] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-25 19:12:04,633 - INFO - 127.0.0.1 - - [25/Aug/2025 19:12:04] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-25 19:12:05,612 - INFO - 127.0.0.1 - - [25/Aug/2025 19:12:05] code 404, message File not found
+
+2025-08-25 19:12:05,612 - INFO - 127.0.0.1 - - [25/Aug/2025 19:12:05] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-26 11:29:14,375 - INFO - AplicaÁ„o iniciada
+2025-08-26 11:29:14,583 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-26 15:47:02,523 - INFO - 127.0.0.1 - - [26/Aug/2025 15:47:02] "GET / HTTP/1.1" 200 -
+
+2025-08-26 15:47:02,597 - INFO - 127.0.0.1 - - [26/Aug/2025 15:47:02] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-26 15:47:02,881 - INFO - 127.0.0.1 - - [26/Aug/2025 15:47:02] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-26 15:47:03,062 - INFO - 127.0.0.1 - - [26/Aug/2025 15:47:03] code 404, message File not found
+
+2025-08-26 15:47:03,062 - INFO - 127.0.0.1 - - [26/Aug/2025 15:47:03] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-26 22:15:57,606 - INFO - AplicaÁ„o iniciada
+2025-08-26 22:15:57,810 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-27 10:59:09,003 - INFO - AplicaÁ„o iniciada
+2025-08-27 10:59:09,218 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-28 00:31:00,024 - INFO - AplicaÁ„o iniciada
+2025-08-28 00:31:00,238 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-28 11:21:24,213 - INFO - 127.0.0.1 - - [28/Aug/2025 11:21:24] "GET / HTTP/1.1" 200 -
+
+2025-08-28 11:21:24,286 - INFO - 127.0.0.1 - - [28/Aug/2025 11:21:24] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-28 11:21:24,598 - INFO - 127.0.0.1 - - [28/Aug/2025 11:21:24] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-28 11:21:25,259 - INFO - 127.0.0.1 - - [28/Aug/2025 11:21:25] code 404, message File not found
+
+2025-08-28 11:21:25,269 - INFO - 127.0.0.1 - - [28/Aug/2025 11:21:25] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-29 11:30:57,849 - INFO - AplicaÁ„o iniciada
+2025-08-29 11:30:58,061 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-29 18:15:10,550 - INFO - 127.0.0.1 - - [29/Aug/2025 18:15:10] "GET / HTTP/1.1" 200 -
+
+2025-08-29 18:15:10,604 - INFO - 127.0.0.1 - - [29/Aug/2025 18:15:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-08-29 18:15:10,889 - INFO - 127.0.0.1 - - [29/Aug/2025 18:15:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-08-29 18:15:11,101 - INFO - 127.0.0.1 - - [29/Aug/2025 18:15:11] code 404, message File not found
+
+2025-08-29 18:15:11,101 - INFO - 127.0.0.1 - - [29/Aug/2025 18:15:11] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-08-30 10:49:05,243 - INFO - AplicaÁ„o iniciada
+2025-08-30 10:49:05,456 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-30 18:33:28,859 - INFO - AplicaÁ„o iniciada
+2025-08-30 18:33:29,073 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-08-31 20:40:56,407 - INFO - AplicaÁ„o iniciada
+2025-08-31 20:40:56,617 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-01 11:49:16,284 - INFO - AplicaÁ„o iniciada
+2025-09-01 11:49:16,498 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-01 12:15:02,794 - INFO - 127.0.0.1 - - [01/Sep/2025 12:15:02] "GET / HTTP/1.1" 200 -
+
+2025-09-01 12:15:02,837 - INFO - 127.0.0.1 - - [01/Sep/2025 12:15:02] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-01 12:15:03,139 - INFO - 127.0.0.1 - - [01/Sep/2025 12:15:03] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-01 12:15:04,011 - INFO - 127.0.0.1 - - [01/Sep/2025 12:15:04] code 404, message File not found
+
+2025-09-01 12:15:04,012 - INFO - 127.0.0.1 - - [01/Sep/2025 12:15:04] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-02 10:47:17,484 - INFO - AplicaÁ„o iniciada
+2025-09-02 10:47:17,691 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-02 18:27:53,964 - INFO - 127.0.0.1 - - [02/Sep/2025 18:27:53] "GET / HTTP/1.1" 200 -
+
+2025-09-02 18:27:54,003 - INFO - 127.0.0.1 - - [02/Sep/2025 18:27:54] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-02 18:27:54,312 - INFO - 127.0.0.1 - - [02/Sep/2025 18:27:54] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-02 18:27:54,905 - INFO - 127.0.0.1 - - [02/Sep/2025 18:27:54] code 404, message File not found
+
+2025-09-02 18:27:54,905 - INFO - 127.0.0.1 - - [02/Sep/2025 18:27:54] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-03 19:58:45,168 - INFO - AplicaÁ„o iniciada
+2025-09-03 19:58:45,378 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-03 23:21:14,593 - INFO - AplicaÁ„o iniciada
+2025-09-03 23:21:14,809 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-04 08:17:08,954 - INFO - AplicaÁ„o iniciada
+2025-09-04 08:17:09,168 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-04 09:47:22,409 - INFO - 127.0.0.1 - - [04/Sep/2025 09:47:22] "GET / HTTP/1.1" 200 -
+
+2025-09-04 09:47:22,486 - INFO - 127.0.0.1 - - [04/Sep/2025 09:47:22] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-04 09:47:22,778 - INFO - 127.0.0.1 - - [04/Sep/2025 09:47:22] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-04 09:47:22,983 - INFO - 127.0.0.1 - - [04/Sep/2025 09:47:22] code 404, message File not found
+
+2025-09-04 09:47:22,983 - INFO - 127.0.0.1 - - [04/Sep/2025 09:47:22] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-04 17:39:37,937 - INFO - AplicaÁ„o iniciada
+2025-09-04 17:39:38,148 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-05 10:11:37,789 - INFO - AplicaÁ„o iniciada
+2025-09-05 10:11:38,000 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-05 15:59:26,578 - INFO - AplicaÁ„o iniciada
+2025-09-05 15:59:26,792 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-05 16:38:34,365 - INFO - AplicaÁ„o iniciada
+2025-09-05 16:38:34,573 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-06 12:42:58,515 - INFO - AplicaÁ„o iniciada
+2025-09-06 12:42:58,724 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-07 09:13:25,859 - INFO - AplicaÁ„o iniciada
+2025-09-07 09:13:26,072 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-08 10:57:09,454 - INFO - AplicaÁ„o iniciada
+2025-09-08 10:57:09,667 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-08 12:23:43,351 - INFO - 127.0.0.1 - - [08/Sep/2025 12:23:43] "GET / HTTP/1.1" 200 -
+
+2025-09-08 12:23:43,421 - INFO - 127.0.0.1 - - [08/Sep/2025 12:23:43] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-08 12:23:43,692 - INFO - 127.0.0.1 - - [08/Sep/2025 12:23:43] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-08 12:23:43,855 - INFO - 127.0.0.1 - - [08/Sep/2025 12:23:43] code 404, message File not found
+
+2025-09-08 12:23:43,855 - INFO - 127.0.0.1 - - [08/Sep/2025 12:23:43] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-08 18:57:12,187 - INFO - 127.0.0.1 - - [08/Sep/2025 18:57:12] "GET / HTTP/1.1" 200 -
+
+2025-09-08 18:57:12,430 - INFO - 127.0.0.1 - - [08/Sep/2025 18:57:12] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-08 18:57:12,600 - INFO - 127.0.0.1 - - [08/Sep/2025 18:57:12] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-08 18:57:13,579 - INFO - 127.0.0.1 - - [08/Sep/2025 18:57:13] code 404, message File not found
+
+2025-09-08 18:57:13,580 - INFO - 127.0.0.1 - - [08/Sep/2025 18:57:13] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-08 19:26:37,931 - INFO - 127.0.0.1 - - [08/Sep/2025 19:26:37] "GET / HTTP/1.1" 200 -
+
+2025-09-08 19:26:38,185 - INFO - 127.0.0.1 - - [08/Sep/2025 19:26:38] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-08 19:26:38,285 - INFO - 127.0.0.1 - - [08/Sep/2025 19:26:38] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-08 19:26:38,659 - INFO - 127.0.0.1 - - [08/Sep/2025 19:26:38] code 404, message File not found
+
+2025-09-08 19:26:38,659 - INFO - 127.0.0.1 - - [08/Sep/2025 19:26:38] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-09 10:20:02,712 - INFO - AplicaÁ„o iniciada
+2025-09-09 10:20:02,925 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-09 11:00:07,022 - INFO - 127.0.0.1 - - [09/Sep/2025 11:00:07] "GET / HTTP/1.1" 200 -
+
+2025-09-09 11:00:07,071 - INFO - 127.0.0.1 - - [09/Sep/2025 11:00:07] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-09 11:00:07,378 - INFO - 127.0.0.1 - - [09/Sep/2025 11:00:07] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-09 11:00:08,106 - INFO - 127.0.0.1 - - [09/Sep/2025 11:00:08] code 404, message File not found
+
+2025-09-09 11:00:08,106 - INFO - 127.0.0.1 - - [09/Sep/2025 11:00:08] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-09 14:45:44,580 - INFO - AplicaÁ„o iniciada
+2025-09-09 14:45:44,794 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-10 08:31:47,852 - INFO - AplicaÁ„o iniciada
+2025-09-10 08:31:48,059 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-11 22:10:08,089 - INFO - AplicaÁ„o iniciada
+2025-09-11 22:10:08,296 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-12 10:40:24,224 - INFO - AplicaÁ„o iniciada
+2025-09-12 10:40:24,429 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-13 11:16:26,784 - INFO - AplicaÁ„o iniciada
+2025-09-13 11:16:26,992 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-13 13:28:00,621 - INFO - AplicaÁ„o iniciada
+2025-09-13 13:28:00,826 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-13 16:54:31,355 - INFO - AplicaÁ„o iniciada
+2025-09-13 16:54:31,565 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-14 14:16:17,271 - INFO - AplicaÁ„o iniciada
+2025-09-14 14:16:17,474 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-15 10:10:23,790 - INFO - AplicaÁ„o iniciada
+2025-09-15 10:10:24,008 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-15 19:39:57,011 - INFO - 127.0.0.1 - - [15/Sep/2025 19:39:57] "GET / HTTP/1.1" 200 -
+
+2025-09-15 19:39:57,195 - INFO - 127.0.0.1 - - [15/Sep/2025 19:39:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-15 19:39:57,515 - INFO - 127.0.0.1 - - [15/Sep/2025 19:39:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-15 19:39:58,428 - INFO - 127.0.0.1 - - [15/Sep/2025 19:39:58] code 404, message File not found
+
+2025-09-15 19:39:58,428 - INFO - 127.0.0.1 - - [15/Sep/2025 19:39:58] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-16 10:56:29,929 - INFO - AplicaÁ„o iniciada
+2025-09-16 10:56:30,140 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-17 11:38:11,284 - INFO - AplicaÁ„o iniciada
+2025-09-17 11:38:11,494 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-18 07:27:44,162 - INFO - AplicaÁ„o iniciada
+2025-09-18 07:27:44,374 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-18 17:43:32,058 - INFO - 127.0.0.1 - - [18/Sep/2025 17:43:32] "GET / HTTP/1.1" 200 -
+
+2025-09-18 17:43:32,137 - INFO - 127.0.0.1 - - [18/Sep/2025 17:43:32] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-18 17:43:32,412 - INFO - 127.0.0.1 - - [18/Sep/2025 17:43:32] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-18 17:43:32,648 - INFO - 127.0.0.1 - - [18/Sep/2025 17:43:32] code 404, message File not found
+
+2025-09-18 17:43:32,648 - INFO - 127.0.0.1 - - [18/Sep/2025 17:43:32] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-19 06:44:42,801 - INFO - AplicaÁ„o iniciada
+2025-09-19 06:44:43,009 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-19 06:59:57,103 - INFO - 127.0.0.1 - - [19/Sep/2025 06:59:57] "GET / HTTP/1.1" 200 -
+
+2025-09-19 06:59:57,188 - INFO - 127.0.0.1 - - [19/Sep/2025 06:59:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-19 06:59:57,466 - INFO - 127.0.0.1 - - [19/Sep/2025 06:59:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-19 06:59:57,678 - INFO - 127.0.0.1 - - [19/Sep/2025 06:59:57] code 404, message File not found
+
+2025-09-19 06:59:57,679 - INFO - 127.0.0.1 - - [19/Sep/2025 06:59:57] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-19 14:01:29,308 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:29] "GET / HTTP/1.1" 200 -
+
+2025-09-19 14:01:29,574 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:29] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-19 14:01:29,653 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:29] code 404, message File not found
+
+2025-09-19 14:01:29,653 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:29] "GET /script%20js HTTP/1.1" 404 -
+
+2025-09-19 14:01:29,802 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:29] code 404, message File not found
+
+2025-09-19 14:01:29,803 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:29] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-19 14:01:35,057 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:35] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-19 14:01:35,064 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:35] code 404, message File not found
+
+2025-09-19 14:01:35,064 - INFO - 127.0.0.1 - - [19/Sep/2025 14:01:35] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-19 16:22:20,691 - INFO - 127.0.0.1 - - [19/Sep/2025 16:22:20] "GET / HTTP/1.1" 200 -
+
+2025-09-19 16:22:20,945 - INFO - 127.0.0.1 - - [19/Sep/2025 16:22:20] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-19 16:22:21,040 - INFO - 127.0.0.1 - - [19/Sep/2025 16:22:21] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-19 16:28:43,124 - INFO - 127.0.0.1 - - [19/Sep/2025 16:28:43] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-19 16:28:43,125 - INFO - 127.0.0.1 - - [19/Sep/2025 16:28:43] code 404, message File not found
+
+2025-09-19 16:28:43,125 - INFO - 127.0.0.1 - - [19/Sep/2025 16:28:43] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-20 01:19:10,579 - INFO - AplicaÁ„o iniciada
+2025-09-20 01:19:10,790 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-20 08:19:33,762 - INFO - AplicaÁ„o iniciada
+2025-09-20 08:19:33,980 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-21 12:30:43,692 - INFO - AplicaÁ„o iniciada
+2025-09-21 12:30:43,900 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-22 08:46:08,757 - INFO - AplicaÁ„o iniciada
+2025-09-22 08:46:08,959 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-22 18:26:22,693 - INFO - AplicaÁ„o iniciada
+2025-09-22 18:26:22,902 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-23 07:14:24,999 - INFO - AplicaÁ„o iniciada
+2025-09-23 07:14:25,216 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-23 07:27:41,360 - INFO - 127.0.0.1 - - [23/Sep/2025 07:27:41] "GET / HTTP/1.1" 200 -
+
+2025-09-23 07:27:41,403 - INFO - 127.0.0.1 - - [23/Sep/2025 07:27:41] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 07:27:41,715 - INFO - 127.0.0.1 - - [23/Sep/2025 07:27:41] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 07:27:42,250 - INFO - 127.0.0.1 - - [23/Sep/2025 07:27:42] code 404, message File not found
+
+2025-09-23 07:27:42,250 - INFO - 127.0.0.1 - - [23/Sep/2025 07:27:42] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-23 08:11:26,544 - INFO - 127.0.0.1 - - [23/Sep/2025 08:11:26] "GET / HTTP/1.1" 200 -
+
+2025-09-23 08:11:26,812 - INFO - 127.0.0.1 - - [23/Sep/2025 08:11:26] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 08:11:26,890 - INFO - 127.0.0.1 - - [23/Sep/2025 08:11:26] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 08:12:40,455 - INFO - 127.0.0.1 - - [23/Sep/2025 08:12:40] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 08:12:40,485 - INFO - 127.0.0.1 - - [23/Sep/2025 08:12:40] code 404, message File not found
+
+2025-09-23 08:12:40,486 - INFO - 127.0.0.1 - - [23/Sep/2025 08:12:40] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 08:35:36,234 - INFO - 127.0.0.1 - - [23/Sep/2025 08:35:36] "GET / HTTP/1.1" 200 -
+
+2025-09-23 08:35:36,484 - INFO - 127.0.0.1 - - [23/Sep/2025 08:35:36] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 08:35:36,577 - INFO - 127.0.0.1 - - [23/Sep/2025 08:35:36] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 08:36:05,160 - INFO - 127.0.0.1 - - [23/Sep/2025 08:36:05] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 08:36:05,513 - INFO - 127.0.0.1 - - [23/Sep/2025 08:36:05] code 404, message File not found
+
+2025-09-23 08:36:05,514 - INFO - 127.0.0.1 - - [23/Sep/2025 08:36:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 08:38:23,816 - INFO - 127.0.0.1 - - [23/Sep/2025 08:38:23] code 404, message File not found
+
+2025-09-23 08:38:23,816 - INFO - 127.0.0.1 - - [23/Sep/2025 08:38:23] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 08:39:17,571 - INFO - 127.0.0.1 - - [23/Sep/2025 08:39:17] code 404, message File not found
+
+2025-09-23 08:39:17,571 - INFO - 127.0.0.1 - - [23/Sep/2025 08:39:17] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 08:46:38,604 - INFO - 127.0.0.1 - - [23/Sep/2025 08:46:38] "GET / HTTP/1.1" 200 -
+
+2025-09-23 08:46:38,873 - INFO - 127.0.0.1 - - [23/Sep/2025 08:46:38] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 08:46:38,951 - INFO - 127.0.0.1 - - [23/Sep/2025 08:46:38] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 08:46:38,968 - INFO - 127.0.0.1 - - [23/Sep/2025 08:46:38] code 404, message File not found
+
+2025-09-23 08:46:38,968 - INFO - 127.0.0.1 - - [23/Sep/2025 08:46:38] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 10:43:05,899 - INFO - 127.0.0.1 - - [23/Sep/2025 10:43:05] "GET / HTTP/1.1" 200 -
+
+2025-09-23 10:43:06,149 - INFO - 127.0.0.1 - - [23/Sep/2025 10:43:06] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 10:43:06,244 - INFO - 127.0.0.1 - - [23/Sep/2025 10:43:06] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 10:43:06,245 - INFO - 127.0.0.1 - - [23/Sep/2025 10:43:06] code 404, message File not found
+
+2025-09-23 10:43:06,245 - INFO - 127.0.0.1 - - [23/Sep/2025 10:43:06] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 10:47:32,174 - INFO - 127.0.0.1 - - [23/Sep/2025 10:47:32] "GET / HTTP/1.1" 200 -
+
+2025-09-23 10:47:32,439 - INFO - 127.0.0.1 - - [23/Sep/2025 10:47:32] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 10:47:32,501 - INFO - 127.0.0.1 - - [23/Sep/2025 10:47:32] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 10:47:32,517 - INFO - 127.0.0.1 - - [23/Sep/2025 10:47:32] code 404, message File not found
+
+2025-09-23 10:47:32,517 - INFO - 127.0.0.1 - - [23/Sep/2025 10:47:32] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 10:53:02,171 - INFO - 127.0.0.1 - - [23/Sep/2025 10:53:02] "GET / HTTP/1.1" 200 -
+
+2025-09-23 10:53:02,439 - INFO - 127.0.0.1 - - [23/Sep/2025 10:53:02] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 10:53:02,502 - INFO - 127.0.0.1 - - [23/Sep/2025 10:53:02] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 10:53:02,534 - INFO - 127.0.0.1 - - [23/Sep/2025 10:53:02] code 404, message File not found
+
+2025-09-23 10:53:02,535 - INFO - 127.0.0.1 - - [23/Sep/2025 10:53:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 10:59:42,105 - INFO - 127.0.0.1 - - [23/Sep/2025 10:59:42] "GET / HTTP/1.1" 200 -
+
+2025-09-23 10:59:42,342 - INFO - 127.0.0.1 - - [23/Sep/2025 10:59:42] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 10:59:42,452 - INFO - 127.0.0.1 - - [23/Sep/2025 10:59:42] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 10:59:42,454 - INFO - 127.0.0.1 - - [23/Sep/2025 10:59:42] code 404, message File not found
+
+2025-09-23 10:59:42,454 - INFO - 127.0.0.1 - - [23/Sep/2025 10:59:42] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 11:03:26,128 - INFO - 127.0.0.1 - - [23/Sep/2025 11:03:26] "GET / HTTP/1.1" 200 -
+
+2025-09-23 11:03:26,395 - INFO - 127.0.0.1 - - [23/Sep/2025 11:03:26] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 11:03:26,460 - INFO - 127.0.0.1 - - [23/Sep/2025 11:03:26] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 11:03:26,462 - INFO - 127.0.0.1 - - [23/Sep/2025 11:03:26] code 404, message File not found
+
+2025-09-23 11:03:26,462 - INFO - 127.0.0.1 - - [23/Sep/2025 11:03:26] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 11:10:29,328 - INFO - 127.0.0.1 - - [23/Sep/2025 11:10:29] "GET / HTTP/1.1" 200 -
+
+2025-09-23 11:10:29,594 - INFO - 127.0.0.1 - - [23/Sep/2025 11:10:29] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 11:10:29,671 - INFO - 127.0.0.1 - - [23/Sep/2025 11:10:29] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 11:10:29,687 - INFO - 127.0.0.1 - - [23/Sep/2025 11:10:29] code 404, message File not found
+
+2025-09-23 11:10:29,687 - INFO - 127.0.0.1 - - [23/Sep/2025 11:10:29] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 14:15:50,895 - INFO - 127.0.0.1 - - [23/Sep/2025 14:15:50] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:15:51,149 - INFO - 127.0.0.1 - - [23/Sep/2025 14:15:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:15:51,243 - INFO - 127.0.0.1 - - [23/Sep/2025 14:15:51] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 14:15:51,259 - INFO - 127.0.0.1 - - [23/Sep/2025 14:15:51] code 404, message File not found
+
+2025-09-23 14:15:51,259 - INFO - 127.0.0.1 - - [23/Sep/2025 14:15:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 14:24:22,622 - INFO - 127.0.0.1 - - [23/Sep/2025 14:24:22] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:24:22,889 - INFO - 127.0.0.1 - - [23/Sep/2025 14:24:22] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:24:22,968 - INFO - 127.0.0.1 - - [23/Sep/2025 14:24:22] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 14:24:22,969 - INFO - 127.0.0.1 - - [23/Sep/2025 14:24:22] code 404, message File not found
+
+2025-09-23 14:24:22,969 - INFO - 127.0.0.1 - - [23/Sep/2025 14:24:22] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 14:33:51,878 - INFO - 127.0.0.1 - - [23/Sep/2025 14:33:51] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:33:52,145 - INFO - 127.0.0.1 - - [23/Sep/2025 14:33:52] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:33:52,224 - INFO - 127.0.0.1 - - [23/Sep/2025 14:33:52] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 14:33:52,225 - INFO - 127.0.0.1 - - [23/Sep/2025 14:33:52] code 404, message File not found
+
+2025-09-23 14:33:52,225 - INFO - 127.0.0.1 - - [23/Sep/2025 14:33:52] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 14:35:36,600 - INFO - 127.0.0.1 - - [23/Sep/2025 14:35:36] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:35:36,865 - INFO - 127.0.0.1 - - [23/Sep/2025 14:35:36] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:35:36,944 - INFO - 127.0.0.1 - - [23/Sep/2025 14:35:36] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 14:35:36,946 - INFO - 127.0.0.1 - - [23/Sep/2025 14:35:36] code 404, message File not found
+
+2025-09-23 14:35:36,946 - INFO - 127.0.0.1 - - [23/Sep/2025 14:35:36] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 14:39:03,053 - INFO - 127.0.0.1 - - [23/Sep/2025 14:39:03] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:39:03,320 - INFO - 127.0.0.1 - - [23/Sep/2025 14:39:03] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:39:03,398 - INFO - 127.0.0.1 - - [23/Sep/2025 14:39:03] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 14:39:03,413 - INFO - 127.0.0.1 - - [23/Sep/2025 14:39:03] code 404, message File not found
+
+2025-09-23 14:39:03,413 - INFO - 127.0.0.1 - - [23/Sep/2025 14:39:03] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 14:43:09,881 - INFO - 127.0.0.1 - - [23/Sep/2025 14:43:09] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:43:10,134 - INFO - 127.0.0.1 - - [23/Sep/2025 14:43:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:43:10,246 - INFO - 127.0.0.1 - - [23/Sep/2025 14:43:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 14:43:10,248 - INFO - 127.0.0.1 - - [23/Sep/2025 14:43:10] code 404, message File not found
+
+2025-09-23 14:43:10,248 - INFO - 127.0.0.1 - - [23/Sep/2025 14:43:10] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-23 14:50:33,607 - INFO - 127.0.0.1 - - [23/Sep/2025 14:50:33] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:50:33,873 - INFO - 127.0.0.1 - - [23/Sep/2025 14:50:33] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:50:33,968 - INFO - 127.0.0.1 - - [23/Sep/2025 14:50:33] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 14:50:35,318 - INFO - 127.0.0.1 - - [23/Sep/2025 14:50:35] "GET / HTTP/1.1" 200 -
+
+2025-09-23 14:50:35,661 - INFO - 127.0.0.1 - - [23/Sep/2025 14:50:35] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-23 14:50:35,662 - INFO - 127.0.0.1 - - [23/Sep/2025 14:50:35] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-23 18:03:21,891 - INFO - AplicaÁ„o iniciada
+2025-09-23 18:03:22,099 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-24 08:27:27,338 - INFO - AplicaÁ„o iniciada
+2025-09-24 08:27:27,544 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-24 10:02:58,795 - INFO - 127.0.0.1 - - [24/Sep/2025 10:02:58] "GET / HTTP/1.1" 200 -
+
+2025-09-24 10:02:58,842 - INFO - 127.0.0.1 - - [24/Sep/2025 10:02:58] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-24 10:02:59,152 - INFO - 127.0.0.1 - - [24/Sep/2025 10:02:59] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-24 10:02:59,380 - INFO - 127.0.0.1 - - [24/Sep/2025 10:02:59] code 404, message File not found
+
+2025-09-24 10:02:59,380 - INFO - 127.0.0.1 - - [24/Sep/2025 10:02:59] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-24 10:05:49,911 - INFO - 127.0.0.1 - - [24/Sep/2025 10:05:49] "GET / HTTP/1.1" 200 -
+
+2025-09-24 10:05:50,175 - INFO - 127.0.0.1 - - [24/Sep/2025 10:05:50] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-24 10:05:50,253 - INFO - 127.0.0.1 - - [24/Sep/2025 10:05:50] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-25 06:03:59,453 - INFO - AplicaÁ„o iniciada
+2025-09-25 06:03:59,658 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-26 09:48:46,836 - INFO - 127.0.0.1 - - [26/Sep/2025 09:48:46] "GET / HTTP/1.1" 200 -
+
+2025-09-26 09:48:46,914 - INFO - 127.0.0.1 - - [26/Sep/2025 09:48:46] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-26 09:48:47,227 - INFO - 127.0.0.1 - - [26/Sep/2025 09:48:47] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-26 09:48:47,778 - INFO - 127.0.0.1 - - [26/Sep/2025 09:48:47] code 404, message File not found
+
+2025-09-26 09:48:47,778 - INFO - 127.0.0.1 - - [26/Sep/2025 09:48:47] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-26 11:36:31,391 - INFO - 127.0.0.1 - - [26/Sep/2025 11:36:31] "GET / HTTP/1.1" 200 -
+
+2025-09-26 11:36:31,644 - INFO - 127.0.0.1 - - [26/Sep/2025 11:36:31] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-26 11:36:31,755 - INFO - 127.0.0.1 - - [26/Sep/2025 11:36:31] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-26 11:37:26,653 - INFO - 127.0.0.1 - - [26/Sep/2025 11:37:26] "GET / HTTP/1.1" 200 -
+
+2025-09-26 11:37:26,999 - INFO - 127.0.0.1 - - [26/Sep/2025 11:37:26] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-26 11:37:27,001 - INFO - 127.0.0.1 - - [26/Sep/2025 11:37:27] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-26 11:45:55,671 - INFO - 127.0.0.1 - - [26/Sep/2025 11:45:55] "GET / HTTP/1.1" 200 -
+
+2025-09-26 11:45:55,922 - INFO - 127.0.0.1 - - [26/Sep/2025 11:45:55] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-26 11:45:56,032 - INFO - 127.0.0.1 - - [26/Sep/2025 11:45:56] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-27 12:59:59,696 - INFO - AplicaÁ„o iniciada
+2025-09-27 12:59:59,906 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-29 10:49:53,591 - INFO - AplicaÁ„o iniciada
+2025-09-29 10:49:53,809 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-29 11:03:42,075 - INFO - 127.0.0.1 - - [29/Sep/2025 11:03:42] "GET / HTTP/1.1" 200 -
+
+2025-09-29 11:03:42,113 - INFO - 127.0.0.1 - - [29/Sep/2025 11:03:42] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 11:03:42,428 - INFO - 127.0.0.1 - - [29/Sep/2025 11:03:42] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 11:03:42,973 - INFO - 127.0.0.1 - - [29/Sep/2025 11:03:42] code 404, message File not found
+
+2025-09-29 11:03:42,973 - INFO - 127.0.0.1 - - [29/Sep/2025 11:03:42] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-29 11:04:24,511 - INFO - 127.0.0.1 - - [29/Sep/2025 11:04:24] "GET / HTTP/1.1" 200 -
+
+2025-09-29 11:04:24,856 - INFO - 127.0.0.1 - - [29/Sep/2025 11:04:24] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 11:04:24,857 - INFO - 127.0.0.1 - - [29/Sep/2025 11:04:24] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 11:55:16,181 - INFO - 127.0.0.1 - - [29/Sep/2025 11:55:16] code 404, message File not found
+
+2025-09-29 11:55:16,181 - INFO - 127.0.0.1 - - [29/Sep/2025 11:55:16] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-09-29 12:06:21,883 - INFO - 127.0.0.1 - - [29/Sep/2025 12:06:21] "GET / HTTP/1.1" 200 -
+
+2025-09-29 12:06:22,136 - INFO - 127.0.0.1 - - [29/Sep/2025 12:06:22] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 12:06:22,232 - INFO - 127.0.0.1 - - [29/Sep/2025 12:06:22] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 12:06:46,256 - INFO - 127.0.0.1 - - [29/Sep/2025 12:06:46] "GET / HTTP/1.1" 200 -
+
+2025-09-29 12:06:46,607 - INFO - 127.0.0.1 - - [29/Sep/2025 12:06:46] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 12:06:46,609 - INFO - 127.0.0.1 - - [29/Sep/2025 12:06:46] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 12:07:32,174 - INFO - 127.0.0.1 - - [29/Sep/2025 12:07:32] "GET / HTTP/1.1" 200 -
+
+2025-09-29 12:07:32,549 - INFO - 127.0.0.1 - - [29/Sep/2025 12:07:32] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 12:07:32,550 - INFO - 127.0.0.1 - - [29/Sep/2025 12:07:32] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 18:56:36,799 - INFO - 127.0.0.1 - - [29/Sep/2025 18:56:36] "GET / HTTP/1.1" 200 -
+
+2025-09-29 18:56:37,052 - INFO - 127.0.0.1 - - [29/Sep/2025 18:56:37] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 18:56:37,145 - INFO - 127.0.0.1 - - [29/Sep/2025 18:56:37] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 21:34:33,229 - INFO - 127.0.0.1 - - [29/Sep/2025 21:34:33] "GET / HTTP/1.1" 200 -
+
+2025-09-29 21:34:33,483 - INFO - 127.0.0.1 - - [29/Sep/2025 21:34:33] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 21:34:33,579 - INFO - 127.0.0.1 - - [29/Sep/2025 21:34:33] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 21:42:00,606 - INFO - 127.0.0.1 - - [29/Sep/2025 21:42:00] "GET / HTTP/1.1" 200 -
+
+2025-09-29 21:42:00,873 - INFO - 127.0.0.1 - - [29/Sep/2025 21:42:00] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 21:42:00,969 - INFO - 127.0.0.1 - - [29/Sep/2025 21:42:00] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 21:42:22,224 - INFO - 127.0.0.1 - - [29/Sep/2025 21:42:22] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 21:42:22,550 - INFO - 127.0.0.1 - - [29/Sep/2025 21:42:22] code 404, message File not found
+
+2025-09-29 21:42:22,550 - INFO - 127.0.0.1 - - [29/Sep/2025 21:42:22] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 21:44:27,888 - INFO - AplicaÁ„o iniciada
+2025-09-29 21:44:29,756 - ERROR - Erro ao bindar porta 8005: [WinError 10048] Normalmente È permitida apenas uma utilizaÁ„o de cada endereÁo de soquete (protocolo/endereÁo de rede/porta)
+2025-09-29 21:44:38,180 - INFO - Servidor parado
+2025-09-29 21:44:42,392 - INFO - AplicaÁ„o iniciada
+2025-09-29 21:44:42,600 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-29 21:47:13,405 - INFO - 127.0.0.1 - - [29/Sep/2025 21:47:13] "GET / HTTP/1.1" 200 -
+
+2025-09-29 21:47:13,497 - INFO - 127.0.0.1 - - [29/Sep/2025 21:47:13] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 21:47:13,758 - INFO - 127.0.0.1 - - [29/Sep/2025 21:47:13] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 21:47:13,773 - INFO - 127.0.0.1 - - [29/Sep/2025 21:47:13] code 404, message File not found
+
+2025-09-29 21:47:13,773 - INFO - 127.0.0.1 - - [29/Sep/2025 21:47:13] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 21:58:47,866 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:47] "GET / HTTP/1.1" 200 -
+
+2025-09-29 21:58:48,116 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:48] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 21:58:48,212 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:48] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 21:58:48,231 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:48] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 21:58:48,232 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:48] code 404, message File not found
+
+2025-09-29 21:58:48,232 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:48] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 21:58:50,558 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:50] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 21:58:50,559 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 21:58:57,854 - INFO - 127.0.0.1 - - [29/Sep/2025 21:58:57] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 21:58:57,855 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 21:59:04,464 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:04] "GET / HTTP/1.1" 200 -
+
+2025-09-29 21:59:04,805 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:04] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 21:59:04,807 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:04] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 21:59:05,072 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:05] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 21:59:05,819 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:05] code 404, message File not found
+
+2025-09-29 21:59:05,819 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 21:59:06,134 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:06] code 404, message File not found
+
+2025-09-29 21:59:06,134 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:06] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 21:59:12,419 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:12] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 21:59:12,420 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 21:59:28,662 - INFO - 127.0.0.1 - - [29/Sep/2025 21:59:28] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 21:59:28,662 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:02:34,101 - INFO - 127.0.0.1 - - [29/Sep/2025 22:02:34] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:02:34,365 - INFO - 127.0.0.1 - - [29/Sep/2025 22:02:34] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:02:34,458 - INFO - 127.0.0.1 - - [29/Sep/2025 22:02:34] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:02:34,461 - INFO - 127.0.0.1 - - [29/Sep/2025 22:02:34] code 404, message File not found
+
+2025-09-29 22:02:34,462 - INFO - 127.0.0.1 - - [29/Sep/2025 22:02:34] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:02:39,162 - INFO - 127.0.0.1 - - [29/Sep/2025 22:02:39] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:02:39,581 - INFO - 127.0.0.1 - - [29/Sep/2025 22:02:39] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:02:39,581 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:07:38,034 - INFO - 127.0.0.1 - - [29/Sep/2025 22:07:38] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:07:38,405 - INFO - 127.0.0.1 - - [29/Sep/2025 22:07:38] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:07:38,405 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:08:00,092 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:00] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:08:00,439 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-29 22:08:00,709 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:00] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:08:00,739 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-29 22:08:00,993 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:00] code 404, message File not found
+
+2025-09-29 22:08:00,993 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:00] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:08:01,817 - INFO - Servidor parado
+2025-09-29 22:08:02,694 - INFO - Servidor parado
+2025-09-29 22:08:12,891 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:12] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:08:14,410 - INFO - Servidor parado
+2025-09-29 22:08:27,034 - INFO - AplicaÁ„o iniciada
+2025-09-29 22:08:27,239 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-29 22:08:27,680 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:27] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:08:27,777 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:27] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:08:28,012 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:28] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:08:28,014 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:28] code 404, message File not found
+
+2025-09-29 22:08:28,014 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:28] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:08:31,131 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:31] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:08:31,494 - INFO - 127.0.0.1 - - [29/Sep/2025 22:08:31] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:08:31,495 - ERROR - ERROR: Traceback (most recent call last):
+2025-09-29 22:08:31,495 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json\subir_arquivos_parede.py", line 39, in main
+2025-09-29 22:08:31,495 - ERROR - ERROR: print("\U0001f4c1 Clonando repositÛrio...")
+2025-09-29 22:08:31,495 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py", line 19, in encode
+2025-09-29 22:08:31,495 - ERROR - ERROR: return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+2025-09-29 22:08:31,495 - ERROR - ERROR: UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4c1' in position 0: character maps to <undefined>
+2025-09-29 22:08:31,495 - ERROR - ERROR: During handling of the above exception, another exception occurred:
+2025-09-29 22:08:31,495 - ERROR - ERROR: Traceback (most recent call last):
+2025-09-29 22:08:31,495 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json\subir_arquivos_parede.py", line 66, in <module>
+2025-09-29 22:08:31,495 - ERROR - ERROR: main()
+2025-09-29 22:08:31,495 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json\subir_arquivos_parede.py", line 60, in main
+2025-09-29 22:08:31,495 - ERROR - ERROR: print("\U0001f9f9 Limpando arquivos tempor·rios...")
+2025-09-29 22:08:31,495 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py", line 19, in encode
+2025-09-29 22:08:31,495 - ERROR - ERROR: return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+2025-09-29 22:08:31,495 - ERROR - ERROR: UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f9f9' in position 0: character maps to <undefined>
+2025-09-29 22:08:31,495 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:10:49,387 - INFO - 127.0.0.1 - - [29/Sep/2025 22:10:49] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:10:49,655 - INFO - 127.0.0.1 - - [29/Sep/2025 22:10:49] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:10:49,735 - INFO - 127.0.0.1 - - [29/Sep/2025 22:10:49] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:10:49,751 - INFO - 127.0.0.1 - - [29/Sep/2025 22:10:49] code 404, message File not found
+
+2025-09-29 22:10:49,751 - INFO - 127.0.0.1 - - [29/Sep/2025 22:10:49] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:10:57,334 - INFO - 127.0.0.1 - - [29/Sep/2025 22:10:57] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:11:07,654 - INFO - 127.0.0.1 - - [29/Sep/2025 22:11:07] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:11:07,654 - ERROR - ERROR: Traceback (most recent call last):
+2025-09-29 22:11:07,654 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest√£o\Aulas de Viol√£o\SITES\Parede da vit√≥ria\com json\subir_arquivos_parede.py", line 71, in <module>
+2025-09-29 22:11:07,654 - ERROR - ERROR: main()
+2025-09-29 22:11:07,655 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest√£o\Aulas de Viol√£o\SITES\Parede da vit√≥ria\com json\subir_arquivos_parede.py", line 66, in main
+2025-09-29 22:11:07,655 - ERROR - ERROR: shutil.rmtree(temp_dir)
+2025-09-29 22:11:07,655 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 759, in rmtree
+2025-09-29 22:11:07,655 - ERROR - ERROR: return _rmtree_unsafe(path, onerror)
+2025-09-29 22:11:07,655 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 624, in _rmtree_unsafe
+2025-09-29 22:11:07,655 - ERROR - ERROR: _rmtree_unsafe(fullname, onerror)
+2025-09-29 22:11:07,655 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 624, in _rmtree_unsafe
+2025-09-29 22:11:07,655 - ERROR - ERROR: _rmtree_unsafe(fullname, onerror)
+2025-09-29 22:11:07,655 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 624, in _rmtree_unsafe
+2025-09-29 22:11:07,655 - ERROR - ERROR: _rmtree_unsafe(fullname, onerror)
+2025-09-29 22:11:07,655 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 629, in _rmtree_unsafe
+2025-09-29 22:11:07,655 - ERROR - ERROR: onerror(os.unlink, fullname, sys.exc_info())
+2025-09-29 22:11:07,655 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 627, in _rmtree_unsafe
+2025-09-29 22:11:07,655 - ERROR - ERROR: os.unlink(fullname)
+2025-09-29 22:11:07,655 - ERROR - ERROR: PermissionError: [WinError 5] Acesso negado: 'C:\\Users\\gabri\\AppData\\Local\\Temp\\tmp3figvtho\\.git\\objects\\1a\\2eaa39ba303e570946a18b355555698212ab45'
+2025-09-29 22:11:07,655 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:13:20,748 - INFO - 127.0.0.1 - - [29/Sep/2025 22:13:20] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:13:21,002 - INFO - 127.0.0.1 - - [29/Sep/2025 22:13:21] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:13:21,097 - INFO - 127.0.0.1 - - [29/Sep/2025 22:13:21] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:13:21,113 - INFO - 127.0.0.1 - - [29/Sep/2025 22:13:21] code 404, message File not found
+
+2025-09-29 22:13:21,113 - INFO - 127.0.0.1 - - [29/Sep/2025 22:13:21] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:13:22,262 - INFO - 127.0.0.1 - - [29/Sep/2025 22:13:22] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:13:22,617 - INFO - 127.0.0.1 - - [29/Sep/2025 22:13:22] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:13:22,617 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json\subir_arquivos_parede.py", line 67
+2025-09-29 22:13:22,617 - ERROR - ERROR: shutil.rmtree(temp_dir)
+2025-09-29 22:13:22,617 - ERROR - ERROR: ^
+2025-09-29 22:13:22,617 - ERROR - ERROR: IndentationError: expected an indented block
+2025-09-29 22:13:22,617 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:14:13,067 - INFO - 127.0.0.1 - - [29/Sep/2025 22:14:13] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:14:13,419 - INFO - 127.0.0.1 - - [29/Sep/2025 22:14:13] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:14:13,450 - INFO - 127.0.0.1 - - [29/Sep/2025 22:14:13] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:14:13,452 - INFO - 127.0.0.1 - - [29/Sep/2025 22:14:13] code 404, message File not found
+
+2025-09-29 22:14:13,452 - INFO - 127.0.0.1 - - [29/Sep/2025 22:14:13] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:14:17,119 - INFO - 127.0.0.1 - - [29/Sep/2025 22:14:17] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:14:17,450 - INFO - 127.0.0.1 - - [29/Sep/2025 22:14:17] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:14:17,450 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json\subir_arquivos_parede.py", line 67
+2025-09-29 22:14:17,451 - ERROR - ERROR: shutil.rmtree(temp_dir)
+2025-09-29 22:14:17,451 - ERROR - ERROR: ^
+2025-09-29 22:14:17,451 - ERROR - ERROR: IndentationError: expected an indented block
+2025-09-29 22:14:17,451 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:16:00,723 - INFO - 127.0.0.1 - - [29/Sep/2025 22:16:00] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:16:01,016 - INFO - 127.0.0.1 - - [29/Sep/2025 22:16:01] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:16:01,016 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json\subir_arquivos_parede.py", line 67
+2025-09-29 22:16:01,016 - ERROR - ERROR: shutil.rmtree(temp_dir)
+2025-09-29 22:16:01,016 - ERROR - ERROR: ^
+2025-09-29 22:16:01,016 - ERROR - ERROR: IndentationError: expected an indented block
+2025-09-29 22:16:01,016 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:16:24,234 - INFO - 127.0.0.1 - - [29/Sep/2025 22:16:24] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:16:24,577 - INFO - 127.0.0.1 - - [29/Sep/2025 22:16:24] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:16:24,578 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json\subir_arquivos_parede.py", line 67
+2025-09-29 22:16:24,578 - ERROR - ERROR: shutil.rmtree(temp_dir)
+2025-09-29 22:16:24,578 - ERROR - ERROR: ^
+2025-09-29 22:16:24,578 - ERROR - ERROR: IndentationError: expected an indented block
+2025-09-29 22:16:24,578 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:17:58,664 - INFO - 127.0.0.1 - - [29/Sep/2025 22:17:58] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:18:11,142 - INFO - 127.0.0.1 - - [29/Sep/2025 22:18:11] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:18:11,142 - ERROR - ERROR: Traceback (most recent call last):
+2025-09-29 22:18:11,142 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest√£o\Aulas de Viol√£o\SITES\Parede da vit√≥ria\com json\subir_arquivos_parede.py", line 76, in <module>
+2025-09-29 22:18:11,142 - ERROR - ERROR: main()
+2025-09-29 22:18:11,142 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gest√£o\Aulas de Viol√£o\SITES\Parede da vit√≥ria\com json\subir_arquivos_parede.py", line 73, in main
+2025-09-29 22:18:11,142 - ERROR - ERROR: input("Pressione Enter para sair...")
+2025-09-29 22:18:11,142 - ERROR - ERROR: EOFError: EOF when reading a line
+2025-09-29 22:18:11,143 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 1
+2025-09-29 22:19:34,502 - INFO - 127.0.0.1 - - [29/Sep/2025 22:19:34] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:19:48,432 - INFO - 127.0.0.1 - - [29/Sep/2025 22:19:48] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:19:48,433 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 0
+2025-09-29 22:21:07,434 - INFO - 127.0.0.1 - - [29/Sep/2025 22:21:07] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:21:07,700 - INFO - 127.0.0.1 - - [29/Sep/2025 22:21:07] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:21:07,794 - INFO - 127.0.0.1 - - [29/Sep/2025 22:21:07] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:21:07,810 - INFO - 127.0.0.1 - - [29/Sep/2025 22:21:07] code 404, message File not found
+
+2025-09-29 22:21:07,810 - INFO - 127.0.0.1 - - [29/Sep/2025 22:21:07] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:21:08,829 - INFO - 127.0.0.1 - - [29/Sep/2025 22:21:08] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:21:26,192 - INFO - 127.0.0.1 - - [29/Sep/2025 22:21:26] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:21:26,192 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 0
+2025-09-29 22:23:36,184 - INFO - 127.0.0.1 - - [29/Sep/2025 22:23:36] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:24:05,450 - INFO - 127.0.0.1 - - [29/Sep/2025 22:24:05] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:24:05,450 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 0
+2025-09-29 22:26:18,638 - INFO - 127.0.0.1 - - [29/Sep/2025 22:26:18] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:26:44,853 - INFO - 127.0.0.1 - - [29/Sep/2025 22:26:44] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:26:44,864 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 0
+2025-09-29 22:40:00,919 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:00] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:40:01,187 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:01] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:40:01,282 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:01] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:40:09,250 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:09] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:40:27,891 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:27] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:40:27,892 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 0
+2025-09-29 22:40:27,892 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:27] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:40:27,894 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:27] code 404, message File not found
+
+2025-09-29 22:40:27,894 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:27] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:40:27,907 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:27] code 404, message File not found
+
+2025-09-29 22:40:27,907 - INFO - 127.0.0.1 - - [29/Sep/2025 22:40:27] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-29 22:47:41,036 - INFO - 127.0.0.1 - - [29/Sep/2025 22:47:41] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:47:41,304 - INFO - 127.0.0.1 - - [29/Sep/2025 22:47:41] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:47:41,396 - INFO - 127.0.0.1 - - [29/Sep/2025 22:47:41] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:50:22,097 - INFO - 127.0.0.1 - - [29/Sep/2025 22:50:22] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:50:22,360 - INFO - 127.0.0.1 - - [29/Sep/2025 22:50:22] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:50:22,454 - INFO - 127.0.0.1 - - [29/Sep/2025 22:50:22] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:50:31,873 - INFO - 127.0.0.1 - - [29/Sep/2025 22:50:31] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:50:32,204 - INFO - 127.0.0.1 - - [29/Sep/2025 22:50:32] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:50:32,206 - INFO - 127.0.0.1 - - [29/Sep/2025 22:50:32] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:51:51,996 - INFO - 127.0.0.1 - - [29/Sep/2025 22:51:51] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:51:52,249 - INFO - 127.0.0.1 - - [29/Sep/2025 22:51:52] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:51:52,357 - INFO - 127.0.0.1 - - [29/Sep/2025 22:51:52] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:51:54,494 - INFO - 127.0.0.1 - - [29/Sep/2025 22:51:54] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 22:52:28,544 - INFO - 127.0.0.1 - - [29/Sep/2025 22:52:28] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 22:52:28,545 - INFO - 127.0.0.1 - - [29/Sep/2025 22:52:28] "POST /executar-python HTTP/1.1" 500 -
+
+2025-09-29 22:52:28,546 - INFO - 127.0.0.1 - - [29/Sep/2025 22:52:28] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:52:28,898 - INFO - 127.0.0.1 - - [29/Sep/2025 22:52:28] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:52:28,899 - INFO - 127.0.0.1 - - [29/Sep/2025 22:52:28] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:53:31,677 - INFO - 127.0.0.1 - - [29/Sep/2025 22:53:31] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:53:31,949 - INFO - 127.0.0.1 - - [29/Sep/2025 22:53:31] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:53:32,044 - INFO - 127.0.0.1 - - [29/Sep/2025 22:53:32] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:53:33,978 - INFO - 127.0.0.1 - - [29/Sep/2025 22:53:33] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:53:34,319 - INFO - 127.0.0.1 - - [29/Sep/2025 22:53:34] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:53:34,320 - INFO - 127.0.0.1 - - [29/Sep/2025 22:53:34] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:56:35,261 - INFO - 127.0.0.1 - - [29/Sep/2025 22:56:35] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:56:35,535 - INFO - 127.0.0.1 - - [29/Sep/2025 22:56:35] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:56:35,613 - INFO - 127.0.0.1 - - [29/Sep/2025 22:56:35] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 22:59:42,986 - INFO - 127.0.0.1 - - [29/Sep/2025 22:59:42] "GET / HTTP/1.1" 200 -
+
+2025-09-29 22:59:43,251 - INFO - 127.0.0.1 - - [29/Sep/2025 22:59:43] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 22:59:43,343 - INFO - 127.0.0.1 - - [29/Sep/2025 22:59:43] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 23:00:56,682 - INFO - 127.0.0.1 - - [29/Sep/2025 23:00:56] "GET / HTTP/1.1" 200 -
+
+2025-09-29 23:00:56,932 - INFO - 127.0.0.1 - - [29/Sep/2025 23:00:56] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-29 23:00:57,041 - INFO - 127.0.0.1 - - [29/Sep/2025 23:00:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-29 23:01:06,931 - INFO - 127.0.0.1 - - [29/Sep/2025 23:01:06] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-29 23:01:23,555 - INFO - 127.0.0.1 - - [29/Sep/2025 23:01:23] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-29 23:01:23,555 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 0
+2025-09-30 08:22:37,787 - INFO - AplicaÁ„o iniciada
+2025-09-30 08:22:37,995 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gest„o\Aulas de Viol„o\SITES\Parede da vitÛria\com json
+2025-09-30 09:48:05,377 - INFO - 127.0.0.1 - - [30/Sep/2025 09:48:05] "GET / HTTP/1.1" 200 -
+
+2025-09-30 09:48:05,452 - INFO - 127.0.0.1 - - [30/Sep/2025 09:48:05] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 09:48:05,717 - INFO - 127.0.0.1 - - [30/Sep/2025 09:48:05] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 11:52:06,640 - INFO - 127.0.0.1 - - [30/Sep/2025 11:52:06] "GET / HTTP/1.1" 200 -
+
+2025-09-30 11:52:06,893 - INFO - 127.0.0.1 - - [30/Sep/2025 11:52:06] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 11:52:06,988 - INFO - 127.0.0.1 - - [30/Sep/2025 11:52:06] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 11:53:08,267 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:08] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 11:53:08,317 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:08] code 404, message File not found
+
+2025-09-30 11:53:08,317 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:08] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 11:53:22,374 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:22] "GET / HTTP/1.1" 200 -
+
+2025-09-30 11:53:22,742 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:22] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 11:53:22,758 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:22] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 11:53:22,760 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:22] code 404, message File not found
+
+2025-09-30 11:53:22,760 - INFO - 127.0.0.1 - - [30/Sep/2025 11:53:22] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 11:55:08,842 - INFO - 127.0.0.1 - - [30/Sep/2025 11:55:08] "GET / HTTP/1.1" 200 -
+
+2025-09-30 11:55:09,105 - INFO - 127.0.0.1 - - [30/Sep/2025 11:55:09] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 11:55:09,216 - INFO - 127.0.0.1 - - [30/Sep/2025 11:55:09] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 11:55:09,232 - INFO - 127.0.0.1 - - [30/Sep/2025 11:55:09] code 404, message File not found
+
+2025-09-30 11:55:09,232 - INFO - 127.0.0.1 - - [30/Sep/2025 11:55:09] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 11:57:41,557 - INFO - 127.0.0.1 - - [30/Sep/2025 11:57:41] "GET / HTTP/1.1" 200 -
+
+2025-09-30 11:57:41,826 - INFO - 127.0.0.1 - - [30/Sep/2025 11:57:41] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 11:57:41,905 - INFO - 127.0.0.1 - - [30/Sep/2025 11:57:41] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 11:57:41,921 - INFO - 127.0.0.1 - - [30/Sep/2025 11:57:41] code 404, message File not found
+
+2025-09-30 11:57:41,921 - INFO - 127.0.0.1 - - [30/Sep/2025 11:57:41] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 11:59:08,319 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:08] "GET / HTTP/1.1" 200 -
+
+2025-09-30 11:59:08,573 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:08] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 11:59:08,669 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:08] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 11:59:08,685 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:08] code 404, message File not found
+
+2025-09-30 11:59:08,685 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:08] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 11:59:15,900 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:15] "GET / HTTP/1.1" 200 -
+
+2025-09-30 11:59:16,233 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:16] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 11:59:16,249 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:16] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 11:59:16,251 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:16] code 404, message File not found
+
+2025-09-30 11:59:16,251 - INFO - 127.0.0.1 - - [30/Sep/2025 11:59:16] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:02:02,311 - INFO - 127.0.0.1 - - [30/Sep/2025 12:02:02] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:02:02,564 - INFO - 127.0.0.1 - - [30/Sep/2025 12:02:02] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:02:02,659 - INFO - 127.0.0.1 - - [30/Sep/2025 12:02:02] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:02:02,673 - INFO - 127.0.0.1 - - [30/Sep/2025 12:02:02] code 404, message File not found
+
+2025-09-30 12:02:02,673 - INFO - 127.0.0.1 - - [30/Sep/2025 12:02:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:08:04,502 - INFO - 127.0.0.1 - - [30/Sep/2025 12:08:04] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:08:04,756 - INFO - 127.0.0.1 - - [30/Sep/2025 12:08:04] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:08:04,852 - INFO - 127.0.0.1 - - [30/Sep/2025 12:08:04] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:08:04,868 - INFO - 127.0.0.1 - - [30/Sep/2025 12:08:04] code 404, message File not found
+
+2025-09-30 12:08:04,868 - INFO - 127.0.0.1 - - [30/Sep/2025 12:08:04] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:09:54,188 - INFO - 127.0.0.1 - - [30/Sep/2025 12:09:54] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-30 12:10:02,774 - INFO - 127.0.0.1 - - [30/Sep/2025 12:10:02] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-30 12:10:02,774 - INFO - Script subir_arquivos_parede.py executado, cÛdigo: 0
+2025-09-30 12:14:00,880 - INFO - 127.0.0.1 - - [30/Sep/2025 12:14:00] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:14:01,136 - INFO - 127.0.0.1 - - [30/Sep/2025 12:14:01] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:14:01,231 - INFO - 127.0.0.1 - - [30/Sep/2025 12:14:01] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:14:01,246 - INFO - 127.0.0.1 - - [30/Sep/2025 12:14:01] code 404, message File not found
+
+2025-09-30 12:14:01,246 - INFO - 127.0.0.1 - - [30/Sep/2025 12:14:01] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:15:58,245 - INFO - 127.0.0.1 - - [30/Sep/2025 12:15:58] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:15:58,512 - INFO - 127.0.0.1 - - [30/Sep/2025 12:15:58] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:15:58,607 - INFO - 127.0.0.1 - - [30/Sep/2025 12:15:58] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:15:58,623 - INFO - 127.0.0.1 - - [30/Sep/2025 12:15:58] code 404, message File not found
+
+2025-09-30 12:15:58,623 - INFO - 127.0.0.1 - - [30/Sep/2025 12:15:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:16:50,975 - INFO - 127.0.0.1 - - [30/Sep/2025 12:16:50] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:16:51,324 - INFO - 127.0.0.1 - - [30/Sep/2025 12:16:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:16:51,339 - INFO - 127.0.0.1 - - [30/Sep/2025 12:16:51] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:16:51,340 - INFO - 127.0.0.1 - - [30/Sep/2025 12:16:51] code 404, message File not found
+
+2025-09-30 12:16:51,341 - INFO - 127.0.0.1 - - [30/Sep/2025 12:16:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:16:56,688 - INFO - 127.0.0.1 - - [30/Sep/2025 12:16:56] "GET /config.json HTTP/1.1" 200 -
+

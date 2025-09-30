@@ -1,0 +1,92 @@
+{
+  "Carlos": {
+    "name": "Carlos",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Antônia": {
+    "name": "Antônia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Alessandro": {
+    "name": "Alessandro",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Valéria": {
+    "name": "Valéria",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Cleide": {
+    "name": "Cleide",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Nazir": {
+    "name": "Nazir",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Heloá": {
+    "name": "Heloá",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Nadir": {
+    "name": "Nadir",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Ivo Ferreira": {
+    "name": "Ivo Ferreira",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  }
+}

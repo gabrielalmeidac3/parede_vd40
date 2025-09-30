@@ -1,0 +1,236 @@
+{
+  "Carlos": {
+    "name": "Carlos",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Harpa 169 / Eis me aqui senhor / Instânte Mágico"
+  },
+  "Antônia": {
+    "name": "Antônia",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Marcar partes da música Porque Ele Vive - e treinar individualmente - depois treinar inteira"
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Melhorar o som dos acordes"
+  },
+  "Alessandro": {
+    "name": "Alessandro",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Valéria": {
+    "name": "Valéria",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Cleide": {
+    "name": "Cleide",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Acertar ritmo e encaixe da voz da música \"Nada me separa desse amor\""
+  },
+  "Nazir": {
+    "name": "Nazir",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Heloá": {
+    "name": "Heloá",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Nadir": {
+    "name": "Nadir",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Daia": {
+    "name": "Daia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Músicas em guarânia"
+  },
+  "Denilson": {
+    "name": "Denilson",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Tocar músicas com o F e melhorar troca e sonoridade do acorde"
+  },
+  "Geni": {
+    "name": "Geni",
+    "active": true,
+    "videocall": true,
+    "tuesday": false,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Página de Amigos - Tom G / É amor - Zezé di Camargo e Luciano"
+  },
+  "Luciene": {
+    "name": "Luciene",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Música Princesa - Amado Batista"
+  },
+  "Regina": {
+    "name": "Regina",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Maguida": {
+    "name": "Maguida",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Adilson": {
+    "name": "Adilson",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Neusa": {
+    "name": "Neusa",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Célia": {
+    "name": "Célia",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Analu": {
+    "name": "Analu",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Aprender os 3 primeiros acordes"
+  },
+  "Gilson": {
+    "name": "Gilson",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": true,
+    "thursday": false,
+    "objective": "Começar com música Telefone Mudo pra treinar"
+  },
+  "Paulo Ricardo": {
+    "name": "Paulo Ricardo",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": ""
+  },
+  "Isabel": {
+    "name": "Isabel",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Treinar música Cavalo Preto"
+  },
+  "Marina": {
+    "name": "Marina",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": true,
+    "thursday": false,
+    "objective": "Assistir a aula sobre os 3 primeiros acordes e fazer o exercício da aula"
+  },
+  "Adelina": {
+    "name": "Adelina",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": true,
+    "objective": "Assistir a aula e fazer o exercício para iniciantes do zero"
+  },
+  "Ivo Ferreira": {
+    "name": "Ivo Ferreira",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Folha Seca em D - Acertar altura da voz / Fazer treinos de altura da voz com as notas"
+  },
+  "Márcia Maria Ribeiro": {
+    "name": "Márcia Maria Ribeiro",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": true,
+    "objective": "Assistir a aula e fazer o exercício para iniciantes do zero"
+  }
+}

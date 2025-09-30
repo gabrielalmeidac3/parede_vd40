@@ -1,0 +1,173 @@
+{
+  "Carlos": {
+    "name": "Carlos",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Meu lugar é aqui / O Baile da Fazenda / Vem me Amar"
+  },
+  "Antônia": {
+    "name": "Antônia",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": "Acertar ritmo e encaixe da voz da música Porque Ele Vive"
+  },
+  "Alessandro": {
+    "name": "Alessandro",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Valéria": {
+    "name": "Valéria",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Cleide": {
+    "name": "Cleide",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Acertar ritmo e encaixe da voz da música \"Nada me separa desse amor\""
+  },
+  "Nazir": {
+    "name": "Nazir",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Heloá": {
+    "name": "Heloá",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Nadir": {
+    "name": "Nadir",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Daia": {
+    "name": "Daia",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Denilson": {
+    "name": "Denilson",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Escolher uma música que contenha o F pra treinar (Página de Amigos)"
+  },
+  "Geni": {
+    "name": "Geni",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Luciene": {
+    "name": "Luciene",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Regina": {
+    "name": "Regina",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Maguida": {
+    "name": "Maguida",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Adilson": {
+    "name": "Adilson",
+    "active": true,
+    "videocall": true,
+    "sentToGroup": false,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Escrever uma música e cifrar"
+  },
+  "Neusa": {
+    "name": "Neusa",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Ver quais músicas já consegue tocar e quais ainda não consegue"
+  },
+  "Célia": {
+    "name": "Célia",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Listar tudo o que sabe no violão hoje. Ou começar pelos 3 primeiros acordes e 1 ritmo."
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": true,
+    "objective": ""
+  },
+  "Ivo Ferreira": {
+    "name": "Ivo Ferreira",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Acertar a altura da voz na música Tocando em Frente - Procurar outra pra treinar"
+  }
+}
