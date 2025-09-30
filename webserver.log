@@ -1897,3 +1897,263 @@ Teste 4: Script finalizado com sucesso!
 
 2025-09-30 12:16:56,688 - INFO - 127.0.0.1 - - [30/Sep/2025 12:16:56] "GET /config.json HTTP/1.1" 200 -
 
+2025-09-30 12:17:05,311 - INFO - 127.0.0.1 - - [30/Sep/2025 12:17:05] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-30 12:17:05,311 - INFO - Script subir_arquivos_parede.py executado, c�digo: 0
+2025-09-30 12:18:27,068 - INFO - 127.0.0.1 - - [30/Sep/2025 12:18:27] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:18:27,323 - INFO - 127.0.0.1 - - [30/Sep/2025 12:18:27] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:18:27,403 - INFO - 127.0.0.1 - - [30/Sep/2025 12:18:27] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:18:27,435 - INFO - 127.0.0.1 - - [30/Sep/2025 12:18:27] code 404, message File not found
+
+2025-09-30 12:18:27,435 - INFO - 127.0.0.1 - - [30/Sep/2025 12:18:27] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:20:03,713 - INFO - 127.0.0.1 - - [30/Sep/2025 12:20:03] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:20:03,980 - INFO - 127.0.0.1 - - [30/Sep/2025 12:20:03] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:20:04,059 - INFO - 127.0.0.1 - - [30/Sep/2025 12:20:04] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:20:04,075 - INFO - 127.0.0.1 - - [30/Sep/2025 12:20:04] code 404, message File not found
+
+2025-09-30 12:20:04,075 - INFO - 127.0.0.1 - - [30/Sep/2025 12:20:04] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:22:06,888 - INFO - 127.0.0.1 - - [30/Sep/2025 12:22:06] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:22:07,127 - INFO - 127.0.0.1 - - [30/Sep/2025 12:22:07] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:22:07,224 - INFO - 127.0.0.1 - - [30/Sep/2025 12:22:07] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:22:07,253 - INFO - 127.0.0.1 - - [30/Sep/2025 12:22:07] code 404, message File not found
+
+2025-09-30 12:22:07,253 - INFO - 127.0.0.1 - - [30/Sep/2025 12:22:07] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:23:33,387 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:33] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:23:33,625 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:33] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:23:33,737 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:33] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:23:33,768 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:33] code 404, message File not found
+
+2025-09-30 12:23:33,768 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:33] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:23:47,275 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:47] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:23:47,617 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:47] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:23:47,618 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:47] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:23:47,619 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:47] code 404, message File not found
+
+2025-09-30 12:23:47,619 - INFO - 127.0.0.1 - - [30/Sep/2025 12:23:47] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:29:18,127 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:18] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:29:18,380 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:18] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:29:18,477 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:18] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:29:18,492 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:18] code 404, message File not found
+
+2025-09-30 12:29:18,492 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:18] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 12:29:35,432 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:35] "GET / HTTP/1.1" 200 -
+
+2025-09-30 12:29:35,769 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:35] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 12:29:35,771 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:35] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 12:29:35,773 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:35] code 404, message File not found
+
+2025-09-30 12:29:35,773 - INFO - 127.0.0.1 - - [30/Sep/2025 12:29:35] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:20:39,004 - INFO - 127.0.0.1 - - [30/Sep/2025 13:20:39] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:20:39,256 - INFO - 127.0.0.1 - - [30/Sep/2025 13:20:39] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:20:39,352 - INFO - 127.0.0.1 - - [30/Sep/2025 13:20:39] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:20:39,367 - INFO - 127.0.0.1 - - [30/Sep/2025 13:20:39] code 404, message File not found
+
+2025-09-30 13:20:39,367 - INFO - 127.0.0.1 - - [30/Sep/2025 13:20:39] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:22:25,496 - INFO - 127.0.0.1 - - [30/Sep/2025 13:22:25] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:22:25,760 - INFO - 127.0.0.1 - - [30/Sep/2025 13:22:25] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:22:25,854 - INFO - 127.0.0.1 - - [30/Sep/2025 13:22:25] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:22:25,870 - INFO - 127.0.0.1 - - [30/Sep/2025 13:22:25] code 404, message File not found
+
+2025-09-30 13:22:25,870 - INFO - 127.0.0.1 - - [30/Sep/2025 13:22:25] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:28:12,290 - INFO - 127.0.0.1 - - [30/Sep/2025 13:28:12] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:28:12,557 - INFO - 127.0.0.1 - - [30/Sep/2025 13:28:12] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:28:12,637 - INFO - 127.0.0.1 - - [30/Sep/2025 13:28:12] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:28:12,669 - INFO - 127.0.0.1 - - [30/Sep/2025 13:28:12] code 404, message File not found
+
+2025-09-30 13:28:12,669 - INFO - 127.0.0.1 - - [30/Sep/2025 13:28:12] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:30:02,374 - INFO - 127.0.0.1 - - [30/Sep/2025 13:30:02] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:30:02,646 - INFO - 127.0.0.1 - - [30/Sep/2025 13:30:02] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:30:02,723 - INFO - 127.0.0.1 - - [30/Sep/2025 13:30:02] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:30:02,725 - INFO - 127.0.0.1 - - [30/Sep/2025 13:30:02] code 404, message File not found
+
+2025-09-30 13:30:02,725 - INFO - 127.0.0.1 - - [30/Sep/2025 13:30:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:31:54,653 - INFO - 127.0.0.1 - - [30/Sep/2025 13:31:54] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:31:54,906 - INFO - 127.0.0.1 - - [30/Sep/2025 13:31:54] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:31:55,001 - INFO - 127.0.0.1 - - [30/Sep/2025 13:31:55] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:31:55,016 - INFO - 127.0.0.1 - - [30/Sep/2025 13:31:55] code 404, message File not found
+
+2025-09-30 13:31:55,016 - INFO - 127.0.0.1 - - [30/Sep/2025 13:31:55] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:33:50,910 - INFO - 127.0.0.1 - - [30/Sep/2025 13:33:50] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:33:51,180 - INFO - 127.0.0.1 - - [30/Sep/2025 13:33:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:33:51,259 - INFO - 127.0.0.1 - - [30/Sep/2025 13:33:51] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:33:51,275 - INFO - 127.0.0.1 - - [30/Sep/2025 13:33:51] code 404, message File not found
+
+2025-09-30 13:33:51,275 - INFO - 127.0.0.1 - - [30/Sep/2025 13:33:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:36:40,924 - INFO - 127.0.0.1 - - [30/Sep/2025 13:36:40] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:36:41,192 - INFO - 127.0.0.1 - - [30/Sep/2025 13:36:41] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:36:41,271 - INFO - 127.0.0.1 - - [30/Sep/2025 13:36:41] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:36:41,287 - INFO - 127.0.0.1 - - [30/Sep/2025 13:36:41] code 404, message File not found
+
+2025-09-30 13:36:41,287 - INFO - 127.0.0.1 - - [30/Sep/2025 13:36:41] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:38:44,170 - INFO - 127.0.0.1 - - [30/Sep/2025 13:38:44] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:38:44,440 - INFO - 127.0.0.1 - - [30/Sep/2025 13:38:44] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:38:44,518 - INFO - 127.0.0.1 - - [30/Sep/2025 13:38:44] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:38:44,548 - INFO - 127.0.0.1 - - [30/Sep/2025 13:38:44] code 404, message File not found
+
+2025-09-30 13:38:44,548 - INFO - 127.0.0.1 - - [30/Sep/2025 13:38:44] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:41:48,685 - INFO - 127.0.0.1 - - [30/Sep/2025 13:41:48] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:41:48,939 - INFO - 127.0.0.1 - - [30/Sep/2025 13:41:48] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:41:49,036 - INFO - 127.0.0.1 - - [30/Sep/2025 13:41:49] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:41:49,051 - INFO - 127.0.0.1 - - [30/Sep/2025 13:41:49] code 404, message File not found
+
+2025-09-30 13:41:49,051 - INFO - 127.0.0.1 - - [30/Sep/2025 13:41:49] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:42:10,424 - INFO - 127.0.0.1 - - [30/Sep/2025 13:42:10] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:42:10,755 - INFO - 127.0.0.1 - - [30/Sep/2025 13:42:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:42:10,757 - INFO - 127.0.0.1 - - [30/Sep/2025 13:42:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:42:10,759 - INFO - 127.0.0.1 - - [30/Sep/2025 13:42:10] code 404, message File not found
+
+2025-09-30 13:42:10,759 - INFO - 127.0.0.1 - - [30/Sep/2025 13:42:10] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:45:20,574 - INFO - 127.0.0.1 - - [30/Sep/2025 13:45:20] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:45:20,827 - INFO - 127.0.0.1 - - [30/Sep/2025 13:45:20] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:45:20,923 - INFO - 127.0.0.1 - - [30/Sep/2025 13:45:20] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:45:20,938 - INFO - 127.0.0.1 - - [30/Sep/2025 13:45:20] code 404, message File not found
+
+2025-09-30 13:45:20,938 - INFO - 127.0.0.1 - - [30/Sep/2025 13:45:20] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:50:04,165 - INFO - 127.0.0.1 - - [30/Sep/2025 13:50:04] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:50:04,432 - INFO - 127.0.0.1 - - [30/Sep/2025 13:50:04] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:50:04,512 - INFO - 127.0.0.1 - - [30/Sep/2025 13:50:04] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:50:04,528 - INFO - 127.0.0.1 - - [30/Sep/2025 13:50:04] code 404, message File not found
+
+2025-09-30 13:50:04,528 - INFO - 127.0.0.1 - - [30/Sep/2025 13:50:04] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:51:34,166 - INFO - 127.0.0.1 - - [30/Sep/2025 13:51:34] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:51:34,434 - INFO - 127.0.0.1 - - [30/Sep/2025 13:51:34] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:51:34,515 - INFO - 127.0.0.1 - - [30/Sep/2025 13:51:34] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:51:34,529 - INFO - 127.0.0.1 - - [30/Sep/2025 13:51:34] code 404, message File not found
+
+2025-09-30 13:51:34,529 - INFO - 127.0.0.1 - - [30/Sep/2025 13:51:34] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:53:51,508 - INFO - 127.0.0.1 - - [30/Sep/2025 13:53:51] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:53:51,760 - INFO - 127.0.0.1 - - [30/Sep/2025 13:53:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:53:51,857 - INFO - 127.0.0.1 - - [30/Sep/2025 13:53:51] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:53:51,887 - INFO - 127.0.0.1 - - [30/Sep/2025 13:53:51] code 404, message File not found
+
+2025-09-30 13:53:51,887 - INFO - 127.0.0.1 - - [30/Sep/2025 13:53:51] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 13:58:45,817 - INFO - 127.0.0.1 - - [30/Sep/2025 13:58:45] "GET / HTTP/1.1" 200 -
+
+2025-09-30 13:58:46,073 - INFO - 127.0.0.1 - - [30/Sep/2025 13:58:46] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:58:46,165 - INFO - 127.0.0.1 - - [30/Sep/2025 13:58:46] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 13:58:55,309 - INFO - 127.0.0.1 - - [30/Sep/2025 13:58:55] "GET /config.json HTTP/1.1" 200 -
+
+2025-09-30 13:59:00,099 - INFO - 127.0.0.1 - - [30/Sep/2025 13:59:00] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-30 13:59:00,100 - ERROR - ERROR: Traceback (most recent call last):
+2025-09-30 13:59:00,100 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json\subir_arquivos_parede.py", line 82, in <module>
+2025-09-30 13:59:00,100 - ERROR - ERROR: main()
+2025-09-30 13:59:00,100 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json\subir_arquivos_parede.py", line 56, in main
+2025-09-30 13:59:00,100 - ERROR - ERROR: copiar_conteudo(pasta_atual, repo_dir)
+2025-09-30 13:59:00,100 - ERROR - ERROR: File "A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json\subir_arquivos_parede.py", line 34, in copiar_conteudo
+2025-09-30 13:59:00,100 - ERROR - ERROR: shutil.rmtree(destino_item)
+2025-09-30 13:59:00,100 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 759, in rmtree
+2025-09-30 13:59:00,100 - ERROR - ERROR: return _rmtree_unsafe(path, onerror)
+2025-09-30 13:59:00,100 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 624, in _rmtree_unsafe
+2025-09-30 13:59:00,100 - ERROR - ERROR: _rmtree_unsafe(fullname, onerror)
+2025-09-30 13:59:00,101 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 624, in _rmtree_unsafe
+2025-09-30 13:59:00,101 - ERROR - ERROR: _rmtree_unsafe(fullname, onerror)
+2025-09-30 13:59:00,101 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 629, in _rmtree_unsafe
+2025-09-30 13:59:00,101 - ERROR - ERROR: onerror(os.unlink, fullname, sys.exc_info())
+2025-09-30 13:59:00,101 - ERROR - ERROR: File "C:\Users\gabri\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 627, in _rmtree_unsafe
+2025-09-30 13:59:00,101 - ERROR - ERROR: os.unlink(fullname)
+2025-09-30 13:59:00,101 - ERROR - ERROR: PermissionError: [WinError 5] Acesso negado: 'C:\\Users\\gabri\\AppData\\Local\\Temp\\tmpnabrftjd\\.git\\objects\\pack\\pack-5c125ac1056ab1c1c5cce049ec48d3c6a29ec0a2.idx'
+2025-09-30 13:59:00,101 - INFO - Script subir_arquivos_parede.py executado, c�digo: 1
+2025-09-30 13:59:08,684 - INFO - 127.0.0.1 - - [30/Sep/2025 13:59:08] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 13:59:09,034 - INFO - 127.0.0.1 - - [30/Sep/2025 13:59:09] code 404, message File not found
+
+2025-09-30 13:59:09,034 - INFO - 127.0.0.1 - - [30/Sep/2025 13:59:09] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 14:12:07,845 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:07] "GET / HTTP/1.1" 200 -
+
+2025-09-30 14:12:08,111 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:08] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 14:12:08,206 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:08] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 14:12:08,208 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:08] code 404, message File not found
+
+2025-09-30 14:12:08,208 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:08] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-09-30 14:12:10,050 - INFO - 127.0.0.1 - - [30/Sep/2025 14:12:10] "GET /config.json HTTP/1.1" 200 -
+
