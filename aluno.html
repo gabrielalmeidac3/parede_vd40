@@ -237,10 +237,9 @@
                         active: studentData.active
                     });
                     
-                    if (studentData.active) {
-                        monthlyStats[name].totalScore += score;
-                        monthlyStats[name].weekCount++;
-                    }
+                    // SEMPRE somar o score (0 se inativo) e sempre contar a semana
+                    monthlyStats[name].totalScore += score;
+                    monthlyStats[name].weekCount++;
                     
                     if (studentData.objective?.trim()) {
                         monthlyStats[name].objectiveCount++;
@@ -249,8 +248,8 @@
             }
 
             Object.values(monthlyStats).forEach(student => {
-                student.averageScore = student.weekCount > 0 ? 
-                    Math.round(student.totalScore / student.weekCount) : 0;
+                // Sempre divide por 4 semanas
+                student.averageScore = Math.round(student.totalScore / 4);
             });
 
             return Object.values(monthlyStats);
@@ -312,7 +311,7 @@
                 console.log('Dados de loadMonthlyData:', JSON.stringify(monthlyData, null, 2));
                 
                 monthlyData
-                    .filter(student => student.weekCount > 0)
+                    .filter(student => student.averageScore > 0)
                     .sort((a, b) => {
                         if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
                         return a.name.localeCompare(b.name);
@@ -415,7 +414,7 @@
                 
                 detailsGrid.innerHTML = '';
                 monthlyData
-                    .filter(student => student.weekCount > 0)
+                    .filter(student => student.averageScore > 0)
                     .sort((a, b) => {
                         if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
                         if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
