@@ -2182,3 +2182,92 @@ Teste 4: Script finalizado com sucesso!
 
 2025-09-30 14:17:06,020 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:06] "GET /config.json HTTP/1.1" 200 -
 
+2025-09-30 14:17:14,540 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:14] "POST /executar-python HTTP/1.1" 200 -
+
+2025-09-30 14:17:14,541 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2025-09-30 14:17:20,012 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:20] "GET / HTTP/1.1" 200 -
+
+2025-09-30 14:17:20,352 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:20] "GET /styles.css HTTP/1.1" 200 -
+
+2025-09-30 14:17:20,383 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:20] "GET /script.js HTTP/1.1" 200 -
+
+2025-09-30 14:17:20,385 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:20] code 404, message File not found
+
+2025-09-30 14:17:20,385 - INFO - 127.0.0.1 - - [30/Sep/2025 14:17:20] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2025-10-01 09:48:21,376 - INFO - 127.0.0.1 - - [01/Oct/2025 09:48:21] "GET / HTTP/1.1" 200 -
+
+2025-10-01 09:48:21,643 - INFO - 127.0.0.1 - - [01/Oct/2025 09:48:21] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-01 09:48:21,766 - INFO - 127.0.0.1 - - [01/Oct/2025 09:48:21] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-01 09:58:41,682 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:41] "GET /aluno.html HTTP/1.1" 200 -
+
+2025-10-01 09:58:41,948 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:41] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-01 09:58:42,043 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /config/months.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:42,045 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /img2.png HTTP/1.1" 200 -
+
+2025-10-01 09:58:42,254 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /config/viewState.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:42,358 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] code 404, message File not found
+
+2025-10-01 09:58:42,358 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /favicon.ico HTTP/1.1" 404 -
+
+2025-10-01 09:58:42,484 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /config/globalStudents.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:42,564 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /meses/2025-09/week1.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:42,797 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /meses/2025-09/week2.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:42,876 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:42] "GET /meses/2025-09/week3.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:43,110 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:43] "GET /meses/2025-09/week4.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:50,563 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:50] "GET /meses/2025-10/week1.json HTTP/1.1" 200 -
+
+2025-10-01 09:58:50,873 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:50] code 404, message File not found
+
+2025-10-01 09:58:50,873 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:50] "GET /meses/2025-10/week2.json HTTP/1.1" 404 -
+
+2025-10-01 09:58:51,139 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:51] code 404, message File not found
+
+2025-10-01 09:58:51,139 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:51] "GET /meses/2025-10/week3.json HTTP/1.1" 404 -
+
+2025-10-01 09:58:51,186 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:51] code 404, message File not found
+
+2025-10-01 09:58:51,186 - INFO - 127.0.0.1 - - [01/Oct/2025 09:58:51] "GET /meses/2025-10/week4.json HTTP/1.1" 404 -
+
+2025-10-01 10:00:51,159 - INFO - 127.0.0.1 - - [01/Oct/2025 10:00:51] "GET / HTTP/1.1" 200 -
+
+2025-10-01 10:00:51,412 - INFO - 127.0.0.1 - - [01/Oct/2025 10:00:51] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-01 10:00:51,506 - INFO - 127.0.0.1 - - [01/Oct/2025 10:00:51] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-02 07:41:33,821 - INFO - Aplicação iniciada
+2025-10-02 07:41:34,027 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-03 10:40:39,540 - INFO - Aplicação iniciada
+2025-10-03 10:40:39,757 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-03 11:17:31,496 - INFO - 127.0.0.1 - - [03/Oct/2025 11:17:31] "GET / HTTP/1.1" 200 -
+
+2025-10-03 11:17:31,546 - INFO - 127.0.0.1 - - [03/Oct/2025 11:17:31] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-03 11:17:31,866 - INFO - 127.0.0.1 - - [03/Oct/2025 11:17:31] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-04 07:34:30,896 - INFO - Aplicação iniciada
+2025-10-04 07:34:31,100 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-05 10:13:02,172 - INFO - Aplicação iniciada
+2025-10-05 10:13:02,388 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-05 19:16:32,026 - INFO - Aplicação iniciada
+2025-10-05 19:16:32,231 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-06 08:54:08,061 - INFO - Aplicação iniciada
+2025-10-06 08:54:08,265 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-06 10:08:58,386 - INFO - 127.0.0.1 - - [06/Oct/2025 10:08:58] "GET / HTTP/1.1" 200 -
+
+2025-10-06 10:08:58,453 - INFO - 127.0.0.1 - - [06/Oct/2025 10:08:58] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-06 10:08:58,776 - INFO - 127.0.0.1 - - [06/Oct/2025 10:08:58] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-06 10:09:16,906 - INFO - 127.0.0.1 - - [06/Oct/2025 10:09:16] "GET /config.json HTTP/1.1" 200 -
+
