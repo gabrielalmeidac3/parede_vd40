@@ -2345,3 +2345,100 @@ Teste 4: Script finalizado com sucesso!
 2025-10-09 10:56:23,608 - INFO - 127.0.0.1 - - [09/Oct/2025 10:56:23] "POST /executar-python HTTP/1.1" 200 -
 
 2025-10-09 10:56:23,608 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2025-10-09 10:57:08,910 - INFO - 127.0.0.1 - - [09/Oct/2025 10:57:08] "POST /executar-python HTTP/1.1" 200 -
+
+2025-10-09 10:57:08,910 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2025-10-09 18:49:04,598 - INFO - 127.0.0.1 - - [09/Oct/2025 18:49:04] "GET / HTTP/1.1" 200 -
+
+2025-10-09 18:49:04,862 - INFO - 127.0.0.1 - - [09/Oct/2025 18:49:04] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-09 18:49:04,941 - INFO - 127.0.0.1 - - [09/Oct/2025 18:49:04] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-09 22:20:44,750 - INFO - Aplicação iniciada
+2025-10-09 22:20:44,953 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-10 08:36:39,854 - INFO - Aplicação iniciada
+2025-10-10 08:36:40,059 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-10 09:13:57,334 - INFO - 127.0.0.1 - - [10/Oct/2025 09:13:57] "GET / HTTP/1.1" 200 -
+
+2025-10-10 09:13:57,391 - INFO - 127.0.0.1 - - [10/Oct/2025 09:13:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-10 09:13:57,696 - INFO - 127.0.0.1 - - [10/Oct/2025 09:13:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-10 09:17:00,623 - INFO - 127.0.0.1 - - [10/Oct/2025 09:17:00] "GET / HTTP/1.1" 200 -
+
+2025-10-10 09:17:00,889 - INFO - 127.0.0.1 - - [10/Oct/2025 09:17:00] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-10 09:17:01,000 - INFO - 127.0.0.1 - - [10/Oct/2025 09:17:01] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-11 12:57:48,219 - INFO - Aplicação iniciada
+2025-10-11 12:57:48,436 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-12 09:23:16,523 - INFO - Aplicação iniciada
+2025-10-12 09:23:16,740 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-12 14:48:53,603 - INFO - Aplicação iniciada
+2025-10-12 14:48:53,816 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-12 17:56:31,773 - INFO - Aplicação iniciada
+2025-10-12 17:56:31,992 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-12 20:20:56,862 - INFO - Aplicação iniciada
+2025-10-12 20:20:57,078 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-13 00:30:55,265 - INFO - Aplicação iniciada
+2025-10-13 00:30:55,473 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-13 01:38:19,066 - INFO - Aplicação iniciada
+2025-10-13 01:38:19,271 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-13 08:18:04,854 - INFO - Aplicação iniciada
+2025-10-13 08:18:05,061 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-13 11:08:18,591 - INFO - Aplicação iniciada
+2025-10-13 11:08:18,806 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-13 11:23:24,266 - INFO - 127.0.0.1 - - [13/Oct/2025 11:23:24] "GET / HTTP/1.1" 200 -
+
+2025-10-13 11:23:24,326 - INFO - 127.0.0.1 - - [13/Oct/2025 11:23:24] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-13 11:23:24,627 - INFO - 127.0.0.1 - - [13/Oct/2025 11:23:24] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-13 18:46:52,492 - INFO - 127.0.0.1 - - [13/Oct/2025 18:46:52] "GET / HTTP/1.1" 200 -
+
+2025-10-13 18:46:52,733 - INFO - 127.0.0.1 - - [13/Oct/2025 18:46:52] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-13 18:46:52,844 - INFO - 127.0.0.1 - - [13/Oct/2025 18:46:52] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-13 19:01:09,055 - INFO - Aplicação iniciada
+2025-10-13 19:01:09,260 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-13 19:08:05,106 - INFO - 127.0.0.1 - - [13/Oct/2025 19:08:05] "GET / HTTP/1.1" 200 -
+
+2025-10-13 19:08:05,197 - INFO - 127.0.0.1 - - [13/Oct/2025 19:08:05] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-13 19:08:05,514 - INFO - 127.0.0.1 - - [13/Oct/2025 19:08:05] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-13 19:46:59,960 - INFO - 127.0.0.1 - - [13/Oct/2025 19:46:59] "GET / HTTP/1.1" 200 -
+
+2025-10-13 19:47:00,209 - INFO - 127.0.0.1 - - [13/Oct/2025 19:47:00] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-13 19:47:00,333 - INFO - 127.0.0.1 - - [13/Oct/2025 19:47:00] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-13 20:01:57,223 - INFO - 127.0.0.1 - - [13/Oct/2025 20:01:57] "GET / HTTP/1.1" 200 -
+
+2025-10-13 20:01:57,486 - INFO - 127.0.0.1 - - [13/Oct/2025 20:01:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-13 20:01:57,579 - INFO - 127.0.0.1 - - [13/Oct/2025 20:01:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-13 20:05:25,969 - INFO - 127.0.0.1 - - [13/Oct/2025 20:05:25] "GET / HTTP/1.1" 200 -
+
+2025-10-13 20:05:26,232 - INFO - 127.0.0.1 - - [13/Oct/2025 20:05:26] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-13 20:05:26,326 - INFO - 127.0.0.1 - - [13/Oct/2025 20:05:26] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-13 20:37:59,274 - INFO - 127.0.0.1 - - [13/Oct/2025 20:37:59] "GET / HTTP/1.1" 200 -
+
+2025-10-13 20:37:59,535 - INFO - 127.0.0.1 - - [13/Oct/2025 20:37:59] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-13 20:37:59,627 - INFO - 127.0.0.1 - - [13/Oct/2025 20:37:59] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-14 08:50:03,191 - INFO - Aplicação iniciada
+2025-10-14 08:50:03,408 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-14 08:54:07,220 - INFO - 127.0.0.1 - - [14/Oct/2025 08:54:07] "GET / HTTP/1.1" 200 -
+
+2025-10-14 08:54:07,310 - INFO - 127.0.0.1 - - [14/Oct/2025 08:54:07] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-14 08:54:07,566 - INFO - 127.0.0.1 - - [14/Oct/2025 08:54:07] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-14 08:54:09,836 - INFO - 127.0.0.1 - - [14/Oct/2025 08:54:09] "GET /config.json HTTP/1.1" 200 -
+

@@ -29,11 +29,11 @@
   "Amélia": {
     "name": "Amélia",
     "active": true,
-    "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
-    "objective": "Telefone Mudo."
+    "videocall": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Tocando em Frente / Ritmo de Rock / Amor de Violeiro / Escolher mais uma no rock"
   },
   "Ana Lucia": {
     "name": "Ana Lucia",
@@ -65,20 +65,20 @@
   "Antônia": {
     "name": "Antônia",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": true,
     "objective": "Ritmo Country Música Meto o Pé na Cara Dele"
   },
   "Carlos": {
     "name": "Carlos",
     "active": true,
     "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Tocando em Frente"
+    "objective": "Maria da Minha Infância - testar em D / A Ti meu Deus"
   },
   "Célia": {
     "name": "Célia",
@@ -93,18 +93,18 @@
     "name": "Cleide",
     "active": true,
     "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Nossa Canção"
+    "objective": "Trabalhai e Orai / Escolher mais uma que seja no Rock"
   },
   "Clerionise": {
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Treinar boate azul"
   },
   "Daia": {
@@ -164,11 +164,11 @@
   "Geni": {
     "name": "Geni",
     "active": true,
-    "videocall": false,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": true,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Amor de Violeiro / A carta"
+    "objective": "Saudade - Eduardo Costa / A carta / Escolher música nova"
   },
   "Gilmar Delgado": {
     "name": "Gilmar Delgado",
@@ -191,9 +191,9 @@
   "Gracie": {
     "name": "Gracie",
     "active": true,
-    "videocall": false,
+    "videocall": true,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
   },
@@ -219,7 +219,7 @@
     "name": "Ivo Ferreira",
     "active": true,
     "videocall": false,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": false,
     "sentToGroup": true,
     "objective": "Sonhei com você"
@@ -335,10 +335,10 @@
   "Paulo Soares": {
     "name": "Paulo Soares",
     "active": true,
-    "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "videocall": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Melhorar acordes G, C, A, D"
   },
   "Regina": {
@@ -364,9 +364,9 @@
     "active": true,
     "videocall": true,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "2 Músicas - Pais e Filhos e Como Zaqueu"
+    "objective": "2 Músicas - Pais e Filhos e Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz)"
   },
   "Silvani": {
     "name": "Silvani",
@@ -426,18 +426,18 @@
     "name": "Elita",
     "active": true,
     "videocall": false,
-    "sentToGroup": true,
-    "tuesday": true,
-    "thursday": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "No toca fita do meu carro / Escolher mais uma música"
   },
   "João Ângelo": {
     "name": "João Ângelo",
     "active": true,
     "videocall": false,
-    "sentToGroup": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Aprender a tocar bem o ritmo de rock"
   }
 }
