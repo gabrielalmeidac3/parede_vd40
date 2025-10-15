@@ -19,18 +19,18 @@
   },
   "Alessandro": {
     "name": "Alessandro",
-    "active": false,
+    "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
-    "sentToGroup": false,
-    "objective": ""
+    "sentToGroup": true,
+    "objective": "Primeiros acordes e afinação"
   },
   "Amélia": {
     "name": "Amélia",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Tocando em Frente / Ritmo de Rock / Amor de Violeiro / Escolher mais uma no rock"
@@ -75,7 +75,7 @@
     "name": "Carlos",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Maria da Minha Infância - testar em D / A Ti meu Deus"
@@ -104,7 +104,7 @@
     "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": false,
+    "sentToGroup": true,
     "objective": "Treinar boate azul"
   },
   "Daia": {
@@ -219,7 +219,7 @@
     "name": "Ivo Ferreira",
     "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": true,
     "objective": "Sonhei com você"
@@ -336,7 +336,7 @@
     "name": "Paulo Soares",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Melhorar acordes G, C, A, D"
@@ -363,7 +363,7 @@
     "name": "Sidnei",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "2 Músicas - Pais e Filhos e Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz)"
