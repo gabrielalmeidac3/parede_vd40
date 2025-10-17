@@ -31,7 +31,7 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Tocando em Frente / Ritmo de Rock / Amor de Violeiro / Escolher mais uma no rock"
   },
@@ -66,8 +66,8 @@
     "name": "Antônia",
     "active": true,
     "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": true,
     "objective": "Ritmo Country Música Meto o Pé na Cara Dele"
   },
@@ -76,7 +76,7 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Maria da Minha Infância - testar em D / A Ti meu Deus"
   },
@@ -94,7 +94,7 @@
     "active": true,
     "videocall": true,
     "tuesday": false,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Trabalhai e Orai / Escolher mais uma que seja no Rock"
   },
@@ -102,8 +102,8 @@
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": true,
     "objective": "Treinar boate azul"
   },
@@ -166,9 +166,9 @@
     "active": true,
     "videocall": true,
     "tuesday": false,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
-    "objective": "Saudade - Eduardo Costa / A carta / Escolher música nova"
+    "objective": "Saudade - Eduardo Costa / A carta / Feiticeira"
   },
   "Gilmar Delgado": {
     "name": "Gilmar Delgado",
@@ -193,7 +193,7 @@
     "active": true,
     "videocall": true,
     "tuesday": false,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
   },
@@ -220,9 +220,9 @@
     "active": true,
     "videocall": false,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": true,
-    "objective": "Sonhei com você"
+    "objective": "Sonhei com você / Escolher música nova"
   },
   "José Hilton": {
     "name": "José Hilton",
@@ -337,7 +337,7 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Melhorar acordes G, C, A, D"
   },
@@ -436,7 +436,7 @@
     "active": true,
     "videocall": false,
     "tuesday": false,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Aprender a tocar bem o ritmo de rock"
   }
