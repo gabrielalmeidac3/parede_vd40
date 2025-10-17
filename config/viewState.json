@@ -1,5 +1,5 @@
 {
   "selectedMonth": "2025-10",
-  "selectedWeek": "3",
-  "detailsView": false
+  "selectedWeek": "general",
+  "detailsView": true
 }

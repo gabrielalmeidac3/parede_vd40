@@ -237,7 +237,7 @@
                         active: studentData.active
                     });
                     
-                    // SEMPRE somar o score (0 se inativo) e sempre contar a semana
+                   // SEMPRE somar o score (0 se inativo) e sempre contar a semana
                     monthlyStats[name].totalScore += score;
                     monthlyStats[name].weekCount++;
                     
@@ -432,7 +432,7 @@
                             <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
                             <div class="detail-activities">
                                 <span class="activity-summary">
-                                    📈 ${student.weekCount} semana(s) ativas
+                                    📈 ${student.weeks.filter(w => w.active).length}/4 semanas ativas
                                 </span>
                                 <span class="activity-summary">
                                     🎯 ${student.objectiveCount} objetivo(s)
