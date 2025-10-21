@@ -95,7 +95,7 @@
     "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": false,
+    "sentToGroup": true,
     "objective": "Trabalhai e Orai / Escolher mais uma que seja no Rock"
   },
   "Clerionise": {
@@ -339,7 +339,7 @@
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Melhorar acordes G, C, A, D"
+    "objective": "Melhorar acordes G, C, A, D / E, Am,"
   },
   "Regina": {
     "name": "Regina",
