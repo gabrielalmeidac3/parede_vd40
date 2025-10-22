@@ -2546,3 +2546,34 @@ Teste 4: Script finalizado com sucesso!
 2025-10-20 19:40:51,667 - INFO - Script subir_arquivos_parede.py executado, código: 0
 2025-10-20 20:30:49,892 - INFO - 127.0.0.1 - - [20/Oct/2025 20:30:49] "GET /config.json HTTP/1.1" 200 -
 
+2025-10-20 20:31:02,722 - INFO - 127.0.0.1 - - [20/Oct/2025 20:31:02] "POST /executar-python HTTP/1.1" 200 -
+
+2025-10-20 20:31:02,723 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2025-10-21 08:52:45,990 - INFO - 127.0.0.1 - - [21/Oct/2025 08:52:45] "GET / HTTP/1.1" 200 -
+
+2025-10-21 08:52:46,246 - INFO - 127.0.0.1 - - [21/Oct/2025 08:52:46] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-21 08:52:46,346 - INFO - 127.0.0.1 - - [21/Oct/2025 08:52:46] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-21 11:32:12,428 - INFO - Aplicação iniciada
+2025-10-21 11:32:12,640 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-21 18:21:31,646 - INFO - 127.0.0.1 - - [21/Oct/2025 18:21:31] "GET / HTTP/1.1" 200 -
+
+2025-10-21 18:21:31,714 - INFO - 127.0.0.1 - - [21/Oct/2025 18:21:31] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-21 18:21:32,003 - INFO - 127.0.0.1 - - [21/Oct/2025 18:21:32] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-22 08:41:57,611 - INFO - 127.0.0.1 - - [22/Oct/2025 08:41:57] "GET / HTTP/1.1" 200 -
+
+2025-10-22 08:41:57,858 - INFO - 127.0.0.1 - - [22/Oct/2025 08:41:57] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-22 08:41:57,965 - INFO - 127.0.0.1 - - [22/Oct/2025 08:41:57] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-22 12:06:02,107 - INFO - 127.0.0.1 - - [22/Oct/2025 12:06:02] "GET / HTTP/1.1" 200 -
+
+2025-10-22 12:06:02,368 - INFO - 127.0.0.1 - - [22/Oct/2025 12:06:02] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-22 12:06:02,445 - INFO - 127.0.0.1 - - [22/Oct/2025 12:06:02] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-22 13:31:38,353 - INFO - 127.0.0.1 - - [22/Oct/2025 13:31:38] "GET /config.json HTTP/1.1" 200 -
+

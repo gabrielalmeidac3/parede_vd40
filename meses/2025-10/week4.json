@@ -30,7 +30,7 @@
     "name": "Amélia",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Ritmo de Rock / Saudade da Minha Terra"
@@ -66,16 +66,16 @@
     "name": "Antônia",
     "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": true,
-    "objective": "Ritmo Country Música Meto o Pé na Cara Dele"
+    "objective": "Ritmo Country Música Meto o Pé na Cara Dele / Pegar mais uma"
   },
   "Carlos": {
     "name": "Carlos",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Vai dar tudo certo em G / Cabecinha no Ombro"
@@ -102,7 +102,7 @@
     "name": "Clerionise",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Treinar boate azul / Estrelinha / Rock"
@@ -165,10 +165,10 @@
     "name": "Geni",
     "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
-    "sentToGroup": false,
-    "objective": "Saudade - Eduardo Costa / A carta / Feiticeira"
+    "sentToGroup": true,
+    "objective": "Saudade - Eduardo Costa / A carta / Feiticeira / Cheiro de Shampoo"
   },
   "Gilmar Delgado": {
     "name": "Gilmar Delgado",
@@ -219,10 +219,10 @@
     "name": "Ivo Ferreira",
     "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
-    "sentToGroup": false,
-    "objective": "Sonhei com você / Fio de Cabelo"
+    "sentToGroup": true,
+    "objective": "Fio de Cabelo / Pegar mais uma"
   },
   "José Hilton": {
     "name": "José Hilton",
@@ -336,10 +336,10 @@
     "name": "Paulo Soares",
     "active": true,
     "videocall": true,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Melhorar acordes G, C, A, D / E, Am,"
+    "objective": "Melhorar acordes G, C, A (melhorar corda 5), D / E (melhorar corda 3), Am - Treinar mais o G nas músicas"
   },
   "Regina": {
     "name": "Regina",
