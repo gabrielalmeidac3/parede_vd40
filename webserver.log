@@ -2577,3 +2577,44 @@ Teste 4: Script finalizado com sucesso!
 
 2025-10-22 13:31:38,353 - INFO - 127.0.0.1 - - [22/Oct/2025 13:31:38] "GET /config.json HTTP/1.1" 200 -
 
+2025-10-22 13:31:55,117 - INFO - 127.0.0.1 - - [22/Oct/2025 13:31:55] "POST /executar-python HTTP/1.1" 200 -
+
+2025-10-22 13:31:55,117 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2025-10-22 17:25:05,211 - INFO - Aplicação iniciada
+2025-10-22 17:25:05,421 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-23 11:12:48,502 - INFO - Aplicação iniciada
+2025-10-23 11:12:48,718 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-23 15:50:53,706 - INFO - Aplicação iniciada
+2025-10-23 15:50:53,913 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-24 09:36:26,673 - INFO - Aplicação iniciada
+2025-10-24 09:36:26,882 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-24 09:58:27,774 - INFO - 127.0.0.1 - - [24/Oct/2025 09:58:27] "GET / HTTP/1.1" 200 -
+
+2025-10-24 09:58:28,143 - INFO - 127.0.0.1 - - [24/Oct/2025 09:58:28] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-24 09:58:28,155 - INFO - 127.0.0.1 - - [24/Oct/2025 09:58:28] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-26 00:54:19,056 - INFO - Aplicação iniciada
+2025-10-26 00:54:19,261 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-27 18:59:41,571 - INFO - 127.0.0.1 - - [27/Oct/2025 18:59:41] "GET / HTTP/1.1" 200 -
+
+2025-10-27 18:59:42,161 - INFO - 127.0.0.1 - - [27/Oct/2025 18:59:42] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-27 18:59:42,166 - INFO - 127.0.0.1 - - [27/Oct/2025 18:59:42] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-28 10:13:51,000 - INFO - Aplicação iniciada
+2025-10-28 10:13:51,210 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-10-28 11:07:45,503 - INFO - 127.0.0.1 - - [28/Oct/2025 11:07:45] "GET / HTTP/1.1" 200 -
+
+2025-10-28 11:07:45,566 - INFO - 127.0.0.1 - - [28/Oct/2025 11:07:45] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-28 11:07:45,873 - INFO - 127.0.0.1 - - [28/Oct/2025 11:07:45] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-28 11:08:28,054 - INFO - 127.0.0.1 - - [28/Oct/2025 11:08:28] "GET / HTTP/1.1" 200 -
+
+2025-10-28 11:08:28,318 - INFO - 127.0.0.1 - - [28/Oct/2025 11:08:28] "GET /styles.css HTTP/1.1" 200 -
+
+2025-10-28 11:08:28,426 - INFO - 127.0.0.1 - - [28/Oct/2025 11:08:28] "GET /script.js HTTP/1.1" 200 -
+
+2025-10-28 11:08:48,996 - INFO - 127.0.0.1 - - [28/Oct/2025 11:08:48] "GET /config.json HTTP/1.1" 200 -
+

@@ -33,7 +33,7 @@
     "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Ritmo de Rock / Saudade da Minha Terra"
+    "objective": "Ritmo de Rock / Saudade da Minha Terra / Encaixe da voz"
   },
   "Ana Lucia": {
     "name": "Ana Lucia",
@@ -67,7 +67,7 @@
     "active": true,
     "videocall": false,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": true,
     "objective": "Ritmo Country Música Meto o Pé na Cara Dele / Pegar mais uma"
   },
@@ -76,9 +76,9 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
-    "objective": "Vai dar tudo certo em G / Cabecinha no Ombro"
+    "objective": "Vai dar tudo certo em G / Ele não mandou ele mesmo veio / Mais uma sertaneja"
   },
   "Célia": {
     "name": "Célia",
@@ -92,18 +92,18 @@
   "Cleide": {
     "name": "Cleide",
     "active": true,
-    "videocall": false,
+    "videocall": true,
     "tuesday": false,
-    "thursday": false,
-    "sentToGroup": true,
-    "objective": "Trabalhai e Orai / Escolher mais uma que seja no Rock"
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "Trabalhai e Orai / Fico Feliz / Celebrai"
   },
   "Clerionise": {
     "name": "Clerionise",
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Treinar boate azul / Estrelinha / Rock"
   },
@@ -166,9 +166,9 @@
     "active": true,
     "videocall": false,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": true,
-    "objective": "Saudade - Eduardo Costa / A carta / Feiticeira / Cheiro de Shampoo"
+    "objective": "Feiticeira / Cheiro de Shampoo (MUDAR TOM) / Escolher mais uma"
   },
   "Gilmar Delgado": {
     "name": "Gilmar Delgado",
@@ -181,19 +181,19 @@
   },
   "Gilson": {
     "name": "Gilson",
-    "active": false,
-    "videocall": false,
+    "active": true,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Telefone Mudo"
+    "objective": "Telefone Mudo, Cabecinha"
   },
   "Gracie": {
     "name": "Gracie",
     "active": true,
     "videocall": true,
     "tuesday": false,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
   },
@@ -220,7 +220,7 @@
     "active": true,
     "videocall": false,
     "tuesday": true,
-    "thursday": false,
+    "thursday": true,
     "sentToGroup": true,
     "objective": "Fio de Cabelo / Pegar mais uma"
   },
@@ -362,11 +362,11 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": false,
+    "videocall": true,
     "tuesday": false,
-    "thursday": false,
-    "sentToGroup": true,
-    "objective": "2 Músicas - Pais e Filhos e Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz)"
+    "thursday": true,
+    "sentToGroup": false,
+    "objective": "2 Músicas - Pais e Filhos e Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz) /"
   },
   "Silvani": {
     "name": "Silvani",
