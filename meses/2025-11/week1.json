@@ -1,0 +1,452 @@
+{
+  "Adelina": {
+    "name": "Adelina",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Pegar as aulas pra iniciantes e fazer os exercícios - E afinar o violão"
+  },
+  "Adilson": {
+    "name": "Adilson",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Aprender a tocar de ouvido"
+  },
+  "Alessandro": {
+    "name": "Alessandro",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Primeiros acordes e afinação - Guarânia com acordes A, E, D"
+  },
+  "Amélia": {
+    "name": "Amélia",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Ritmo de Rock / Saudade da Minha Terra / Encaixe da voz"
+  },
+  "Ana Lucia": {
+    "name": "Ana Lucia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Aprender os 3 primeiros acordes e afinar o violão"
+  },
+  "Analu": {
+    "name": "Analu",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "André Correia": {
+    "name": "André Correia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Resolver música Como Zaqueu e escolher uma mais Pop Rockza"
+  },
+  "Antônia": {
+    "name": "Antônia",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Ritmo Country Música Meto o Pé na Cara Dele / Pegar mais uma"
+  },
+  "Carlos": {
+    "name": "Carlos",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Vai dar tudo certo em G / O Natal Existe / Noite Feliz"
+  },
+  "Célia": {
+    "name": "Célia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Cleide": {
+    "name": "Cleide",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Trabalhai e Orai / Fico Feliz / Celebrai"
+  },
+  "Clerionise": {
+    "name": "Clerionise",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": true,
+    "objective": "Treinar boate azul / Estrelinha / Rock"
+  },
+  "Daia": {
+    "name": "Daia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "ddd": {
+    "name": "ddd",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Denilson": {
+    "name": "Denilson",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Treinar o F nas músicas e fazer o treino de troca"
+  },
+  "Dete Mendes": {
+    "name": "Dete Mendes",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Vai passar e Dia de Sol / Depois escolher outras duas"
+  },
+  "Eliana Nascimento": {
+    "name": "Eliana Nascimento",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Treinar troca de acordes"
+  },
+  "Elito": {
+    "name": "Elito",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Aprender a afinar o violão e iniciar a música Porque Ele Vive"
+  },
+  "Geni": {
+    "name": "Geni",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Feiticeira / Cheiro de Shampoo (MUDAR TOM) / Escolher mais uma"
+  },
+  "Gilmar Delgado": {
+    "name": "Gilmar Delgado",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Tocando em frente"
+  },
+  "Gilson": {
+    "name": "Gilson",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Telefone Mudo, Cabecinha"
+  },
+  "Gracie": {
+    "name": "Gracie",
+    "active": true,
+    "videocall": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
+  },
+  "Heloá": {
+    "name": "Heloá",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Isabel": {
+    "name": "Isabel",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Ivo Ferreira": {
+    "name": "Ivo Ferreira",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": true,
+    "objective": "Fio de Cabelo / Pegar mais uma"
+  },
+  "José Hilton": {
+    "name": "José Hilton",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Cabecinha no ombro - encaixe da voz"
+  },
+  "Léo Silva": {
+    "name": "Léo Silva",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Escolher uma música nova pra pegar essa semana - 28 jul"
+  },
+  "Luciene": {
+    "name": "Luciene",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Maguida": {
+    "name": "Maguida",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Márcia Maria Ribeiro": {
+    "name": "Márcia Maria Ribeiro",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Cavalo Preto"
+  },
+  "Maria da Luz": {
+    "name": "Maria da Luz",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Ver aulas pra iniciantes (acordes e afinação)"
+  },
+  "Marina": {
+    "name": "Marina",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Mary Ramos": {
+    "name": "Mary Ramos",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Pegar mais músicas em Guarânia - Aprender o ritmo de Pop Rock"
+  },
+  "Nadir": {
+    "name": "Nadir",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Tocando em Frente\n\nTem alguém no meu lugar \n\nLuar do sertão"
+  },
+  "Nazir": {
+    "name": "Nazir",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Neusa": {
+    "name": "Neusa",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Paulo Ricardo": {
+    "name": "Paulo Ricardo",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Porque Ele Vive - Tocar não precisa cantar ainda"
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": true,
+    "objective": "Melhorar acordes G, C, A (melhorar corda 5), D / E (melhorar corda 3), Am - Treinar mais o G nas músicas"
+  },
+  "Regina": {
+    "name": "Regina",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Samuel Rosa": {
+    "name": "Samuel Rosa",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Verificar ritmos se estão corretos"
+  },
+  "Sidnei": {
+    "name": "Sidnei",
+    "active": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "2 Músicas - Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz) /"
+  },
+  "Silvani": {
+    "name": "Silvani",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Soeli Lúcia": {
+    "name": "Soeli Lúcia",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Aprender o ritmo de vanera pra música Luz de Tupã"
+  },
+  "teste": {
+    "name": "teste",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "teste"
+  },
+  "teste2": {
+    "name": "teste2",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "teste"
+  },
+  "Valéria": {
+    "name": "Valéria",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
+  "Wanderson": {
+    "name": "Wanderson",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Afinar o violão - Escolher uma música pra tocar inteira"
+  },
+  "Elita": {
+    "name": "Elita",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "No toca fita do meu carro / Escolher mais uma música"
+  },
+  "João Ângelo": {
+    "name": "João Ângelo",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Aprender a tocar bem o ritmo de rock"
+  },
+  "Rommel": {
+    "name": "Rommel",
+    "active": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Cadê você / Mais uma no rock / Aula de como deixar o acorde bonito (Aulas pra iniciantes)"
+  }
+}
