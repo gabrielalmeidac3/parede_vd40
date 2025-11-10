@@ -29,9 +29,9 @@
   "Amélia": {
     "name": "Amélia",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Ritmo de Rock / Saudade da Minha Terra / Encaixe da voz"
   },
@@ -66,17 +66,17 @@
     "name": "Antônia",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Ritmo Country Música Meto o Pé na Cara Dele / Pegar mais uma"
   },
   "Carlos": {
     "name": "Carlos",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Vai dar tudo certo em G / O Natal Existe / Noite Feliz"
   },
@@ -92,9 +92,9 @@
   "Cleide": {
     "name": "Cleide",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Trabalhai e Orai / Fico Feliz / Celebrai"
   },
@@ -102,9 +102,9 @@
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Treinar boate azul / Estrelinha / Rock"
   },
   "Daia": {
@@ -165,7 +165,7 @@
     "name": "Geni",
     "active": true,
     "videocall": false,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Feiticeira / Cheiro de Shampoo (MUDAR TOM) / Escolher mais uma"
@@ -191,7 +191,7 @@
   "Gracie": {
     "name": "Gracie",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
@@ -219,9 +219,9 @@
     "name": "Ivo Ferreira",
     "active": true,
     "videocall": false,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "Fio de Cabelo / Pegar mais uma"
   },
   "José Hilton": {
@@ -336,9 +336,9 @@
     "name": "Paulo Soares",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Melhorar acordes G, C, A (melhorar corda 5), D / E (melhorar corda 3), Am - Treinar mais o G nas músicas"
   },
   "Regina": {
@@ -362,8 +362,8 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
+    "videocall": false,
+    "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "2 Músicas - Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz) /"
