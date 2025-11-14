@@ -19,9 +19,9 @@
   },
   "Alessandro": {
     "name": "Alessandro",
-    "active": true,
+    "active": false,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Primeiros acordes e afinação - Guarânia com acordes A, E, D"
@@ -29,11 +29,11 @@
   "Amélia": {
     "name": "Amélia",
     "active": true,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": false,
-    "objective": "Ritmo de Rock / Saudade da Minha Terra / Encaixe da voz"
+    "objective": "Ritmo de Rock / Meu Ex Amor /"
   },
   "Ana Lucia": {
     "name": "Ana Lucia",
@@ -74,11 +74,11 @@
   "Carlos": {
     "name": "Carlos",
     "active": true,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": false,
-    "objective": "Vai dar tudo certo em G / O Natal Existe / Noite Feliz"
+    "objective": "O Natal Existe / Noite Feliz / Dia Lindo Amado Batista / Sonho Lindo Amado Batista"
   },
   "Célia": {
     "name": "Célia",
@@ -92,9 +92,9 @@
   "Cleide": {
     "name": "Cleide",
     "active": true,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Trabalhai e Orai / Fico Feliz / Celebrai"
   },
@@ -102,8 +102,8 @@
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Treinar boate azul / Estrelinha / Rock"
   },
@@ -165,9 +165,9 @@
     "name": "Geni",
     "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
-    "sentToGroup": false,
+    "sentToGroup": true,
     "objective": "Feiticeira / Cheiro de Shampoo (MUDAR TOM) / Escolher mais uma"
   },
   "Gilmar Delgado": {
@@ -181,7 +181,7 @@
   },
   "Gilson": {
     "name": "Gilson",
-    "active": true,
+    "active": false,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
@@ -192,7 +192,7 @@
     "name": "Gracie",
     "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
@@ -218,11 +218,11 @@
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
     "active": true,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": false,
-    "objective": "Fio de Cabelo / Pegar mais uma"
+    "objective": "Fio de Cabelo / Couro de Boi (G) / Ritmo de Toada"
   },
   "José Hilton": {
     "name": "José Hilton",
@@ -298,7 +298,7 @@
   },
   "Nadir": {
     "name": "Nadir",
-    "active": true,
+    "active": false,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
@@ -336,9 +336,9 @@
     "name": "Paulo Soares",
     "active": true,
     "videocall": false,
-    "tuesday": false,
+    "tuesday": true,
     "thursday": false,
-    "sentToGroup": false,
+    "sentToGroup": true,
     "objective": "Melhorar acordes G, C, A (melhorar corda 5), D / E (melhorar corda 3), Am - Treinar mais o G nas músicas"
   },
   "Regina": {
@@ -362,11 +362,11 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": true,
     "sentToGroup": false,
-    "objective": "2 Músicas - Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz) /"
+    "objective": "2 Músicas - Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz) / Meu Ex Amor"
   },
   "Silvani": {
     "name": "Silvani",
@@ -424,7 +424,7 @@
   },
   "Elita": {
     "name": "Elita",
-    "active": true,
+    "active": false,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
@@ -433,7 +433,7 @@
   },
   "João Ângelo": {
     "name": "João Ângelo",
-    "active": true,
+    "active": false,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
@@ -442,7 +442,7 @@
   },
   "Rommel": {
     "name": "Rommel",
-    "active": true,
+    "active": false,
     "videocall": false,
     "tuesday": false,
     "thursday": false,

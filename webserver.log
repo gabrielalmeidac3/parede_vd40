@@ -2730,3 +2730,54 @@ Teste 4: Script finalizado com sucesso!
 
 2025-11-10 11:06:52,289 - INFO - 127.0.0.1 - - [10/Nov/2025 11:06:52] "GET /config.json HTTP/1.1" 200 -
 
+2025-11-10 11:07:00,511 - INFO - 127.0.0.1 - - [10/Nov/2025 11:07:00] "POST /executar-python HTTP/1.1" 200 -
+
+2025-11-10 11:07:00,511 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2025-11-10 19:04:09,759 - INFO - 127.0.0.1 - - [10/Nov/2025 19:04:09] "GET / HTTP/1.1" 200 -
+
+2025-11-10 19:04:10,010 - INFO - 127.0.0.1 - - [10/Nov/2025 19:04:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-11-10 19:04:10,159 - INFO - 127.0.0.1 - - [10/Nov/2025 19:04:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-11-11 11:53:50,592 - INFO - Aplicação iniciada
+2025-11-11 11:53:50,797 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-11-11 12:33:10,563 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:10] "GET / HTTP/1.1" 200 -
+
+2025-11-11 12:33:10,925 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-11-11 12:33:10,936 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-11-11 17:54:09,868 - INFO - 127.0.0.1 - - [11/Nov/2025 17:54:09] "GET / HTTP/1.1" 200 -
+
+2025-11-11 17:54:10,131 - INFO - 127.0.0.1 - - [11/Nov/2025 17:54:10] "GET /styles.css HTTP/1.1" 200 -
+
+2025-11-11 17:54:10,238 - INFO - 127.0.0.1 - - [11/Nov/2025 17:54:10] "GET /script.js HTTP/1.1" 200 -
+
+2025-11-12 11:07:11,734 - INFO - Aplicação iniciada
+2025-11-12 11:07:11,938 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2025-11-12 11:09:03,029 - INFO - 127.0.0.1 - - [12/Nov/2025 11:09:03] "GET / HTTP/1.1" 200 -
+
+2025-11-12 11:09:03,392 - INFO - 127.0.0.1 - - [12/Nov/2025 11:09:03] "GET /styles.css HTTP/1.1" 200 -
+
+2025-11-12 11:09:03,394 - INFO - 127.0.0.1 - - [12/Nov/2025 11:09:03] "GET /script.js HTTP/1.1" 200 -
+
+2025-11-13 10:49:17,410 - INFO - 127.0.0.1 - - [13/Nov/2025 10:49:17] "GET / HTTP/1.1" 200 -
+
+2025-11-13 10:49:17,829 - INFO - 127.0.0.1 - - [13/Nov/2025 10:49:17] "GET /styles.css HTTP/1.1" 200 -
+
+2025-11-13 10:49:17,833 - INFO - 127.0.0.1 - - [13/Nov/2025 10:49:17] "GET /script.js HTTP/1.1" 200 -
+
+2025-11-14 10:49:35,864 - INFO - 127.0.0.1 - - [14/Nov/2025 10:49:35] "GET / HTTP/1.1" 200 -
+
+2025-11-14 10:49:36,252 - INFO - 127.0.0.1 - - [14/Nov/2025 10:49:36] "GET /styles.css HTTP/1.1" 200 -
+
+2025-11-14 10:49:36,257 - INFO - 127.0.0.1 - - [14/Nov/2025 10:49:36] "GET /script.js HTTP/1.1" 200 -
+
+2025-11-14 13:14:27,534 - INFO - 127.0.0.1 - - [14/Nov/2025 13:14:27] "GET / HTTP/1.1" 200 -
+
+2025-11-14 13:14:27,790 - INFO - 127.0.0.1 - - [14/Nov/2025 13:14:27] "GET /styles.css HTTP/1.1" 200 -
+
+2025-11-14 13:14:27,937 - INFO - 127.0.0.1 - - [14/Nov/2025 13:14:27] "GET /script.js HTTP/1.1" 200 -
+
+2025-11-14 13:14:47,362 - INFO - 127.0.0.1 - - [14/Nov/2025 13:14:47] "GET /config.json HTTP/1.1" 200 -
+
