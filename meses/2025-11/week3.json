@@ -21,7 +21,7 @@
     "name": "Alessandro",
     "active": false,
     "videocall": false,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Primeiros acordes e afinação - Guarânia com acordes A, E, D"
@@ -29,9 +29,9 @@
   "Amélia": {
     "name": "Amélia",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Ritmo de Rock / Meu Ex Amor /"
   },
@@ -74,9 +74,9 @@
   "Carlos": {
     "name": "Carlos",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "O Natal Existe / Noite Feliz / Dia Lindo Amado Batista / Sonho Lindo Amado Batista"
   },
@@ -92,9 +92,9 @@
   "Cleide": {
     "name": "Cleide",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Trabalhai e Orai / Fico Feliz / Celebrai"
   },
@@ -102,9 +102,9 @@
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Treinar boate azul / Estrelinha / Rock"
   },
   "Daia": {
@@ -165,9 +165,9 @@
     "name": "Geni",
     "active": true,
     "videocall": false,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "Feiticeira / Cheiro de Shampoo (MUDAR TOM) / Escolher mais uma"
   },
   "Gilmar Delgado": {
@@ -191,8 +191,8 @@
   "Gracie": {
     "name": "Gracie",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
+    "videocall": false,
+    "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
@@ -218,9 +218,9 @@
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Fio de Cabelo / Couro de Boi (G) / Ritmo de Toada"
   },
@@ -336,9 +336,9 @@
     "name": "Paulo Soares",
     "active": true,
     "videocall": false,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "Melhorar acordes G, C, A (melhorar corda 5), D / E (melhorar corda 3), Am - Treinar mais o G nas músicas"
   },
   "Regina": {
@@ -362,9 +362,9 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "2 Músicas - Como Zaqueu / Porque Ele Vive (ver aula encaixe da voz) / Meu Ex Amor"
   },
