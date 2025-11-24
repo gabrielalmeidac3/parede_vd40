@@ -29,9 +29,9 @@
   "Amélia": {
     "name": "Amélia",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Ritmo de Rock / Meu Ex Amor / Canarinho Prisioneiro"
   },
@@ -65,18 +65,18 @@
   "Antônia": {
     "name": "Antônia",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Desespero de uma noite - Rock / Bom dia meu amor - country /"
   },
   "Carlos": {
     "name": "Carlos",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "O Natal Existe / Noite Feliz / Dia Lindo Amado Batista / Sonho Lindo Amado Batista"
   },
@@ -92,8 +92,8 @@
   "Cleide": {
     "name": "Cleide",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
+    "videocall": false,
+    "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Trabalhai e Orai / Fico Feliz / Celebrai / Fazer uma lista das que já sabe"
@@ -102,9 +102,9 @@
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Treinar boate azul / Estrelinha / Rock / Caminhando e Cantando"
   },
   "Daia": {
@@ -164,9 +164,9 @@
   "Geni": {
     "name": "Geni",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "/ Na Hora de Amar (Mudar pra tom D) / Pegar mais uma"
   },
@@ -191,7 +191,7 @@
   "Gracie": {
     "name": "Gracie",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
@@ -219,9 +219,9 @@
     "name": "Ivo Ferreira",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Fio de Cabelo / Couro de Boi (G) / Ritmo de Toada"
   },
   "José Hilton": {
@@ -362,7 +362,7 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
