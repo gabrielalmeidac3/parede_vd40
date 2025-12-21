@@ -29,11 +29,11 @@
   "Amélia": {
     "name": "Amélia",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Ritmo de Rock / Meu Ex Amor / Canarinho Prisioneiro"
+    "objective": "Andorinhas / Encanto e Magia / Ritmo de Rock / Meu Ex Amor"
   },
   "Ana Lucia": {
     "name": "Ana Lucia",
@@ -68,15 +68,15 @@
     "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "Desespero de uma noite - Rock / Bom dia meu amor - country /"
   },
   "Carlos": {
     "name": "Carlos",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "O Natal Existe / Noite Feliz / Dia Lindo Amado Batista / Sonho Lindo Amado Batista"
   },
@@ -92,19 +92,19 @@
   "Cleide": {
     "name": "Cleide",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Trabalhai e Orai / Fico Feliz / Celebrai / Fazer uma lista das que já sabe"
+    "objective": "Alvo Mais que a Nevei / Toada / Valsa / Sossegai - Mandar lista de músicas"
   },
   "Clerionise": {
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "Treinar boate azul / Estrelinha / Rock / Caminhando e Cantando"
   },
   "Daia": {
@@ -164,9 +164,9 @@
   "Geni": {
     "name": "Geni",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "/ Na Hora de Amar (Mudar pra tom D) / Temporal de Amor"
   },
@@ -191,9 +191,9 @@
   "Gracie": {
     "name": "Gracie",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
   },
@@ -219,10 +219,10 @@
     "name": "Ivo Ferreira",
     "active": true,
     "videocall": false,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
-    "objective": "Fio de Cabelo / Couro de Boi (G) / Ritmo de Toada"
+    "sentToGroup": false,
+    "objective": "Telefone Mudo / Couro de Boi (G) / Ritmo de Toada"
   },
   "José Hilton": {
     "name": "José Hilton",
@@ -298,12 +298,12 @@
   },
   "Nadir": {
     "name": "Nadir",
-    "active": false,
+    "active": true,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Tocando em Frente\n\nTem alguém no meu lugar \n\nLuar do sertão"
+    "objective": "Tem alguém no meu lugar - Treinar Pop Rock"
   },
   "Nazir": {
     "name": "Nazir",
@@ -362,11 +362,11 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
+    "videocall": false,
+    "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Procurar mais uma / Meu Ex Amor"
+    "objective": "Princesa / Meu Ex Amor"
   },
   "Silvani": {
     "name": "Silvani",

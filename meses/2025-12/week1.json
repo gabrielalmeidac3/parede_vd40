@@ -31,7 +31,7 @@
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Ritmo de Rock / Meu Ex Amor / Canarinho Prisioneiro"
   },
@@ -68,7 +68,7 @@
     "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "Desespero de uma noite - Rock / Bom dia meu amor - country /"
   },
   "Carlos": {
@@ -93,10 +93,10 @@
     "name": "Cleide",
     "active": true,
     "videocall": true,
-    "tuesday": true,
+    "tuesday": false,
     "thursday": true,
     "sentToGroup": false,
-    "objective": "Trabalhai e Orai / Fico Feliz / Celebrai / Fazer uma lista das que já sabe"
+    "objective": "Alvo Mais que a Nevei / Toada / Valsa / Sossegai"
   },
   "Clerionise": {
     "name": "Clerionise",
@@ -164,9 +164,9 @@
   "Geni": {
     "name": "Geni",
     "active": true,
-    "videocall": true,
-    "tuesday": false,
-    "thursday": true,
+    "videocall": false,
+    "tuesday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "/ Na Hora de Amar (Mudar pra tom D) / Temporal de Amor"
   },
@@ -192,8 +192,8 @@
     "name": "Gracie",
     "active": true,
     "videocall": true,
-    "tuesday": true,
-    "thursday": true,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana"
   },
@@ -221,7 +221,7 @@
     "videocall": false,
     "tuesday": true,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "Fio de Cabelo / Couro de Boi (G) / Ritmo de Toada"
   },
   "José Hilton": {
@@ -298,12 +298,12 @@
   },
   "Nadir": {
     "name": "Nadir",
-    "active": false,
+    "active": true,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Tocando em Frente\n\nTem alguém no meu lugar \n\nLuar do sertão"
+    "objective": "Tem alguém no meu lugar - Treinar Pop Rock"
   },
   "Nazir": {
     "name": "Nazir",
@@ -362,9 +362,9 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": true,
     "sentToGroup": false,
     "objective": "Procurar mais uma / Meu Ex Amor"
   },
