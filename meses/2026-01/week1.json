@@ -7,7 +7,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Pegar as aulas pra iniciantes e fazer os exercícios - E afinar o violão",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Adilson": {
     "name": "Adilson",
@@ -17,27 +18,30 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Aprender a tocar de ouvido",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Alessandro": {
     "name": "Alessandro",
-    "active": false,
+    "active": true,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Primeiros acordes e afinação - Guarânia com acordes A, E, D",
-    "apresentacaoSemanal": false
+    "objective": "Primeiros acordes e afinação - Guarânia com acordes A, E, D / Telefone mudo",
+    "apresentacaoSemanal": false,
+    "presentationDay": "Quinta"
   },
   "Amélia": {
     "name": "Amélia",
     "active": true,
     "videocall": true,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Andorinhas / Encanto e Magia / Ritmo de Rock / Meu Ex Amor",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": "Quinta"
   },
   "Ana Lucia": {
     "name": "Ana Lucia",
@@ -47,7 +51,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Aprender os 3 primeiros acordes e afinar o violão",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Analu": {
     "name": "Analu",
@@ -57,7 +62,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "André Correia": {
     "name": "André Correia",
@@ -67,27 +73,30 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Resolver música Como Zaqueu e escolher uma mais Pop Rockza",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Antônia": {
     "name": "Antônia",
     "active": true,
     "videocall": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Desespero de uma noite - Rock / Bom dia meu amor - country /",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Carlos": {
     "name": "Carlos",
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "O Natal Existe / Noite Feliz / Dia Lindo Amado Batista / Sonho Lindo Amado Batista",
-    "apresentacaoSemanal": false
+    "objective": "Oh Jesus me Ama 169 / Naquela Mesa /",
+    "apresentacaoSemanal": true,
+    "presentationDay": "Terça"
   },
   "Célia": {
     "name": "Célia",
@@ -97,27 +106,30 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Cleide": {
     "name": "Cleide",
     "active": true,
     "videocall": true,
     "tuesday": true,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Os que confiam no Senhor / Dia de Sol",
-    "apresentacaoSemanal": false
+    "objective": "Fica Jesus / Dia de Sol",
+    "apresentacaoSemanal": true,
+    "presentationDay": "Terça"
   },
   "Clerionise": {
     "name": "Clerionise",
     "active": true,
     "videocall": false,
-    "tuesday": true,
-    "thursday": true,
+    "tuesday": false,
+    "thursday": false,
     "sentToGroup": true,
-    "objective": "Coração Sertanejo (Chitãozinho e Xororó) / Caminhando e Cantando / Aprender ritmo de Rock",
-    "apresentacaoSemanal": false
+    "objective": "Outra em Guarânia / Por Mil Caminhos / Aprender ritmo de Rock",
+    "apresentacaoSemanal": true,
+    "presentationDay": "Terça"
   },
   "Daia": {
     "name": "Daia",
@@ -127,7 +139,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "ddd": {
     "name": "ddd",
@@ -137,7 +150,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Denilson": {
     "name": "Denilson",
@@ -147,7 +161,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Treinar o F nas músicas e fazer o treino de troca",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Dete Mendes": {
     "name": "Dete Mendes",
@@ -157,7 +172,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Vai passar e Dia de Sol / Depois escolher outras duas",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Eliana Nascimento": {
     "name": "Eliana Nascimento",
@@ -167,7 +183,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Treinar troca de acordes",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Elito": {
     "name": "Elito",
@@ -177,17 +194,19 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Aprender a afinar o violão e iniciar a música Porque Ele Vive",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Geni": {
     "name": "Geni",
     "active": true,
     "videocall": false,
     "tuesday": false,
-    "thursday": true,
-    "sentToGroup": true,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": "/ Na Hora de Amar (Mudar pra tom D) / Temporal de Amor",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Gilmar Delgado": {
     "name": "Gilmar Delgado",
@@ -197,7 +216,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Tocando em frente",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Gilson": {
     "name": "Gilson",
@@ -207,17 +227,19 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Telefone Mudo, Cabecinha",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Gracie": {
     "name": "Gracie",
     "active": true,
     "videocall": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
     "objective": "Não se reprima - Menudos / A Desconhecida - Fernando Mendes / Praticar pestana",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Heloá": {
     "name": "Heloá",
@@ -227,7 +249,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Isabel": {
     "name": "Isabel",
@@ -237,17 +260,19 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
     "active": true,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": true,
+    "videocall": true,
+    "tuesday": true,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Telefone Mudo / Couro de Boi (G) / Ritmo de Toada",
-    "apresentacaoSemanal": false
+    "objective": "Pop Rock / No dia que eu saí de casa",
+    "apresentacaoSemanal": true,
+    "presentationDay": "Quinta"
   },
   "José Hilton": {
     "name": "José Hilton",
@@ -257,7 +282,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Cabecinha no ombro - encaixe da voz",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Léo Silva": {
     "name": "Léo Silva",
@@ -267,7 +293,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Escolher uma música nova pra pegar essa semana - 28 jul",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Luciene": {
     "name": "Luciene",
@@ -277,7 +304,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Maguida": {
     "name": "Maguida",
@@ -287,7 +315,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Márcia Maria Ribeiro": {
     "name": "Márcia Maria Ribeiro",
@@ -297,7 +326,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Cavalo Preto",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Maria da Luz": {
     "name": "Maria da Luz",
@@ -307,7 +337,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Ver aulas pra iniciantes (acordes e afinação)",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Marina": {
     "name": "Marina",
@@ -317,7 +348,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Mary Ramos": {
     "name": "Mary Ramos",
@@ -327,17 +359,19 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Pegar mais músicas em Guarânia - Aprender o ritmo de Pop Rock",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Nadir": {
     "name": "Nadir",
-    "active": false,
-    "videocall": false,
+    "active": true,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Tem alguém no meu lugar - Treinar Pop Rock",
-    "apresentacaoSemanal": false
+    "objective": "Eduardo Costa - Tem alguém no Seu Lugar / Boate Azul / Pop Rock /",
+    "apresentacaoSemanal": false,
+    "presentationDay": "Terça"
   },
   "Nazir": {
     "name": "Nazir",
@@ -347,7 +381,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": "Domingo"
   },
   "Neusa": {
     "name": "Neusa",
@@ -357,7 +392,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Paulo Ricardo": {
     "name": "Paulo Ricardo",
@@ -367,7 +403,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Porque Ele Vive - Tocar não precisa cantar ainda",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Paulo Soares": {
     "name": "Paulo Soares",
@@ -377,7 +414,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Melhorar acordes G, C, A (melhorar corda 5), D / E (melhorar corda 3), Am - Treinar mais o G nas músicas",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Regina": {
     "name": "Regina",
@@ -387,7 +425,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Samuel Rosa": {
     "name": "Samuel Rosa",
@@ -397,17 +436,19 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Verificar ritmos se estão corretos",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": false,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": true,
-    "objective": "Princesa / Meu Ex Amor",
-    "apresentacaoSemanal": false
+    "videocall": true,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "Boate Azul / Chalana",
+    "apresentacaoSemanal": true,
+    "presentationDay": "Terça"
   },
   "Silvani": {
     "name": "Silvani",
@@ -417,7 +458,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Soeli Lúcia": {
     "name": "Soeli Lúcia",
@@ -427,7 +469,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Aprender o ritmo de vanera pra música Luz de Tupã",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "teste": {
     "name": "teste",
@@ -437,7 +480,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "teste",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "teste2": {
     "name": "teste2",
@@ -447,7 +491,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "teste",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Valéria": {
     "name": "Valéria",
@@ -457,7 +502,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Wanderson": {
     "name": "Wanderson",
@@ -467,7 +513,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Afinar o violão - Escolher uma música pra tocar inteira",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Elita": {
     "name": "Elita",
@@ -477,7 +524,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "No toca fita do meu carro / Escolher mais uma música",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "João Ângelo": {
     "name": "João Ângelo",
@@ -487,7 +535,8 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Aprender a tocar bem o ritmo de rock",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   },
   "Rommel": {
     "name": "Rommel",
@@ -497,6 +546,7 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Cadê você / Mais uma no rock / Aula de como deixar o acorde bonito (Aulas pra iniciantes)",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": false,
+    "presentationDay": ""
   }
 }

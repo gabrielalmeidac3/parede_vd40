@@ -3162,3 +3162,166 @@ Teste 4: Script finalizado com sucesso!
 
 2026-01-06 14:25:56,076 - INFO - 127.0.0.1 - - [06/Jan/2026 14:25:56] "GET /config.json HTTP/1.1" 200 -
 
+2026-01-06 14:26:03,916 - INFO - 127.0.0.1 - - [06/Jan/2026 14:26:03] "POST /executar-python HTTP/1.1" 200 -
+
+2026-01-06 14:26:03,916 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2026-01-06 15:31:26,115 - INFO - 127.0.0.1 - - [06/Jan/2026 15:31:26] "GET / HTTP/1.1" 200 -
+
+2026-01-06 15:31:26,384 - INFO - 127.0.0.1 - - [06/Jan/2026 15:31:26] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-06 15:31:26,535 - INFO - 127.0.0.1 - - [06/Jan/2026 15:31:26] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-06 18:23:21,291 - INFO - 127.0.0.1 - - [06/Jan/2026 18:23:21] "GET / HTTP/1.1" 200 -
+
+2026-01-06 18:23:21,556 - INFO - 127.0.0.1 - - [06/Jan/2026 18:23:21] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-06 18:23:21,635 - INFO - 127.0.0.1 - - [06/Jan/2026 18:23:21] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 11:46:37,407 - INFO - Aplicação iniciada
+2026-01-07 11:46:37,624 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-07 13:02:00,657 - INFO - 127.0.0.1 - - [07/Jan/2026 13:02:00] "GET / HTTP/1.1" 200 -
+
+2026-01-07 13:02:00,775 - INFO - 127.0.0.1 - - [07/Jan/2026 13:02:00] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 13:02:01,038 - INFO - 127.0.0.1 - - [07/Jan/2026 13:02:01] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 13:39:24,814 - INFO - 127.0.0.1 - - [07/Jan/2026 13:39:24] "GET / HTTP/1.1" 200 -
+
+2026-01-07 13:39:25,082 - INFO - 127.0.0.1 - - [07/Jan/2026 13:39:25] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 13:39:25,193 - INFO - 127.0.0.1 - - [07/Jan/2026 13:39:25] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 13:40:45,165 - INFO - 127.0.0.1 - - [07/Jan/2026 13:40:45] "OPTIONS / HTTP/1.1" 200 -
+
+2026-01-07 13:40:45,204 - INFO - 127.0.0.1 - - [07/Jan/2026 13:40:45] code 501, message Unsupported method ('PROPFIND')
+
+2026-01-07 13:40:45,204 - INFO - 127.0.0.1 - - [07/Jan/2026 13:40:45] "PROPFIND / HTTP/1.1" 501 -
+
+2026-01-07 13:40:45,250 - INFO - 127.0.0.1 - - [07/Jan/2026 13:40:45] code 501, message Unsupported method ('PROPFIND')
+
+2026-01-07 13:40:45,250 - INFO - 127.0.0.1 - - [07/Jan/2026 13:40:45] "PROPFIND / HTTP/1.1" 501 -
+
+2026-01-07 13:40:45,287 - INFO - 127.0.0.1 - - [07/Jan/2026 13:40:45] code 501, message Unsupported method ('PROPFIND')
+
+2026-01-07 13:40:45,288 - INFO - 127.0.0.1 - - [07/Jan/2026 13:40:45] "PROPFIND / HTTP/1.1" 501 -
+
+2026-01-07 14:18:19,954 - INFO - 127.0.0.1 - - [07/Jan/2026 14:18:19] "GET / HTTP/1.1" 200 -
+
+2026-01-07 14:18:20,228 - INFO - 127.0.0.1 - - [07/Jan/2026 14:18:20] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 14:18:20,316 - INFO - 127.0.0.1 - - [07/Jan/2026 14:18:20] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 14:23:27,490 - INFO - 127.0.0.1 - - [07/Jan/2026 14:23:27] "GET / HTTP/1.1" 200 -
+
+2026-01-07 14:23:27,759 - INFO - 127.0.0.1 - - [07/Jan/2026 14:23:27] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 14:23:27,822 - INFO - 127.0.0.1 - - [07/Jan/2026 14:23:27] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 15:03:30,875 - INFO - 127.0.0.1 - - [07/Jan/2026 15:03:30] "GET / HTTP/1.1" 200 -
+
+2026-01-07 15:03:31,114 - INFO - 127.0.0.1 - - [07/Jan/2026 15:03:31] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 15:03:31,251 - INFO - 127.0.0.1 - - [07/Jan/2026 15:03:31] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 15:05:08,642 - INFO - 127.0.0.1 - - [07/Jan/2026 15:05:08] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 15:05:08,657 - INFO - 127.0.0.1 - - [07/Jan/2026 15:05:08] code 404, message File not found
+
+2026-01-07 15:05:08,657 - INFO - 127.0.0.1 - - [07/Jan/2026 15:05:08] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-01-07 15:13:02,463 - INFO - 127.0.0.1 - - [07/Jan/2026 15:13:02] "GET / HTTP/1.1" 200 -
+
+2026-01-07 15:13:02,717 - INFO - 127.0.0.1 - - [07/Jan/2026 15:13:02] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 15:13:02,855 - INFO - 127.0.0.1 - - [07/Jan/2026 15:13:02] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 15:13:02,857 - INFO - 127.0.0.1 - - [07/Jan/2026 15:13:02] code 404, message File not found
+
+2026-01-07 15:13:02,857 - INFO - 127.0.0.1 - - [07/Jan/2026 15:13:02] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-01-07 18:08:40,891 - INFO - 127.0.0.1 - - [07/Jan/2026 18:08:40] "GET / HTTP/1.1" 200 -
+
+2026-01-07 18:08:41,153 - INFO - 127.0.0.1 - - [07/Jan/2026 18:08:41] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 18:08:41,308 - INFO - 127.0.0.1 - - [07/Jan/2026 18:08:41] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-07 18:10:22,362 - INFO - 127.0.0.1 - - [07/Jan/2026 18:10:22] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 18:10:22,379 - INFO - 127.0.0.1 - - [07/Jan/2026 18:10:22] code 404, message File not found
+
+2026-01-07 18:10:22,379 - INFO - 127.0.0.1 - - [07/Jan/2026 18:10:22] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-01-07 18:15:24,066 - INFO - Servidor parado
+2026-01-07 18:15:55,081 - INFO - Aplicação iniciada
+2026-01-07 18:15:55,284 - INFO - Servidor iniciado na porta 8010 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-07 18:16:08,301 - INFO - Servidor parado
+2026-01-07 18:16:21,382 - INFO - Aplicação iniciada
+2026-01-07 18:16:21,587 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-07 18:16:35,361 - INFO - 127.0.0.1 - - [07/Jan/2026 18:16:35] "GET / HTTP/1.1" 200 -
+
+2026-01-07 18:16:35,473 - INFO - 127.0.0.1 - - [07/Jan/2026 18:16:35] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-07 18:16:35,730 - INFO - 127.0.0.1 - - [07/Jan/2026 18:16:35] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-08 10:16:43,870 - INFO - Aplicação iniciada
+2026-01-08 10:16:44,075 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-08 13:38:45,391 - INFO - 127.0.0.1 - - [08/Jan/2026 13:38:45] "GET / HTTP/1.1" 200 -
+
+2026-01-08 13:38:45,504 - INFO - 127.0.0.1 - - [08/Jan/2026 13:38:45] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-08 13:38:45,788 - INFO - 127.0.0.1 - - [08/Jan/2026 13:38:45] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-08 15:26:03,033 - INFO - 127.0.0.1 - - [08/Jan/2026 15:26:03] "GET / HTTP/1.1" 200 -
+
+2026-01-08 15:26:03,283 - INFO - 127.0.0.1 - - [08/Jan/2026 15:26:03] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-08 15:26:03,408 - INFO - 127.0.0.1 - - [08/Jan/2026 15:26:03] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-09 10:37:39,770 - INFO - Aplicação iniciada
+2026-01-09 10:37:39,984 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-09 12:08:52,126 - INFO - 127.0.0.1 - - [09/Jan/2026 12:08:52] "GET / HTTP/1.1" 200 -
+
+2026-01-09 12:08:52,253 - INFO - 127.0.0.1 - - [09/Jan/2026 12:08:52] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-09 12:08:52,526 - INFO - 127.0.0.1 - - [09/Jan/2026 12:08:52] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-09 17:17:00,763 - INFO - 127.0.0.1 - - [09/Jan/2026 17:17:00] "GET / HTTP/1.1" 200 -
+
+2026-01-09 17:17:01,043 - INFO - 127.0.0.1 - - [09/Jan/2026 17:17:01] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-09 17:17:01,207 - INFO - 127.0.0.1 - - [09/Jan/2026 17:17:01] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-10 10:48:12,106 - INFO - Aplicação iniciada
+2026-01-10 10:48:12,311 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-11 11:19:40,004 - INFO - Aplicação iniciada
+2026-01-11 11:19:40,212 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-11 21:08:30,204 - INFO - 127.0.0.1 - - [11/Jan/2026 21:08:30] "GET / HTTP/1.1" 200 -
+
+2026-01-11 21:08:30,334 - INFO - 127.0.0.1 - - [11/Jan/2026 21:08:30] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-11 21:08:30,606 - INFO - 127.0.0.1 - - [11/Jan/2026 21:08:30] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-11 21:17:12,120 - INFO - 127.0.0.1 - - [11/Jan/2026 21:17:12] "GET / HTTP/1.1" 200 -
+
+2026-01-11 21:17:12,385 - INFO - 127.0.0.1 - - [11/Jan/2026 21:17:12] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-11 21:17:12,513 - INFO - 127.0.0.1 - - [11/Jan/2026 21:17:12] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-11 21:17:55,674 - INFO - 127.0.0.1 - - [11/Jan/2026 21:17:55] "GET / HTTP/1.1" 200 -
+
+2026-01-11 21:17:56,043 - INFO - 127.0.0.1 - - [11/Jan/2026 21:17:56] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-11 21:17:56,044 - INFO - 127.0.0.1 - - [11/Jan/2026 21:17:56] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-11 21:28:54,181 - INFO - 127.0.0.1 - - [11/Jan/2026 21:28:54] "GET / HTTP/1.1" 200 -
+
+2026-01-11 21:28:54,436 - INFO - 127.0.0.1 - - [11/Jan/2026 21:28:54] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-11 21:28:54,548 - INFO - 127.0.0.1 - - [11/Jan/2026 21:28:54] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-11 21:35:18,501 - INFO - 127.0.0.1 - - [11/Jan/2026 21:35:18] "GET / HTTP/1.1" 200 -
+
+2026-01-11 21:35:18,740 - INFO - 127.0.0.1 - - [11/Jan/2026 21:35:18] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-11 21:35:18,880 - INFO - 127.0.0.1 - - [11/Jan/2026 21:35:18] "GET /script.js HTTP/1.1" 200 -
+

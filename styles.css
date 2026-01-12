@@ -989,3 +989,26 @@ html[aluno-page] .student-details {
 .objective-div:hover {
     background: rgba(74, 172, 254, 0.3) !important;
 }
+
+/* Presentation day dropdown styling */
+.presentation-day-select {
+    background: #2d3748 !important;
+    color: white !important;
+    border: 1px solid #4a5568 !important;
+    border-radius: 8px !important;
+    padding: 4px 8px !important;
+    font-size: 0.9em !important;
+    min-width: 130px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.presentation-day-select:hover {
+    background: rgba(77, 83, 72, 0.8) !important;
+    border-color: #4facfe !important;
+}
+
+.presentation-day-select:focus {
+    outline: 2px solid #4facfe !important;
+    outline-offset: 1px !important;
+}

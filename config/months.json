@@ -1,5 +1,11 @@
 [
   {
+    "id": "2026-01",
+    "name": "Janeiro de 2026",
+    "monthNumber": 1,
+    "year": 2026
+  },
+  {
     "id": "2025-12",
     "name": "Dezembro de 2025",
     "monthNumber": 12,
