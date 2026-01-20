@@ -2611,34 +2611,34 @@ async function updateLastUploadTime() {
 
 document.getElementById('uploadGithubBtn').addEventListener('click', async () => {
     showSaveStatus('saving', 'Upando para GitHub...');
-    
+
     try {
         const configResponse = await fetch('/config.json');
         const config = await configResponse.json();
         const serverPort = config.port || window.location.port || 8005;
-        
+
         const response = await fetch(`http://localhost:${serverPort}/executar-python`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ arquivo: 'subir_arquivos_parede.py' })
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-        
+
         const result = await response.json();
-        
+
         if (result.sucesso) {
             showSaveStatus('success', '✅ Upload concluído com sucesso!');
-            
+
             // Aguardar o arquivo ser atualizado
             await new Promise(resolve => setTimeout(resolve, 500));
-            
+
             // Invalidar cache e recarregar
             invalidateFileCache('ultima_execucao.json');
             const uploadData = await loadJsonFile('ultima_execucao.json', null, true);
-            
+
             if (uploadData?.ultima_execucao) {
                 // Sincronizar timestamps
                 const uploadDate = new Date(uploadData.ultima_execucao.replace(' às ', ' '));
@@ -2646,16 +2646,16 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
                     ultima_modificacao: uploadData.ultima_execucao,
                     timestamp_unix: uploadDate.getTime()
                 };
-                
+
                 const configHandle = await directoryHandle.getDirectoryHandle('config', { create: true });
                 const fileHandle = await configHandle.getFileHandle('local_modification.json', { create: true });
                 const writable = await fileHandle.createWritable({ keepExistingData: false });
                 await writable.write(JSON.stringify(syncData, null, 2));
                 await writable.close();
-                
+
                 invalidateFileCache('local_modification.json');
             }
-            
+
             // Atualizar visual
             await updateLastUploadTime();
         } else {
@@ -2665,5 +2665,30 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
     } catch (error) {
         showSaveStatus('error', '❌ Erro ao conectar ao servidor!');
         console.error('Erro completo:', error);
+    }
+});
+
+// Modal functionality
+const modal = document.getElementById('presentationsModal');
+const openBtn = document.getElementById('openPresentationsBtn');
+const closeBtn = document.querySelector('.close');
+
+openBtn.onclick = function() {
+    modal.style.display = 'block';
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        modal.style.display = 'none';
     }
 });

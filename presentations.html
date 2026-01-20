@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentações Semanais - VD40</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #4facfe, #0275c3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .no-gradient {
+            color: white;
+        }
+
+        select {
+            background: #2d3748;
+            color: white;
+            border: 1px solid #4a5568;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            height: calc(100vh - 120px);
+            padding: 10px;
+        }
+
+        .day-column {
+            background: rgba(151, 151, 183, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .day-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 12px 12px 0 0;
+            flex-shrink: 0;
+        }
+
+        .day-content {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+        }
+
+        .student-card {
+            background: rgba(74, 172, 254, 0.1);
+            border: 1px solid rgba(74, 172, 254, 0.3);
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 0.9em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .student-name {
+            font-weight: bold;
+            color: #4facfe;
+            margin-bottom: 4px;
+        }
+
+        .student-objective {
+            font-size: 0.8em;
+            color: #cccccc;
+            line-height: 1.3;
+        }
+
+        .empty-day {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #888;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-controls {
+                justify-content: center;
+            }
+
+            .week-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+                gap: 10px;
+            }
+
+            .day-column {
+                min-height: 200px;
+            }
+
+            .day-header {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            .week-grid {
+                padding: 5px;
+                gap: 8px;
+            }
+
+            .day-header {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+
+            .day-content {
+                padding: 8px;
+                gap: 6px;
+            }
+
+            .student-card {
+                padding: 6px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><span class="gradient-text">Apresentações Semanais</span> <span class="no-gradient">🎸</span></h1>
+            <div class="header-controls">
+                <select id="monthSelect">
+                    <option value="">Carregando...</option>
+                </select>
+                <select id="weekSelect">
+                    <option value="1">Semana 1</option>
+                    <option value="2">Semana 2</option>
+                    <option value="3">Semana 3</option>
+                    <option value="4">Semana 4</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="week-grid">
+            <div class="day-column">
+                <div class="day-header">Domingo</div>
+                <div class="day-content" id="sunday-list">
+                    <div class="empty-day">Nenhuma apresentação</div>
+                </div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Segunda</div>
+                <div class="day-content" id="monday-list">
+                    <div class="empty-day">Nenhuma apresentação</div>
+                </div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Terça</div>
+                <div class="day-content" id="tuesday-list">
+                    <div class="empty-day">Nenhuma apresentação</div>
+                </div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Quarta</div>
+                <div class="day-content" id="wednesday-list">
+                    <div class="empty-day">Nenhuma apresentação</div>
+                </div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Quinta</div>
+                <div class="day-content" id="thursday-list">
+                    <div class="empty-day">Nenhuma apresentação</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dayMap = {
+            'Domingo': 'sunday-list',
+            'Segunda': 'monday-list',
+            'Terça': 'tuesday-list',
+            'Quarta': 'wednesday-list',
+            'Quinta': 'thursday-list'
+        };
+
+        let currentMonth = '';
+        let currentWeek = 1;
+        let monthsData = [];
+        let weekData = {};
+
+        async function loadMonths() {
+            try {
+                const response = await fetch('config/months.json');
+                monthsData = await response.json();
+                populateMonthSelect();
+            } catch (error) {
+                console.error('Erro ao carregar meses:', error);
+            }
+        }
+
+        async function loadDefaultWeek() {
+            for (let w = 4; w >= 1; w--) {
+                try {
+                    const response = await fetch(`meses/${currentMonth}/week${w}.json`);
+                    const data = await response.json();
+                    const hasPresentations = Object.values(data).some(student => student.active && student.presentationDay && student.presentationDay.trim() !== '');
+                    if (hasPresentations) {
+                        currentWeek = w;
+                        document.getElementById('weekSelect').value = w;
+                        loadWeekData(currentMonth, w);
+                        return;
+                    }
+                } catch (e) {
+                    // continue to next week
+                }
+            }
+            // If no week has presentations, default to week 1
+            currentWeek = 1;
+            document.getElementById('weekSelect').value = 1;
+            loadWeekData(currentMonth, 1);
+        }
+
+        function populateMonthSelect() {
+            const monthSelect = document.getElementById('monthSelect');
+            monthSelect.innerHTML = '';
+
+            // Sort months by year and month descending
+            monthsData.sort((a, b) => {
+                if (a.year !== b.year) return b.year - a.year;
+                return b.monthNumber - a.monthNumber;
+            });
+
+            monthsData.forEach(month => {
+                const option = document.createElement('option');
+                option.value = month.id;
+                option.textContent = month.name;
+                monthSelect.appendChild(option);
+            });
+
+            // Set current month to the first (most recent)
+            if (monthsData.length > 0) {
+                currentMonth = monthsData[0].id;
+                monthSelect.value = currentMonth;
+                loadDefaultWeek();
+            }
+        }
+
+        async function loadWeekData(month, week) {
+            try {
+                const response = await fetch(`meses/${month}/week${week}.json`);
+                weekData = await response.json();
+                displayPresentations();
+            } catch (error) {
+                console.error('Erro ao carregar dados da semana:', error);
+                // Clear all lists
+                Object.values(dayMap).forEach(listId => {
+                    const list = document.getElementById(listId);
+                    list.innerHTML = '<div class="empty-day">Nenhuma apresentação</div>';
+                });
+            }
+        }
+
+        function displayPresentations() {
+            // Clear all lists
+            Object.values(dayMap).forEach(listId => {
+                const list = document.getElementById(listId);
+                list.innerHTML = '';
+            });
+
+            const studentsByDay = {};
+
+            // Initialize empty arrays for each day
+            Object.keys(dayMap).forEach(day => {
+                studentsByDay[day] = [];
+            });
+
+            // Group students by presentation day
+            Object.values(weekData).forEach(student => {
+                if (student.active && student.presentationDay && student.presentationDay.trim() !== '') {
+                    const day = student.presentationDay;
+                    if (studentsByDay[day]) {
+                        studentsByDay[day].push(student);
+                    }
+                }
+            });
+
+            // Update day headers with student counts
+            const headers = document.querySelectorAll('.day-header');
+            Object.entries(dayMap).forEach(([dayName, listId], index) => {
+                const count = studentsByDay[dayName] ? studentsByDay[dayName].length : 0;
+                headers[index].textContent = `${dayName} (${count})`;
+            });
+
+            // Display students for each day
+            Object.entries(dayMap).forEach(([dayName, listId]) => {
+                const list = document.getElementById(listId);
+                const students = studentsByDay[dayName] || [];
+
+                if (students.length === 0) {
+                    list.innerHTML = '<div class="empty-day">Nenhuma apresentação</div>';
+                } else {
+                    students.forEach(student => {
+                        const studentCard = document.createElement('div');
+                        studentCard.className = 'student-card';
+                        studentCard.innerHTML = `
+                            <div class="student-name">${student.name}</div>
+                            <div class="student-objective">${student.objective || 'Sem objetivo definido'}</div>
+                        `;
+                        list.appendChild(studentCard);
+                    });
+                }
+            });
+        }
+
+        function loadCurrentWeek() {
+            const monthSelect = document.getElementById('monthSelect');
+            const weekSelect = document.getElementById('weekSelect');
+
+            currentMonth = monthSelect.value;
+            currentWeek = parseInt(weekSelect.value);
+
+            loadWeekData(currentMonth, currentWeek);
+        }
+
+        // Event listeners
+        document.getElementById('monthSelect').addEventListener('change', loadCurrentWeek);
+        document.getElementById('weekSelect').addEventListener('change', loadCurrentWeek);
+
+        // Initialize
+        loadMonths();
+    </script>
+</body>
+</html>

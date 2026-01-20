@@ -41,7 +41,7 @@
     "sentToGroup": false,
     "objective": "Andorinhas / Encanto e Magia / Ritmo de Rock",
     "presentationDay": "Quinta",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "Ana Lucia": {
     "name": "Ana Lucia",
@@ -67,13 +67,13 @@
   },
   "André Correia": {
     "name": "André Correia",
-    "active": false,
-    "videocall": false,
+    "active": true,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Resolver música Como Zaqueu e escolher uma mais Pop Rockza",
-    "presentationDay": "",
+    "objective": "Resolver música Como Zaqueu e escolher uma mais Pop Rock",
+    "presentationDay": "Quinta",
     "apresentacaoSemanal": false
   },
   "Antônia": {
@@ -90,13 +90,13 @@
   "Carlos": {
     "name": "Carlos",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": false,
+    "sentToGroup": true,
     "objective": "Naquela Mesa / Aquela Parede",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "Célia": {
     "name": "Célia",
@@ -118,7 +118,7 @@
     "sentToGroup": false,
     "objective": "Fica Jesus / Dia de Sol",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "Clerionise": {
     "name": "Clerionise",
@@ -126,10 +126,10 @@
     "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "Índia / Por Mil Caminhos / Aprender ritmo de Rock Procurar música em Rock Pode ser a princesa amado batista",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "Daia": {
     "name": "Daia",
@@ -162,7 +162,7 @@
     "sentToGroup": false,
     "objective": "Treinar o F nas músicas e fazer o treino de troca",
     "presentationDay": "Quinta",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "Dete Mendes": {
     "name": "Dete Mendes",
@@ -203,7 +203,7 @@
     "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
+    "sentToGroup": false,
     "objective": "/ Na Hora de Amar (Mudar pra tom D) / Temporal de Amor",
     "presentationDay": "",
     "apresentacaoSemanal": false
@@ -221,12 +221,12 @@
   },
   "Gilson": {
     "name": "Gilson",
-    "active": false,
-    "videocall": false,
+    "active": true,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
-    "objective": "Telefone Mudo, Cabecinha",
+    "objective": "Estrada da Vida /",
     "presentationDay": "",
     "apresentacaoSemanal": false
   },
@@ -266,13 +266,13 @@
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Pop Rock / No dia que eu saí de casa",
     "presentationDay": "Quinta",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "José Hilton": {
     "name": "José Hilton",
@@ -376,13 +376,13 @@
   "Nazir": {
     "name": "Nazir",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "",
     "presentationDay": "Domingo",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "Neusa": {
     "name": "Neusa",
@@ -442,13 +442,13 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Boate Azul / Chalana",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   },
   "Silvani": {
     "name": "Silvani",
@@ -552,10 +552,10 @@
   "Germano": {
     "name": "Germano",
     "active": true,
-    "videocall": true,
-    "sentToGroup": false,
+    "videocall": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": "É o Amor - Zezé Di Carmargo / Pop Rock",
     "presentationDay": "Quinta",
     "apresentacaoSemanal": false
@@ -564,11 +564,11 @@
     "name": "Luiz Tavares",
     "active": true,
     "videocall": true,
-    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "sentToGroup": false,
     "objective": "Música Filha - Tom G com capo /",
     "presentationDay": "Quinta",
-    "apresentacaoSemanal": true
+    "apresentacaoSemanal": false
   }
 }
