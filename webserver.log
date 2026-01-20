@@ -3553,3 +3553,6 @@ Teste 4: Script finalizado com sucesso!
 
 2026-01-20 13:31:26,609 - INFO - 127.0.0.1 - - [20/Jan/2026 13:31:26] "GET /config.json HTTP/1.1" 200 -
 
+2026-01-20 13:31:34,950 - INFO - 127.0.0.1 - - [20/Jan/2026 13:31:34] "POST /executar-python HTTP/1.1" 200 -
+
+2026-01-20 13:31:34,950 - INFO - Script subir_arquivos_parede.py executado, código: 0
