@@ -3556,3 +3556,43 @@ Teste 4: Script finalizado com sucesso!
 2026-01-20 13:31:34,950 - INFO - 127.0.0.1 - - [20/Jan/2026 13:31:34] "POST /executar-python HTTP/1.1" 200 -
 
 2026-01-20 13:31:34,950 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2026-01-20 19:24:39,696 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:39] "GET / HTTP/1.1" 200 -
+
+2026-01-20 19:24:39,948 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:39] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-20 19:24:40,129 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:40] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-20 19:24:40,200 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:40] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-20 19:24:40,225 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:40] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-20 19:24:40,619 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:40] code 404, message File not found
+
+2026-01-20 19:24:40,619 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:40] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-20 19:24:40,897 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:40] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-20 19:24:41,027 - INFO - 127.0.0.1 - - [20/Jan/2026 19:24:41] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-21 12:27:37,695 - INFO - Aplicação iniciada
+2026-01-21 12:27:37,908 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-21 12:45:07,738 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:07] "GET / HTTP/1.1" 200 -
+
+2026-01-21 12:45:07,854 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:07] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-21 12:45:08,134 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:08] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-21 12:45:08,172 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:08] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-21 12:45:08,184 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:08] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-21 12:45:08,554 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:08] code 404, message File not found
+
+2026-01-21 12:45:08,554 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:08] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-21 12:45:08,816 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:08] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-21 12:45:08,870 - INFO - 127.0.0.1 - - [21/Jan/2026 12:45:08] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-21 13:44:21,848 - INFO - 127.0.0.1 - - [21/Jan/2026 13:44:21] "GET /config.json HTTP/1.1" 200 -
+

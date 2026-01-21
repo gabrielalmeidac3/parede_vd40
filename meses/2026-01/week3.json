@@ -90,11 +90,11 @@
   "Carlos": {
     "name": "Carlos",
     "active": true,
-    "videocall": false,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": true,
-    "objective": "Naquela Mesa / Aquela Parede",
+    "sentToGroup": false,
+    "objective": "Naquela Mesa /Luz da minha vida / Castelo de Amor",
     "presentationDay": "Terça",
     "apresentacaoSemanal": false
   },
@@ -126,10 +126,10 @@
     "videocall": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": false,
+    "sentToGroup": true,
     "objective": "Índia / Por Mil Caminhos / Aprender ritmo de Rock Procurar música em Rock Pode ser a princesa amado batista",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": true
   },
   "Daia": {
     "name": "Daia",
@@ -442,13 +442,13 @@
   "Sidnei": {
     "name": "Sidnei",
     "active": true,
-    "videocall": false,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Boate Azul / Chalana",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": true
   },
   "Silvani": {
     "name": "Silvani",
