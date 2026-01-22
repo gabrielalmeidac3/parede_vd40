@@ -3643,25 +3643,21 @@ Teste 4: Script finalizado com sucesso!
 
 2026-01-22 12:38:57,165 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:57] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
 
-2026-01-22 12:53:14,587 - INFO - Aplicação iniciada
-2026-01-22 12:53:14,789 - INFO - Servidor iniciado na porta 8006 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json - OTIMIZADO
-2026-01-22 12:53:36,623 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:36] "GET / HTTP/1.1" 200 -
+2026-01-22 12:54:06,394 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:06] "GET / HTTP/1.1" 200 -
 
-2026-01-22 12:53:36,771 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:36] "GET /styles.css HTTP/1.1" 200 -
+2026-01-22 12:54:06,659 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:06] "GET /styles.css HTTP/1.1" 200 -
 
-2026-01-22 12:53:37,013 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /presentations.html HTTP/1.1" 200 -
+2026-01-22 12:54:06,738 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:06] "GET /presentations.html HTTP/1.1" 200 -
 
-2026-01-22 12:53:37,015 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /script.js HTTP/1.1" 200 -
+2026-01-22 12:54:06,739 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:06] "GET /script.js HTTP/1.1" 200 -
 
-2026-01-22 12:53:37,037 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /config/months.json HTTP/1.1" 200 -
+2026-01-22 12:54:06,769 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:06] "GET /config/months.json HTTP/1.1" 200 -
 
-2026-01-22 12:53:37,428 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] code 404, message File not found
+2026-01-22 12:54:07,069 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:07] code 404, message File not found
 
-2026-01-22 12:53:37,428 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+2026-01-22 12:54:07,069 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:07] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
 
-2026-01-22 12:53:37,704 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+2026-01-22 12:54:07,165 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:07] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
 
-2026-01-22 12:53:37,742 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
-
-2026-01-22 12:54:26,288 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:26] "GET /config.json HTTP/1.1" 200 -
+2026-01-22 12:54:07,385 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:07] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
 

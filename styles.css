@@ -200,16 +200,15 @@ select {
     position: relative;
     align-items: center;
     min-width: 60px;
-    transition: height 0.3s ease, background 0.3s ease;
+    transition: all 0.3s ease;
     padding-top: 25px; /* Espaço para a estrela */
-    will-change: transform;
 
 }
 
-.bar-fill {
+.bar-fill { 
     width: 50px;
     border-radius: 8px 8px 0 0;
-    transition: height 0.3s ease, background 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     display: flex;
     align-items: end;
@@ -218,7 +217,6 @@ select {
     font-weight: bold;
     font-size: 12px;
     padding: 5px;
-    will-change: transform;
 }
 
 .bar-fill.high {
