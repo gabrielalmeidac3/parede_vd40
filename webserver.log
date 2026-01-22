@@ -3596,3 +3596,72 @@ Teste 4: Script finalizado com sucesso!
 
 2026-01-21 13:44:21,848 - INFO - 127.0.0.1 - - [21/Jan/2026 13:44:21] "GET /config.json HTTP/1.1" 200 -
 
+2026-01-21 13:44:31,048 - INFO - 127.0.0.1 - - [21/Jan/2026 13:44:31] "POST /executar-python HTTP/1.1" 200 -
+
+2026-01-21 13:44:31,048 - INFO - Script subir_arquivos_parede.py executado, código: 0
+2026-01-21 19:00:15,884 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:15] "GET / HTTP/1.1" 200 -
+
+2026-01-21 19:00:16,176 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:16] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-21 19:00:16,350 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:16] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-21 19:00:16,459 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:16] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-21 19:00:16,675 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:16] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-21 19:00:17,302 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:17] code 404, message File not found
+
+2026-01-21 19:00:17,302 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:17] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-21 19:00:17,591 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:17] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-21 19:00:17,633 - INFO - 127.0.0.1 - - [21/Jan/2026 19:00:17] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-21 19:21:54,426 - INFO - 127.0.0.1 - - [21/Jan/2026 19:21:54] "GET / HTTP/1.1" 200 -
+
+2026-01-21 19:21:54,678 - INFO - 127.0.0.1 - - [21/Jan/2026 19:21:54] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-21 19:21:54,790 - INFO - 127.0.0.1 - - [21/Jan/2026 19:21:54] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-22 11:41:16,061 - INFO - Aplicação iniciada
+2026-01-22 11:41:16,270 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-22 12:38:55,579 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:55] "GET / HTTP/1.1" 200 -
+
+2026-01-22 12:38:55,658 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:55] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-22 12:38:56,032 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:56] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-22 12:38:56,110 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:56] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-22 12:38:56,393 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:56] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-22 12:38:56,755 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:56] code 404, message File not found
+
+2026-01-22 12:38:56,755 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:56] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-22 12:38:57,031 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:57] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 12:38:57,165 - INFO - 127.0.0.1 - - [22/Jan/2026 12:38:57] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 12:53:14,587 - INFO - Aplicação iniciada
+2026-01-22 12:53:14,789 - INFO - Servidor iniciado na porta 8006 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json - OTIMIZADO
+2026-01-22 12:53:36,623 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:36] "GET / HTTP/1.1" 200 -
+
+2026-01-22 12:53:36,771 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:36] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-22 12:53:37,013 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-22 12:53:37,015 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-22 12:53:37,037 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-22 12:53:37,428 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] code 404, message File not found
+
+2026-01-22 12:53:37,428 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-22 12:53:37,704 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 12:53:37,742 - INFO - 127.0.0.1 - - [22/Jan/2026 12:53:37] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 12:54:26,288 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:26] "GET /config.json HTTP/1.1" 200 -
+
