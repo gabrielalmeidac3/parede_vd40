@@ -49,7 +49,7 @@ class WebServerTray:
     def __init__(self):
         self.server = None
         self.server_thread = None
-        self.port = config.get('port', 8003)
+        self.port = 8006
         self.icon_name = config.get('icon_name', 'WebServer')
         self.running = False
         self.script_dir = Path(__file__).parent.absolute()

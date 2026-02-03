@@ -1026,6 +1026,39 @@ async function clearAllData() {
     }
 }
 
+// Ajustar posição da weekly-summary quando section-header fica sticky
+function adjustWeeklySummaryPosition() {
+    const sectionHeader = document.querySelector('.section-header');
+    const weeklySummary = document.querySelector('.weekly-summary');
+    
+    if (sectionHeader && weeklySummary) {
+        const headerRect = sectionHeader.getBoundingClientRect();
+        const isSticky = headerRect.top === 0;
+        
+        if (isSticky) {
+            const headerHeight = sectionHeader.offsetHeight;
+            weeklySummary.style.top = `${headerHeight + 20}px`;
+        } else {
+            weeklySummary.style.top = '20px';
+        }
+    }
+}
+
+// Executar ao rolar a página
+window.addEventListener('scroll', adjustWeeklySummaryPosition);
+// Executar ao carregar
+window.addEventListener('load', adjustWeeklySummaryPosition);
+// Ctrl+F para focar no campo de pesquisa de alunos
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+        e.preventDefault();
+        const searchInput = document.getElementById('searchStudents');
+        if (searchInput) {
+            searchInput.focus();
+            searchInput.select();
+        }
+    }
+});
 // Event listeners
 
 document.getElementById('newStudentName').addEventListener('keypress', async function(e) {
@@ -1939,21 +1972,37 @@ function toggleDetailsView() {
 
 document.getElementById('toggleDetailsBtn').addEventListener('click', toggleDetailsView);
 // Filtro de alunos
-document.getElementById('filterActive').addEventListener('click', () => setFilter("active"));
-document.getElementById('filterAll').addEventListener('click', () => setFilter("all"));
-document.getElementById('filterInactive').addEventListener('click', () => setFilter("inactive"));
+// Dropdown de filtro
+const filterDropdown = document.getElementById('filterDropdown');
+const filterMenu = document.getElementById('filterMenu');
+
+filterDropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+    filterMenu.style.display = filterMenu.style.display === 'none' ? 'block' : 'none';
+});
+
+document.querySelectorAll('#filterMenu .dropdown-item').forEach(item => {
+    item.addEventListener('click', () => {
+        setFilter(item.dataset.filter);
+        filterMenu.style.display = 'none';
+    });
+});
+
+document.addEventListener('click', () => {
+    filterMenu.style.display = 'none';
+});
 // Event listener para pesquisa em tempo real
 document.getElementById('searchStudents').addEventListener('input', handleSearch);
 document.getElementById('clearSearch').addEventListener('click', clearSearch);
 
 function setFilter(type) {
     currentFilter = type;
-
-    // resetar estado visual dos botões
-    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-    if (type === "active") document.getElementById("filterActive").classList.add("active");
-    if (type === "all") document.getElementById("filterAll").classList.add("active");
-    if (type === "inactive") document.getElementById("filterInactive").classList.add("active");
+    
+    // Atualizar texto do botão dropdown
+    const filterBtn = document.getElementById('filterDropdown');
+    if (type === "active") filterBtn.textContent = "🔽 Alunos Ativos";
+    if (type === "all") filterBtn.textContent = "🔽 Todos os Alunos";
+    if (type === "inactive") filterBtn.textContent = "🔽 Alunos Inativos";
 
     updateStudentList();
 }
@@ -1971,7 +2020,20 @@ function clearSearch() {
     document.getElementById('searchStudents').value = '';
     searchTerm = "";
     updateStudentList();
+    document.getElementById('searchStudents').focus();
 }
+// Menu hamburger
+const menuBtn = document.getElementById('menuBtn');
+const menuDropdown = document.getElementById('menuDropdown');
+
+menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuDropdown.style.display = menuDropdown.style.display === 'none' ? 'block' : 'none';
+});
+
+document.addEventListener('click', () => {
+    menuDropdown.style.display = 'none';
+});
 
 // Função para atualizar resumo semanal
 async function updateWeeklySummary() {

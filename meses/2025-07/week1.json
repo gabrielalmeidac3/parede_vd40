@@ -188,15 +188,6 @@
     "thursday": false,
     "objective": ""
   },
-  "Isabel": {
-    "name": "Isabel",
-    "active": true,
-    "videocall": false,
-    "sentToGroup": true,
-    "tuesday": false,
-    "thursday": false,
-    "objective": "Treinar música Cavalo Preto"
-  },
   "Marina": {
     "name": "Marina",
     "active": true,
@@ -232,5 +223,14 @@
     "tuesday": false,
     "thursday": true,
     "objective": "Assistir a aula e fazer o exercício para iniciantes do zero"
+  },
+  "Isabel Barra": {
+    "name": "Isabel Barra",
+    "active": true,
+    "videocall": false,
+    "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Treinar música Cavalo Preto"
   }
 }

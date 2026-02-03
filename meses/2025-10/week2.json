@@ -206,15 +206,6 @@
     "sentToGroup": false,
     "objective": ""
   },
-  "Isabel": {
-    "name": "Isabel",
-    "active": false,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
-    "sentToGroup": false,
-    "objective": ""
-  },
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
     "active": true,
@@ -439,5 +430,14 @@
     "tuesday": false,
     "thursday": true,
     "objective": "Aprender a tocar bem o ritmo de rock"
+  },
+  "Isabel Barra": {
+    "name": "Isabel Barra",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
   }
 }

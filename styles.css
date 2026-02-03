@@ -106,6 +106,12 @@ body {
     margin-bottom: 15px;
     flex-wrap: wrap;
     gap: 15px;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    z-index: 100;
+    padding: 15px 0;
+    margin-top: -15px;
 }
 
 .filter-buttons {
@@ -135,6 +141,102 @@ body {
 
 .filter-btn.active {
     background: linear-gradient(45deg, #4facfe, #0275c3);
+}
+
+/* Dropdown menus - floating dark theme */
+.compact-controls {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 500;
+    display: none;
+    width: max-content;
+    min-width: 200px;
+    max-width: 320px;
+    padding: 10px;
+    background: linear-gradient(160deg, #364154, #222b3a);
+    border: 1px solid rgba(79, 172, 254, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dropdown-menu[style*="display: block"] {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#menuDropdown {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -8px);
+}
+
+#menuDropdown[style*="display: block"] {
+    transform: translate(-50%, 0);
+}
+
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 18px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(160deg, #364154, #222b3a);
+    border-left: 1px solid rgba(79, 172, 254, 0.35);
+    border-top: 1px solid rgba(79, 172, 254, 0.35);
+    transform: rotate(45deg);
+}
+
+#menuDropdown::before {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.dropdown-item {
+    width: 100%;
+    border: none;
+    background: rgba(26, 32, 44, 0.7);
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-item + .dropdown-item {
+    margin-top: 6px;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.3), rgba(118, 75, 162, 0.35));
+    transform: translateX(4px);
+    box-shadow: 0 6px 16px rgba(79, 172, 254, 0.25);
+}
+
+.dropdown-item:focus-visible {
+    outline: 2px solid rgba(79, 172, 254, 0.7);
+    outline-offset: 2px;
 }
 
 
@@ -669,11 +771,30 @@ select {
         flex-direction: column;
         width: 100%;
     }
-    
-    .filter-buttons .filter-btn,
-    .filter-buttons .toggle-btn {
+
+    .compact-controls {
         width: 100%;
-        text-align: center;
+        align-items: stretch;
+    }
+
+    .dropdown-menu,
+    #menuDropdown {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -8px);
+        width: min(90vw, 320px);
+    }
+
+    .dropdown-menu[style*="display: block"],
+    #menuDropdown[style*="display: block"] {
+        transform: translate(-50%, 0);
+    }
+
+    .dropdown-menu::before,
+    #menuDropdown::before {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) rotate(45deg);
     }
     
     .section-header > div[style*="position: relative"] {

@@ -70,22 +70,29 @@
                 </div>
             </div>
         </div>
-
+            <div class="sticky-section-wrapper">
             <div class="section">
                 <div class="section-header">
                     <h3>👥 Alunos</h3>
-                    <div style="position: relative; flex: 1; min-width: 200px; max-width: 400px; display: flex; align-items: center; margin: 0 15px;">
+                    <div style="position: relative; flex: 1; min-width: 200px; max-width: 400px; display: flex; align-items: center; margin: 0 5px;">
                         <input type="text" id="searchStudents" placeholder="Pesquisar alunos..." style="flex: 1; padding: 12px 30px 12px 15px; border: 1px solid #4a5568; border-radius: 8px; background: #2d3748; color: white; font-size: 16px; box-sizing: border-box;">
                         <button id="clearSearch" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #888; cursor: pointer; font-size: 18px;">×</button>
                     </div>
-                    <div class="filter-buttons">
-                        <button id="filterActive" class="filter-btn active">Alunos Ativos</button>
-                        <button id="filterAll" class="filter-btn">Todos os Alunos</button>
-                        <button id="filterInactive" class="filter-btn">Alunos Inativos</button>
-                        <button id="copyFromPreviousBtn" class="toggle-btn" onclick="copyFromPreviousWeek()" style="padding: 6px 12px; font-size: 12px;">← Copiar Ativos da semana anterior</button>
+                    <div class="compact-controls">
+                        <button id="filterDropdown" class="filter-btn" style="padding: 6px 12px; font-size: 12px;">🔽 Alunos Ativos</button>
+                        <div id="filterMenu" class="dropdown-menu" style="display: none;">
+                            <button class="dropdown-item" data-filter="active">Alunos Ativos</button>
+                            <button class="dropdown-item" data-filter="all">Todos os Alunos</button>
+                            <button class="dropdown-item" data-filter="inactive">Alunos Inativos</button>
+                        </div>
+                        <button id="menuBtn" class="toggle-btn" style="padding: 6px 12px; font-size: 12px;">☰ Menu</button>
+                        <div id="menuDropdown" class="dropdown-menu" style="display: none;">
+                            <button class="dropdown-item" id="copyFromPreviousBtn">Copiar Ativos da semana anterior</button>
+                        </div>
+                        <button id="openPresentationsBtn" class="toggle-btn" style="padding: 6px 12px; font-size: 12px;">Ver Apresentações</button>
                     </div>
                 </div>
-                <button id="openPresentationsBtn" class="toggle-btn" style="margin: 10px 0 20px 0;">Ver dias de apresentações</button>
+                
 
 
                 <div class="students-container">

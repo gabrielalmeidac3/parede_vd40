@@ -3661,3 +3661,891 @@ Teste 4: Script finalizado com sucesso!
 
 2026-01-22 12:54:07,385 - INFO - 127.0.0.1 - - [22/Jan/2026 12:54:07] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
 
+2026-01-22 13:04:38,853 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:38] "GET / HTTP/1.1" 200 -
+
+2026-01-22 13:04:39,106 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-22 13:04:39,215 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-22 13:04:39,227 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-22 13:04:39,243 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-22 13:04:39,611 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] code 404, message File not found
+
+2026-01-22 13:04:39,611 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-22 13:04:39,878 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 13:04:39,927 - INFO - 127.0.0.1 - - [22/Jan/2026 13:04:39] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 14:25:49,434 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:49] "GET / HTTP/1.1" 200 -
+
+2026-01-22 14:25:49,702 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:49] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-22 14:25:49,781 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:49] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-22 14:25:49,785 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:49] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-22 14:25:49,810 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:49] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-22 14:25:50,109 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:50] code 404, message File not found
+
+2026-01-22 14:25:50,109 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:50] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-22 14:25:50,186 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:50] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 14:25:50,420 - INFO - 127.0.0.1 - - [22/Jan/2026 14:25:50] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 21:26:51,627 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:51] "GET / HTTP/1.1" 200 -
+
+2026-01-22 21:26:51,873 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:51] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-22 21:26:52,039 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:52] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-22 21:26:52,083 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:52] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-22 21:26:52,101 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:52] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-22 21:26:52,376 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:52] code 404, message File not found
+
+2026-01-22 21:26:52,376 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:52] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-22 21:26:52,466 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:52] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-22 21:26:52,758 - INFO - 127.0.0.1 - - [22/Jan/2026 21:26:52] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-23 11:52:14,993 - INFO - Aplicação iniciada
+2026-01-23 11:52:15,204 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-23 18:41:23,358 - INFO - Aplicação iniciada
+2026-01-23 18:41:23,563 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-23 18:53:56,513 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:56] "GET / HTTP/1.1" 200 -
+
+2026-01-23 18:53:56,623 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:56] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-23 18:53:56,904 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:56] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-23 18:53:56,942 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:56] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-23 18:53:56,953 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:56] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-23 18:53:57,300 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:57] code 404, message File not found
+
+2026-01-23 18:53:57,300 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:57] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-23 18:53:57,581 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:57] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-23 18:53:57,622 - INFO - 127.0.0.1 - - [23/Jan/2026 18:53:57] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-24 12:53:09,483 - INFO - Aplicação iniciada
+2026-01-24 12:53:09,696 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-26 13:15:20,693 - INFO - Aplicação iniciada
+2026-01-26 13:15:20,909 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-26 14:36:00,015 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:00] "GET / HTTP/1.1" 200 -
+
+2026-01-26 14:36:00,149 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:00] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-26 14:36:00,402 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:00] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-26 14:36:00,443 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:00] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-26 14:36:00,455 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:00] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-26 14:36:00,822 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:00] code 404, message File not found
+
+2026-01-26 14:36:00,822 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:00] "GET /meses/2026-01/week4.json HTTP/1.1" 404 -
+
+2026-01-26 14:36:01,095 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:01] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-26 14:36:01,149 - INFO - 127.0.0.1 - - [26/Jan/2026 14:36:01] "GET /meses/2026-01/week3.json HTTP/1.1" 200 -
+
+2026-01-26 19:08:39,897 - INFO - 127.0.0.1 - - [26/Jan/2026 19:08:39] "GET / HTTP/1.1" 200 -
+
+2026-01-26 19:08:40,311 - INFO - 127.0.0.1 - - [26/Jan/2026 19:08:40] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-26 19:08:40,381 - INFO - 127.0.0.1 - - [26/Jan/2026 19:08:40] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-26 19:08:40,461 - INFO - 127.0.0.1 - - [26/Jan/2026 19:08:40] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-26 19:08:40,755 - INFO - 127.0.0.1 - - [26/Jan/2026 19:08:40] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-26 19:08:41,321 - INFO - 127.0.0.1 - - [26/Jan/2026 19:08:41] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-26 19:08:41,553 - INFO - 127.0.0.1 - - [26/Jan/2026 19:08:41] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-27 00:54:19,145 - INFO - Aplicação iniciada
+2026-01-27 00:54:19,362 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-27 10:40:57,364 - INFO - Aplicação iniciada
+2026-01-27 10:40:57,580 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-27 19:01:15,439 - INFO - 127.0.0.1 - - [27/Jan/2026 19:01:15] "GET / HTTP/1.1" 200 -
+
+2026-01-27 19:01:15,510 - INFO - 127.0.0.1 - - [27/Jan/2026 19:01:15] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-27 19:01:15,865 - INFO - 127.0.0.1 - - [27/Jan/2026 19:01:15] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-27 19:01:15,934 - INFO - 127.0.0.1 - - [27/Jan/2026 19:01:15] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-27 19:01:16,229 - INFO - 127.0.0.1 - - [27/Jan/2026 19:01:16] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-27 19:01:16,819 - INFO - 127.0.0.1 - - [27/Jan/2026 19:01:16] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-27 19:01:17,066 - INFO - 127.0.0.1 - - [27/Jan/2026 19:01:17] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-27 23:41:49,758 - INFO - Aplicação iniciada
+2026-01-27 23:41:49,974 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-28 12:15:05,496 - INFO - Aplicação iniciada
+2026-01-28 12:15:05,712 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-28 13:03:26,380 - INFO - 127.0.0.1 - - [28/Jan/2026 13:03:26] "GET / HTTP/1.1" 200 -
+
+2026-01-28 13:03:26,764 - INFO - 127.0.0.1 - - [28/Jan/2026 13:03:26] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-28 13:03:26,847 - INFO - 127.0.0.1 - - [28/Jan/2026 13:03:26] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-28 13:03:26,922 - INFO - 127.0.0.1 - - [28/Jan/2026 13:03:26] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-28 13:03:27,015 - INFO - 127.0.0.1 - - [28/Jan/2026 13:03:27] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-28 13:03:27,208 - INFO - 127.0.0.1 - - [28/Jan/2026 13:03:27] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-28 13:03:27,376 - INFO - 127.0.0.1 - - [28/Jan/2026 13:03:27] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-28 18:23:17,530 - INFO - 127.0.0.1 - - [28/Jan/2026 18:23:17] "GET / HTTP/1.1" 200 -
+
+2026-01-28 18:23:17,907 - INFO - 127.0.0.1 - - [28/Jan/2026 18:23:17] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-28 18:23:17,976 - INFO - 127.0.0.1 - - [28/Jan/2026 18:23:17] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-28 18:23:18,032 - INFO - 127.0.0.1 - - [28/Jan/2026 18:23:18] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-28 18:23:18,145 - INFO - 127.0.0.1 - - [28/Jan/2026 18:23:18] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-28 18:23:18,428 - INFO - 127.0.0.1 - - [28/Jan/2026 18:23:18] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-28 18:23:18,685 - INFO - 127.0.0.1 - - [28/Jan/2026 18:23:18] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-28 19:00:55,876 - INFO - 127.0.0.1 - - [28/Jan/2026 19:00:55] "GET / HTTP/1.1" 200 -
+
+2026-01-28 19:00:56,130 - INFO - 127.0.0.1 - - [28/Jan/2026 19:00:56] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-28 19:00:56,231 - INFO - 127.0.0.1 - - [28/Jan/2026 19:00:56] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-28 19:00:56,233 - INFO - 127.0.0.1 - - [28/Jan/2026 19:00:56] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-28 19:00:56,288 - INFO - 127.0.0.1 - - [28/Jan/2026 19:00:56] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-28 19:00:56,597 - INFO - 127.0.0.1 - - [28/Jan/2026 19:00:56] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-28 19:00:56,835 - INFO - 127.0.0.1 - - [28/Jan/2026 19:00:56] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-29 11:31:27,742 - INFO - Aplicação iniciada
+2026-01-29 11:31:27,949 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-30 11:43:55,388 - INFO - Aplicação iniciada
+2026-01-30 11:43:55,610 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-01-30 13:07:38,345 - INFO - 127.0.0.1 - - [30/Jan/2026 13:07:38] "GET / HTTP/1.1" 200 -
+
+2026-01-30 13:07:38,439 - INFO - 127.0.0.1 - - [30/Jan/2026 13:07:38] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-30 13:07:38,749 - INFO - 127.0.0.1 - - [30/Jan/2026 13:07:38] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-30 13:07:38,797 - INFO - 127.0.0.1 - - [30/Jan/2026 13:07:38] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-30 13:07:38,808 - INFO - 127.0.0.1 - - [30/Jan/2026 13:07:38] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-30 13:07:39,189 - INFO - 127.0.0.1 - - [30/Jan/2026 13:07:39] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-30 13:07:39,445 - INFO - 127.0.0.1 - - [30/Jan/2026 13:07:39] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-30 15:47:37,748 - INFO - 127.0.0.1 - - [30/Jan/2026 15:47:37] "GET / HTTP/1.1" 200 -
+
+2026-01-30 15:47:38,022 - INFO - 127.0.0.1 - - [30/Jan/2026 15:47:38] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-30 15:47:38,152 - INFO - 127.0.0.1 - - [30/Jan/2026 15:47:38] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-30 15:47:38,207 - INFO - 127.0.0.1 - - [30/Jan/2026 15:47:38] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-30 15:47:38,225 - INFO - 127.0.0.1 - - [30/Jan/2026 15:47:38] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-30 15:47:38,657 - INFO - 127.0.0.1 - - [30/Jan/2026 15:47:38] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-30 15:47:38,908 - INFO - 127.0.0.1 - - [30/Jan/2026 15:47:38] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-30 17:03:22,796 - INFO - 127.0.0.1 - - [30/Jan/2026 17:03:22] "GET / HTTP/1.1" 200 -
+
+2026-01-30 17:03:23,062 - INFO - 127.0.0.1 - - [30/Jan/2026 17:03:23] "GET /styles.css HTTP/1.1" 200 -
+
+2026-01-30 17:03:23,175 - INFO - 127.0.0.1 - - [30/Jan/2026 17:03:23] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-01-30 17:03:23,177 - INFO - 127.0.0.1 - - [30/Jan/2026 17:03:23] "GET /script.js HTTP/1.1" 200 -
+
+2026-01-30 17:03:23,230 - INFO - 127.0.0.1 - - [30/Jan/2026 17:03:23] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-01-30 17:03:23,520 - INFO - 127.0.0.1 - - [30/Jan/2026 17:03:23] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-30 17:03:23,723 - INFO - 127.0.0.1 - - [30/Jan/2026 17:03:23] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-01-31 10:58:42,840 - INFO - Aplicação iniciada
+2026-01-31 10:58:43,053 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-02-02 12:12:12,545 - INFO - Aplicação iniciada
+2026-02-02 12:12:12,750 - INFO - Servidor iniciado na porta 8005 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json
+2026-02-02 14:16:55,227 - INFO - 127.0.0.1 - - [02/Feb/2026 14:16:55] "GET / HTTP/1.1" 200 -
+
+2026-02-02 14:16:55,442 - INFO - 127.0.0.1 - - [02/Feb/2026 14:16:55] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 14:16:55,649 - INFO - 127.0.0.1 - - [02/Feb/2026 14:16:55] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 14:16:55,697 - INFO - 127.0.0.1 - - [02/Feb/2026 14:16:55] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 14:16:55,710 - INFO - 127.0.0.1 - - [02/Feb/2026 14:16:55] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 14:16:56,137 - INFO - 127.0.0.1 - - [02/Feb/2026 14:16:56] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-02-02 14:16:56,374 - INFO - 127.0.0.1 - - [02/Feb/2026 14:16:56] "GET /meses/2026-01/week4.json HTTP/1.1" 200 -
+
+2026-02-02 16:38:39,361 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:39] "GET / HTTP/1.1" 200 -
+
+2026-02-02 16:38:39,605 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:39] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 16:38:39,783 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:39] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 16:38:39,835 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:39] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 16:38:39,853 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:39] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 16:38:40,251 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] code 404, message File not found
+
+2026-02-02 16:38:40,251 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 16:38:40,503 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] code 404, message File not found
+
+2026-02-02 16:38:40,504 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 16:38:40,565 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] code 404, message File not found
+
+2026-02-02 16:38:40,565 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 16:38:40,829 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 16:38:40,879 - INFO - 127.0.0.1 - - [02/Feb/2026 16:38:40] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 18:57:49,673 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:49] "GET / HTTP/1.1" 200 -
+
+2026-02-02 18:57:49,941 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:49] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 18:57:50,051 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 18:57:50,063 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 18:57:50,080 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 18:57:50,462 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] code 404, message File not found
+
+2026-02-02 18:57:50,462 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 18:57:50,729 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] code 404, message File not found
+
+2026-02-02 18:57:50,729 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 18:57:50,774 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] code 404, message File not found
+
+2026-02-02 18:57:50,775 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:50] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 18:57:51,042 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:51] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 18:57:51,089 - INFO - 127.0.0.1 - - [02/Feb/2026 18:57:51] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 19:58:48,412 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:48] "GET / HTTP/1.1" 200 -
+
+2026-02-02 19:58:48,679 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:48] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 19:58:48,789 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:48] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 19:58:48,802 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:48] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 19:58:48,834 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:48] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 19:58:49,165 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] code 404, message File not found
+
+2026-02-02 19:58:49,165 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 19:58:49,432 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] code 404, message File not found
+
+2026-02-02 19:58:49,432 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 19:58:49,478 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] code 404, message File not found
+
+2026-02-02 19:58:49,478 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 19:58:49,745 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 19:58:49,793 - INFO - 127.0.0.1 - - [02/Feb/2026 19:58:49] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:02:22,022 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:22] "GET / HTTP/1.1" 200 -
+
+2026-02-02 20:02:22,287 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:22] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 20:02:22,398 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:22] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 20:02:22,400 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:22] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 20:02:22,430 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:22] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 20:02:22,884 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:22] code 404, message File not found
+
+2026-02-02 20:02:22,884 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:22] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 20:02:23,148 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:23] code 404, message File not found
+
+2026-02-02 20:02:23,148 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:23] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 20:02:23,196 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:23] code 404, message File not found
+
+2026-02-02 20:02:23,196 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:23] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 20:02:23,464 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:23] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:02:23,511 - INFO - 127.0.0.1 - - [02/Feb/2026 20:02:23] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:33:41,737 - INFO - Aplicação iniciada
+2026-02-02 20:33:41,941 - INFO - Servidor iniciado na porta 8006 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json - MELHORAR 2FEV26
+2026-02-02 20:56:10,485 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:10] "GET / HTTP/1.1" 200 -
+
+2026-02-02 20:56:10,688 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:10] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 20:56:10,846 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:10] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 20:56:10,847 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:10] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 20:56:10,891 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:10] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:11,172 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] code 404, message File not found
+
+2026-02-02 20:56:11,172 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:11,266 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] code 404, message File not found
+
+2026-02-02 20:56:11,266 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:11,485 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] code 404, message File not found
+
+2026-02-02 20:56:11,485 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:11,580 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:11,799 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:11] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:38,901 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:38] "GET / HTTP/1.1" 200 -
+
+2026-02-02 20:56:39,253 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 20:56:39,255 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 20:56:39,256 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 20:56:39,506 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:39,601 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] code 404, message File not found
+
+2026-02-02 20:56:39,601 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:39,838 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] code 404, message File not found
+
+2026-02-02 20:56:39,838 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:39,917 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] code 404, message File not found
+
+2026-02-02 20:56:39,917 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:39] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:40,152 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:40] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:40,231 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:40] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:50,192 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:50] "GET / HTTP/1.1" 200 -
+
+2026-02-02 20:56:50,527 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:50] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 20:56:50,529 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:50] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 20:56:50,543 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:50] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 20:56:50,794 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:50] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:50,875 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:50] code 404, message File not found
+
+2026-02-02 20:56:50,875 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:50] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:51,110 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:51] code 404, message File not found
+
+2026-02-02 20:56:51,110 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:51] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:51,187 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:51] code 404, message File not found
+
+2026-02-02 20:56:51,188 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:51] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 20:56:51,424 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:51] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:51,503 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:51] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 20:56:56,607 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:56] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 20:56:56,919 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:56] code 404, message File not found
+
+2026-02-02 20:56:56,919 - INFO - 127.0.0.1 - - [02/Feb/2026 20:56:56] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:01:29,842 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:29] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:01:30,108 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:01:30,219 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:01:30,286 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:01:30,287 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] code 404, message File not found
+
+2026-02-02 21:01:30,288 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:01:30,339 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:01:30,721 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] code 404, message File not found
+
+2026-02-02 21:01:30,721 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:01:30,953 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] code 404, message File not found
+
+2026-02-02 21:01:30,953 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:30] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:01:31,062 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:31] code 404, message File not found
+
+2026-02-02 21:01:31,062 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:31] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:01:31,264 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:31] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:01:31,374 - INFO - 127.0.0.1 - - [02/Feb/2026 21:01:31] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:02:45,080 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:02:45,317 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:02:45,443 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:02:45,460 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:02:45,462 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] code 404, message File not found
+
+2026-02-02 21:02:45,462 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:02:45,511 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:02:45,916 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] code 404, message File not found
+
+2026-02-02 21:02:45,916 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:45] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:02:46,184 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:46] code 404, message File not found
+
+2026-02-02 21:02:46,185 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:46] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:02:46,263 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:46] code 404, message File not found
+
+2026-02-02 21:02:46,263 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:46] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:02:46,496 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:46] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:02:46,575 - INFO - 127.0.0.1 - - [02/Feb/2026 21:02:46] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:06:50,537 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:50] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:06:50,804 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:50] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:06:50,929 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:50] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:06:50,931 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:50] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:06:50,933 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:50] code 404, message File not found
+
+2026-02-02 21:06:50,934 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:50] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:06:51,018 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:51] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:06:51,473 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:51] code 404, message File not found
+
+2026-02-02 21:06:51,473 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:51] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:06:51,721 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:51] code 404, message File not found
+
+2026-02-02 21:06:51,721 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:51] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:06:51,816 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:51] code 404, message File not found
+
+2026-02-02 21:06:51,816 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:51] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:06:52,083 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:52] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:06:52,130 - INFO - 127.0.0.1 - - [02/Feb/2026 21:06:52] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:07:45,192 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:07:45,556 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:07:45,573 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:07:45,575 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:07:45,634 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] code 404, message File not found
+
+2026-02-02 21:07:45,635 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:07:45,822 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:07:45,963 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] code 404, message File not found
+
+2026-02-02 21:07:45,963 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:45] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:07:46,231 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:46] code 404, message File not found
+
+2026-02-02 21:07:46,231 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:46] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:07:46,371 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:46] code 404, message File not found
+
+2026-02-02 21:07:46,371 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:46] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:07:46,544 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:46] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:07:46,685 - INFO - 127.0.0.1 - - [02/Feb/2026 21:07:46] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:09:30,625 - INFO - Servidor iniciado na porta 8006 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json - MELHORAR 2FEV26
+2026-02-02 21:09:32,298 - INFO - Servidor parado
+2026-02-02 21:09:40,895 - INFO - Aplicação iniciada
+2026-02-02 21:09:41,097 - INFO - Servidor iniciado na porta 8006 em A:\GABRIEL ALMEIDA - Gestão\Aulas de Violão\SITES\Parede da vitória\com json - MELHORAR 2FEV26
+2026-02-02 21:09:42,351 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:42] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:09:42,575 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:42] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:09:42,687 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:42] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:09:42,688 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:42] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:09:42,709 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:42] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:09:43,091 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] code 404, message File not found
+
+2026-02-02 21:09:43,091 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:09:43,342 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] code 404, message File not found
+
+2026-02-02 21:09:43,342 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:09:43,405 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] code 404, message File not found
+
+2026-02-02 21:09:43,405 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:09:43,657 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:09:43,720 - INFO - 127.0.0.1 - - [02/Feb/2026 21:09:43] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:11:05,571 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:05] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:11:05,916 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:05] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:11:05,917 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:05] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:11:05,921 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:05] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:11:05,995 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:05] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:11:06,184 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] code 404, message File not found
+
+2026-02-02 21:11:06,184 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:11:06,294 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] code 404, message File not found
+
+2026-02-02 21:11:06,295 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:11:06,529 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] code 404, message File not found
+
+2026-02-02 21:11:06,529 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:11:06,703 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] code 404, message File not found
+
+2026-02-02 21:11:06,703 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:11:06,845 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:06] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:11:07,016 - INFO - 127.0.0.1 - - [02/Feb/2026 21:11:07] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:18:55,412 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:55] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:18:55,666 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:55] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:18:55,771 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:55] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:18:55,773 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:55] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:18:55,774 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:55] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:18:55,984 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:55] code 404, message File not found
+
+2026-02-02 21:18:55,984 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:55] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:18:56,107 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:56] code 404, message File not found
+
+2026-02-02 21:18:56,107 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:56] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:18:56,295 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:56] code 404, message File not found
+
+2026-02-02 21:18:56,295 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:56] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:18:56,422 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:56] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:18:56,611 - INFO - 127.0.0.1 - - [02/Feb/2026 21:18:56] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:22:52,141 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:22:52,379 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:22:52,485 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:22:52,487 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:22:52,498 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:22:52,693 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] code 404, message File not found
+
+2026-02-02 21:22:52,693 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:22:52,818 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] code 404, message File not found
+
+2026-02-02 21:22:52,818 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:52] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:22:53,006 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:53] code 404, message File not found
+
+2026-02-02 21:22:53,006 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:53] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:22:53,132 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:53] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:22:53,318 - INFO - 127.0.0.1 - - [02/Feb/2026 21:22:53] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:23:04,699 - INFO - 127.0.0.1 - - [02/Feb/2026 21:23:04] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:23:05,033 - INFO - 127.0.0.1 - - [02/Feb/2026 21:23:05] code 404, message File not found
+
+2026-02-02 21:23:05,033 - INFO - 127.0.0.1 - - [02/Feb/2026 21:23:05] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:31:23,209 - INFO - 127.0.0.1 - - [02/Feb/2026 21:31:23] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:31:23,296 - INFO - 127.0.0.1 - - [02/Feb/2026 21:31:23] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:31:23,298 - INFO - 127.0.0.1 - - [02/Feb/2026 21:31:23] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:51:34,705 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:34] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:51:34,993 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:34] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:51:35,068 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:51:35,070 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:51:35,116 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:51:35,399 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] code 404, message File not found
+
+2026-02-02 21:51:35,399 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:51:35,528 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] code 404, message File not found
+
+2026-02-02 21:51:35,528 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:51:35,713 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] code 404, message File not found
+
+2026-02-02 21:51:35,714 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:51:35,838 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:35] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:51:36,060 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:36] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:51:49,376 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:49] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:51:49,691 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:49] code 404, message File not found
+
+2026-02-02 21:51:49,691 - INFO - 127.0.0.1 - - [02/Feb/2026 21:51:49] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+2026-02-02 21:56:38,319 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:38] "GET / HTTP/1.1" 200 -
+
+2026-02-02 21:56:38,600 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:38] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 21:56:38,665 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:38] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 21:56:38,666 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:38] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 21:56:38,744 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:38] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 21:56:38,994 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:38] code 404, message File not found
+
+2026-02-02 21:56:38,994 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:38] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 21:56:39,121 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:39] code 404, message File not found
+
+2026-02-02 21:56:39,121 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:39] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 21:56:39,311 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:39] code 404, message File not found
+
+2026-02-02 21:56:39,311 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:39] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 21:56:39,437 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:39] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 21:56:39,626 - INFO - 127.0.0.1 - - [02/Feb/2026 21:56:39] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:02:56,260 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:56] "GET / HTTP/1.1" 200 -
+
+2026-02-02 22:02:56,490 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:56] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 22:02:56,631 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:56] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 22:02:56,633 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:56] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 22:02:56,693 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:56] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 22:02:56,963 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:56] code 404, message File not found
+
+2026-02-02 22:02:56,963 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:56] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 22:02:57,089 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:57] code 404, message File not found
+
+2026-02-02 22:02:57,090 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:57] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 22:02:57,295 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:57] code 404, message File not found
+
+2026-02-02 22:02:57,295 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:57] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 22:02:57,405 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:57] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:02:57,611 - INFO - 127.0.0.1 - - [02/Feb/2026 22:02:57] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:04:24,762 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:24] "GET / HTTP/1.1" 200 -
+
+2026-02-02 22:04:25,003 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 22:04:25,146 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 22:04:25,147 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 22:04:25,168 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 22:04:25,506 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] code 404, message File not found
+
+2026-02-02 22:04:25,506 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 22:04:25,772 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] code 404, message File not found
+
+2026-02-02 22:04:25,772 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 22:04:25,835 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] code 404, message File not found
+
+2026-02-02 22:04:25,835 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:25] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 22:04:26,088 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:26] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:04:26,151 - INFO - 127.0.0.1 - - [02/Feb/2026 22:04:26] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:05:19,901 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:19] "GET / HTTP/1.1" 200 -
+
+2026-02-02 22:05:20,276 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 22:05:20,278 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 22:05:20,342 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 22:05:20,530 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 22:05:20,608 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] code 404, message File not found
+
+2026-02-02 22:05:20,608 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 22:05:20,872 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] code 404, message File not found
+
+2026-02-02 22:05:20,873 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 22:05:20,920 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] code 404, message File not found
+
+2026-02-02 22:05:20,920 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:20] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 22:05:21,182 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:21] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:05:21,230 - INFO - 127.0.0.1 - - [02/Feb/2026 22:05:21] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:06:13,426 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:13] "GET / HTTP/1.1" 200 -
+
+2026-02-02 22:06:13,826 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:13] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 22:06:13,827 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:13] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 22:06:13,875 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:13] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 22:06:14,079 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 22:06:14,158 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] code 404, message File not found
+
+2026-02-02 22:06:14,158 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 22:06:14,423 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] code 404, message File not found
+
+2026-02-02 22:06:14,424 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 22:06:14,470 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] code 404, message File not found
+
+2026-02-02 22:06:14,471 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 22:06:14,737 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:06:14,784 - INFO - 127.0.0.1 - - [02/Feb/2026 22:06:14] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:08:09,308 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:09] "GET / HTTP/1.1" 200 -
+
+2026-02-02 22:08:09,563 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:09] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 22:08:09,658 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:09] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 22:08:09,701 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:09] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 22:08:09,703 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:09] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 22:08:09,983 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:09] code 404, message File not found
+
+2026-02-02 22:08:09,983 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:09] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 22:08:10,051 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:10] code 404, message File not found
+
+2026-02-02 22:08:10,051 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:10] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 22:08:10,298 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:10] code 404, message File not found
+
+2026-02-02 22:08:10,298 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:10] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 22:08:10,362 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:10] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:08:10,614 - INFO - 127.0.0.1 - - [02/Feb/2026 22:08:10] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:10:21,378 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:21] "GET / HTTP/1.1" 200 -
+
+2026-02-02 22:10:21,632 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:21] "GET /styles.css HTTP/1.1" 200 -
+
+2026-02-02 22:10:21,742 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:21] "GET /presentations.html HTTP/1.1" 200 -
+
+2026-02-02 22:10:21,789 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:21] "GET /script.js HTTP/1.1" 200 -
+
+2026-02-02 22:10:21,791 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:21] "GET /config/months.json HTTP/1.1" 200 -
+
+2026-02-02 22:10:22,074 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] code 404, message File not found
+
+2026-02-02 22:10:22,074 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] "GET /meses/2026-02/week4.json HTTP/1.1" 404 -
+
+2026-02-02 22:10:22,153 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] code 404, message File not found
+
+2026-02-02 22:10:22,153 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] "GET /meses/2026-02/week3.json HTTP/1.1" 404 -
+
+2026-02-02 22:10:22,386 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] code 404, message File not found
+
+2026-02-02 22:10:22,386 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] "GET /meses/2026-02/week2.json HTTP/1.1" 404 -
+
+2026-02-02 22:10:22,463 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+
+2026-02-02 22:10:22,697 - INFO - 127.0.0.1 - - [02/Feb/2026 22:10:22] "GET /meses/2026-02/week1.json HTTP/1.1" 200 -
+

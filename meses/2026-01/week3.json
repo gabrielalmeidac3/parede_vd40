@@ -41,7 +41,7 @@
     "sentToGroup": false,
     "objective": "Andorinhas / Encanto e Magia / Ritmo de Rock",
     "presentationDay": "Quinta",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": true
   },
   "Ana Lucia": {
     "name": "Ana Lucia",
@@ -96,7 +96,7 @@
     "sentToGroup": false,
     "objective": "Naquela Mesa /Luz da minha vida / Castelo de Amor",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": true
   },
   "Célia": {
     "name": "Célia",
@@ -118,7 +118,7 @@
     "sentToGroup": false,
     "objective": "Fica Jesus / Dia de Sol",
     "presentationDay": "Terça",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": true
   },
   "Clerionise": {
     "name": "Clerionise",
@@ -252,27 +252,16 @@
     "presentationDay": "",
     "apresentacaoSemanal": false
   },
-  "Isabel": {
-    "name": "Isabel",
-    "active": false,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
-    "sentToGroup": false,
-    "objective": "",
-    "presentationDay": "",
-    "apresentacaoSemanal": false
-  },
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
     "active": true,
-    "videocall": false,
+    "videocall": true,
     "tuesday": false,
     "thursday": false,
     "sentToGroup": false,
     "objective": "Pop Rock / No dia que eu saí de casa",
     "presentationDay": "Quinta",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": true
   },
   "José Hilton": {
     "name": "José Hilton",
@@ -382,7 +371,7 @@
     "sentToGroup": false,
     "objective": "",
     "presentationDay": "Domingo",
-    "apresentacaoSemanal": false
+    "apresentacaoSemanal": true
   },
   "Neusa": {
     "name": "Neusa",
@@ -569,6 +558,17 @@
     "sentToGroup": false,
     "objective": "Música Filha - Tom G com capo /",
     "presentationDay": "Quinta",
+    "apresentacaoSemanal": true
+  },
+  "Isabel Barra": {
+    "name": "Isabel Barra",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": "",
+    "presentationDay": "",
     "apresentacaoSemanal": false
   }
 }

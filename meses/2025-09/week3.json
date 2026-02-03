@@ -197,15 +197,6 @@
     "sentToGroup": false,
     "objective": "Porque Ele Vive - Tocar não precisa cantar ainda"
   },
-  "Isabel": {
-    "name": "Isabel",
-    "active": false,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
-    "sentToGroup": false,
-    "objective": ""
-  },
   "Marina": {
     "name": "Marina",
     "active": false,
@@ -402,6 +393,15 @@
     "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
+    "objective": ""
+  },
+  "Isabel Barra": {
+    "name": "Isabel Barra",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
     "objective": ""
   }
 }
