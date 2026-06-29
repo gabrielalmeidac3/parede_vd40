@@ -6,29 +6,20 @@
     "tuesday": true,
     "thursday": true,
     "sentToGroup": false,
-    "objective": "Harpa 169 / Eis me aqui senhor / Instânte Mágico"
+    "objective": "Meu lugar é aqui / O Baile da Fazenda / Vem me Amar"
   },
   "Antônia": {
     "name": "Antônia",
-    "active": true,
-    "videocall": true,
-    "tuesday": true,
-    "thursday": true,
-    "sentToGroup": false,
-    "objective": "Marcar partes da música Porque Ele Vive - e treinar individualmente - depois treinar inteira"
-  },
-  "Paulo Soares": {
-    "name": "Paulo Soares",
     "active": true,
     "videocall": false,
     "tuesday": true,
     "thursday": true,
     "sentToGroup": true,
-    "objective": "Melhorar o som dos acordes"
+    "objective": "Acertar ritmo e encaixe da voz da música Porque Ele Vive"
   },
   "Alessandro": {
     "name": "Alessandro",
-    "active": true,
+    "active": false,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
@@ -82,39 +73,39 @@
   },
   "Daia": {
     "name": "Daia",
-    "active": false,
+    "active": true,
     "videocall": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Músicas em guarânia"
+    "objective": ""
   },
   "Denilson": {
     "name": "Denilson",
     "active": true,
-    "videocall": false,
+    "videocall": true,
     "tuesday": true,
     "thursday": true,
-    "sentToGroup": true,
-    "objective": "Tocar músicas com o F e melhorar troca e sonoridade do acorde"
+    "sentToGroup": false,
+    "objective": "Escolher uma música que contenha o F pra treinar (Página de Amigos)"
   },
   "Geni": {
     "name": "Geni",
     "active": true,
-    "videocall": true,
+    "videocall": false,
     "tuesday": false,
-    "thursday": true,
+    "thursday": false,
     "sentToGroup": false,
-    "objective": "Página de Amigos - Tom G / É amor - Zezé di Camargo e Luciano"
+    "objective": ""
   },
   "Luciene": {
     "name": "Luciene",
     "active": true,
     "videocall": false,
     "tuesday": false,
-    "thursday": true,
-    "sentToGroup": true,
-    "objective": "Música Princesa - Amado Batista"
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
   },
   "Regina": {
     "name": "Regina",
@@ -127,7 +118,7 @@
   },
   "Maguida": {
     "name": "Maguida",
-    "active": false,
+    "active": true,
     "videocall": false,
     "tuesday": false,
     "thursday": false,
@@ -136,84 +127,39 @@
   },
   "Adilson": {
     "name": "Adilson",
-    "active": false,
-    "videocall": false,
+    "active": true,
+    "videocall": true,
+    "sentToGroup": false,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": false,
-    "objective": ""
+    "objective": "Escrever uma música e cifrar"
   },
   "Neusa": {
     "name": "Neusa",
-    "active": false,
+    "active": true,
     "videocall": false,
+    "sentToGroup": true,
     "tuesday": false,
     "thursday": false,
-    "sentToGroup": false,
-    "objective": ""
+    "objective": "Ver quais músicas já consegue tocar e quais ainda não consegue"
   },
   "Célia": {
     "name": "Célia",
     "active": true,
     "videocall": false,
-    "tuesday": false,
-    "thursday": false,
-    "sentToGroup": false,
-    "objective": ""
-  },
-  "Analu": {
-    "name": "Analu",
-    "active": true,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
-    "thursday": false,
-    "objective": "Aprender os 3 primeiros acordes"
-  },
-  "Gilson": {
-    "name": "Gilson",
-    "active": true,
-    "videocall": false,
     "sentToGroup": true,
+    "tuesday": false,
+    "thursday": false,
+    "objective": "Listar tudo o que sabe no violão hoje. Ou começar pelos 3 primeiros acordes e 1 ritmo."
+  },
+  "Paulo Soares": {
+    "name": "Paulo Soares",
+    "active": true,
+    "videocall": false,
     "tuesday": true,
-    "thursday": false,
-    "objective": "Começar com música Telefone Mudo pra treinar"
-  },
-  "Paulo Ricardo": {
-    "name": "Paulo Ricardo",
-    "active": true,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
-    "thursday": false,
-    "objective": ""
-  },
-  "Isabel": {
-    "name": "Isabel",
-    "active": true,
-    "videocall": false,
-    "sentToGroup": true,
-    "tuesday": false,
-    "thursday": false,
-    "objective": "Treinar música Cavalo Preto"
-  },
-  "Marina": {
-    "name": "Marina",
-    "active": true,
-    "videocall": false,
-    "sentToGroup": true,
-    "tuesday": true,
-    "thursday": false,
-    "objective": "Assistir a aula sobre os 3 primeiros acordes e fazer o exercício da aula"
-  },
-  "Adelina": {
-    "name": "Adelina",
-    "active": true,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
     "thursday": true,
-    "objective": "Assistir a aula e fazer o exercício para iniciantes do zero"
+    "sentToGroup": true,
+    "objective": ""
   },
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
@@ -222,15 +168,6 @@
     "tuesday": true,
     "thursday": true,
     "sentToGroup": false,
-    "objective": "Folha Seca em D - Acertar altura da voz / Fazer treinos de altura da voz com as notas"
-  },
-  "Márcia Maria Ribeiro": {
-    "name": "Márcia Maria Ribeiro",
-    "active": true,
-    "videocall": false,
-    "sentToGroup": false,
-    "tuesday": false,
-    "thursday": true,
-    "objective": "Assistir a aula e fazer o exercício para iniciantes do zero"
+    "objective": "Acertar a altura da voz na música Tocando em Frente - Procurar outra pra treinar"
   }
 }

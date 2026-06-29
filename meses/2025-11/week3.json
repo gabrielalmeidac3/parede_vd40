@@ -206,6 +206,15 @@
     "sentToGroup": false,
     "objective": ""
   },
+  "Isabel": {
+    "name": "Isabel",
+    "active": false,
+    "videocall": false,
+    "tuesday": false,
+    "thursday": false,
+    "sentToGroup": false,
+    "objective": ""
+  },
   "Ivo Ferreira": {
     "name": "Ivo Ferreira",
     "active": true,
@@ -439,14 +448,5 @@
     "thursday": false,
     "sentToGroup": false,
     "objective": "Cadê você / Mais uma no rock / Aula de como deixar o acorde bonito (Aulas pra iniciantes)"
-  },
-  "Isabel Barra": {
-    "name": "Isabel Barra",
-    "active": false,
-    "videocall": false,
-    "tuesday": false,
-    "thursday": false,
-    "sentToGroup": false,
-    "objective": ""
   }
 }

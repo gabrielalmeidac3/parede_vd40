@@ -52,33 +52,6 @@ function addGlobalEventListener() {
         }
     }, 50);
     
-    // Handle select dropdown changes for presentation day
-    studentList.addEventListener('change', async (e) => {
-        if (e.target.classList.contains('presentation-day-select')) {
-            const studentName = e.target.dataset.student;
-            const value = e.target.value;
-
-            // ATUALIZAÇÃO INSTANTÂNEA VISUAL
-            // Mostrar indicador de salvamento
-            showSaveStatus('saving', '💾 Salvando...');
-
-            // Atualizar dados
-            await updateStudent(studentName, 'presentationDay', value);
-
-            // Atualizar lista (para sincronizar)
-            await updateStudentList();
-
-            // Pequeno delay para garantir que o timestamp foi salvo
-            await new Promise(resolve => setTimeout(resolve, 100));
-
-            // Atualizar status do botão de upload APÓS salvar
-            await updateLastUploadTime();
-
-            // Mostrar sucesso
-            showSaveStatus('success', '✅ Salvo!');
-        }
-    });
-
     studentList.addEventListener('change', debouncedChangeHandler);
     
     // Event delegation para botões
@@ -236,17 +209,17 @@ async function initData() {
 // Carregar dados específicos de mês+semana
 async function loadStudents() {
     const week = document.getElementById('weekSelect').value;
-
+    
     if (week === 'general') {
         return [];  // Retorna array vazio no modo geral
     }
-
+    
     const monthId = document.getElementById('monthSelect').value;
     const weekNum = document.getElementById('weekSelect').value;
     const fileName = `${monthId}-week${weekNum}.json`;
-
+    
     const weekData = await loadJsonFile(`${monthId}-week${weekNum}.json`, {});
-
+    
     // Retornar todos os alunos globais com seus dados da semana atual
     const globalStudents = await loadGlobalStudents();
     return globalStudents.map(name => {
@@ -256,9 +229,7 @@ async function loadStudents() {
             videocall: false,
             sentToGroup: false,
             tuesday: false,
-            thursday: false,
-            apresentacaoSemanal: false,
-            presentationDay: ''
+            thursday: false
         };
 
         // Adicionar campos se não existirem
@@ -268,13 +239,7 @@ async function loadStudents() {
         if (student.sentToGroup === undefined) {
             student.sentToGroup = false;
         }
-        if (student.apresentacaoSemanal === undefined) {
-            student.apresentacaoSemanal = false;
-        }
-        if (!student.presentationDay) {
-            student.presentationDay = '';
-        }
-
+        
         return student;
     });
 }
@@ -359,39 +324,15 @@ const calculateScore = (function() {
     const cache = new Map();
     return function(student) {
         if (!student.active) return 0;
-
-        // Obter mês selecionado
-        const monthSelect = document.getElementById('monthSelect');
-        const selectedMonth = monthSelect ? monthSelect.value : '';
-
-        // Verificar se é janeiro de 2026 ou posterior
-        const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
-
-        // Criar chave de cache diferente para cada sistema
-        const key = isNewSystem
-            ? `${student.name}-${student.videocall}-${student.sentToGroup}-${student.apresentacaoSemanal}-${student.objective}-new`
-            : `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}-${student.objective}-old`;
-
+        const key = `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}-${student.objective}`;
         if (cache.has(key)) {
             return cache.get(key);
         }
-
         let score = 0;
-
-        if (isNewSystem) {
-            // Sistema novo (≥ janeiro 2026): videochamada/grupo + apresentação semanal + objetivo = 100%
-            // Cada item vale 33.33%
-            if (student.videocall || student.sentToGroup) score += 33.33;
-            if (student.apresentacaoSemanal) score += 33.33; // Novo campo apresentacaoSemanal
-            if (student.objective?.trim()) score += 33.33;
-        } else {
-            // Sistema antigo (< janeiro 2026): videochamada/grupo + terça + quinta + objetivo
-            if (student.videocall || student.sentToGroup) score += 25;
-            if (student.tuesday) score += 25;
-            if (student.thursday) score += 25;
-            if (student.objective?.trim()) score += 25;
-        }
-
+        if (student.videocall || student.sentToGroup) score += 25;
+        if (student.tuesday) score += 25;
+        if (student.thursday) score += 25;
+        if (student.objective?.trim()) score += 25;
         const result = Math.round(score);
         cache.set(key, result);
         return result;
@@ -558,7 +499,7 @@ async function updateChart() {
 async function updateStudentList() {
     // Adicionar listeners globais apenas uma vez
     addGlobalEventListener();
-
+    
     updateStudentObjectiveSelect();
     let students = await loadStudents();
 
@@ -571,7 +512,7 @@ async function updateStudentList() {
 
     // aplicar filtro de pesquisa
     if (searchTerm) {
-        students = students.filter(s =>
+        students = students.filter(s => 
             normalizeText(s.name).includes(searchTerm)
         );
     }
@@ -581,71 +522,37 @@ async function updateStudentList() {
     const studentList = document.getElementById('studentList');
     studentList.innerHTML = '';
 
-    // Verificar se é janeiro de 2026 ou posterior
-    const monthSelect = document.getElementById('monthSelect');
-    const selectedMonth = monthSelect ? monthSelect.value : '';
-    const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
-
     students.forEach((student, index) => {
         const studentItem = document.createElement('div');
         studentItem.className = 'student-item';
         studentItem.dataset.studentName = student.name; // Importante para event delegation
         const score = calculateScore(student);
 
-        // Gerar HTML condicionalmente
-        let checkboxesHTML = `
-            <div class="checkbox-item">
-                <input type="checkbox" id="active-${index}" data-field="active" data-student="${student.name}" ${student.active ? 'checked' : ''}>
-                <label for="active-${index}">Ativo</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${student.name}" ${student.videocall ? 'checked' : ''}>
-                <label for="videocall-${index}">Videochamada</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${student.name}" ${student.sentToGroup ? 'checked' : ''}>
-                <label for="sentToGroup-${index}">Mandou no grupo</label>
-            </div>
-        `;
-
-        if (isNewSystem) {
-            // Sistema novo: mostrar apenas Apresentação Semanal
-            checkboxesHTML += `
-                <div class="checkbox-item">
-                    <input type="checkbox" id="apresentacaoSemanal-${index}" data-field="apresentacaoSemanal" data-student="${student.name}" ${student.apresentacaoSemanal ? 'checked' : ''}>
-                    <label for="apresentacaoSemanal-${index}">Apresentação Semanal</label>
-                </div>
-            `;
-        } else {
-            // Sistema antigo: mostrar Terça e Quinta
-            checkboxesHTML += `
-                <div class="checkbox-item">
-                    <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${student.name}" ${student.tuesday ? 'checked' : ''}>
-                    <label for="tuesday-${index}">Terça</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${student.name}" ${student.thursday ? 'checked' : ''}>
-                    <label for="thursday-${index}">Quinta</label>
-                </div>
-            `;
-        }
-
-        // Dropdown para dia de apresentação
-        const presentationDayOptions = ['', 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta'];
-        let presentationDayHTML = `<select class="presentation-day-select" data-student="${student.name}">`;
-        presentationDayOptions.forEach(day => {
-            const selected = student.presentationDay === day ? 'selected' : '';
-            presentationDayHTML += `<option value="${day}" ${selected}>${day || 'Selecionar dia'}</option>`;
-        });
-        presentationDayHTML += `</select>`;
-
         studentItem.innerHTML = `
             <div class="student-header">
                 <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
                     <span class="student-name">${student.name}</span>
-                    <div style="color: #888; font-size: 0.9em;">Dia da apresentação: ${presentationDayHTML}</div>
                     <div class="checkboxes" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        ${checkboxesHTML}
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="active-${index}" data-field="active" data-student="${student.name}" ${student.active ? 'checked' : ''}>
+                            <label for="active-${index}">Ativo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${student.name}" ${student.videocall ? 'checked' : ''}>
+                            <label for="videocall-${index}">Videochamada</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${student.name}" ${student.sentToGroup ? 'checked' : ''}>
+                            <label for="sentToGroup-${index}">Mandou no grupo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${student.name}" ${student.tuesday ? 'checked' : ''}>
+                            <label for="tuesday-${index}">Terça</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${student.name}" ${student.thursday ? 'checked' : ''}>
+                            <label for="thursday-${index}">Quinta</label>
+                        </div>
                     </div>
                 </div>
                 <div class="student-actions">
@@ -677,23 +584,18 @@ async function updateDetails() {
     const week = document.getElementById('weekSelect').value;
     const detailsGrid = document.getElementById('detailsGrid');
     const detailsTitle = document.querySelector('.student-details h3');
-
-    // Verificar se é janeiro de 2026 ou posterior
-    const monthSelect = document.getElementById('monthSelect');
-    const selectedMonth = monthSelect ? monthSelect.value : '';
-    const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
-
+    
     if (week === 'general') {
         detailsTitle.textContent = '📊 Resumo Mensal';
         const monthlyData = await loadMonthlyData();
-
+        
         if (monthlyData.length === 0 || monthlyData.every(s => s.averageScore === 0)) {
             detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum dado para este mês</p>';
             return;
         }
-
+        
         detailsGrid.innerHTML = '';
-
+        
         monthlyData
             .filter(student => student.averageScore > 0)
             .sort((a, b) => {
@@ -705,11 +607,11 @@ async function updateDetails() {
             .forEach(student => {
                 const detailItem = document.createElement('div');
                 detailItem.className = 'detail-item';
-
+                
                 const weeksInfo = student.weeks
                     .map(w => `S${w.week}: ${w.score}%${w.active ? '' : ' (inativo)'}`)
                     .join(' | ');
-
+                
                 detailItem.innerHTML = `
                     <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
                     <div class="detail-activities">
@@ -724,14 +626,14 @@ async function updateDetails() {
                         </span>
                     </div>
                 `;
-
+                
                 detailsGrid.appendChild(detailItem);
             });
     } else {
-        // Modo semana individual
+        // Modo semana individual (código original)
         detailsTitle.textContent = '📊 Detalhes dos Alunos';
         const students = (await loadStudents()).filter(s => s.active);
-
+        
         const activeStudents = students
             .filter(s => s.active)
             .sort((a, b) => {
@@ -744,7 +646,7 @@ async function updateDetails() {
             detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum aluno ativo para esta semana</p>';
             return;
         }
-
+        
         detailsGrid.innerHTML = '';
 
         activeStudents.forEach(student => {
@@ -752,39 +654,22 @@ async function updateDetails() {
             detailItem.className = 'detail-item';
 
             const score = calculateScore(student);
-
-            let activitiesHTML = `
-                <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
-                    ${student.videocall ? '✅ Videochamada' :
-                    student.sentToGroup ? '✅ Mandou no grupo' :
-                    '❌ Videochamada / Mandou no grupo'}
-                </span>
-            `;
-
-            if (isNewSystem) {
-                // Sistema novo: mostrar Apresentação Semanal
-                activitiesHTML += `
-                    <span class="activity ${student.apresentacaoSemanal ? 'done' : 'not-done'}">
-                        ${student.apresentacaoSemanal ? '✅' : '❌'} Apresentação Semanal
+            
+            detailItem.innerHTML = `
+                <div class="detail-name">${student.name} - ${score}%</div>
+                ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
+                <div class="detail-activities">
+                    <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
+                        ${student.videocall ? '✅ Videochamada' : 
+                        student.sentToGroup ? '✅ Mandou no grupo' : 
+                        '❌ Videochamada / Mandou no grupo'}
                     </span>
-                `;
-            } else {
-                // Sistema antigo: mostrar Terça e Quinta
-                activitiesHTML += `
                     <span class="activity ${student.tuesday ? 'done' : 'not-done'}">
                         ${student.tuesday ? '✅' : '❌'} Terça
                     </span>
                     <span class="activity ${student.thursday ? 'done' : 'not-done'}">
                         ${student.thursday ? '✅' : '❌'} Quinta
                     </span>
-                `;
-            }
-
-            detailItem.innerHTML = `
-                <div class="detail-name">${student.name} - ${score}%</div>
-                ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
-                <div class="detail-activities">
-                    ${activitiesHTML}
                 </div>
             `;
 
@@ -853,8 +738,7 @@ async function addStudent() {
         sentToGroup: false,
         tuesday: false,
         thursday: false,
-        objective: '',
-        presentationDay: ''
+        objective: ''
     };
     students.push(newStudent);
     await saveStudents(students);
@@ -1026,39 +910,6 @@ async function clearAllData() {
     }
 }
 
-// Ajustar posição da weekly-summary quando section-header fica sticky
-function adjustWeeklySummaryPosition() {
-    const sectionHeader = document.querySelector('.section-header');
-    const weeklySummary = document.querySelector('.weekly-summary');
-    
-    if (sectionHeader && weeklySummary) {
-        const headerRect = sectionHeader.getBoundingClientRect();
-        const isSticky = headerRect.top === 0;
-        
-        if (isSticky) {
-            const headerHeight = sectionHeader.offsetHeight;
-            weeklySummary.style.top = `${headerHeight + 20}px`;
-        } else {
-            weeklySummary.style.top = '20px';
-        }
-    }
-}
-
-// Executar ao rolar a página
-window.addEventListener('scroll', adjustWeeklySummaryPosition);
-// Executar ao carregar
-window.addEventListener('load', adjustWeeklySummaryPosition);
-// Ctrl+F para focar no campo de pesquisa de alunos
-document.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
-        e.preventDefault();
-        const searchInput = document.getElementById('searchStudents');
-        if (searchInput) {
-            searchInput.focus();
-            searchInput.select();
-        }
-    }
-});
 // Event listeners
 
 document.getElementById('newStudentName').addEventListener('keypress', async function(e) {
@@ -1349,8 +1200,7 @@ async function copyFromPreviousWeek() {
             tuesday: false,
             thursday: false,
             sentToGroup: false,
-            objective: previousStudent?.objective || '',
-            presentationDay: previousStudent?.presentationDay || ''
+            objective: previousStudent?.objective || ''
         };
     });
     
@@ -1972,37 +1822,21 @@ function toggleDetailsView() {
 
 document.getElementById('toggleDetailsBtn').addEventListener('click', toggleDetailsView);
 // Filtro de alunos
-// Dropdown de filtro
-const filterDropdown = document.getElementById('filterDropdown');
-const filterMenu = document.getElementById('filterMenu');
-
-filterDropdown.addEventListener('click', (e) => {
-    e.stopPropagation();
-    filterMenu.style.display = filterMenu.style.display === 'none' ? 'block' : 'none';
-});
-
-document.querySelectorAll('#filterMenu .dropdown-item').forEach(item => {
-    item.addEventListener('click', () => {
-        setFilter(item.dataset.filter);
-        filterMenu.style.display = 'none';
-    });
-});
-
-document.addEventListener('click', () => {
-    filterMenu.style.display = 'none';
-});
+document.getElementById('filterActive').addEventListener('click', () => setFilter("active"));
+document.getElementById('filterAll').addEventListener('click', () => setFilter("all"));
+document.getElementById('filterInactive').addEventListener('click', () => setFilter("inactive"));
 // Event listener para pesquisa em tempo real
 document.getElementById('searchStudents').addEventListener('input', handleSearch);
 document.getElementById('clearSearch').addEventListener('click', clearSearch);
 
 function setFilter(type) {
     currentFilter = type;
-    
-    // Atualizar texto do botão dropdown
-    const filterBtn = document.getElementById('filterDropdown');
-    if (type === "active") filterBtn.textContent = "🔽 Alunos Ativos";
-    if (type === "all") filterBtn.textContent = "🔽 Todos os Alunos";
-    if (type === "inactive") filterBtn.textContent = "🔽 Alunos Inativos";
+
+    // resetar estado visual dos botões
+    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+    if (type === "active") document.getElementById("filterActive").classList.add("active");
+    if (type === "all") document.getElementById("filterAll").classList.add("active");
+    if (type === "inactive") document.getElementById("filterInactive").classList.add("active");
 
     updateStudentList();
 }
@@ -2020,25 +1854,12 @@ function clearSearch() {
     document.getElementById('searchStudents').value = '';
     searchTerm = "";
     updateStudentList();
-    document.getElementById('searchStudents').focus();
 }
-// Menu hamburger
-const menuBtn = document.getElementById('menuBtn');
-const menuDropdown = document.getElementById('menuDropdown');
-
-menuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuDropdown.style.display = menuDropdown.style.display === 'none' ? 'block' : 'none';
-});
-
-document.addEventListener('click', () => {
-    menuDropdown.style.display = 'none';
-});
 
 // Função para atualizar resumo semanal
 async function updateWeeklySummary() {
     const week = document.getElementById('weekSelect').value;
-
+    
     if (week === 'general') {
         // Esconder barra no modo geral
         document.getElementById('weeklySummary').style.display = 'none';
@@ -2046,41 +1867,20 @@ async function updateWeeklySummary() {
     } else {
         document.getElementById('weeklySummary').style.display = 'flex';
     }
-
+    
     const students = await loadStudents();
-
-    // Verificar se é janeiro de 2026 ou posterior
-    const monthSelect = document.getElementById('monthSelect');
-    const selectedMonth = monthSelect ? monthSelect.value : '';
-    const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
-
+    
     const active = students.filter(s => s.active).length;
     const videocall = students.filter(s => s.active && s.videocall).length;
     const group = students.filter(s => s.active && s.sentToGroup).length;
-
-    if (isNewSystem) {
-        // Sistema novo: mostrar AS (Apresentação Semanal)
-        const apresentacaoSemanal = students.filter(s => s.active && s.apresentacaoSemanal).length;
-
-        document.getElementById('summaryActive').textContent = `A: ${active}`;
-        document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
-        document.getElementById('summaryGroup').textContent = `MG: ${group}`;
-        document.getElementById('summaryTuesday').textContent = `AS: ${apresentacaoSemanal}`;
-        // Esconder o contador de quinta-feira no sistema novo
-        document.getElementById('summaryThursday').style.display = 'none';
-    } else {
-        // Sistema antigo: mostrar T e Q
-        const tuesday = students.filter(s => s.active && s.tuesday).length;
-        const thursday = students.filter(s => s.active && s.thursday).length;
-
-        document.getElementById('summaryActive').textContent = `A: ${active}`;
-        document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
-        document.getElementById('summaryGroup').textContent = `MG: ${group}`;
-        document.getElementById('summaryTuesday').textContent = `T: ${tuesday}`;
-        document.getElementById('summaryThursday').textContent = `Q: ${thursday}`;
-        // Garantir que o contador de quinta-feira esteja visível no sistema antigo
-        document.getElementById('summaryThursday').style.display = 'flex';
-    }
+    const tuesday = students.filter(s => s.active && s.tuesday).length;
+    const thursday = students.filter(s => s.active && s.thursday).length;
+    
+    document.getElementById('summaryActive').textContent = `A: ${active}`;
+    document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
+    document.getElementById('summaryGroup').textContent = `MG: ${group}`;
+    document.getElementById('summaryTuesday').textContent = `T: ${tuesday}`;
+    document.getElementById('summaryThursday').textContent = `Q: ${thursday}`;
 }
 
 // Função para atualização instantânea da UI
@@ -2673,34 +2473,34 @@ async function updateLastUploadTime() {
 
 document.getElementById('uploadGithubBtn').addEventListener('click', async () => {
     showSaveStatus('saving', 'Upando para GitHub...');
-
+    
     try {
         const configResponse = await fetch('/config.json');
         const config = await configResponse.json();
         const serverPort = config.port || window.location.port || 8005;
-
+        
         const response = await fetch(`http://localhost:${serverPort}/executar-python`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ arquivo: 'subir_arquivos_parede.py' })
         });
-
+        
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-
+        
         const result = await response.json();
-
+        
         if (result.sucesso) {
             showSaveStatus('success', '✅ Upload concluído com sucesso!');
-
+            
             // Aguardar o arquivo ser atualizado
             await new Promise(resolve => setTimeout(resolve, 500));
-
+            
             // Invalidar cache e recarregar
             invalidateFileCache('ultima_execucao.json');
             const uploadData = await loadJsonFile('ultima_execucao.json', null, true);
-
+            
             if (uploadData?.ultima_execucao) {
                 // Sincronizar timestamps
                 const uploadDate = new Date(uploadData.ultima_execucao.replace(' às ', ' '));
@@ -2708,16 +2508,16 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
                     ultima_modificacao: uploadData.ultima_execucao,
                     timestamp_unix: uploadDate.getTime()
                 };
-
+                
                 const configHandle = await directoryHandle.getDirectoryHandle('config', { create: true });
                 const fileHandle = await configHandle.getFileHandle('local_modification.json', { create: true });
                 const writable = await fileHandle.createWritable({ keepExistingData: false });
                 await writable.write(JSON.stringify(syncData, null, 2));
                 await writable.close();
-
+                
                 invalidateFileCache('local_modification.json');
             }
-
+            
             // Atualizar visual
             await updateLastUploadTime();
         } else {
@@ -2727,30 +2527,5 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
     } catch (error) {
         showSaveStatus('error', '❌ Erro ao conectar ao servidor!');
         console.error('Erro completo:', error);
-    }
-});
-
-// Modal functionality
-const modal = document.getElementById('presentationsModal');
-const openBtn = document.getElementById('openPresentationsBtn');
-const closeBtn = document.querySelector('.close');
-
-openBtn.onclick = function() {
-    modal.style.display = 'block';
-}
-
-closeBtn.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        modal.style.display = 'none';
     }
 });
