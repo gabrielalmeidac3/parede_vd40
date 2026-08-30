@@ -1,66 +1,172 @@
-
 let globalListenerAdded = false;
 let currentFilter = "active"; // padrão: mostrar apenas alunos ativos
 let searchTerm = ""; // termo de pesquisa atual
+// Controle de expansão do gráfico
+let chartExpanded = false;
+let isChartVisible = false;
+
+function getChartScrollTarget() {
+    const chartSection = document.getElementById('chartSection');
+    const chart = document.getElementById('chart');
+    return chartSection || chart;
+}
+
+function scrollToChart() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+function syncChartTogglePosition() {
+    const chartSection = document.getElementById('chartSection');
+    const chartToggleTab = document.getElementById('chartToggleTab');
+    const container = document.querySelector('.container');
+    if (!chartToggleTab || !container) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const computedStyle = window.getComputedStyle(container);
+    const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0;
+    const contentStart = containerRect.left + paddingLeft;
+    const safeGap = 16;
+    const availableMargin = Math.max(32, Math.floor(contentStart - safeGap));
+    chartToggleTab.style.width = `${availableMargin}px`;
+
+    if (!isChartVisible || !chartSection || chartSection.classList.contains('chart-container-collapsed')) {
+        chartToggleTab.classList.remove('is-hidden-by-viewport');
+        return;
+    }
+
+    const rect = chartSection.getBoundingClientRect();
+    const isVisible = rect.bottom > 0 && rect.top < window.innerHeight && rect.left < viewportWidth && rect.right > 0;
+    chartToggleTab.classList.toggle('is-hidden-by-viewport', !isVisible);
+}
+
+function updateChartToggleUI() {
+    const chartSection = document.getElementById('chartSection');
+    const chartToggleTab = document.getElementById('chartToggleTab');
+    if (!chartSection || !chartToggleTab) return;
+
+    const arrow = chartToggleTab.querySelector('.chart-toggle-arrow');
+    const label = chartToggleTab.querySelector('.chart-toggle-label');
+    const openText = 'Abrir gráfico';
+    const closeText = 'Fechar gráfico';
+
+    chartSection.classList.toggle('chart-container-collapsed', !isChartVisible);
+    chartSection.setAttribute('aria-hidden', String(!isChartVisible));
+    chartToggleTab.setAttribute('aria-expanded', String(isChartVisible));
+    chartToggleTab.classList.toggle('chart-hidden', !isChartVisible);
+    chartToggleTab.classList.toggle('chart-visible', isChartVisible);
+    chartToggleTab.title = isChartVisible ? closeText : openText;
+
+    if (arrow) {
+        arrow.textContent = isChartVisible ? '◀' : '▶';
+    }
+
+    if (label) {
+        label.textContent = isChartVisible ? closeText : openText;
+    }
+
+    syncChartTogglePosition();
+}
+
+function toggleChartVisibility(forceState) {
+    const wasVisible = isChartVisible;
+    isChartVisible = typeof forceState === 'boolean' ? forceState : !isChartVisible;
+    updateChartToggleUI();
+
+    if (!wasVisible && isChartVisible) {
+        requestAnimationFrame(() => {
+            scrollToChart();
+            setTimeout(syncChartTogglePosition, 350);
+        });
+    }
+}
 
 function addGlobalEventListener() {
     if (globalListenerAdded) return;
-    
+
     const studentList = document.getElementById('studentList');
-    
+
     // Event delegation - um único listener para todos os checkboxes
     const debouncedChangeHandler = debounce(async (e) => {
         if (e.target.type === 'checkbox' && e.target.dataset.student) {
             const studentName = e.target.dataset.student;
             const field = e.target.dataset.field;
             const value = e.target.checked;
-            
+
             // Atualização visual instantânea do checkbox
             e.target.style.transform = 'scale(1.1)';
             setTimeout(() => e.target.style.transform = 'scale(1)', 150);
 
             // ATUALIZAÇÃO INSTANTÂNEA VISUAL
             updateUIInstantly(studentName, field, value);
-            
+
             // Mostrar indicador de salvamento
             showSaveStatus('saving', '💾 Salvando...');
-            
+
             // Atualizar dados
             if (field === 'videocall' || field === 'sentToGroup') {
                 await updateStudentWithExclusion(studentName, field, value);
             } else {
                 await updateStudent(studentName, field, value);
             }
-            
+
             // Atualizar gráfico imediatamente
             const week = document.getElementById('weekSelect').value;
             if (week !== 'general') {
                 await updateChart();
             }
-            
+
             // Atualizar lista (para pontuação)
             await updateStudentList();
-            
+
             // Pequeno delay para garantir que o timestamp foi salvo
             await new Promise(resolve => setTimeout(resolve, 100));
-            
+
             // Atualizar status do botão de upload APÓS salvar
             await updateLastUploadTime();
-            
+
             // Mostrar sucesso
             showSaveStatus('success', '✅ Salvo!');
         }
     }, 50);
-    
+
+    // Handle select dropdown changes for presentation day
+    studentList.addEventListener('change', async (e) => {
+        if (e.target.classList.contains('presentation-day-select')) {
+            const studentName = e.target.dataset.student;
+            const value = e.target.value;
+
+            // ATUALIZAÇÃO INSTANTÂNEA VISUAL
+            // Mostrar indicador de salvamento
+            showSaveStatus('saving', '💾 Salvando...');
+
+            // Atualizar dados
+            await updateStudent(studentName, 'presentationDay', value);
+
+            // Atualizar lista (para sincronizar)
+            await updateStudentList();
+
+            // Pequeno delay para garantir que o timestamp foi salvo
+            await new Promise(resolve => setTimeout(resolve, 100));
+
+            // Atualizar status do botão de upload APÓS salvar
+            await updateLastUploadTime();
+
+            // Mostrar sucesso
+            showSaveStatus('success', '✅ Salvo!');
+        }
+    });
+
     studentList.addEventListener('change', debouncedChangeHandler);
-    
+
     // Event delegation para botões
-    studentList.addEventListener('click', function(e) {
+    studentList.addEventListener('click', function (e) {
         const studentItem = e.target.closest('.student-item');
         if (!studentItem) return;
-        
+
         const studentName = studentItem.dataset.studentName;
-        
+
         if (e.target.classList.contains('edit-btn')) {
             editStudentName(studentName);
         } else if (e.target.classList.contains('delete-btn')) {
@@ -69,8 +175,18 @@ function addGlobalEventListener() {
             editObjective(studentName);
         }
     });
-    
+
     globalListenerAdded = true;
+
+    // Toggle para Ferramentas de Adição
+    const addToolsToggle = document.getElementById('addToolsToggle');
+    const addToolsContent = document.getElementById('addToolsContent');
+    if (addToolsToggle && addToolsContent) {
+        addToolsToggle.addEventListener('click', () => {
+            const isActive = addToolsContent.classList.toggle('active');
+            addToolsToggle.classList.toggle('active');
+        });
+    }
 }
 
 // Dados iniciais
@@ -118,7 +234,7 @@ async function saveDirectoryHandle(handle) {
         await store.put({ id: 'directoryHandle', handle: handle, name: handle.name });
         localStorage.setItem('directoryHandleName', handle.name);
         sessionStorage.setItem('directoryHandleName', handle.name);
-        
+
     } catch (err) {
         console.error('Erro ao salvar no IndexedDB:', err);
     }
@@ -141,7 +257,7 @@ async function restoreDirectoryHandle() {
                             directoryHandle = saved.handle;
                             localStorage.setItem('directoryHandleName', saved.name);
                             sessionStorage.setItem('directoryHandleName', saved.name);
-                            
+
                             showSaveStatus('success', `✅ Conectado a: ${saved.name}`);
                             updateFileSystemStatusFixed();
                             resolve(true);
@@ -151,7 +267,7 @@ async function restoreDirectoryHandle() {
                                 directoryHandle = saved.handle;
                                 localStorage.setItem('directoryHandleName', saved.name);
                                 sessionStorage.setItem('directoryHandleName', saved.name);
-                                
+
                                 showSaveStatus('success', `✅ Conectado a: ${saved.name}`);
                                 updateFileSystemStatusFixed();
                                 resolve(true);
@@ -186,8 +302,8 @@ async function restoreDirectoryHandle() {
 
 // Inicializar dados se não existirem
 async function initData() {
-   
-    
+
+
     if (!(await loadJsonFile('months.json'))) {
         const defaultMonths = [
             { id: "2025-06", name: "Junho 2025", monthNumber: 6, year: 2025 },
@@ -196,7 +312,7 @@ async function initData() {
         ];
         await saveJsonFile('months.json', defaultMonths);
     }
-    
+
     if (!(await loadJsonFile('globalStudents.json'))) {
         const defaultStudents = [
             "Ana Silva", "Bruno Costa", "Carlos Mendes", "Diana Rocha", "Eduardo Lima",
@@ -207,39 +323,69 @@ async function initData() {
 }
 
 // Carregar dados específicos de mês+semana
+function sanitizeStudentData(name, rawData) {
+    const student = rawData || {
+        name: name,
+        active: false,
+        videocall: false,
+        sentToGroup: false,
+        tuesday: false,
+        thursday: false,
+        apresentacaoSemanal: false,
+        objective: '',
+        objectiveActive: false,
+        presentationDay: ''
+    };
+
+    // Garantir que o nome esteja correto
+    student.name = name;
+
+    // Adicionar/sanitizar campos se não existirem
+    if (student.active === undefined) student.active = false;
+    if (student.videocall === undefined) student.videocall = false;
+    if (student.sentToGroup === undefined) student.sentToGroup = false;
+    if (student.tuesday === undefined) student.tuesday = false;
+    if (student.thursday === undefined) student.thursday = false;
+    if (student.apresentacaoSemanal === undefined) student.apresentacaoSemanal = false;
+
+    if (!student.objective) {
+        student.objective = '';
+    } else {
+        student.objective = String(student.objective).trim();
+    }
+
+    if (student.objective) {
+        if (student.objectiveActive === undefined) {
+            student.objectiveActive = true;
+        }
+    } else {
+        student.objectiveActive = false;
+    }
+
+    if (!student.presentationDay) {
+        student.presentationDay = '';
+    }
+
+    return student;
+}
+
 async function loadStudents() {
     const week = document.getElementById('weekSelect').value;
-    
+
     if (week === 'general') {
         return [];  // Retorna array vazio no modo geral
     }
-    
+
     const monthId = document.getElementById('monthSelect').value;
     const weekNum = document.getElementById('weekSelect').value;
     const fileName = `${monthId}-week${weekNum}.json`;
-    
+
     const weekData = await loadJsonFile(`${monthId}-week${weekNum}.json`, {});
-    
+
     // Retornar todos os alunos globais com seus dados da semana atual
     const globalStudents = await loadGlobalStudents();
     return globalStudents.map(name => {
-        const student = weekData[name] || {
-            name: name,
-            active: false,
-            videocall: false,
-            sentToGroup: false,
-            tuesday: false,
-            thursday: false
-        };
-
-        // Adicionar campos se não existirem
-        if (!student.objective) {
-            student.objective = '';
-        }
-        if (student.sentToGroup === undefined) {
-            student.sentToGroup = false;
-        }
-        
+        const student = sanitizeStudentData(name, weekData[name]);
         return student;
     });
 }
@@ -248,10 +394,10 @@ async function loadStudents() {
 async function loadMonthlyData() {
     const monthId = document.getElementById('monthSelect').value;
     const globalStudents = await loadGlobalStudents();
-    
+
     // Coletar dados de todas as 4 semanas do mês
     const monthlyStats = {};
-    
+
     globalStudents.forEach(name => {
         monthlyStats[name] = {
             name: name,
@@ -261,38 +407,30 @@ async function loadMonthlyData() {
             objectiveCount: 0
         };
     });
-    
+
     for (let week = 1; week <= 4; week++) {
         const fileName = `${monthId}-week${week}.json`;
         const weekData = await loadJsonFile(fileName, {});
-        
+
         globalStudents.forEach(name => {
-            const studentData = weekData[name] || {
-                name: name,
-                active: false,
-                videocall: false,
-                tuesday: false,
-                thursday: false,
-                objective: ''
-            };
-            
+            const studentData = sanitizeStudentData(name, weekData[name]);
             const score = calculateScore(studentData);
             monthlyStats[name].weeks.push({
                 week: week,
                 score: score,
                 active: studentData.active
             });
-            
+
             // MUDANÇA: Sempre somar o score (0 se inativo) e sempre contar a semana
             monthlyStats[name].totalScore += score;
             monthlyStats[name].weekCount++;
-            
+
             if (studentData.objective?.trim()) {
                 monthlyStats[name].objectiveCount++;
             }
         });
     }
-    
+
     // Calcular médias - agora sempre divide por 4 semanas
     Object.values(monthlyStats).forEach(student => {
         student.averageScore = Math.round(student.totalScore / 4);
@@ -306,12 +444,12 @@ async function saveStudents(students) {
     const monthId = document.getElementById('monthSelect').value;
     const week = document.getElementById('weekSelect').value;
     const fileName = `${monthId}-week${week}.json`;
-    
+
     const weekData = {};
     students.forEach(student => {
         weekData[student.name] = student;
     });
-    
+
     const success = await saveJsonFile(fileName, weekData);
     if (success) {
         await updateStudentList();
@@ -320,19 +458,44 @@ async function saveStudents(students) {
 }
 
 // Calcular pontuação
-const calculateScore = (function() {
+const calculateScore = (function () {
     const cache = new Map();
-    return function(student) {
+    return function (student) {
         if (!student.active) return 0;
-        const key = `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}-${student.objective}`;
+
+        // Obter mês selecionado
+        const monthSelect = document.getElementById('monthSelect');
+        const selectedMonth = monthSelect ? monthSelect.value : '';
+
+        // Verificar se é janeiro de 2026 ou posterior
+        const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
+
+        // Criar chave de cache diferente para cada sistema
+        const objectiveState = student.objectiveActive ? 'objective-on' : 'objective-off';
+        const key = isNewSystem
+            ? `${student.name}-${student.videocall}-${student.sentToGroup}-${student.apresentacaoSemanal}-${student.objective}-${objectiveState}-new`
+            : `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}-${student.objective}-${objectiveState}-old`;
+
         if (cache.has(key)) {
             return cache.get(key);
         }
+
         let score = 0;
-        if (student.videocall || student.sentToGroup) score += 25;
-        if (student.tuesday) score += 25;
-        if (student.thursday) score += 25;
-        if (student.objective?.trim()) score += 25;
+
+        if (isNewSystem) {
+            // Sistema novo (≥ janeiro 2026): videochamada/grupo + apresentação semanal + objetivo = 100%
+            // Cada item vale 33.33%
+            if (student.videocall || student.sentToGroup) score += 33.33;
+            if (student.apresentacaoSemanal) score += 33.33; // Novo campo apresentacaoSemanal
+            if (student.objectiveActive && student.objective?.trim()) score += 33.33;
+        } else {
+            // Sistema antigo (< janeiro 2026): videochamada/grupo + terça + quinta + objetivo
+            if (student.videocall || student.sentToGroup) score += 25;
+            if (student.tuesday) score += 25;
+            if (student.thursday) score += 25;
+            if (student.objectiveActive && student.objective?.trim()) score += 25;
+        }
+
         const result = Math.round(score);
         cache.set(key, result);
         return result;
@@ -341,7 +504,7 @@ const calculateScore = (function() {
 
 // Carregar meses salvos
 async function loadMonths() {
-    
+
     const defaultMonths = [
         { id: "2025-06", name: "Junho 2025", monthNumber: 6, year: 2025 },
         { id: "2025-05", name: "Maio 2025", monthNumber: 5, year: 2025 },
@@ -352,7 +515,7 @@ async function loadMonths() {
 
 // Salvar meses
 async function saveMonths(months) {
-    
+
     const success = await saveJsonFile('months.json', months);
 }
 // Carregar lista global de alunos
@@ -372,7 +535,7 @@ async function saveGlobalStudents(students) {
 // Verificar se aluno já existe globalmente
 async function studentExists(name) {
     const globalStudents = await loadGlobalStudents();
-    return globalStudents.some(student => 
+    return globalStudents.some(student =>
         student.toLowerCase().trim() === name.toLowerCase().trim()
     );
 }
@@ -382,13 +545,13 @@ async function updateMonthSelect() {
     const months = await loadMonths();
     const monthSelect = document.getElementById('monthSelect');
     const currentValue = monthSelect.value;
-    
+
     monthSelect.innerHTML = '';
     months.forEach(month => {
         const option = new Option(month.name, month.id);
         monthSelect.add(option);
     });
-    
+
     // Restaurar seleção se ainda existir
     if (currentValue && months.find(m => m.id === currentValue)) {
         monthSelect.value = currentValue;
@@ -399,107 +562,278 @@ async function updateMonthSelect() {
 async function updateChart() {
     const week = document.getElementById('weekSelect').value;
     const chart = document.getElementById('chart');
-    
+
     // Criar fragmento para minimizar manipulações do DOM
     const fragment = document.createDocumentFragment();
-    
+
     if (week === 'general') {
         invalidateFileCache('months.json');
         const monthlyData = await loadMonthlyData();
-        console.log('Dados de loadMonthlyData:', JSON.stringify(monthlyData, null, 2));
-        monthlyData
+
+        const rankedMonthlyStudents = monthlyData
             .filter(student => student.averageScore > 0)
             .sort((a, b) => {
                 if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
                 return a.name.localeCompare(b.name);
-            })
-            .forEach(student => {
-                const bar = document.createElement('div');
-                bar.className = 'bar';
-                
-                const barFill = document.createElement('div');
-                barFill.className = 'bar-fill';
-                barFill.style.height = `${Math.max(student.averageScore * 2.5, 20)}px`;
-                
-                if (student.averageScore >= 80) {
-                    barFill.classList.add('high');
-                    if (student.averageScore === 100) {
-                        const star = document.createElement('div');
-                        star.className = 'star';
-                        star.textContent = '⭐';
-                        bar.appendChild(star);
-                    }
-                } else if (student.averageScore >= 50) {
-                    barFill.classList.add('medium');
-                } else {
-                    barFill.classList.add('low');
-                }
-                
-                barFill.textContent = `${student.averageScore}%`;
-                
-                const barName = document.createElement('div');
-                barName.className = 'bar-name';
-                barName.textContent = student.name;
-                
-                bar.appendChild(barFill);
-                bar.appendChild(barName);
+            });
+
+        const lowScoreStudents = rankedMonthlyStudents.filter(s => s.averageScore <= 33);
+        const otherStudents = rankedMonthlyStudents.filter(s => s.averageScore > 33);
+
+        // Renderizar alunos com score > 33%
+        otherStudents.forEach(student => {
+            const bar = createMonthlyBarElement(student);
+            fragment.appendChild(bar);
+        });
+
+        // Lógica de colapso para alunos ≤33% (igual às abas semanais)
+        if (lowScoreStudents.length > 3 && !chartExpanded) {
+            const visibleLow = lowScoreStudents.slice(0, 3);
+            const hiddenCount = lowScoreStudents.length - 3;
+
+            visibleLow.forEach(student => {
+                const bar = createMonthlyBarElement(student);
                 fragment.appendChild(bar);
             });
+
+            const showMoreBtn = document.createElement('div');
+            showMoreBtn.className = 'bar show-more-bar';
+            showMoreBtn.style.cursor = 'pointer';
+            showMoreBtn.onclick = () => {
+                chartExpanded = true;
+                updateChart();
+            };
+
+            const btnFill = document.createElement('div');
+            btnFill.className = 'bar-fill low';
+            btnFill.style.height = '20px';
+            btnFill.style.display = 'flex';
+            btnFill.style.alignItems = 'center';
+            btnFill.style.justifyContent = 'center';
+            btnFill.style.fontSize = '11px';
+            btnFill.textContent = `▼`;
+
+            const btnName = document.createElement('div');
+            btnName.className = 'bar-name';
+            btnName.textContent = `Mostrar mais (${hiddenCount})`;
+
+            showMoreBtn.appendChild(btnFill);
+            showMoreBtn.appendChild(btnName);
+            fragment.appendChild(showMoreBtn);
+        } else if (lowScoreStudents.length > 0) {
+            lowScoreStudents.forEach(student => {
+                const bar = createMonthlyBarElement(student);
+                fragment.appendChild(bar);
+            });
+
+            if (chartExpanded && lowScoreStudents.length > 3) {
+                const showLessBtn = document.createElement('div');
+                showLessBtn.className = 'bar show-less-bar';
+                showLessBtn.style.cursor = 'pointer';
+                showLessBtn.onclick = () => {
+                    chartExpanded = false;
+                    updateChart();
+                };
+
+                const btnFill = document.createElement('div');
+                btnFill.className = 'bar-fill low';
+                btnFill.style.height = '20px';
+                btnFill.style.display = 'flex';
+                btnFill.style.alignItems = 'center';
+                btnFill.style.justifyContent = 'center';
+                btnFill.style.fontSize = '11px';
+                btnFill.textContent = `▲`;
+
+                const btnName = document.createElement('div');
+                btnName.className = 'bar-name';
+                btnName.innerHTML = `Mostrar<br>menos`;
+                btnName.style.lineHeight = '1.2';
+
+                showLessBtn.appendChild(btnFill);
+                showLessBtn.appendChild(btnName);
+                fragment.appendChild(showLessBtn);
+            }
+        }
     } else {
         const students = (await loadStudents()).filter(s => s.active);
-        // Em updateChart, substitua a ordenação no modo de semana específica
         students.sort((a, b) => {
             const scoreA = calculateScore(a);
             const scoreB = calculateScore(b);
             if (scoreB !== scoreA) return scoreB - scoreA;
             return a.name.localeCompare(b.name);
         });
-        
-        students.forEach(student => {
-            const score = calculateScore(student);
-            const bar = document.createElement('div');
-            bar.className = 'bar';
-            
-            const barFill = document.createElement('div');
-            barFill.className = 'bar-fill';
-            barFill.style.height = `${Math.max(score * 2.5, 20)}px`;
-            
-            if (score >= 80) {
-                barFill.classList.add('high');
-                if (score === 100) {
-                    const star = document.createElement('div');
-                    star.className = 'star';
-                    star.textContent = '⭐';
-                    bar.appendChild(star);
-                }
-            } else if (score >= 50) {
-                barFill.classList.add('medium');
-            } else {
-                barFill.classList.add('low');
-            }
-            
-            barFill.textContent = `${score}%`;
-            
-            const barName = document.createElement('div');
-            barName.className = 'bar-name';
-            barName.textContent = student.name;
-            
-            bar.appendChild(barFill);
-            bar.appendChild(barName);
+
+        // Separar alunos por pontuação
+        const lowScoreStudents = students.filter(s => calculateScore(s) <= 33);
+        const otherStudents = students.filter(s => calculateScore(s) > 33);
+
+        // Renderizar alunos com score > 33%
+        otherStudents.forEach(student => {
+            const bar = createBarElement(student);
             fragment.appendChild(bar);
         });
+
+        // Lógica de colapso para alunos ≤33%
+        if (lowScoreStudents.length > 3 && !chartExpanded) {
+            // Mostrar apenas os 3 primeiros (ordem alfabética)
+            const visibleLow = lowScoreStudents.slice(0, 3);
+            const hiddenCount = lowScoreStudents.length - 3;
+
+            visibleLow.forEach(student => {
+                const bar = createBarElement(student);
+                fragment.appendChild(bar);
+            });
+
+            // Criar botão "Mostrar mais"
+            const showMoreBtn = document.createElement('div');
+            showMoreBtn.className = 'bar show-more-bar';
+            showMoreBtn.style.cursor = 'pointer';
+            showMoreBtn.onclick = () => {
+                chartExpanded = true;
+                updateChart();
+            };
+
+            const btnFill = document.createElement('div');
+            btnFill.className = 'bar-fill low';
+            btnFill.style.height = '20px';
+            btnFill.style.display = 'flex';
+            btnFill.style.alignItems = 'center';
+            btnFill.style.justifyContent = 'center';
+            btnFill.style.fontSize = '11px';
+            btnFill.textContent = `▼`;
+
+            const btnName = document.createElement('div');
+            btnName.className = 'bar-name';
+            btnName.textContent = `Mostrar mais (${hiddenCount})`;
+
+
+            showMoreBtn.appendChild(btnFill);
+            showMoreBtn.appendChild(btnName);
+            fragment.appendChild(showMoreBtn);
+
+        } else if (lowScoreStudents.length > 0) {
+            // Mostrar todos os alunos ≤33%
+            lowScoreStudents.forEach(student => {
+                const bar = createBarElement(student);
+                fragment.appendChild(bar);
+            });
+
+            // Adicionar botão "Mostrar menos" se estava expandido
+            if (chartExpanded && lowScoreStudents.length > 3) {
+                const showLessBtn = document.createElement('div');
+                showLessBtn.className = 'bar show-less-bar';
+                showLessBtn.style.cursor = 'pointer';
+                showLessBtn.onclick = () => {
+                    chartExpanded = false;
+                    updateChart();
+                };
+
+                const btnFill = document.createElement('div');
+                btnFill.className = 'bar-fill low';
+                btnFill.style.height = '20px';
+                btnFill.style.display = 'flex';
+                btnFill.style.alignItems = 'center';
+                btnFill.style.justifyContent = 'center';
+                btnFill.style.fontSize = '11px';
+                btnFill.textContent = `▲`;
+
+                const btnName = document.createElement('div');
+                btnName.className = 'bar-name';
+                btnName.innerHTML = `Mostrar<br>menos`;
+
+                btnName.style.lineHeight = '1.2';
+
+                showLessBtn.appendChild(btnFill);
+                showLessBtn.appendChild(btnName);
+
+
+                // Adicionar após todos os alunos low como uma barra normal
+                fragment.appendChild(showLessBtn);
+            }
+        }
     }
-    
+
     // Limpar e adicionar ao DOM de uma vez
     chart.innerHTML = '';
     chart.appendChild(fragment);
+}
+
+function createMonthlyBarElement(student) {
+    const score = student.averageScore;
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+
+    const barFill = document.createElement('div');
+    barFill.className = 'bar-fill';
+    barFill.style.height = `${Math.max(score * 2.5, 20)}px`;
+
+    if (score >= 80) {
+        barFill.classList.add('high');
+        if (score === 100) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.textContent = '⭐';
+            bar.appendChild(star);
+        }
+    } else if (score >= 50) {
+        barFill.classList.add('medium');
+    } else {
+        barFill.classList.add('low');
+    }
+
+    barFill.textContent = `${score}%`;
+
+    const barName = document.createElement('div');
+    barName.className = 'bar-name';
+    barName.textContent = student.name;
+
+    bar.appendChild(barFill);
+    bar.appendChild(barName);
+
+    return bar;
+}
+
+// Função auxiliar para criar elementos de barra
+function createBarElement(student) {
+    const score = calculateScore(student);
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+
+    const barFill = document.createElement('div');
+    barFill.className = 'bar-fill';
+    barFill.style.height = `${Math.max(score * 2.5, 20)}px`;
+
+    if (score >= 80) {
+        barFill.classList.add('high');
+        if (score === 100) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.textContent = '⭐';
+            bar.appendChild(star);
+        }
+    } else if (score >= 50) {
+        barFill.classList.add('medium');
+    } else {
+        barFill.classList.add('low');
+    }
+
+    barFill.textContent = `${score}%`;
+
+    const barName = document.createElement('div');
+    barName.className = 'bar-name';
+    barName.textContent = student.name;
+
+    bar.appendChild(barFill);
+    bar.appendChild(barName);
+
+    return bar;
 }
 
 // Atualizar lista de alunos no painel produtor
 async function updateStudentList() {
     // Adicionar listeners globais apenas uma vez
     addGlobalEventListener();
-    
+
     updateStudentObjectiveSelect();
     let students = await loadStudents();
 
@@ -512,7 +846,7 @@ async function updateStudentList() {
 
     // aplicar filtro de pesquisa
     if (searchTerm) {
-        students = students.filter(s => 
+        students = students.filter(s =>
             normalizeText(s.name).includes(searchTerm)
         );
     }
@@ -522,37 +856,71 @@ async function updateStudentList() {
     const studentList = document.getElementById('studentList');
     studentList.innerHTML = '';
 
+    // Verificar se é janeiro de 2026 ou posterior
+    const monthSelect = document.getElementById('monthSelect');
+    const selectedMonth = monthSelect ? monthSelect.value : '';
+    const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
+
     students.forEach((student, index) => {
         const studentItem = document.createElement('div');
         studentItem.className = 'student-item';
         studentItem.dataset.studentName = student.name; // Importante para event delegation
         const score = calculateScore(student);
 
+        // Gerar HTML condicionalmente
+        let checkboxesHTML = `
+            <div class="checkbox-item">
+                <input type="checkbox" id="active-${index}" data-field="active" data-student="${student.name}" ${student.active ? 'checked' : ''}>
+                <label for="active-${index}">Ativo</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${student.name}" ${student.videocall ? 'checked' : ''}>
+                <label for="videocall-${index}">Videochamada</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${student.name}" ${student.sentToGroup ? 'checked' : ''}>
+                <label for="sentToGroup-${index}">Mandou no grupo</label>
+            </div>
+        `;
+
+        if (isNewSystem) {
+            // Sistema novo: mostrar apenas Apresentação Semanal
+            checkboxesHTML += `
+                <div class="checkbox-item">
+                    <input type="checkbox" id="apresentacaoSemanal-${index}" data-field="apresentacaoSemanal" data-student="${student.name}" ${student.apresentacaoSemanal ? 'checked' : ''}>
+                    <label for="apresentacaoSemanal-${index}">Apresentação Semanal</label>
+                </div>
+            `;
+        } else {
+            // Sistema antigo: mostrar Terça e Quinta
+            checkboxesHTML += `
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${student.name}" ${student.tuesday ? 'checked' : ''}>
+                    <label for="tuesday-${index}">Terça</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${student.name}" ${student.thursday ? 'checked' : ''}>
+                    <label for="thursday-${index}">Quinta</label>
+                </div>
+            `;
+        }
+
+        // Dropdown para dia de apresentação
+        const presentationDayOptions = ['', 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta'];
+        let presentationDayHTML = `<select class="presentation-day-select" data-student="${student.name}">`;
+        presentationDayOptions.forEach(day => {
+            const selected = student.presentationDay === day ? 'selected' : '';
+            presentationDayHTML += `<option value="${day}" ${selected}>${day || 'Selecionar dia'}</option>`;
+        });
+        presentationDayHTML += `</select>`;
+
         studentItem.innerHTML = `
             <div class="student-header">
                 <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
                     <span class="student-name">${student.name}</span>
+                    <div style="color: #888; font-size: 0.9em;">Dia da apresentação: ${presentationDayHTML}</div>
                     <div class="checkboxes" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="active-${index}" data-field="active" data-student="${student.name}" ${student.active ? 'checked' : ''}>
-                            <label for="active-${index}">Ativo</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${student.name}" ${student.videocall ? 'checked' : ''}>
-                            <label for="videocall-${index}">Videochamada</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${student.name}" ${student.sentToGroup ? 'checked' : ''}>
-                            <label for="sentToGroup-${index}">Mandou no grupo</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${student.name}" ${student.tuesday ? 'checked' : ''}>
-                            <label for="tuesday-${index}">Terça</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${student.name}" ${student.thursday ? 'checked' : ''}>
-                            <label for="thursday-${index}">Quinta</label>
-                        </div>
+                        ${checkboxesHTML}
                     </div>
                 </div>
                 <div class="student-actions">
@@ -562,10 +930,16 @@ async function updateStudentList() {
                     <span class="student-score">${score}%</span>
                 </div>
             </div>
-            ${student.objective ? `<div class="objective-div" style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; cursor: pointer; transition: background 0.2s ease;" title="Clique para editar objetivo"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
         `;
 
         studentList.appendChild(studentItem);
+        if (student.objective) {
+            const studentHeader = studentItem.querySelector('.student-header');
+            if (studentHeader) {
+                const objectiveDiv = createObjectiveElement(student.name, student.objective, Boolean(student.objectiveActive));
+                studentHeader.insertAdjacentElement('afterend', objectiveDiv);
+            }
+        }
         updateWeeklySummary();
     });
 }
@@ -584,18 +958,23 @@ async function updateDetails() {
     const week = document.getElementById('weekSelect').value;
     const detailsGrid = document.getElementById('detailsGrid');
     const detailsTitle = document.querySelector('.student-details h3');
-    
+
+    // Verificar se é janeiro de 2026 ou posterior
+    const monthSelect = document.getElementById('monthSelect');
+    const selectedMonth = monthSelect ? monthSelect.value : '';
+    const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
+
     if (week === 'general') {
         detailsTitle.textContent = '📊 Resumo Mensal';
         const monthlyData = await loadMonthlyData();
-        
+
         if (monthlyData.length === 0 || monthlyData.every(s => s.averageScore === 0)) {
             detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum dado para este mês</p>';
             return;
         }
-        
+
         detailsGrid.innerHTML = '';
-        
+
         monthlyData
             .filter(student => student.averageScore > 0)
             .sort((a, b) => {
@@ -607,11 +986,11 @@ async function updateDetails() {
             .forEach(student => {
                 const detailItem = document.createElement('div');
                 detailItem.className = 'detail-item';
-                
+
                 const weeksInfo = student.weeks
                     .map(w => `S${w.week}: ${w.score}%${w.active ? '' : ' (inativo)'}`)
                     .join(' | ');
-                
+
                 detailItem.innerHTML = `
                     <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
                     <div class="detail-activities">
@@ -626,14 +1005,14 @@ async function updateDetails() {
                         </span>
                     </div>
                 `;
-                
+
                 detailsGrid.appendChild(detailItem);
             });
     } else {
-        // Modo semana individual (código original)
+        // Modo semana individual
         detailsTitle.textContent = '📊 Detalhes dos Alunos';
         const students = (await loadStudents()).filter(s => s.active);
-        
+
         const activeStudents = students
             .filter(s => s.active)
             .sort((a, b) => {
@@ -646,7 +1025,7 @@ async function updateDetails() {
             detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum aluno ativo para esta semana</p>';
             return;
         }
-        
+
         detailsGrid.innerHTML = '';
 
         activeStudents.forEach(student => {
@@ -654,22 +1033,39 @@ async function updateDetails() {
             detailItem.className = 'detail-item';
 
             const score = calculateScore(student);
-            
-            detailItem.innerHTML = `
-                <div class="detail-name">${student.name} - ${score}%</div>
-                ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
-                <div class="detail-activities">
-                    <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
-                        ${student.videocall ? '✅ Videochamada' : 
-                        student.sentToGroup ? '✅ Mandou no grupo' : 
+
+            let activitiesHTML = `
+                <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
+                    ${student.videocall ? '✅ Videochamada' :
+                    student.sentToGroup ? '✅ Mandou no grupo' :
                         '❌ Videochamada / Mandou no grupo'}
+                </span>
+            `;
+
+            if (isNewSystem) {
+                // Sistema novo: mostrar Apresentação Semanal
+                activitiesHTML += `
+                    <span class="activity ${student.apresentacaoSemanal ? 'done' : 'not-done'}">
+                        ${student.apresentacaoSemanal ? '✅' : '❌'} Apresentação Semanal
                     </span>
+                `;
+            } else {
+                // Sistema antigo: mostrar Terça e Quinta
+                activitiesHTML += `
                     <span class="activity ${student.tuesday ? 'done' : 'not-done'}">
                         ${student.tuesday ? '✅' : '❌'} Terça
                     </span>
                     <span class="activity ${student.thursday ? 'done' : 'not-done'}">
                         ${student.thursday ? '✅' : '❌'} Quinta
                     </span>
+                `;
+            }
+
+            detailItem.innerHTML = `
+                <div class="detail-name">${student.name} - ${score}%</div>
+                ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
+                <div class="detail-activities">
+                    ${activitiesHTML}
                 </div>
             `;
 
@@ -695,7 +1091,7 @@ async function updateStudent(studentName, field, value) {
 async function addStudent() {
     const nameInput = document.getElementById('newStudentName');
     const name = nameInput.value.trim();
-    
+
     if (!name) {
         nameInput.style.borderColor = '#ef4444';
         nameInput.style.boxShadow = '0 0 5px rgba(239, 68, 68, 0.5)';
@@ -705,30 +1101,30 @@ async function addStudent() {
         }, 1000);
         return;
     }
-    
+
     // Verificar duplicata instantaneamente
     const globalStudents = await loadGlobalStudents();
-    if (globalStudents.some(student => 
+    if (globalStudents.some(student =>
         student.toLowerCase().trim() === name.toLowerCase().trim()
     )) {
         nameInput.style.borderColor = '#ef4444';
         showSaveStatus('error', '❌ Este aluno já está cadastrado no sistema!');
         return;
     }
-    
+
     // ATUALIZAÇÃO VISUAL INSTANTÂNEA
     nameInput.value = '';
     nameInput.style.borderColor = '#10b981';
-    
+
     // Adicionar aluno visualmente à lista IMEDIATAMENTE
     addStudentToListInstantly(name);
-    
+
     showSaveStatus('saving', '💾 Salvando...');
-    
+
     // Salvar em background
     globalStudents.push(name);
     await saveGlobalStudents(globalStudents);
-    
+
     // Salvar dados do aluno como ativo por padrão
     const students = await loadStudents();
     const newStudent = {
@@ -738,11 +1134,13 @@ async function addStudent() {
         sentToGroup: false,
         tuesday: false,
         thursday: false,
-        objective: ''
+        objective: '',
+        objectiveActive: false,
+        presentationDay: ''
     };
     students.push(newStudent);
     await saveStudents(students);
-    
+
     showSaveStatus('success', '✅ Aluno adicionado!');
     nameInput.style.borderColor = '#4a5568';
 }
@@ -756,10 +1154,10 @@ async function listDirectoryContents() {
         showSaveStatus('error', '❌ Configure o sistema de arquivos primeiro!');
         return;
     }
-    
+
     try {
         let report = '📁 ESTRUTURA DE ARQUIVOS:\n\n';
-        
+
         // Listar arquivos na raiz
         report += '📂 Raiz:\n';
         for await (const [name, handle] of directoryHandle.entries()) {
@@ -767,7 +1165,7 @@ async function listDirectoryContents() {
                 report += `  📄 ${name}\n`;
             }
         }
-        
+
         // Listar pasta config
         try {
             const configHandle = await directoryHandle.getDirectoryHandle('config');
@@ -780,7 +1178,7 @@ async function listDirectoryContents() {
         } catch (err) {
             report += '\n📂 config/: (não encontrada)\n';
         }
-        
+
         // Listar pasta meses
         try {
             const mesesHandle = await directoryHandle.getDirectoryHandle('meses');
@@ -798,7 +1196,7 @@ async function listDirectoryContents() {
         } catch (err) {
             report += '\n📂 meses/: (não encontrada)\n';
         }
-        
+
         alert(report);
     } catch (err) {
         showSaveStatus('error', `❌ Erro ao listar: ${err.message}`);
@@ -811,31 +1209,31 @@ async function clearMonthData() {
         alert('Configure o sistema de arquivos primeiro!');
         return;
     }
-    
+
     const monthId = document.getElementById('monthSelect').value;
     if (!monthId) {
         showSaveStatus('error', '❌ Selecione um mês!');
         return;
     }
-    
+
     const months = await loadMonths();
     const month = months.find(m => m.id === monthId);
-    
+
     if (!confirm(`Limpar TODOS os dados de "${month.name}"?\nIsso não pode ser desfeito!`)) {
         return;
     }
-    
+
     try {
         const mesesHandle = await directoryHandle.getDirectoryHandle('meses');
         const monthHandle = await mesesHandle.getDirectoryHandle(monthId);
-        
+
         // Limpar todos os arquivos da pasta do mês
         for await (const [fileName, fileHandle] of monthHandle.entries()) {
             if (fileHandle.kind === 'file') {
                 await monthHandle.removeEntry(fileName);
             }
         }
-        
+
         showSaveStatus('success', `✅ Dados de ${month.name} limpos!`);
         await updateChart();
         await updateDetails();
@@ -853,15 +1251,15 @@ async function clearAllData() {
         alert('Configure o sistema de arquivos primeiro!');
         return;
     }
-    
+
     if (!confirm('⚠️ ATENÇÃO: Isso vai apagar TODOS os dados!\n\nTem certeza?')) {
         return;
     }
-    
+
     if (!confirm('🚨 ÚLTIMA CHANCE!\n\nIsso vai apagar PERMANENTEMENTE todos os meses, alunos e configurações!\n\nContinuar?')) {
         return;
     }
-    
+
     try {
         // Limpar pasta config
         try {
@@ -874,7 +1272,7 @@ async function clearAllData() {
         } catch (err) {
             console.log('Pasta config não encontrada');
         }
-        
+
         // Limpar pasta meses
         try {
             const mesesHandle = await directoryHandle.getDirectoryHandle('meses');
@@ -893,36 +1291,78 @@ async function clearAllData() {
         } catch (err) {
             console.log('Pasta meses não encontrada');
         }
-        
+
         // Limpar dados da memória também
         memoryStorage = {};
-        
+
         // Reinicializar dados padrão
         await initData();
         await updateMonthSelect();
         await updateChart();
         await updateDetails();
-        
+
         showSaveStatus('success', '✅ Todos os dados foram limpos!');
-        
+
     } catch (err) {
         showSaveStatus('error', `❌ Erro ao limpar: ${err.message}`);
     }
 }
 
+// Ajustar posição da weekly-summary quando section-header fica sticky
+function adjustWeeklySummaryPosition() {
+    const sectionHeader = document.querySelector('.section-header');
+    const weeklySummary = document.querySelector('.weekly-summary');
+
+    if (sectionHeader && weeklySummary) {
+        const headerRect = sectionHeader.getBoundingClientRect();
+        const isSticky = headerRect.top === 0;
+
+        if (isSticky) {
+            const headerHeight = sectionHeader.offsetHeight;
+            weeklySummary.style.top = `${headerHeight + 20}px`;
+        } else {
+            weeklySummary.style.top = '20px';
+        }
+    }
+}
+
+// Executar ao rolar a página
+window.addEventListener('scroll', adjustWeeklySummaryPosition);
+window.addEventListener('scroll', syncChartTogglePosition);
+// Executar ao carregar
+window.addEventListener('load', adjustWeeklySummaryPosition);
+window.addEventListener('load', syncChartTogglePosition);
+window.addEventListener('resize', syncChartTogglePosition);
+// Ctrl+F para focar no campo de pesquisa de alunos
+document.addEventListener('keydown', function (e) {
+    if (e.altKey && !e.ctrlKey && !e.metaKey && e.key.toLowerCase() === 'a') {
+        e.preventDefault();
+        toggleChartVisibility();
+        return;
+    }
+
+    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+        e.preventDefault();
+        const searchInput = document.getElementById('searchStudents');
+        if (searchInput) {
+            searchInput.focus();
+            searchInput.select();
+        }
+    }
+});
 // Event listeners
 
-document.getElementById('newStudentName').addEventListener('keypress', async function(e) {
+document.getElementById('newStudentName').addEventListener('keypress', async function (e) {
     if (e.key === 'Enter') {
         await addStudent();
     }
 });
-document.getElementById('studentObjectiveSelect').addEventListener('keypress', async function(e) {
+document.getElementById('studentObjectiveSelect').addEventListener('keypress', async function (e) {
     if (e.key === 'Enter') {
         e.preventDefault(); // Evita abrir a lista suspensa
         const objectiveText = document.getElementById('objectiveText').value.trim();
         const studentSelected = this.value;
-        
+
         if (objectiveText && studentSelected) {
             await addObjective();
         }
@@ -930,7 +1370,7 @@ document.getElementById('studentObjectiveSelect').addEventListener('keypress', a
 });
 
 // Event listener para copyFromPreviousWeek (com verificação)
-const copyBtn = document.getElementById('copyFromPreviousWeekBtn');
+const copyBtn = document.getElementById('copyFromPreviousBtn');
 if (copyBtn) {
     copyBtn.addEventListener('click', copyFromPreviousWeek);
 }
@@ -945,7 +1385,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM carregado, inicializando app...');
     const mainContent = document.querySelector('main') || document.body;
     const setupBtn = document.getElementById('setupFileSystemBtn');
-    
+    const chartToggleTab = document.getElementById('chartToggleTab');
+
+    updateChartToggleUI();
+
+    if (chartToggleTab) {
+        chartToggleTab.addEventListener('click', () => toggleChartVisibility());
+    }
+
+    syncChartTogglePosition();
+
     const restored = await restoreDirectoryHandle();
     if (restored && directoryHandle) {
         setupBtn.style.display = 'none';
@@ -959,8 +1408,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             await updateStudentList();
         }
         updateFileSystemStatusFixed();
-        
+
         await updateLastUploadTime();
+        await checkIfCurrentWeek();
     } else {
         setupBtn.style.display = 'block';
         mainContent.style.display = 'none';
@@ -968,17 +1418,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 // 3. ADICIONE event listeners para salvar quando mudar:
-document.getElementById('monthSelect').addEventListener('change', async function() {
+document.getElementById('monthSelect').addEventListener('change', async function () {
+    chartExpanded = false; // Resetar estado de expansão
     // Forçar seleção da aba "geral" quando mudar mês
     document.getElementById('weekSelect').value = 'general';
-    
+
     await onMonthOrWeekChange();
     await saveViewState();
+    await checkIfCurrentWeek();
 });
 
-document.getElementById('weekSelect').addEventListener('change', async function() {
-    await onMonthOrWeekChange();  
+document.getElementById('weekSelect').addEventListener('change', async function () {
+    chartExpanded = false; // Resetar estado de expansão
+    await onMonthOrWeekChange();
     await saveViewState();
+    await checkIfCurrentWeek();
 });
 
 // Função para adicionar mês
@@ -988,7 +1442,7 @@ async function addMonth() {
 
     const monthNumber = parseInt(prompt("Número do mês (1-12):"));
     const year = parseInt(prompt("Ano (ex: 2025):"));
-    
+
     if (monthNumber < 1 || monthNumber > 12 || !year) {
         showSaveStatus('error', '❌ Mês (1-12) e ano válidos!');
         return;
@@ -1009,7 +1463,7 @@ async function addMonth() {
 
     months.push(newMonth);
     months.sort((a, b) => b.year - a.year || b.monthNumber - a.monthNumber);
-    
+
     await saveMonths(months);
     await updateMonthSelect();
     document.getElementById('monthSelect').value = newMonth.id;
@@ -1020,23 +1474,23 @@ async function addMonth() {
 async function getPreviousMonth(currentMonthId) {
     const months = await loadMonths();
     const currentMonth = months.find(m => m.id === currentMonthId);
-    
+
     if (!currentMonth) return null;
-    
+
     let previousMonthNumber = currentMonth.monthNumber - 1;
     let previousYear = currentMonth.year;
-    
+
     // Se é janeiro, vai para dezembro do ano anterior
     if (previousMonthNumber === 0) {
         previousMonthNumber = 12;
         previousYear--;
     }
-    
+
     // Procurar o mês anterior na lista
-    const previousMonth = months.find(m => 
+    const previousMonth = months.find(m =>
         m.monthNumber === previousMonthNumber && m.year === previousYear
     );
-    
+
     return previousMonth;
 }
 
@@ -1044,42 +1498,42 @@ async function getPreviousMonth(currentMonthId) {
 async function editMonth() {
     const monthSelect = document.getElementById('monthSelect');
     const selectedValue = monthSelect.value;
-    
+
     if (!selectedValue) {
         showSaveStatus('error', '❌ Selecione um mês!');
         return;
     }
-    
+
     const months = await loadMonths();
     const monthToEdit = months.find(m => m.id === selectedValue);
-    
+
     if (!monthToEdit) {
         showSaveStatus('error', '❌ Mês não encontrado!');
         return;
     }
-    
+
     const newName = prompt("Nome do mês:", monthToEdit.name);
     if (!newName?.trim()) return;
-    
+
     const newMonthNumber = parseInt(prompt("Número do mês (1-12):", monthToEdit.monthNumber));
     if (isNaN(newMonthNumber) || newMonthNumber < 1 || newMonthNumber > 12) {
         showSaveStatus('error', '❌ Mês deve ser 1-12!');
         return;
     }
-    
+
     const newYear = parseInt(prompt("Ano:", monthToEdit.year));
     if (isNaN(newYear) || newYear < 1900 || newYear > 2100) {
         showSaveStatus('error', '❌ Ano inválido!');
         return;
     }
-    
+
     const newId = `${newYear}-${newMonthNumber.toString().padStart(2, '0')}`;
-    
+
     if (newId !== selectedValue && months.some(m => m.id === newId)) {
         showSaveStatus('error', '❌ Data já existe!');
         return;
     }
-    
+
     if (newId !== selectedValue) {
         for (let week = 1; week <= 4; week++) {
             const oldFileName = `${selectedValue}-week${week}.json`;
@@ -1091,14 +1545,14 @@ async function editMonth() {
             }
         }
     }
-    
+
     monthToEdit.id = newId;
     monthToEdit.name = newName.trim();
     monthToEdit.monthNumber = newMonthNumber;
     monthToEdit.year = newYear;
-    
+
     months.sort((a, b) => b.year - a.year || b.monthNumber - a.monthNumber);
-    
+
     await saveMonths(months);
     await updateMonthSelect();
     document.getElementById('monthSelect').value = newId;
@@ -1110,35 +1564,35 @@ async function editMonth() {
 async function deleteMonth() {
     const monthSelect = document.getElementById('monthSelect');
     const selectedValue = monthSelect.value;
-    
+
     if (!selectedValue) {
         showSaveStatus('error', '❌ Selecione um mês!');
         return;
     }
-    
+
     const months = await loadMonths();
     if (months.length <= 1) {
         showSaveStatus('error', '❌ Não pode excluir o último mês!');
         return;
     }
-    
+
     const monthToDelete = months.find(m => m.id === selectedValue);
     if (!monthToDelete) {
         showSaveStatus('error', '❌ Mês não encontrado!');
         return;
     }
-    
+
     if (!confirm(`Excluir "${monthToDelete.name}"? TODOS OS DADOS serão perdidos!`)) return;
-    
+
     for (let week = 1; week <= 4; week++) {
         const fileName = `${selectedValue}-week${week}.json`;
         await saveJsonFile(fileName, {});
     }
-    
+
     const updatedMonths = months.filter(m => m.id !== selectedValue);
     await saveMonths(updatedMonths);
     await updateMonthSelect();
-    
+
     const firstMonth = updatedMonths[0];
     if (firstMonth) {
         document.getElementById('monthSelect').value = firstMonth.id;
@@ -1146,7 +1600,7 @@ async function deleteMonth() {
         await onMonthOrWeekChange();
         await saveViewState();
     }
-    
+
     showSaveStatus('success', '✅ Mês excluído!');
 }
 
@@ -1161,13 +1615,14 @@ async function onMonthOrWeekChange() {
     invalidateFileCache(`${document.getElementById('monthSelect').value}-week${document.getElementById('weekSelect').value}.json`);
     await debouncedUpdate();
     await updateWeeklySummary();
+    await checkIfCurrentWeek();
 }
 
 // 4. NOVA função copyFromPreviousWeek melhorada:
 async function copyFromPreviousWeek() {
     const monthId = document.getElementById('monthSelect').value;
     const currentWeek = parseInt(document.getElementById('weekSelect').value);
-    
+
     let previousWeekKey;
     if (currentWeek === 1) {
         const previousMonth = await getPreviousMonth(monthId);
@@ -1179,18 +1634,18 @@ async function copyFromPreviousWeek() {
     } else {
         previousWeekKey = `${monthId}-week${currentWeek - 1}`;
     }
-    
+
     const currentWeekKey = `${monthId}-week${currentWeek}`;
     const previousWeekData = await loadJsonFile(previousWeekKey + '.json', {});
-    
+
     if (Object.keys(previousWeekData).length === 0) {
         showSaveStatus('error', '❌ Sem dados na semana anterior!');
         return;
     }
-    
+
     const globalStudents = await loadGlobalStudents();
     const currentWeekData = {};
-    
+
     globalStudents.forEach(name => {
         const previousStudent = previousWeekData[name];
         currentWeekData[name] = {
@@ -1200,10 +1655,12 @@ async function copyFromPreviousWeek() {
             tuesday: false,
             thursday: false,
             sentToGroup: false,
-            objective: previousStudent?.objective || ''
+            objective: previousStudent?.objective || '',
+            objectiveActive: false,
+            presentationDay: previousStudent?.presentationDay || ''
         };
     });
-    
+
     await saveJsonFile(currentWeekKey + '.json', currentWeekData);
     await updateChart();
     await updateDetails();
@@ -1215,18 +1672,18 @@ async function copyFromPreviousWeek() {
 function addButtonFeedback(buttonId, action) {
     const button = document.getElementById(buttonId);
     if (!button) return;
-    
+
     const originalClickHandler = button.onclick;
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
         // Feedback visual imediato
         this.style.transform = 'scale(0.95)';
         this.style.opacity = '0.8';
-        
+
         setTimeout(() => {
             this.style.transform = 'scale(1)';
             this.style.opacity = '1';
         }, 150);
-        
+
         if (originalClickHandler) {
             originalClickHandler.call(this, e);
         }
@@ -1307,10 +1764,10 @@ async function addObjective() {
 
     // ATUALIZAÇÃO VISUAL INSTANTÂNEA
     addObjectiveVisually(studentName, objective);
-    
+
     objectiveInput.value = '';
     studentSelect.value = '';
-    
+
     showSaveStatus('saving', '💾 Salvando...');
 
     // Salvar em background
@@ -1330,13 +1787,13 @@ async function addObjective() {
 async function updateStudentObjectiveSelect() {
     const select = document.getElementById('studentObjectiveSelect');
     const globalStudents = await loadGlobalStudents();
-    
+
     // Limpar opções existentes (exceto a primeira)
     select.innerHTML = '<option value="">Selecione o aluno</option>';
-    
+
     // Ordenar alunos alfabeticamente
     globalStudents.sort((a, b) => a.localeCompare(b));
-    
+
     // Adicionar todos os alunos globais
     globalStudents.forEach(name => {
         const option = new Option(name, name);
@@ -1359,7 +1816,7 @@ async function updateStudentWithExclusion(studentName, field, value) {
             student[field] = value;
         }
         await saveStudents(students);
-        
+
     } else {
         console.error(`Aluno ${studentName} não encontrado`);
         showSaveStatus('error', `❌ Aluno ${studentName} não encontrado`);
@@ -1380,13 +1837,13 @@ async function editStudentName(oldName) {
 
     // ATUALIZAÇÃO VISUAL INSTANTÂNEA
     updateStudentNameVisually(oldName, newName);
-    
+
     showSaveStatus('saving', '💾 Salvando...');
-    
+
     // Salvar em background
     const updatedGlobalStudents = globalStudents.map(name => name === oldName ? newName : name);
     await saveGlobalStudents(updatedGlobalStudents);
-    
+
     const months = await loadMonths();
     for (const month of months) {
         for (let week = 1; week <= 4; week++) {
@@ -1399,7 +1856,7 @@ async function editStudentName(oldName) {
             }
         }
     }
-    
+
     await updateStudentList(); // Sincronizar
     await updateChart();
     await updateDetails();
@@ -1409,17 +1866,17 @@ async function editStudentName(oldName) {
 // Apagar aluno
 async function deleteStudent(studentName) {
     if (!confirm(`Apagar "${studentName}"? TODOS OS DADOS serão perdidos!`)) return;
-    
+
     // REMOÇÃO VISUAL INSTANTÂNEA
     removeStudentVisually(studentName);
-    
+
     showSaveStatus('saving', '💾 Removendo...');
-    
+
     // Salvar em background
     const globalStudents = await loadGlobalStudents();
     const updatedGlobalStudents = globalStudents.filter(name => name !== studentName);
     await saveGlobalStudents(updatedGlobalStudents);
-    
+
     const months = await loadMonths();
     for (const month of months) {
         for (let week = 1; week <= 4; week++) {
@@ -1431,7 +1888,7 @@ async function deleteStudent(studentName) {
             }
         }
     }
-    
+
     await updateStudentList(); // Sincronizar
     await updateChart();
     await updateDetails();
@@ -1442,7 +1899,7 @@ async function deleteStudent(studentName) {
 async function editObjective(studentName) {
     const students = await loadStudents();
     const student = students.find(s => s.name === studentName);
-    
+
     if (student) {
         const currentObjective = student.objective || '';
         const newObjective = prompt("Editar objetivo do aluno:", currentObjective)?.trim();
@@ -1450,14 +1907,16 @@ async function editObjective(studentName) {
 
         // ATUALIZAÇÃO VISUAL INSTANTÂNEA
         updateObjectiveVisually(studentName, newObjective);
-        
+
         showSaveStatus('saving', '💾 Salvando...');
 
         // Salvar em background
         student.objective = newObjective;
+        student.objectiveActive = Boolean(newObjective);
         await saveStudents(students);
         await updateStudentList(); // Sincronizar
         await updateDetails();
+        await updateChart();
 
         showSaveStatus('success', '✅ Salvo!');
     }
@@ -1469,7 +1928,7 @@ async function editObjective(studentName) {
 
 async function initializeFileSystem() {
     console.log('Iniciando File System Access API...');
-    
+
     // Verificar se foi chamado por interação do usuário
     if (!navigator.userActivation?.isActive) {
         console.log('Aguardando interação do usuário...');
@@ -1477,7 +1936,7 @@ async function initializeFileSystem() {
 
     try {
         if ('showDirectoryPicker' in window) {
-            directoryHandle = await window.showDirectoryPicker({ 
+            directoryHandle = await window.showDirectoryPicker({
                 mode: 'readwrite',
                 startIn: 'documents'
             });
@@ -1523,14 +1982,14 @@ function debounce(func, wait = 20) {
 // Função para garantir que as pastas existem
 async function ensureDirectoryStructure() {
     if (!directoryHandle) return;
-    
+
     try {
         // Criar pasta 'meses' se não existir
         await directoryHandle.getDirectoryHandle('meses', { create: true });
-        
+
         // Criar pasta 'config' se não existir  
         await directoryHandle.getDirectoryHandle('config', { create: true });
-        
+
         console.log('✅ Estrutura de pastas verificada');
     } catch (err) {
         console.error('❌ Erro ao criar estrutura:', err);
@@ -1543,50 +2002,50 @@ function getFilePath(fileName) {
     if (['months.json', 'globalStudents.json', 'viewState.json', 'ultima_execucao.json'].includes(fileName)) {
         return { folder: 'config', fileName: fileName };
     }
-    
+
     // Arquivos de semanas vão para pasta do mês
     if (fileName.includes('-week')) {
         const monthId = fileName.split('-week')[0];
         const weekFileName = fileName.split('-')[2]; // week1.json, week2.json, etc.
         return { folder: `meses/${monthId}`, fileName: weekFileName };
     }
-    
+
     // Outros arquivos ficam na raiz
     return { folder: null, fileName: fileName };
 }
 
 async function saveJsonFile(fileName, data) {
     try {
-       
+
         if (!directoryHandle) {
             showSaveStatus('error', '❌ Configure o sistema de arquivos primeiro!');
             return false;
         }
-        
+
         const filePath = getFilePath(fileName);
         let targetHandle = directoryHandle;
-        
+
         if (filePath.folder) {
             const folderParts = filePath.folder.split('/');
             for (const part of folderParts) {
                 targetHandle = await targetHandle.getDirectoryHandle(part, { create: true });
             }
         }
-        
+
         const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: true });
         const writable = await fileHandle.createWritable();
         await writable.write(JSON.stringify(data, null, 2));
         await writable.close();
         invalidateFileCache(fileName);
-        
+
         // Atualizar timestamp APENAS se não for o próprio arquivo de modificação
         if (fileName !== 'local_modification.json' && fileName !== 'ultima_execucao.json') {
-            
+
             await updateLocalModificationTime();
         }
         return true;
     } catch (err) {
-        
+
         let message = '❌ Erro ao salvar';
         if (err.name === 'NotAllowedError') {
             message = '❌ Permissão negada para salvar';
@@ -1602,7 +2061,7 @@ async function loadJsonFile(fileName, defaultValue = {}, forceReload = false) {
     if (fileCache[fileName] && !forceReload) {
         return JSON.parse(JSON.stringify(fileCache[fileName]));
     }
-    
+
     // Arquivos que ficam na raiz (ultima_execucao) e na config (local_modification)
     if (fileName === 'ultima_execucao.json') {
         try {
@@ -1617,7 +2076,7 @@ async function loadJsonFile(fileName, defaultValue = {}, forceReload = false) {
             return defaultValue;
         }
     }
-    
+
     // Arquivo local_modification.json fica na pasta config
     if (fileName === 'local_modification.json') {
         try {
@@ -1628,7 +2087,7 @@ async function loadJsonFile(fileName, defaultValue = {}, forceReload = false) {
             const text = await file.text();
             const data = JSON.parse(text);
             fileCache[fileName] = data;
-            
+
             return data;
         } catch (err) {
             console.log(`ℹ️ ${fileName} não encontrado na pasta config`);
@@ -1637,13 +2096,13 @@ async function loadJsonFile(fileName, defaultValue = {}, forceReload = false) {
     }
     try {
         if (!directoryHandle) {
-            
+
             return defaultValue;
         }
-        
+
         const filePath = getFilePath(fileName);
         let targetHandle = directoryHandle;
-        
+
         if (filePath.folder) {
             const folderParts = filePath.folder.split('/');
             for (const part of folderParts) {
@@ -1651,24 +2110,24 @@ async function loadJsonFile(fileName, defaultValue = {}, forceReload = false) {
                     targetHandle = await targetHandle.getDirectoryHandle(part, { create: false });
                 } catch (err) {
                     if (err.name === 'NotFoundError') {
-                        
+
                         return defaultValue;
                     }
                     throw err;
                 }
             }
         }
-        
+
         const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: false });
         const file = await fileHandle.getFile();
         const text = await file.text();
         const data = JSON.parse(text);
-        
+
         fileCache[fileName] = data;
         return data;
     } catch (err) {
         if (err.name === 'NotFoundError') {
-            
+
             return defaultValue;
         }
         return defaultValue;
@@ -1686,16 +2145,16 @@ function showSaveStatus(type, message) {
         statusDiv.id = 'saveStatus';
         document.body.appendChild(statusDiv);
     }
-    
+
     statusDiv.className = `save-status-${type} visible`;
     statusDiv.textContent = message;
-    
+
     // Adicionar animação de pulso para 'saving'
     if (type === 'saving') {
         statusDiv.style.animation = 'pulse 1.5s infinite';
         return;
     }
-    
+
     // Parar animação e esconder após delay
     statusDiv.style.animation = '';
     setTimeout(() => {
@@ -1806,7 +2265,7 @@ function toggleDetailsView() {
     const producerPanel = document.getElementById('producerPanel');
     const detailsPanel = document.getElementById('detailsGrid').parentElement;
     const toggleBtn = document.getElementById('toggleDetailsBtn');
-    
+
     if (producerPanel.classList.contains('active')) {
         producerPanel.classList.remove('active');
         detailsPanel.classList.add('active');
@@ -1816,15 +2275,31 @@ function toggleDetailsView() {
         detailsPanel.classList.remove('active');
         toggleBtn.textContent = '📊 Ver Detalhes Alunos';
     }
-    
+
     saveViewState();
 }
 
 document.getElementById('toggleDetailsBtn').addEventListener('click', toggleDetailsView);
 // Filtro de alunos
-document.getElementById('filterActive').addEventListener('click', () => setFilter("active"));
-document.getElementById('filterAll').addEventListener('click', () => setFilter("all"));
-document.getElementById('filterInactive').addEventListener('click', () => setFilter("inactive"));
+// Dropdown de filtro
+const filterDropdown = document.getElementById('filterDropdown');
+const filterMenu = document.getElementById('filterMenu');
+
+filterDropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+    filterMenu.style.display = filterMenu.style.display === 'none' ? 'block' : 'none';
+});
+
+document.querySelectorAll('#filterMenu .dropdown-item').forEach(item => {
+    item.addEventListener('click', () => {
+        setFilter(item.dataset.filter);
+        filterMenu.style.display = 'none';
+    });
+});
+
+document.addEventListener('click', () => {
+    filterMenu.style.display = 'none';
+});
 // Event listener para pesquisa em tempo real
 document.getElementById('searchStudents').addEventListener('input', handleSearch);
 document.getElementById('clearSearch').addEventListener('click', clearSearch);
@@ -1832,11 +2307,11 @@ document.getElementById('clearSearch').addEventListener('click', clearSearch);
 function setFilter(type) {
     currentFilter = type;
 
-    // resetar estado visual dos botões
-    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-    if (type === "active") document.getElementById("filterActive").classList.add("active");
-    if (type === "all") document.getElementById("filterAll").classList.add("active");
-    if (type === "inactive") document.getElementById("filterInactive").classList.add("active");
+    // Atualizar texto do botão dropdown
+    const filterBtn = document.getElementById('filterDropdown');
+    if (type === "active") filterBtn.textContent = "🔽 Alunos Ativos";
+    if (type === "all") filterBtn.textContent = "🔽 Todos os Alunos";
+    if (type === "inactive") filterBtn.textContent = "🔽 Alunos Inativos";
 
     updateStudentList();
 }
@@ -1854,12 +2329,25 @@ function clearSearch() {
     document.getElementById('searchStudents').value = '';
     searchTerm = "";
     updateStudentList();
+    document.getElementById('searchStudents').focus();
 }
+// Menu hamburger
+const menuBtn = document.getElementById('menuBtn');
+const menuDropdown = document.getElementById('menuDropdown');
+
+menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuDropdown.style.display = menuDropdown.style.display === 'none' ? 'block' : 'none';
+});
+
+document.addEventListener('click', () => {
+    menuDropdown.style.display = 'none';
+});
 
 // Função para atualizar resumo semanal
 async function updateWeeklySummary() {
     const week = document.getElementById('weekSelect').value;
-    
+
     if (week === 'general') {
         // Esconder barra no modo geral
         document.getElementById('weeklySummary').style.display = 'none';
@@ -1867,20 +2355,41 @@ async function updateWeeklySummary() {
     } else {
         document.getElementById('weeklySummary').style.display = 'flex';
     }
-    
+
     const students = await loadStudents();
-    
+
+    // Verificar se é janeiro de 2026 ou posterior
+    const monthSelect = document.getElementById('monthSelect');
+    const selectedMonth = monthSelect ? monthSelect.value : '';
+    const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
+
     const active = students.filter(s => s.active).length;
     const videocall = students.filter(s => s.active && s.videocall).length;
     const group = students.filter(s => s.active && s.sentToGroup).length;
-    const tuesday = students.filter(s => s.active && s.tuesday).length;
-    const thursday = students.filter(s => s.active && s.thursday).length;
-    
-    document.getElementById('summaryActive').textContent = `A: ${active}`;
-    document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
-    document.getElementById('summaryGroup').textContent = `MG: ${group}`;
-    document.getElementById('summaryTuesday').textContent = `T: ${tuesday}`;
-    document.getElementById('summaryThursday').textContent = `Q: ${thursday}`;
+
+    if (isNewSystem) {
+        // Sistema novo: mostrar AS (Apresentação Semanal)
+        const apresentacaoSemanal = students.filter(s => s.active && s.apresentacaoSemanal).length;
+
+        document.getElementById('summaryActive').textContent = `A: ${active}`;
+        document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
+        document.getElementById('summaryGroup').textContent = `MG: ${group}`;
+        document.getElementById('summaryTuesday').textContent = `AS: ${apresentacaoSemanal}`;
+        // Esconder o contador de quinta-feira no sistema novo
+        document.getElementById('summaryThursday').style.display = 'none';
+    } else {
+        // Sistema antigo: mostrar T e Q
+        const tuesday = students.filter(s => s.active && s.tuesday).length;
+        const thursday = students.filter(s => s.active && s.thursday).length;
+
+        document.getElementById('summaryActive').textContent = `A: ${active}`;
+        document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
+        document.getElementById('summaryGroup').textContent = `MG: ${group}`;
+        document.getElementById('summaryTuesday').textContent = `T: ${tuesday}`;
+        document.getElementById('summaryThursday').textContent = `Q: ${thursday}`;
+        // Garantir que o contador de quinta-feira esteja visível no sistema antigo
+        document.getElementById('summaryThursday').style.display = 'flex';
+    }
 }
 
 // Função para atualização instantânea da UI
@@ -1901,24 +2410,24 @@ function updateUIInstantly(studentName, field, value) {
             setTimeout(() => videocallCheckbox.style.transform = 'scale(1)', 100);
         }
     }
-    
+
     // Atualizar filtros instantaneamente se 'active' mudou
     if (field === 'active') {
         updateStudentListVisually();
     }
-    
+
     // Atualizar gráfico instantaneamente
     const week = document.getElementById('weekSelect').value;
     if (week !== 'general') {
         updateChartInstantly(studentName, field, value);
     }
-    
+
     // Atualizar pontuação instantaneamente
     updateScoreInstantly(studentName);
-    
+
     // Atualizar resumo semanal instantaneamente
     updateSummaryInstantly();
-    
+
     // Atualizar detalhes instantaneamente
     updateDetailsVisually();
 }
@@ -1930,16 +2439,16 @@ function updateScoreInstantly(studentName) {
         if (item.dataset.studentName === studentName) {
             const checkboxes = item.querySelectorAll('input[type="checkbox"]');
             const student = { active: false, videocall: false, sentToGroup: false, tuesday: false, thursday: false, objective: '' };
-            
+
             checkboxes.forEach(checkbox => {
                 student[checkbox.dataset.field] = checkbox.checked;
             });
-            
+
             const objectiveDiv = item.querySelector('.objective-div');
             if (objectiveDiv) {
                 student.objective = objectiveDiv.textContent.replace('🎯 Objetivo: ', '');
             }
-            
+
             const score = calculateScore(student);
             const scoreElement = item.querySelector('.student-score');
             if (scoreElement) {
@@ -1953,14 +2462,14 @@ function updateScoreInstantly(studentName) {
 function updateSummaryInstantly() {
     const week = document.getElementById('weekSelect').value;
     if (week === 'general') return;
-    
+
     let active = 0, videocall = 0, group = 0, tuesday = 0, thursday = 0;
-    
+
     document.querySelectorAll('.student-item').forEach(item => {
         const checkboxes = item.querySelectorAll('input[type="checkbox"]');
         const student = {};
         checkboxes.forEach(cb => student[cb.dataset.field] = cb.checked);
-        
+
         if (student.active) {
             active++;
             if (student.videocall) videocall++;
@@ -1969,7 +2478,7 @@ function updateSummaryInstantly() {
             if (student.thursday) thursday++;
         }
     });
-    
+
     document.getElementById('summaryActive').textContent = `A: ${active}`;
     document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
     document.getElementById('summaryGroup').textContent = `MG: ${group}`;
@@ -1980,28 +2489,28 @@ function updateSummaryInstantly() {
 // Nova função para atualizar lista visualmente (filtros)
 function updateStudentListVisually() {
     const studentItems = document.querySelectorAll('.student-item');
-    
+
     studentItems.forEach(item => {
         const activeCheckbox = item.querySelector('input[data-field="active"]');
         if (!activeCheckbox) return;
-        
+
         const isActive = activeCheckbox.checked;
         const studentName = item.dataset.studentName?.toLowerCase() || '';
-        
+
         let shouldShow = true;
-        
+
         // Aplicar filtros
         if (currentFilter === "active" && !isActive) {
             shouldShow = false;
         } else if (currentFilter === "inactive" && isActive) {
             shouldShow = false;
         }
-        
+
         // Aplicar pesquisa
         if (searchTerm && !studentName.includes(searchTerm)) {
             shouldShow = false;
         }
-        
+
         // Animação suave
         if (shouldShow) {
             item.style.display = 'block';
@@ -2021,16 +2530,16 @@ function updateStudentListVisually() {
 function updateDetailsVisually() {
     const week = document.getElementById('weekSelect').value;
     if (week === 'general') return;
-    
+
     // Atualizar apenas elementos visíveis sem recarregar dados
     const detailItems = document.querySelectorAll('.detail-item');
     detailItems.forEach(detailItem => {
         const nameElement = detailItem.querySelector('.detail-name');
         if (!nameElement) return;
-        
+
         const studentName = nameElement.textContent.split(' - ')[0];
         const studentItem = document.querySelector(`[data-student-name="${studentName}"]`);
-        
+
         if (studentItem) {
             const activeCheckbox = studentItem.querySelector('input[data-field="active"]');
             if (!activeCheckbox?.checked) {
@@ -2050,10 +2559,10 @@ function addStudentToListInstantly(name) {
     const studentItem = document.createElement('div');
     const students = [...document.querySelectorAll('.student-item')];
     const index = students.length;
-    
+
     studentItem.className = 'student-item';
     studentItem.dataset.studentName = name;
-    
+
     studentItem.innerHTML = `
         <div class="student-header">
             <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
@@ -2089,19 +2598,19 @@ function addStudentToListInstantly(name) {
             </div>
         </div>
     `;
-    
+
     // Inserir ordenado alfabeticamente
     const allItems = [...studentList.querySelectorAll('.student-item')];
-    const insertIndex = allItems.findIndex(item => 
+    const insertIndex = allItems.findIndex(item =>
         item.dataset.studentName?.localeCompare(name) > 0
     );
-    
+
     if (insertIndex === -1) {
         studentList.appendChild(studentItem);
     } else {
         studentList.insertBefore(studentItem, allItems[insertIndex]);
     }
-    
+
     // Animação de entrada
     studentItem.style.opacity = '0';
     studentItem.style.transform = 'scale(0.95)';
@@ -2109,7 +2618,7 @@ function addStudentToListInstantly(name) {
         studentItem.style.opacity = '1';
         studentItem.style.transform = 'scale(1)';
     }, 100);
-    
+
     // Atualizar select de objetivos
     updateStudentObjectiveSelectInstantly(name);
 }
@@ -2117,14 +2626,14 @@ function addStudentToListInstantly(name) {
 // Nova função para atualizar select de objetivos instantaneamente
 function updateStudentObjectiveSelectInstantly(newStudentName = null) {
     const select = document.getElementById('studentObjectiveSelect');
-    
+
     if (newStudentName) {
         const option = new Option(newStudentName, newStudentName);
-        
+
         // Inserir ordenado
         const options = [...select.options].slice(1); // Remove primeira opção
         const insertIndex = options.findIndex(opt => opt.text.localeCompare(newStudentName) > 0);
-        
+
         if (insertIndex === -1) {
             select.add(option);
         } else {
@@ -2146,12 +2655,12 @@ function updateStudentNameVisually(oldName, newName) {
             nameElement.style.color = '#10b981';
             setTimeout(() => nameElement.style.color = '', 1000);
         }
-        
+
         // Atualizar data-student dos checkboxes
         const checkboxes = studentItem.querySelectorAll('input[data-student]');
         checkboxes.forEach(cb => cb.dataset.student = newName);
     }
-    
+
     // Atualizar no gráfico
     const bars = document.querySelectorAll('.bar');
     bars.forEach(bar => {
@@ -2160,7 +2669,7 @@ function updateStudentNameVisually(oldName, newName) {
             barName.textContent = newName;
         }
     });
-    
+
     // Atualizar no select de objetivos
     const select = document.getElementById('studentObjectiveSelect');
     const options = [...select.options];
@@ -2169,7 +2678,7 @@ function updateStudentNameVisually(oldName, newName) {
         option.text = newName;
         option.value = newName;
     }
-    
+
     // Atualizar nos detalhes
     const detailItems = document.querySelectorAll('.detail-item');
     detailItems.forEach(item => {
@@ -2189,7 +2698,7 @@ function removeStudentVisually(studentName) {
         studentItem.style.transform = 'scale(0.95)';
         setTimeout(() => studentItem.remove(), 300);
     }
-    
+
     // Remover do gráfico
     const bars = document.querySelectorAll('.bar');
     bars.forEach(bar => {
@@ -2199,7 +2708,7 @@ function removeStudentVisually(studentName) {
             setTimeout(() => bar.remove(), 300);
         }
     });
-    
+
     // Remover do select de objetivos
     const select = document.getElementById('studentObjectiveSelect');
     const options = [...select.options];
@@ -2207,7 +2716,7 @@ function removeStudentVisually(studentName) {
     if (option) {
         option.remove();
     }
-    
+
     // Remover dos detalhes
     const detailItems = document.querySelectorAll('.detail-item');
     detailItems.forEach(item => {
@@ -2217,96 +2726,130 @@ function removeStudentVisually(studentName) {
             setTimeout(() => item.remove(), 300);
         }
     });
-    
+
     // Atualizar resumo instantaneamente
     updateSummaryInstantly();
 }
 
-// Nova função para adicionar objetivo visualmente
+function createObjectiveElement(studentName, objectiveText, isActive = true) {
+    const objectiveDiv = document.createElement('div');
+    objectiveDiv.className = 'objective-div';
+    objectiveDiv.classList.add(isActive ? 'objective-active' : 'objective-inactive');
+    objectiveDiv.dataset.studentObjective = studentName;
+    objectiveDiv.dataset.objectiveActive = isActive ? 'true' : 'false';
+
+    const emoji = document.createElement('span');
+    emoji.className = 'objective-emoji';
+    emoji.textContent = '🎯';
+    emoji.title = isActive ? 'Objetivo ativo — clique para desativar' : 'Objetivo inativo — clique para ativar';
+    emoji.tabIndex = 0;
+    emoji.addEventListener('click', async (event) => {
+        event.stopPropagation();
+        await toggleObjectiveActive(studentName);
+    });
+
+    const textSpan = document.createElement('span');
+    textSpan.className = 'objective-text';
+    textSpan.innerHTML = `<strong>Objetivo:</strong> ${objectiveText}`;
+
+    objectiveDiv.appendChild(emoji);
+    objectiveDiv.appendChild(textSpan);
+
+    objectiveDiv.addEventListener('click', (event) => {
+        if (event.target === emoji) return;
+        editObjective(studentName);
+    });
+
+    return objectiveDiv;
+}
+
+function removeObjectiveElement(studentName) {
+    const studentItem = document.querySelector(`[data-student-name="${studentName}"]`);
+    if (!studentItem) return;
+    const objectiveDiv = studentItem.querySelector('.objective-div');
+    if (objectiveDiv) {
+        objectiveDiv.remove();
+    }
+}
+
+function ensureObjectiveButton(studentItem) {
+    if (!studentItem) return;
+    const actions = studentItem.querySelector('.student-actions');
+    if (!actions) return;
+    if (actions.querySelector('.objective-btn')) return;
+
+    const objectiveBtn = document.createElement('button');
+    objectiveBtn.className = 'icon-btn objective-btn';
+    objectiveBtn.title = 'Adicionar objetivo';
+    objectiveBtn.style.cssText = 'width: 25px; height: 25px; font-size: 10px;';
+    objectiveBtn.textContent = '🎯';
+
+    const editBtn = actions.querySelector('.edit-btn');
+    actions.insertBefore(objectiveBtn, editBtn);
+}
+
+function updateObjectiveElement(studentName, objective, isActive = true) {
+    if (!objective) return;
+    const studentItem = document.querySelector(`[data-student-name="${studentName}"]`);
+    if (!studentItem) return;
+
+    removeObjectiveElement(studentName);
+    const studentHeader = studentItem.querySelector('.student-header');
+    if (!studentHeader) return;
+
+    const objectiveDiv = createObjectiveElement(studentName, objective, isActive);
+    studentHeader.insertAdjacentElement('afterend', objectiveDiv);
+
+    const actions = studentItem.querySelector('.student-actions');
+    const objectiveBtn = actions?.querySelector('.objective-btn');
+    if (objectiveBtn) objectiveBtn.remove();
+}
+
 function addObjectiveVisually(studentName, objective) {
     const studentItem = document.querySelector(`[data-student-name="${studentName}"]`);
     if (!studentItem) return;
-    
-    // Remover botão "adicionar objetivo" se existir
-    const objectiveBtn = studentItem.querySelector('.objective-btn');
-    if (objectiveBtn) {
-        objectiveBtn.remove();
-    }
-    
-    // Adicionar div do objetivo
-    const existingObjective = studentItem.querySelector('.objective-div');
-    if (existingObjective) {
-        existingObjective.remove();
-    }
-    
-    const objectiveDiv = document.createElement('div');
-    objectiveDiv.className = 'objective-div';
-    objectiveDiv.style.cssText = 'background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; cursor: pointer; transition: background 0.2s ease;';
-    objectiveDiv.title = 'Clique para editar objetivo';
-    objectiveDiv.innerHTML = `<strong>🎯 Objetivo:</strong> ${objective}`;
-    
-    const studentHeader = studentItem.querySelector('.student-header');
-    studentHeader.insertAdjacentElement('afterend', objectiveDiv);
-    
-    // Efeito visual
-    objectiveDiv.style.opacity = '0';
-    objectiveDiv.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-        objectiveDiv.style.opacity = '1';
-        objectiveDiv.style.transform = 'scale(1)';
-    }, 100);
-    
-    // Atualizar pontuação instantaneamente
+
+    updateObjectiveElement(studentName, objective, true);
     updateScoreInstantly(studentName);
 }
 
-// Nova função para atualizar objetivo visualmente
 function updateObjectiveVisually(studentName, newObjective) {
     const studentItem = document.querySelector(`[data-student-name="${studentName}"]`);
     if (!studentItem) return;
-    
-    const existingObjective = studentItem.querySelector('.objective-div');
-    
+
     if (!newObjective) {
-        // Remover objetivo
-        if (existingObjective) {
-            existingObjective.style.opacity = '0';
-            setTimeout(() => existingObjective.remove(), 300);
-        }
-        
-        // Adicionar botão "adicionar objetivo"
-        const actions = studentItem.querySelector('.student-actions');
-        if (actions && !actions.querySelector('.objective-btn')) {
-            const objectiveBtn = document.createElement('button');
-            objectiveBtn.className = 'icon-btn objective-btn';
-            objectiveBtn.title = 'Adicionar objetivo';
-            objectiveBtn.style.cssText = 'width: 25px; height: 25px; font-size: 10px;';
-            objectiveBtn.textContent = '🎯';
-            
-            const editBtn = actions.querySelector('.edit-btn');
-            actions.insertBefore(objectiveBtn, editBtn);
-        }
+        removeObjectiveElement(studentName);
+        ensureObjectiveButton(studentItem);
     } else {
-        // Atualizar objetivo existente ou criar novo
-        if (existingObjective) {
-            existingObjective.innerHTML = `<strong>🎯 Objetivo:</strong> ${newObjective}`;
-            // Efeito visual
-            existingObjective.style.backgroundColor = 'rgba(16, 185, 129, 0.2)';
-            setTimeout(() => existingObjective.style.backgroundColor = 'rgba(74, 172, 254, 0.2)', 1000);
-        } else {
-            addObjectiveVisually(studentName, newObjective);
-        }
+        updateObjectiveElement(studentName, newObjective, true);
     }
-    
-    // Atualizar pontuação instantaneamente
+
     updateScoreInstantly(studentName);
+}
+
+async function toggleObjectiveActive(studentName) {
+    showSaveStatus('saving', '💾 Salvando...');
+    const students = await loadStudents();
+    const student = students.find(s => s.name === studentName);
+    if (!student || !student.objective?.trim()) {
+        showSaveStatus('error', '❌ Objetivo inexistente!');
+        return;
+    }
+
+    student.objectiveActive = !student.objectiveActive;
+    await saveStudents(students);
+    updateObjectiveElement(studentName, student.objective, student.objectiveActive);
+    await updateChart();
+    await updateStudentList();
+    await updateDetails();
+    showSaveStatus('success', student.objectiveActive ? '✅ Objetivo ativado!' : '✅ Objetivo desativado!');
 }
 
 // Atualizar gráfico instantaneamente
 function updateChartInstantly(studentName, field, value) {
     const chart = document.getElementById('chart');
     const bars = chart.querySelectorAll('.bar');
-    
+
     bars.forEach(bar => {
         const barName = bar.querySelector('.bar-name');
         if (barName && barName.textContent === studentName) {
@@ -2318,16 +2861,16 @@ function updateChartInstantly(studentName, field, value) {
                     const checkboxes = studentItem.querySelectorAll('input[type="checkbox"]');
                     const student = { objective: '' };
                     checkboxes.forEach(cb => student[cb.dataset.field] = cb.checked);
-                    
+
                     const objectiveDiv = studentItem.querySelector('.objective-div');
                     if (objectiveDiv) student.objective = 'tem objetivo';
-                    
+
                     const newScore = calculateScore(student);
-                    
+
                     // Atualizar visualmente
                     barFill.style.height = `${Math.max(newScore * 2.5, 20)}px`;
                     barFill.textContent = `${newScore}%`;
-                    
+
                     // Atualizar classes de cor
                     barFill.classList.remove('high', 'medium', 'low');
                     if (newScore >= 80) {
@@ -2337,7 +2880,7 @@ function updateChartInstantly(studentName, field, value) {
                     } else {
                         barFill.classList.add('low');
                     }
-                    
+
                     // Adicionar/remover estrela
                     const existingStar = bar.querySelector('.star');
                     if (newScore === 100 && !existingStar) {
@@ -2348,7 +2891,7 @@ function updateChartInstantly(studentName, field, value) {
                     } else if (newScore !== 100 && existingStar) {
                         existingStar.remove();
                     }
-                    
+
                     // Efeito visual de atualização
                     barFill.style.transform = 'scale(1.05)';
                     setTimeout(() => barFill.style.transform = 'scale(1)', 200);
@@ -2363,41 +2906,41 @@ function updateChartInstantly(studentName, field, value) {
 
 async function updateLocalModificationTime() {
     if (!directoryHandle) return;
-    
+
     try {
         const now = new Date();
         const timestamp = now.toLocaleString('pt-BR');
-        const data = { 
+        const data = {
             ultima_modificacao: timestamp,
             timestamp_unix: now.getTime()
         };
-        
-     
-        
+
+
+
         // Salvar DIRETAMENTE sem chamar saveJsonFile (evita loop)
         const configHandle = await directoryHandle.getDirectoryHandle('config', { create: true });
         const fileHandle = await configHandle.getFileHandle('local_modification.json', { create: true });
-        
+
         // CRITICAL: keepExistingData: false para GARANTIR sobrescrita
         const writable = await fileHandle.createWritable({ keepExistingData: false });
         await writable.write(JSON.stringify(data, null, 2));
         await writable.close();
-        
-        
-        
+
+
+
         // Aguardar um momento para o sistema de arquivos sincronizar
         await new Promise(resolve => setTimeout(resolve, 100));
-        
-       
-        
+
+
+
         // Invalidar cache para forçar leitura do novo timestamp
         invalidateFileCache('local_modification.json');
-        
+
         // Verificar se realmente foi salvo
         const verificacao = await configHandle.getFileHandle('local_modification.json');
         const fileVerif = await verificacao.getFile();
         const textVerif = await fileVerif.text();
-        
+
     } catch (err) {
         console.error('Erro ao atualizar timestamp:', err);
     }
@@ -2417,7 +2960,7 @@ async function getLastUploadTime() {
     try {
         const data = await loadJsonFile('ultima_execucao.json', null);
         if (!data?.ultima_execucao) return 0;
-        
+
         // Parse do formato "30 Sep 25 às 12:10"
         const dateStr = data.ultima_execucao.replace(' às ', ' ');
         const date = new Date(dateStr);
@@ -2429,26 +2972,26 @@ async function getLastUploadTime() {
 
 async function updateLastUploadTime() {
     try {
-        
+
         const uploadBtn = document.getElementById('uploadGithubBtn');
         const lastUploadElement = document.getElementById('lastUploadTime');
-        
+
         const uploadTime = await getLastUploadTime();
         const modificationTime = await getLastModificationTime();
-        
-        
+
+
         const uploadData = await loadJsonFile('ultima_execucao.json', null);
-        
+
 
         const modData = await loadJsonFile('local_modification.json', null);
-        
+
         // Verificar se tem alterações pendentes
         const hasChanges = modificationTime > uploadTime;
         const timeDiff = hasChanges ? Math.floor((Date.now() - modificationTime) / 1000 / 60) : 0; // minutos
-        
+
         // Atualizar visual do botão
         uploadBtn.classList.remove('status-synced', 'status-pending', 'status-critical');
-        
+
         if (!uploadTime) {
             // Nunca fez upload
             uploadBtn.classList.add('status-critical');
@@ -2473,34 +3016,34 @@ async function updateLastUploadTime() {
 
 document.getElementById('uploadGithubBtn').addEventListener('click', async () => {
     showSaveStatus('saving', 'Upando para GitHub...');
-    
+
     try {
         const configResponse = await fetch('/config.json');
         const config = await configResponse.json();
         const serverPort = config.port || window.location.port || 8005;
-        
+
         const response = await fetch(`http://localhost:${serverPort}/executar-python`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ arquivo: 'subir_arquivos_parede.py' })
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-        
+
         const result = await response.json();
-        
+
         if (result.sucesso) {
             showSaveStatus('success', '✅ Upload concluído com sucesso!');
-            
+
             // Aguardar o arquivo ser atualizado
             await new Promise(resolve => setTimeout(resolve, 500));
-            
+
             // Invalidar cache e recarregar
             invalidateFileCache('ultima_execucao.json');
             const uploadData = await loadJsonFile('ultima_execucao.json', null, true);
-            
+
             if (uploadData?.ultima_execucao) {
                 // Sincronizar timestamps
                 const uploadDate = new Date(uploadData.ultima_execucao.replace(' às ', ' '));
@@ -2508,16 +3051,16 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
                     ultima_modificacao: uploadData.ultima_execucao,
                     timestamp_unix: uploadDate.getTime()
                 };
-                
+
                 const configHandle = await directoryHandle.getDirectoryHandle('config', { create: true });
                 const fileHandle = await configHandle.getFileHandle('local_modification.json', { create: true });
                 const writable = await fileHandle.createWritable({ keepExistingData: false });
                 await writable.write(JSON.stringify(syncData, null, 2));
                 await writable.close();
-                
+
                 invalidateFileCache('local_modification.json');
             }
-            
+
             // Atualizar visual
             await updateLastUploadTime();
         } else {
@@ -2527,5 +3070,119 @@ document.getElementById('uploadGithubBtn').addEventListener('click', async () =>
     } catch (error) {
         showSaveStatus('error', '❌ Erro ao conectar ao servidor!');
         console.error('Erro completo:', error);
+    }
+});
+
+// Função para verificar se está na semana atual
+async function checkIfCurrentWeek() {
+    const monthSelect = document.getElementById('monthSelect');
+    const weekSelect = document.getElementById('weekSelect');
+    const warningBalloon = document.getElementById('weekWarningBalloon');
+
+    const selectedMonth = monthSelect.value;
+    const selectedWeek = weekSelect.value;
+
+    // Pegar o mês mais recente
+    const months = await loadMonths();
+    if (months.length === 0) return;
+
+    const mostRecentMonth = months[0]; // Já está ordenado por data decrescente
+
+    // Encontrar a semana mais recente com dados nesse mês
+    let mostRecentWeek = null;
+    for (let w = 4; w >= 1; w--) {
+        const weekData = await loadJsonFile(`${mostRecentMonth.id}-week${w}.json`, {});
+        const hasPresentations = Object.values(weekData).some(student =>
+            student.active || student.videocall || student.tuesday || student.thursday
+        );
+        if (hasPresentations) {
+            mostRecentWeek = w;
+            break;
+        }
+    }
+
+    // Se não encontrou semana com dados, usar semana 1
+    if (!mostRecentWeek) mostRecentWeek = 1;
+
+    // Verificar se está vendo o mês atual
+    const isCurrentMonth = selectedMonth === mostRecentMonth.id;
+
+    // Verificar se está vendo a semana atual (quando não está em "Geral")
+    const isCurrentWeek = selectedWeek === String(mostRecentWeek);
+    const isGeneralView = selectedWeek === 'general';
+
+    // Mostrar/ocultar balão
+    // Mostra se: não está no mês atual OU (está no mês atual mas não está na semana atual e não está em "Geral")
+    const shouldShow = !isCurrentMonth || (!isGeneralView && !isCurrentWeek);
+
+    if (shouldShow) {
+        warningBalloon.style.display = 'flex';
+    } else {
+        warningBalloon.style.display = 'none';
+    }
+}
+
+// Função para ir para a semana atual
+async function goToCurrentWeek() {
+    const monthSelect = document.getElementById('monthSelect');
+    const weekSelect = document.getElementById('weekSelect');
+    const warningBalloon = document.getElementById('weekWarningBalloon');
+
+    // Ocultar o balão imediatamente
+    warningBalloon.style.display = 'none';
+
+    // Pegar o mês mais recente
+    const months = await loadMonths();
+    if (months.length === 0) return;
+
+    const mostRecentMonth = months[0];
+
+    // Encontrar a semana mais recente com dados
+    let mostRecentWeek = 1;
+    for (let w = 4; w >= 1; w--) {
+        const weekData = await loadJsonFile(`${mostRecentMonth.id}-week${w}.json`, {});
+        const hasPresentations = Object.values(weekData).some(student =>
+            student.active || student.videocall || student.tuesday || student.thursday
+        );
+        if (hasPresentations) {
+            mostRecentWeek = w;
+            break;
+        }
+    }
+
+    // Alterar seleção
+    monthSelect.value = mostRecentMonth.id;
+    weekSelect.value = String(mostRecentWeek);
+
+    // Disparar evento de mudança
+    await onMonthOrWeekChange();
+    await saveViewState();
+}
+
+// Event listener para o botão
+document.getElementById('goToCurrentWeekBtn').addEventListener('click', goToCurrentWeek);
+
+// Modal functionality
+const modal = document.getElementById('presentationsModal');
+const openBtn = document.getElementById('openPresentationsBtn');
+const closeBtn = document.querySelector('.close');
+
+openBtn.onclick = function () {
+    modal.style.display = 'block';
+}
+
+closeBtn.onclick = function () {
+    modal.style.display = 'none';
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        modal.style.display = 'none';
     }
 });

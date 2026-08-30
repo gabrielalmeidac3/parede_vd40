@@ -268,6 +268,9 @@
             for (let w = 4; w >= 1; w--) {
                 try {
                     const response = await fetch(`meses/${currentMonth}/week${w}.json`);
+                    if (!response.ok) {
+                        continue; // Ignora semana inexistente e tenta a próxima
+                    }
                     const data = await response.json();
                     const hasPresentations = Object.values(data).some(student => student.active && student.presentationDay && student.presentationDay.trim() !== '');
                     if (hasPresentations) {
@@ -314,6 +317,11 @@
         async function loadWeekData(month, week) {
             try {
                 const response = await fetch(`meses/${month}/week${week}.json`);
+                if (!response.ok) {
+                    weekData = {};
+                    displayPresentations();
+                    return;
+                }
                 weekData = await response.json();
                 displayPresentations();
             } catch (error) {
