@@ -1478,39 +1478,3 @@ html[aluno-page] .student-details {
         transform: translateY(0);
     }
 }
-/* Mecanismo Responsivo de Alinhamento e Fixação do Visor (weekly-summary) no Celular */
-@media (max-width: 768px) {
-    .students-container {
-        flex-direction: column !important;
-        gap: 12px !important;
-        width: 100% !important;
-    }
-
-    .weekly-summary {
-        position: sticky !important;
-        top: 10px !important;
-        z-index: 99 !important;
-        width: 100% !important;
-        min-width: unset !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        background: rgba(26, 26, 46, 0.95) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        padding: 8px 6px !important;
-        border-radius: 10px !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        box-sizing: border-box !important;
-        gap: 6px !important;
-    }
-
-    .summary-item {
-        flex: 1 1 0 !important;
-        min-width: 0 !important;
-    }
-
-    .student-list-wrapper {
-        width: 100% !important;
-    }
-}
