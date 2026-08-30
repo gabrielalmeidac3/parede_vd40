@@ -124,8 +124,7 @@ function addGlobalEventListener() {
             await new Promise(resolve => setTimeout(resolve, 100));
 
             // Atualizar status do botão de upload APÓS salvar
-            await updateLastUploadTime();
-
+            
             // Mostrar sucesso
             showSaveStatus('success', '✅ Salvo!');
         }
@@ -151,8 +150,7 @@ function addGlobalEventListener() {
             await new Promise(resolve => setTimeout(resolve, 100));
 
             // Atualizar status do botão de upload APÓS salvar
-            await updateLastUploadTime();
-
+            
             // Mostrar sucesso
             showSaveStatus('success', '✅ Salvo!');
         }
@@ -203,102 +201,75 @@ const defaultStudents = [
     { name: "Julia Ferreira", active: true, videocall: true, tuesday: true, thursday: true }
 ];
 
-// Variável global para File System
-let directoryHandle = null;
+// Configuração do Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAX7_vTbtXr387VfcxOMNSTskR1okqYE2w",
+  authDomain: "bicicleta-507120.firebaseapp.com",
+  projectId: "bicicleta-507120",
+  storageBucket: "bicicleta-507120.firebasestorage.app",
+  messagingSenderId: "376695516995",
+  appId: "1:376695516995:web:367371e575de704a76c9f6",
+  measurementId: "G-BHZ267JX4B"
+};
 
-// IndexedDB para persistência do directoryHandle
-const DB_NAME = 'FileSystemPersistence';
-const STORE_NAME = 'directoryHandles';
-const DB_VERSION = 1;
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const auth = firebase.auth();
 
-async function openDB() {
-    return new Promise((resolve, reject) => {
-        const request = indexedDB.open(DB_NAME, DB_VERSION);
-        request.onupgradeneeded = (event) => {
-            const db = event.target.result;
-            if (!db.objectStoreNames.contains(STORE_NAME)) {
-                db.createObjectStore(STORE_NAME, { keyPath: 'id' });
-            }
-        };
-        request.onsuccess = () => resolve(request.result);
-        request.onerror = () => reject(request.error);
+window.currentUser = null;
+        window.currentUser = null;
+let currentUser = null;
+        window.currentUser = null;
+
+// Firebase Authentication listeners and Login functions
+document.getElementById('loginBtn')?.addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider).catch(error => {
+        alert("Erro no login: " + error.message);
     });
-}
+});
 
-async function saveDirectoryHandle(handle) {
-    if (!handle) return;
-    try {
-        const db = await openDB();
-        const tx = db.transaction(STORE_NAME, 'readwrite');
-        const store = tx.objectStore(STORE_NAME);
-        await store.put({ id: 'directoryHandle', handle: handle, name: handle.name });
-        localStorage.setItem('directoryHandleName', handle.name);
-        sessionStorage.setItem('directoryHandleName', handle.name);
+document.getElementById('logoutBtn')?.addEventListener('click', () => {
+    auth.signOut();
+});
 
-    } catch (err) {
-        console.error('Erro ao salvar no IndexedDB:', err);
+const ALLOWED_EMAIL = "suportegabriel7@gmail.com"; // 🔒 TRAVA DE E-MAIL
+
+auth.onAuthStateChanged(async (user) => {
+    const overlay = document.getElementById('loginOverlay');
+    const mainContent = document.querySelector('main');
+    const logoutBtn = document.getElementById('logoutBtn');
+    
+    if (user) {
+        if (user.email !== ALLOWED_EMAIL) {
+            alert("🔒 ACESSO NEGADO: Esta conta Google não tem permissão para acessar este painel.");
+            auth.signOut();
+            return;
+        }
+        currentUser = user;
+        window.currentUser = user;
+        if (overlay) overlay.style.display = 'none';
+        if (mainContent) mainContent.style.display = 'block';
+        if (logoutBtn) logoutBtn.style.display = 'inline-block';
+        
+        await initData();
+        await updateMonthSelect();
+        await loadViewState();
+        await updateChart();
+        await updateDetails();
+        if (!window.location.pathname.includes('aluno.html')) {
+            await updateStudentList();
+        }
+        await checkIfCurrentWeek();
+        
+    } else {
+        currentUser = null;
+        window.currentUser = null;
+        if (overlay) overlay.style.display = 'flex';
+        if (mainContent) mainContent.style.display = 'none';
+        if (logoutBtn) logoutBtn.style.display = 'none';
     }
-}
-
-async function restoreDirectoryHandle() {
-    try {
-        const db = await openDB();
-        const tx = db.transaction(STORE_NAME, 'readonly');
-        const store = tx.objectStore(STORE_NAME);
-        const request = store.get('directoryHandle');
-        return new Promise((resolve) => {
-            request.onsuccess = async () => {
-                const saved = request.result;
-                if (saved?.handle) {
-                    try {
-                        // Verificar permissão
-                        const permission = await saved.handle.queryPermission({ mode: 'readwrite' });
-                        if (permission === 'granted') {
-                            directoryHandle = saved.handle;
-                            localStorage.setItem('directoryHandleName', saved.name);
-                            sessionStorage.setItem('directoryHandleName', saved.name);
-
-                            showSaveStatus('success', `✅ Conectado a: ${saved.name}`);
-                            updateFileSystemStatusFixed();
-                            resolve(true);
-                        } else if (permission === 'prompt') {
-                            const granted = await saved.handle.requestPermission({ mode: 'readwrite' });
-                            if (granted === 'granted') {
-                                directoryHandle = saved.handle;
-                                localStorage.setItem('directoryHandleName', saved.name);
-                                sessionStorage.setItem('directoryHandleName', saved.name);
-
-                                showSaveStatus('success', `✅ Conectado a: ${saved.name}`);
-                                updateFileSystemStatusFixed();
-                                resolve(true);
-                            } else {
-                                console.log('Permissão negada.');
-                                resolve(false);
-                            }
-                        } else {
-                            console.log('Permissão não concedida.');
-                            resolve(false);
-                        }
-                    } catch (err) {
-                        console.error('Erro ao verificar diretório:', err);
-                        showSaveStatus('error', `❌ Erro ao verificar diretório: ${err.message}`);
-                        resolve(false);
-                    }
-                } else {
-                    console.log('Nenhum diretório salvo encontrado.');
-                    resolve(false);
-                }
-            };
-            request.onerror = () => {
-                console.error('Erro ao restaurar:', request.error);
-                resolve(false);
-            };
-        });
-    } catch (err) {
-        console.error('Erro ao abrir IndexedDB:', err);
-        return false;
-    }
-}
+});
 
 // Inicializar dados se não existirem
 async function initData() {
@@ -453,7 +424,7 @@ async function saveStudents(students) {
     const success = await saveJsonFile(fileName, weekData);
     if (success) {
         await updateStudentList();
-        await updateLastUploadTime(); // Atualizar botão
+         // Atualizar botão
     }
 }
 
@@ -753,9 +724,10 @@ async function updateChart() {
         }
     }
 
-    // Limpar e adicionar ao DOM de uma vez
+        // Limpar e adicionar ao DOM de uma vez
     chart.innerHTML = '';
     chart.appendChild(fragment);
+    chart.style.opacity = '1';
 }
 
 function createMonthlyBarElement(student) {
@@ -964,113 +936,115 @@ async function updateDetails() {
     const selectedMonth = monthSelect ? monthSelect.value : '';
     const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
 
-    if (week === 'general') {
-        detailsTitle.textContent = '📊 Resumo Mensal';
-        const monthlyData = await loadMonthlyData();
+    try {
+        if (week === 'general') {
+            if (detailsTitle) detailsTitle.textContent = '📊 Resumo Mensal';
+            const monthlyData = await loadMonthlyData();
 
-        if (monthlyData.length === 0 || monthlyData.every(s => s.averageScore === 0)) {
-            detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum dado para este mês</p>';
-            return;
-        }
+            if (monthlyData.length === 0 || monthlyData.every(s => s.averageScore === 0)) {
+                if (detailsGrid) detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum dado para este mês</p>';
+                return;
+            }
 
-        detailsGrid.innerHTML = '';
+            if (detailsGrid) detailsGrid.innerHTML = '';
 
-        monthlyData
-            .filter(student => student.averageScore > 0)
-            .sort((a, b) => {
-                if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
-                if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
-                if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
-                return a.name.localeCompare(b.name);
-            })
-            .forEach(student => {
+            monthlyData
+                .filter(student => student.averageScore > 0)
+                .sort((a, b) => {
+                    if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
+                    if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
+                    if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
+                    return a.name.localeCompare(b.name);
+                })
+                .forEach(student => {
+                    const detailItem = document.createElement('div');
+                    detailItem.className = 'detail-item';
+
+                    const weeksInfo = student.weeks
+                        .map(w => `S${w.week}: ${w.score}%${w.active ? '' : ' (inativo)'}`)
+                        .join(' | ');
+
+                    detailItem.innerHTML = `
+                        <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
+                        <div class="detail-activities">
+                            <span class="activity-summary">
+                                📈 ${student.weeks.filter(w => w.active).length}/4 semanas ativas
+                            </span>
+                            <span class="activity-summary">
+                                🎯 ${student.objectiveCount} objetivo(s)
+                            </span>
+                            <span class="activity-summary">
+                                ${weeksInfo || 'Sem dados'}
+                            </span>
+                        </div>
+                    `;
+
+                    if (detailsGrid) detailsGrid.appendChild(detailItem);
+                });
+        } else {
+            // Modo semana individual
+            if (detailsTitle) detailsTitle.textContent = '📊 Detalhes dos Alunos';
+            const students = (await loadStudents()).filter(s => s.active);
+
+            const activeStudents = students
+                .filter(s => s.active)
+                .sort((a, b) => {
+                    const countA = countStudentItems(a);
+                    const countB = countStudentItems(b);
+                    return countB - countA || a.name.localeCompare(b.name);
+                });
+
+            if (activeStudents.length === 0) {
+                if (detailsGrid) detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum aluno ativo para esta semana</p>';
+                return;
+            }
+
+            if (detailsGrid) detailsGrid.innerHTML = '';
+
+            activeStudents.forEach(student => {
                 const detailItem = document.createElement('div');
                 detailItem.className = 'detail-item';
 
-                const weeksInfo = student.weeks
-                    .map(w => `S${w.week}: ${w.score}%${w.active ? '' : ' (inativo)'}`)
-                    .join(' | ');
+                const score = calculateScore(student);
+
+                let activitiesHTML = `
+                    <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
+                        ${student.videocall ? '✅ Videochamada' :
+                        student.sentToGroup ? '✅ Mandou no grupo' :
+                            '❌ Videochamada / Mandou no grupo'}
+                    </span>
+                `;
+
+                if (isNewSystem) {
+                    activitiesHTML += `
+                        <span class="activity ${student.apresentacaoSemanal ? 'done' : 'not-done'}">
+                            ${student.apresentacaoSemanal ? '✅' : '❌'} Apresentação Semanal
+                        </span>
+                    `;
+                } else {
+                    activitiesHTML += `
+                        <span class="activity ${student.tuesday ? 'done' : 'not-done'}">
+                            ${student.tuesday ? '✅' : '❌'} Terça
+                        </span>
+                        <span class="activity ${student.thursday ? 'done' : 'not-done'}">
+                            ${student.thursday ? '✅' : '❌'} Quinta
+                        </span>
+                    `;
+                }
 
                 detailItem.innerHTML = `
-                    <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
+                    <div class="detail-name">${student.name} - ${score}%</div>
+                    ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
                     <div class="detail-activities">
-                        <span class="activity-summary">
-                            📈 ${student.weeks.filter(w => w.active).length}/4 semanas ativas
-                        </span>
-                        <span class="activity-summary">
-                            🎯 ${student.objectiveCount} objetivo(s)
-                        </span>
-                        <span class="activity-summary">
-                            ${weeksInfo || 'Sem dados'}
-                        </span>
+                        ${activitiesHTML}
                     </div>
                 `;
 
-                detailsGrid.appendChild(detailItem);
+                if (detailsGrid) detailsGrid.appendChild(detailItem);
             });
-    } else {
-        // Modo semana individual
-        detailsTitle.textContent = '📊 Detalhes dos Alunos';
-        const students = (await loadStudents()).filter(s => s.active);
-
-        const activeStudents = students
-            .filter(s => s.active)
-            .sort((a, b) => {
-                const countA = countStudentItems(a);
-                const countB = countStudentItems(b);
-                return countB - countA || a.name.localeCompare(b.name);
-            });
-
-        if (activeStudents.length === 0) {
-            detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum aluno ativo para esta semana</p>';
-            return;
         }
-
-        detailsGrid.innerHTML = '';
-
-        activeStudents.forEach(student => {
-            const detailItem = document.createElement('div');
-            detailItem.className = 'detail-item';
-
-            const score = calculateScore(student);
-
-            let activitiesHTML = `
-                <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
-                    ${student.videocall ? '✅ Videochamada' :
-                    student.sentToGroup ? '✅ Mandou no grupo' :
-                        '❌ Videochamada / Mandou no grupo'}
-                </span>
-            `;
-
-            if (isNewSystem) {
-                // Sistema novo: mostrar Apresentação Semanal
-                activitiesHTML += `
-                    <span class="activity ${student.apresentacaoSemanal ? 'done' : 'not-done'}">
-                        ${student.apresentacaoSemanal ? '✅' : '❌'} Apresentação Semanal
-                    </span>
-                `;
-            } else {
-                // Sistema antigo: mostrar Terça e Quinta
-                activitiesHTML += `
-                    <span class="activity ${student.tuesday ? 'done' : 'not-done'}">
-                        ${student.tuesday ? '✅' : '❌'} Terça
-                    </span>
-                    <span class="activity ${student.thursday ? 'done' : 'not-done'}">
-                        ${student.thursday ? '✅' : '❌'} Quinta
-                    </span>
-                `;
-            }
-
-            detailItem.innerHTML = `
-                <div class="detail-name">${student.name} - ${score}%</div>
-                ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
-                <div class="detail-activities">
-                    ${activitiesHTML}
-                </div>
-            `;
-
-            detailsGrid.appendChild(detailItem);
-        });
+    } finally {
+        if (detailsGrid) detailsGrid.style.opacity = '1';
     }
 }
 
@@ -1375,7 +1349,6 @@ if (copyBtn) {
     copyBtn.addEventListener('click', copyFromPreviousWeek);
 }
 
-document.getElementById('setupFileSystemBtn').addEventListener('click', setupFileSystem);
 
 // Adicionar depois dos outros event listeners
 
@@ -1383,8 +1356,6 @@ document.getElementById('setupFileSystemBtn').addEventListener('click', setupFil
 // Inicializar
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM carregado, inicializando app...');
-    const mainContent = document.querySelector('main') || document.body;
-    const setupBtn = document.getElementById('setupFileSystemBtn');
     const chartToggleTab = document.getElementById('chartToggleTab');
 
     updateChartToggleUI();
@@ -1394,28 +1365,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     syncChartTogglePosition();
-
-    const restored = await restoreDirectoryHandle();
-    if (restored && directoryHandle) {
-        setupBtn.style.display = 'none';
-        mainContent.style.display = 'block';
-        await initData();
-        await updateMonthSelect();
-        await loadViewState();
-        await updateChart();
-        await updateDetails();
-        if (!window.location.pathname.includes('aluno.html')) {
-            await updateStudentList();
-        }
-        updateFileSystemStatusFixed();
-
-        await updateLastUploadTime();
-        await checkIfCurrentWeek();
-    } else {
-        setupBtn.style.display = 'block';
-        mainContent.style.display = 'none';
-        showSaveStatus('warning', '⚠️ Configure o sistema de arquivos para começar');
-    }
 });
 // 3. ADICIONE event listeners para salvar quando mudar:
 document.getElementById('monthSelect').addEventListener('change', async function () {
@@ -1465,8 +1414,36 @@ async function addMonth() {
     months.sort((a, b) => b.year - a.year || b.monthNumber - a.monthNumber);
 
     await saveMonths(months);
+
+    // Auto-copiar alunos ativos da semana 4 do mês anterior para a semana 1 do novo mês
+    const previousMonth = await getPreviousMonth(newMonth.id);
+    if (previousMonth) {
+        const previousWeekData = await loadJsonFile(`${previousMonth.id}-week4.json`, {});
+        if (Object.keys(previousWeekData).length > 0) {
+            const globalStudents = await loadGlobalStudents();
+            const week1Data = {};
+            globalStudents.forEach(name => {
+                const previousStudent = previousWeekData[name];
+                week1Data[name] = {
+                    name,
+                    active: previousStudent ? previousStudent.active : false,
+                    videocall: false,
+                    tuesday: false,
+                    thursday: false,
+                    sentToGroup: false,
+                    apresentacaoSemanal: false,
+                    objective: previousStudent?.objective || '',
+                    objectiveActive: false,
+                    presentationDay: previousStudent?.presentationDay || ''
+                };
+            });
+            await saveJsonFile(`${newMonth.id}-week1.json`, week1Data);
+        }
+    }
+
     await updateMonthSelect();
     document.getElementById('monthSelect').value = newMonth.id;
+    document.getElementById('weekSelect').value = '1';
     await onMonthOrWeekChange();
 }
 
@@ -1612,9 +1589,34 @@ const debouncedUpdate = debounce(async () => {
 }, 100);
 
 async function onMonthOrWeekChange() {
-    invalidateFileCache(`${document.getElementById('monthSelect').value}-week${document.getElementById('weekSelect').value}.json`);
-    await debouncedUpdate();
+    const chart = document.getElementById('chart');
+    if (chart) {
+        chart.style.transition = 'opacity 0.2s ease-in-out';
+        chart.style.opacity = '0.3';
+    }
+    const detailsGrid = document.getElementById('detailsGrid');
+    if (detailsGrid) {
+        detailsGrid.style.transition = 'opacity 0.2s ease-in-out';
+        detailsGrid.style.opacity = '0.3';
+    }
+    
+    const monthSelect = document.getElementById('monthSelect');
+    const weekSelect = document.getElementById('weekSelect');
+    if (monthSelect && weekSelect) {
+        invalidateFileCache(`${monthSelect.value}-week${weekSelect.value}.json`);
+        if (weekSelect.value === 'general') {
+            toggleChartVisibility(true);
+        }
+    }
+    
+    await updateChart();
+    await updateDetails();
+    if (!window.location.pathname.includes('aluno.html')) {
+        await updateStudentList();
+    }
     await updateWeeklySummary();
+        const ws = document.getElementById('weekSelect');
+        if (ws && ws.value === 'general') { toggleChartVisibility(true); }
     await checkIfCurrentWeek();
 }
 
@@ -1739,6 +1741,10 @@ async function loadViewState() {
             detailsPanel.classList.add('active');
             document.getElementById('toggleDetailsBtn').textContent = '🛠️ Voltar ao Modo Produtor';
         }
+    }
+
+    if (weekSelect.value === 'general') {
+        toggleChartVisibility(true);
     }
 }
 
@@ -1996,63 +2002,35 @@ async function ensureDirectoryStructure() {
     }
 }
 
-// Função para obter o caminho correto do arquivo
-function getFilePath(fileName) {
-    // Arquivos de configuração vão para pasta 'config'
-    if (['months.json', 'globalStudents.json', 'viewState.json', 'ultima_execucao.json'].includes(fileName)) {
-        return { folder: 'config', fileName: fileName };
+// Função para obter o caminho no Firebase
+function getFirebasePath(fileName) {
+    if (fileName === 'ultima_execucao.json') return 'ultima_execucao';
+    if (fileName === 'local_modification.json') return 'config/local_modification';
+    if (['months.json', 'globalStudents.json', 'viewState.json'].includes(fileName)) {
+        return `config/${fileName.replace('.json', '')}`;
     }
-
-    // Arquivos de semanas vão para pasta do mês
     if (fileName.includes('-week')) {
         const monthId = fileName.split('-week')[0];
-        const weekFileName = fileName.split('-')[2]; // week1.json, week2.json, etc.
-        return { folder: `meses/${monthId}`, fileName: weekFileName };
+        const weekNum = fileName.split('-week')[1].replace('.json', '');
+        return `meses/${monthId}/week${weekNum}`;
     }
-
-    // Outros arquivos ficam na raiz
-    return { folder: null, fileName: fileName };
+    return fileName.replace('.json', '');
 }
 
 async function saveJsonFile(fileName, data) {
     try {
-
-        if (!directoryHandle) {
-            showSaveStatus('error', '❌ Configure o sistema de arquivos primeiro!');
-            return false;
-        }
-
-        const filePath = getFilePath(fileName);
-        let targetHandle = directoryHandle;
-
-        if (filePath.folder) {
-            const folderParts = filePath.folder.split('/');
-            for (const part of folderParts) {
-                targetHandle = await targetHandle.getDirectoryHandle(part, { create: true });
-            }
-        }
-
-        const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: true });
-        const writable = await fileHandle.createWritable();
-        await writable.write(JSON.stringify(data, null, 2));
-        await writable.close();
+        if (!currentUser) return false;
+        
+        const path = getFirebasePath(fileName);
+        await firebase.database().ref(path).set(data);
         invalidateFileCache(fileName);
 
-        // Atualizar timestamp APENAS se não for o próprio arquivo de modificação
         if (fileName !== 'local_modification.json' && fileName !== 'ultima_execucao.json') {
-
             await updateLocalModificationTime();
         }
         return true;
     } catch (err) {
-
-        let message = '❌ Erro ao salvar';
-        if (err.name === 'NotAllowedError') {
-            message = '❌ Permissão negada para salvar';
-        } else if (err.name === 'TypeError') {
-            message = '❌ Formato de dados inválido';
-        }
-        showSaveStatus('error', message);
+        showSaveStatus('error', '❌ Erro ao salvar: ' + err.message);
         return false;
     }
 }
@@ -2061,75 +2039,27 @@ async function loadJsonFile(fileName, defaultValue = {}, forceReload = false) {
     if (fileCache[fileName] && !forceReload) {
         return JSON.parse(JSON.stringify(fileCache[fileName]));
     }
-
-    // Arquivos que ficam na raiz (ultima_execucao) e na config (local_modification)
-    if (fileName === 'ultima_execucao.json') {
-        try {
-            if (!directoryHandle) return defaultValue;
-            const fileHandle = await directoryHandle.getFileHandle(fileName, { create: false });
-            const file = await fileHandle.getFile();
-            const text = await file.text();
-            const data = JSON.parse(text);
-            fileCache[fileName] = data;
-            return data;
-        } catch (err) {
-            return defaultValue;
-        }
-    }
-
-    // Arquivo local_modification.json fica na pasta config
-    if (fileName === 'local_modification.json') {
-        try {
-            if (!directoryHandle) return defaultValue;
-            const configHandle = await directoryHandle.getDirectoryHandle('config', { create: false });
-            const fileHandle = await configHandle.getFileHandle(fileName, { create: false });
-            const file = await fileHandle.getFile();
-            const text = await file.text();
-            const data = JSON.parse(text);
-            fileCache[fileName] = data;
-
-            return data;
-        } catch (err) {
-            console.log(`ℹ️ ${fileName} não encontrado na pasta config`);
-            return defaultValue;
-        }
-    }
     try {
-        if (!directoryHandle) {
+        if (!currentUser) return defaultValue;
 
-            return defaultValue;
-        }
-
-        const filePath = getFilePath(fileName);
-        let targetHandle = directoryHandle;
-
-        if (filePath.folder) {
-            const folderParts = filePath.folder.split('/');
-            for (const part of folderParts) {
-                try {
-                    targetHandle = await targetHandle.getDirectoryHandle(part, { create: false });
-                } catch (err) {
-                    if (err.name === 'NotFoundError') {
-
-                        return defaultValue;
-                    }
-                    throw err;
-                }
+        const path = getFirebasePath(fileName);
+        const snapshot = await firebase.database().ref(path).once('value');
+        
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            // Firebase returns arrays as objects if they have missing keys, or arrays.
+            // Since we use array methods on some JSONs, we should ensure data structure matches defaultValue
+            if (Array.isArray(defaultValue) && typeof data === 'object' && !Array.isArray(data)) {
+                // convert object back to array
+                fileCache[fileName] = Object.values(data);
+                return fileCache[fileName];
             }
+            
+            fileCache[fileName] = data;
+            return data;
         }
-
-        const fileHandle = await targetHandle.getFileHandle(filePath.fileName, { create: false });
-        const file = await fileHandle.getFile();
-        const text = await file.text();
-        const data = JSON.parse(text);
-
-        fileCache[fileName] = data;
-        return data;
+        return defaultValue;
     } catch (err) {
-        if (err.name === 'NotFoundError') {
-
-            return defaultValue;
-        }
         return defaultValue;
     }
 }
@@ -2170,8 +2100,7 @@ async function setupFileSystem(event) {
     event?.preventDefault();
     if (directoryHandle) {
         showSaveStatus('success', '✅ Sistema já configurado!');
-        updateFileSystemStatusFixed();
-        return;
+                return;
     }
     if (!('showDirectoryPicker' in window)) {
         showSaveStatus('error', '❌ Navegador não suporta File System API.');
@@ -2202,8 +2131,7 @@ async function setupFileSystem(event) {
         setupBtn.style.display = 'none';
         mainContent.style.display = 'block';
         showSaveStatus('success', `✅ Configurado! Salvando em: ${newHandle.name}`);
-        updateFileSystemStatusFixed();
-    } catch (err) {
+            } catch (err) {
         console.error('Erro:', err);
         showSaveStatus('error', err.name === 'AbortError' ? '⚠️ Seleção cancelada.' : `❌ Erro: ${err.message}`);
     }
@@ -2903,10 +2831,8 @@ function updateChartInstantly(studentName, field, value) {
 
 // BOTÃO SUBIR - VERSÃO CORRIGIDA
 
-
 async function updateLocalModificationTime() {
-    if (!directoryHandle) return;
-
+    if (!currentUser) return;
     try {
         const now = new Date();
         const timestamp = now.toLocaleString('pt-BR');
@@ -2914,164 +2840,11 @@ async function updateLocalModificationTime() {
             ultima_modificacao: timestamp,
             timestamp_unix: now.getTime()
         };
-
-
-
-        // Salvar DIRETAMENTE sem chamar saveJsonFile (evita loop)
-        const configHandle = await directoryHandle.getDirectoryHandle('config', { create: true });
-        const fileHandle = await configHandle.getFileHandle('local_modification.json', { create: true });
-
-        // CRITICAL: keepExistingData: false para GARANTIR sobrescrita
-        const writable = await fileHandle.createWritable({ keepExistingData: false });
-        await writable.write(JSON.stringify(data, null, 2));
-        await writable.close();
-
-
-
-        // Aguardar um momento para o sistema de arquivos sincronizar
-        await new Promise(resolve => setTimeout(resolve, 100));
-
-
-
-        // Invalidar cache para forçar leitura do novo timestamp
-        invalidateFileCache('local_modification.json');
-
-        // Verificar se realmente foi salvo
-        const verificacao = await configHandle.getFileHandle('local_modification.json');
-        const fileVerif = await verificacao.getFile();
-        const textVerif = await fileVerif.text();
-
+        await firebase.database().ref('config/local_modification').set(data);
     } catch (err) {
-        console.error('Erro ao atualizar timestamp:', err);
+        console.error('Erro ao atualizar modification time:', err);
     }
 }
-
-async function getLastModificationTime() {
-    try {
-        invalidateFileCache('local_modification.json');
-        const data = await loadJsonFile('local_modification.json', null, true);
-        return data?.timestamp_unix || 0;
-    } catch {
-        return 0;
-    }
-}
-
-async function getLastUploadTime() {
-    try {
-        const data = await loadJsonFile('ultima_execucao.json', null);
-        if (!data?.ultima_execucao) return 0;
-
-        // Parse do formato "30 Sep 25 às 12:10"
-        const dateStr = data.ultima_execucao.replace(' às ', ' ');
-        const date = new Date(dateStr);
-        return date.getTime();
-    } catch {
-        return 0;
-    }
-}
-
-async function updateLastUploadTime() {
-    try {
-
-        const uploadBtn = document.getElementById('uploadGithubBtn');
-        const lastUploadElement = document.getElementById('lastUploadTime');
-
-        const uploadTime = await getLastUploadTime();
-        const modificationTime = await getLastModificationTime();
-
-
-        const uploadData = await loadJsonFile('ultima_execucao.json', null);
-
-
-        const modData = await loadJsonFile('local_modification.json', null);
-
-        // Verificar se tem alterações pendentes
-        const hasChanges = modificationTime > uploadTime;
-        const timeDiff = hasChanges ? Math.floor((Date.now() - modificationTime) / 1000 / 60) : 0; // minutos
-
-        // Atualizar visual do botão
-        uploadBtn.classList.remove('status-synced', 'status-pending', 'status-critical');
-
-        if (!uploadTime) {
-            // Nunca fez upload
-            uploadBtn.classList.add('status-critical');
-            lastUploadElement.textContent = 'Nunca executado';
-        } else if (!hasChanges) {
-            // Sincronizado
-            uploadBtn.classList.add('status-synced');
-            lastUploadElement.textContent = `✅ Sincronizado (${uploadData.ultima_execucao})`;
-        } else if (timeDiff < 30) {
-            // Alterações recentes
-            uploadBtn.classList.add('status-pending');
-            lastUploadElement.textContent = `⚠️ Alterações há ${timeDiff} min`;
-        } else {
-            // Alterações antigas
-            uploadBtn.classList.add('status-critical');
-            lastUploadElement.textContent = `🔴 Alterações há ${timeDiff} min!`;
-        }
-    } catch (err) {
-        document.getElementById('lastUploadTime').textContent = 'Erro ao verificar';
-    }
-}
-
-document.getElementById('uploadGithubBtn').addEventListener('click', async () => {
-    showSaveStatus('saving', 'Upando para GitHub...');
-
-    try {
-        const configResponse = await fetch('/config.json');
-        const config = await configResponse.json();
-        const serverPort = config.port || window.location.port || 8005;
-
-        const response = await fetch(`http://localhost:${serverPort}/executar-python`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ arquivo: 'subir_arquivos_parede.py' })
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-
-        const result = await response.json();
-
-        if (result.sucesso) {
-            showSaveStatus('success', '✅ Upload concluído com sucesso!');
-
-            // Aguardar o arquivo ser atualizado
-            await new Promise(resolve => setTimeout(resolve, 500));
-
-            // Invalidar cache e recarregar
-            invalidateFileCache('ultima_execucao.json');
-            const uploadData = await loadJsonFile('ultima_execucao.json', null, true);
-
-            if (uploadData?.ultima_execucao) {
-                // Sincronizar timestamps
-                const uploadDate = new Date(uploadData.ultima_execucao.replace(' às ', ' '));
-                const syncData = {
-                    ultima_modificacao: uploadData.ultima_execucao,
-                    timestamp_unix: uploadDate.getTime()
-                };
-
-                const configHandle = await directoryHandle.getDirectoryHandle('config', { create: true });
-                const fileHandle = await configHandle.getFileHandle('local_modification.json', { create: true });
-                const writable = await fileHandle.createWritable({ keepExistingData: false });
-                await writable.write(JSON.stringify(syncData, null, 2));
-                await writable.close();
-
-                invalidateFileCache('local_modification.json');
-            }
-
-            // Atualizar visual
-            await updateLastUploadTime();
-        } else {
-            showSaveStatus('error', '❌ Erro no upload!');
-            console.error('Erro do script:', result.stderr || result.erro);
-        }
-    } catch (error) {
-        showSaveStatus('error', '❌ Erro ao conectar ao servidor!');
-        console.error('Erro completo:', error);
-    }
-});
 
 // Função para verificar se está na semana atual
 async function checkIfCurrentWeek() {
@@ -3160,7 +2933,7 @@ async function goToCurrentWeek() {
 }
 
 // Event listener para o botão
-document.getElementById('goToCurrentWeekBtn').addEventListener('click', goToCurrentWeek);
+document.getElementById('goToCurrentWeekBtn')?.addEventListener('click', goToCurrentWeek);
 
 // Modal functionality
 const modal = document.getElementById('presentationsModal');
@@ -3169,6 +2942,10 @@ const closeBtn = document.querySelector('.close');
 
 openBtn.onclick = function () {
     modal.style.display = 'block';
+    const iframe = modal.querySelector('iframe');
+    if (iframe && iframe.contentWindow && typeof iframe.contentWindow.loadMonths === 'function') {
+        iframe.contentWindow.loadMonths();
+    }
 }
 
 closeBtn.onclick = function () {

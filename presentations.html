@@ -240,7 +240,7 @@
         </div>
     </div>
 
-    <script>
+        <script>
         const dayMap = {
             'Domingo': 'sunday-list',
             'Segunda': 'monday-list',
@@ -256,8 +256,13 @@
 
         async function loadMonths() {
             try {
-                const response = await fetch('config/months.json');
-                monthsData = await response.json();
+                console.log('Carregando lista de meses para apresentações...');
+                const data = await window.parent.loadJsonFile('months.json');
+                if (!data) throw new Error("months.json retornou vazio");
+                
+                monthsData = Array.isArray(data) ? data : Object.values(data);
+                if (monthsData.length === 0) throw new Error("Nenhum mês encontrado");
+                
                 populateMonthSelect();
             } catch (error) {
                 console.error('Erro ao carregar meses:', error);
@@ -267,12 +272,23 @@
         async function loadDefaultWeek() {
             for (let w = 4; w >= 1; w--) {
                 try {
-                    const response = await fetch(`meses/${currentMonth}/week${w}.json`);
-                    if (!response.ok) {
-                        continue; // Ignora semana inexistente e tenta a próxima
-                    }
-                    const data = await response.json();
-                    const hasPresentations = Object.values(data).some(student => student.active && student.presentationDay && student.presentationDay.trim() !== '');
+                    const data = await window.parent.loadJsonFile(`${currentMonth}-week${w}.json`);
+                    if (!data || Object.keys(data).length === 0) continue;
+                    
+                    const students = Object.entries(data).map(([key, val]) => {
+                        if (typeof val === 'object' && val !== null) {
+                            if (!val.name) val.name = key;
+                            return val;
+                        }
+                        return null;
+                    }).filter(Boolean);
+
+                    const hasPresentations = students.some(student => 
+                        (student.active === true || student.active === 'true') && 
+                        student.presentationDay && 
+                        String(student.presentationDay).trim() !== ''
+                    );
+
                     if (hasPresentations) {
                         currentWeek = w;
                         document.getElementById('weekSelect').value = w;
@@ -280,10 +296,10 @@
                         return;
                     }
                 } catch (e) {
-                    // continue to next week
+                    console.warn(`Erro ao verificar semana ${w}:`, e);
                 }
             }
-            // If no week has presentations, default to week 1
+            // Padrão para semana 1
             currentWeek = 1;
             document.getElementById('weekSelect').value = 1;
             loadWeekData(currentMonth, 1);
@@ -293,20 +309,21 @@
             const monthSelect = document.getElementById('monthSelect');
             monthSelect.innerHTML = '';
 
-            // Sort months by year and month descending
+            // Ordenar meses decrescente
             monthsData.sort((a, b) => {
-                if (a.year !== b.year) return b.year - a.year;
-                return b.monthNumber - a.monthNumber;
+                if (a.year !== b.year) return (b.year || 0) - (a.year || 0);
+                return (b.monthNumber || 0) - (a.monthNumber || 0);
             });
 
             monthsData.forEach(month => {
-                const option = document.createElement('option');
-                option.value = month.id;
-                option.textContent = month.name;
-                monthSelect.appendChild(option);
+                if (month && month.id && month.name) {
+                    const option = document.createElement('option');
+                    option.value = month.id;
+                    option.textContent = month.name;
+                    monthSelect.appendChild(option);
+                }
             });
 
-            // Set current month to the first (most recent)
             if (monthsData.length > 0) {
                 currentMonth = monthsData[0].id;
                 monthSelect.value = currentMonth;
@@ -316,64 +333,69 @@
 
         async function loadWeekData(month, week) {
             try {
-                const response = await fetch(`meses/${month}/week${week}.json`);
-                if (!response.ok) {
+                console.log(`Carregando dados da semana ${week} do mês ${month}...`);
+                const data = await window.parent.loadJsonFile(`${month}-week${week}.json`);
+                if (!data || Object.keys(data).length === 0) {
                     weekData = {};
                     displayPresentations();
                     return;
                 }
-                weekData = await response.json();
+                weekData = data;
                 displayPresentations();
             } catch (error) {
                 console.error('Erro ao carregar dados da semana:', error);
-                // Clear all lists
-                Object.values(dayMap).forEach(listId => {
-                    const list = document.getElementById(listId);
-                    list.innerHTML = '<div class="empty-day">Nenhuma apresentação</div>';
-                });
             }
         }
 
         function displayPresentations() {
-            // Clear all lists
             Object.values(dayMap).forEach(listId => {
                 const list = document.getElementById(listId);
-                list.innerHTML = '';
+                if (list) list.innerHTML = '';
             });
 
             const studentsByDay = {};
-
-            // Initialize empty arrays for each day
             Object.keys(dayMap).forEach(day => {
                 studentsByDay[day] = [];
             });
 
-            // Group students by presentation day
-            Object.values(weekData).forEach(student => {
-                if (student.active && student.presentationDay && student.presentationDay.trim() !== '') {
-                    const day = student.presentationDay;
-                    if (studentsByDay[day]) {
-                        studentsByDay[day].push(student);
-                    }
+            // Normalizar students de weekData
+            const students = Object.entries(weekData).map(([key, val]) => {
+                if (typeof val === 'object' && val !== null) {
+                    const s = { ...val };
+                    if (!s.name) s.name = key;
+                    return s;
+                }
+                return null;
+            }).filter(Boolean);
+
+            students.forEach(student => {
+                const isActive = student.active === true || student.active === 'true';
+                const day = student.presentationDay ? String(student.presentationDay).trim() : '';
+
+                if (isActive && day && studentsByDay[day]) {
+                    studentsByDay[day].push(student);
                 }
             });
 
-            // Update day headers with student counts
+            // Atualizar cabeçalhos
             const headers = document.querySelectorAll('.day-header');
             Object.entries(dayMap).forEach(([dayName, listId], index) => {
                 const count = studentsByDay[dayName] ? studentsByDay[dayName].length : 0;
-                headers[index].textContent = `${dayName} (${count})`;
+                if (headers[index]) {
+                    headers[index].textContent = `${dayName} (${count})`;
+                }
             });
 
-            // Display students for each day
+            // Renderizar cards
             Object.entries(dayMap).forEach(([dayName, listId]) => {
                 const list = document.getElementById(listId);
-                const students = studentsByDay[dayName] || [];
+                if (!list) return;
+                const listStudents = studentsByDay[dayName] || [];
 
-                if (students.length === 0) {
+                if (listStudents.length === 0) {
                     list.innerHTML = '<div class="empty-day">Nenhuma apresentação</div>';
                 } else {
-                    students.forEach(student => {
+                    listStudents.forEach(student => {
                         const studentCard = document.createElement('div');
                         studentCard.className = 'student-card';
                         studentCard.innerHTML = `
@@ -396,12 +418,18 @@
             loadWeekData(currentMonth, currentWeek);
         }
 
-        // Event listeners
         document.getElementById('monthSelect').addEventListener('change', loadCurrentWeek);
         document.getElementById('weekSelect').addEventListener('change', loadCurrentWeek);
 
-        // Initialize
-        loadMonths();
+        // Inicialização robusta aguardando autenticação e carregamento do pai
+        function waitForParentAndLoad() {
+            if (window.parent && typeof window.parent.loadJsonFile === 'function' && window.parent.currentUser) {
+                loadMonths();
+            } else {
+                setTimeout(waitForParentAndLoad, 100);
+            }
+        }
+        waitForParentAndLoad();
     </script>
 </body>
 </html>

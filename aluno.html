@@ -3,70 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parede da Vitória - Visualização dos Alunos</title>
+    <title>Parede da Vitória - Área do Aluno 🎸</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos complementares refinados para a Área do Aluno */
+        .top-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: rgba(37, 148, 163, 0.85);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-back-home:hover {
+            background: #2594a3;
+            transform: translateX(-2px);
+        }
+
+        .student-badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #34d399;
+            background: rgba(16, 185, 129, 0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #34d399;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #34d399;
+            animation: pulseDot 1.8s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        /* Seletor "Quem é você?" e Filtros */
+        .aluno-toolbar {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .toolbar-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .toolbar-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .toolbar-select {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .toolbar-select:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Card de Destaque Pessoal (3 colunas iguais no Desktop / Empilhado no celular) */
+        .personal-spotlight-card {
+            display: none;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border: 2px solid #fbbf24;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.12);
+            animation: fadeInCard 0.3s ease;
+        }
+
+        .personal-spotlight-card.active {
+            display: block;
+        }
+
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .personal-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .personal-user-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .personal-score-tag {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+        }
+
+        .personal-3cols-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            align-items: start;
+        }
+
+        .personal-col-box {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-box-title {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .col-box-content {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f8fafc;
+            line-height: 1.4;
+        }
+
+        /* Abas Modernas com Scroll Suave no Celular */
+        .student-tabs-wrapper {
+            display: flex;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 6px;
+            border-radius: 14px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .student-tabs-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .student-tab-btn {
+            flex: 1;
+            min-width: max-content;
+            padding: 10px 18px;
+            background: transparent;
+            border: none;
+            border-radius: 10px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .student-tab-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .student-tab-btn.active {
+            background: #38bdf8;
+            color: #0f172a;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+        }
+
+        .student-tab-content {
+            display: none;
+        }
+
+        .student-tab-content.active {
+            display: block;
+            animation: fadeInTab 0.25s ease;
+        }
+
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Destaque na barra do gráfico */
+        .bar.highlight-student .bar-fill {
+            border: 2px solid #fbbf24 !important;
+            box-shadow: 0 0 16px rgba(251, 191, 36, 0.7) !important;
+            transform: scale(1.04);
+        }
+
+        .bar.highlight-student .bar-name {
+            color: #fbbf24 !important;
+            font-weight: 800 !important;
+        }
+
+        /* Escala de Apresentações (Aba 3) */
+        .presentations-week-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+
+        .pres-day-col {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .pres-day-title {
+            background: rgba(56, 189, 248, 0.08);
+            color: #38bdf8;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-align: center;
+            padding: 12px 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .pres-day-body {
+            padding: 12px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-height: 100px;
+        }
+
+        .pres-student-item {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .pres-student-item:hover {
+            border-color: #38bdf8;
+            transform: translateX(2px);
+        }
+
+        .pres-empty-msg {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.8rem;
+            text-align: center;
+            margin: auto 0;
+            padding: 16px 0;
+        }
+
+        /* Responsividade para Celular */
+        @media (max-width: 768px) {
+            .personal-3cols-grid {
+                grid-template-columns: 1fr;
+            }
+            .aluno-toolbar {
+                grid-template-columns: 1fr;
+            }
+            .student-tab-btn {
+                padding: 10px 14px;
+                font-size: 0.82rem;
+            }
+        }
+    </style>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 </head>
 <body>
     <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-navigation">
+            <a href="https://gabrielalmeidac3.github.io/musicas_violao/fechado_geral2.html" class="btn-back-home">
+                <span>←</span>
+                <span>Portal Geral</span>
+            </a>
+            <div class="student-badge-live">
+                <span class="live-dot"></span>
+                <span>Painel do Aluno</span>
+            </div>
+        </div>
+
+        <!-- Header -->
         <div class="header">
             <h1>🎯</h1>
-            <h1><span class="gradient-text">Parede da Vitória - VD40</span><span class="no-gradient">🎸</span></h1>
-            <p>Acompanhe o progresso dos alunos semana a semana</p>
-        </div>
-        <div style="margin-top: 10px; margin-bottom: 20px; text-align: center;">
-            <a href="https://gabrielalmeidac3.github.io/musicas_violao/fechado_geral2.html">
-                <button style="
-                    display: inline-block;
-                    padding: 8px 16px;
-                    font-size: 9px;
-                    color: white;
-                    background: #2594a3;
-                    border-radius: 12px;
-                    text-decoration: none;
-                    text-align: center;
-                    transition: background 0.3s;
-                    border: none;
-                    cursor: pointer;
-                ">
-                    Voltar para a Página Geral
-                </button>
-            </a>
-        </div>
-        <div class="controls">
-            <select id="monthSelect">
-                <!-- Meses carregados via JavaScript -->
-            </select>
-            <select id="weekSelect">
-                <option value="general">📊 Geral do Mês</option>
-                <option value="1">Semana 1</option>
-                <option value="2">Semana 2</option>
-                <option value="3">Semana 3</option>
-                <option value="4">Semana 4</option>
-            </select>
+            <h1><span class="gradient-text">Parede da Vitória - VD40</span> <span class="no-gradient">🎸</span></h1>
+            <p>Seu progresso e dedicação nas aulas de violão!</p>
         </div>
 
-        <div class="chart-container">
-            <h3 id="chartTitle">📊 Gráfico</h3>
-            <div class="chart" id="chart"></div>
+        <!-- Toolbar de Filtros -->
+        <div class="aluno-toolbar">
+            <div class="toolbar-item">
+                <label class="toolbar-label" for="studentSelector">👤 Quem é você?</label>
+                <select id="studentSelector" class="toolbar-select">
+                    <option value="">-- Ver todos os alunos --</option>
+                </select>
+            </div>
+            <div class="toolbar-item">
+                <label class="toolbar-label" for="monthSelect">📅 Mês</label>
+                <select id="monthSelect" class="toolbar-select"></select>
+            </div>
+            <div class="toolbar-item">
+                <label class="toolbar-label" for="weekSelect">📊 Semana</label>
+                <select id="weekSelect" class="toolbar-select">
+                    <option value="general">📊 Geral do Mês</option>
+                    <option value="1">Semana 1</option>
+                    <option value="2">Semana 2</option>
+                    <option value="3">Semana 3</option>
+                    <option value="4" selected>Semana 4</option>
+                </select>
+            </div>
         </div>
-    </div>
 
-    <section class="student-details active">
-        <h3 id="detailsTitle">📊 Detalhes dos Alunos</h3>
-        <div id="detailsGrid" class="details-grid"></div>
-    </section>
+        <!-- Card de Destaque Pessoal (3 colunas iguais) -->
+        <div id="personalCard" class="personal-spotlight-card">
+            <div class="personal-card-top">
+                <div class="personal-user-title">
+                    <span>👤</span>
+                    <span id="personalName">Seu Nome</span>
+                </div>
+                <div class="personal-score-tag" id="personalScoreBadge">100% ⭐</div>
+            </div>
+            <div class="personal-3cols-grid">
+                <div class="personal-col-box">
+                    <div class="col-box-title">🎯 Seu Objetivo</div>
+                    <div class="col-box-content" id="personalObjective">Nenhum objetivo definido</div>
+                </div>
+                <div class="personal-col-box">
+                    <div class="col-box-title">📅 Dia escolhido para mandar a apresentação no grupo</div>
+                    <div class="col-box-content" id="personalPresentationDay">A definir</div>
+                </div>
+                <div class="personal-col-box">
+                    <div class="col-box-title">📋 Checklist de Atividades</div>
+                    <div class="col-box-content" id="personalActivities">Carregando...</div>
+                </div>
+            </div>
+        </div>
 
-    <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
-        <img src="img2.png" alt="Watermark" style="width: 100px; height: auto; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-        <p style="font-size: 14px; color: #888; margin-top: 10px;">Por Gabriel Almeida</p>
+        <!-- Abas de Navegação -->
+        <div class="student-tabs-wrapper">
+            <button class="student-tab-btn active" onclick="switchAlunoTab('tab-parede')">
+                <span>🏆</span>
+                <span>A Parede (Ranking)</span>
+            </button>
+            <button class="student-tab-btn" onclick="switchAlunoTab('tab-objetivos')">
+                <span>📋</span>
+                <span>Objetivos da Turma</span>
+            </button>
+            <button class="student-tab-btn" onclick="switchAlunoTab('tab-apresentacoes')">
+                <span>📅</span>
+                <span>Escala de Apresentações</span>
+            </button>
+        </div>
+
+        <!-- Aba 1: Gráfico A Parede (Idêntico ao original do professor) -->
+        <div id="tab-parede" class="student-tab-content active">
+            <div class="chart-container">
+                <h3 id="chartTitle">🏆 A Parede da Vitória</h3>
+                <div class="chart" id="chart"></div>
+            </div>
+        </div>
+
+        <!-- Aba 2: Detalhes e Objetivos da Turma -->
+        <div id="tab-objetivos" class="student-tab-content">
+            <section class="student-details active" style="margin-top: 0;">
+                <h3 id="detailsTitle" style="display: none;">📊 Detalhes</h3>
+                <div id="detailsGrid" class="details-grid"></div>
+            </section>
+        </div>
+
+        <!-- Aba 3: Escala de Apresentações (Apenas os nomes dos alunos) -->
+        <div id="tab-apresentacoes" class="student-tab-content">
+            <div class="presentations-week-grid">
+                <div class="pres-day-col">
+                    <div class="pres-day-title">Domingo <span id="count-domingo">(0)</span></div>
+                    <div class="pres-day-body" id="pres-domingo"></div>
+                </div>
+                <div class="pres-day-col">
+                    <div class="pres-day-title">Segunda <span id="count-segunda">(0)</span></div>
+                    <div class="pres-day-body" id="pres-segunda"></div>
+                </div>
+                <div class="pres-day-col">
+                    <div class="pres-day-title">Terça <span id="count-terca">(0)</span></div>
+                    <div class="pres-day-body" id="pres-terca"></div>
+                </div>
+                <div class="pres-day-col">
+                    <div class="pres-day-title">Quarta <span id="count-quarta">(0)</span></div>
+                    <div class="pres-day-body" id="pres-quarta"></div>
+                </div>
+                <div class="pres-day-col">
+                    <div class="pres-day-title">Quinta <span id="count-quinta">(0)</span></div>
+                    <div class="pres-day-body" id="pres-quinta"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+            <img src="img2.png" alt="Gabriel Almeida" style="width: 90px; height: auto; border-radius: 14px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 13px; color: #888; margin-top: 8px;">Aulas de Violão • Gabriel Almeida</p>
+        </div>
     </div>
 
     <div id="saveStatus"></div>
 
     <script>
-        // Cache para armazenar dados carregados
-        let dataCache = {};
-        
+        // Configuração do Firebase Realtime Database
+        const firebaseConfig = {
+            apiKey: "AIzaSyAX7_vTbtXr387VfcxOMNSTskR1okqYE2w",
+            authDomain: "bicicleta-507120.firebaseapp.com",
+            projectId: "bicicleta-507120",
+            storageBucket: "bicicleta-507120.firebasestorage.app",
+            messagingSenderId: "376695516995",
+            appId: "1:376695516995:web:367371e575de704a76c9f6",
+            measurementId: "G-BHZ267JX4B"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        window.currentUser = { isStudent: true };
+        let fileCache = {};
+        let selectedStudentName = localStorage.getItem('parede_selected_student') || '';
+        let chartExpanded = false;
+
+        function switchAlunoTab(tabId) {
+            document.querySelectorAll('.student-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.student-tab-content').forEach(pane => pane.classList.remove('active'));
+
+            const targetPane = document.getElementById(tabId);
+            if (targetPane) targetPane.classList.add('active');
+
+            const activeBtn = Array.from(document.querySelectorAll('.student-tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        function getFirebasePath(fileName) {
+            if (fileName === 'ultima_execucao.json') return 'ultima_execucao';
+            if (fileName === 'local_modification.json') return 'config/local_modification';
+            if (['months.json', 'globalStudents.json', 'viewState.json'].includes(fileName)) {
+                return 'config/' + fileName.replace('.json', '');
+            }
+            if (fileName.includes('-week')) {
+                const monthId = fileName.split('-week')[0];
+                const weekNum = fileName.split('-week')[1].replace('.json', '');
+                return 'meses/' + monthId + '/week' + weekNum;
+            }
+            return fileName.replace('.json', '');
+        }
+
+        async function loadJsonFile(fileName, defaultValue = {}, forceReload = false) {
+            if (fileCache[fileName] && !forceReload) {
+                return JSON.parse(JSON.stringify(fileCache[fileName]));
+            }
+            try {
+                const path = getFirebasePath(fileName);
+                const snapshot = await db.ref(path).once('value');
+                if (snapshot.exists()) {
+                    let data = snapshot.val();
+                    if (Array.isArray(defaultValue) && typeof data === 'object' && !Array.isArray(data)) {
+                        data = Object.values(data);
+                    }
+                    fileCache[fileName] = data;
+                    return data;
+                }
+                return defaultValue;
+            } catch (err) {
+                console.warn('Erro ao carregar ' + fileName + ':', err.message);
+                return defaultValue;
+            }
+        }
+        window.loadJsonFile = loadJsonFile;
+
         function showSaveStatus(type, message) {
             let statusDiv = document.getElementById('saveStatus');
             if (!statusDiv) {
@@ -74,386 +559,576 @@
                 statusDiv.id = 'saveStatus';
                 document.body.appendChild(statusDiv);
             }
-            statusDiv.className = `save-status-${type}`;
+            statusDiv.className = 'save-status-' + type;
             statusDiv.textContent = message;
             statusDiv.style.display = 'block';
-            setTimeout(() => {
-                statusDiv.style.display = 'none';
-            }, 3000);
-        }
-
-        async function loadJsonFile(fileName, defaultValue = {}) {
-            // Verificar se já está no cache
-            if (dataCache[fileName]) {
-                return JSON.parse(JSON.stringify(dataCache[fileName]));
-            }
-
-            try {
-                let url;
-                
-                // Determinar o caminho do arquivo
-                if (['months.json', 'globalStudents.json', 'viewState.json'].includes(fileName)) {
-                    url = `config/${fileName}`;
-                } else if (fileName.includes('-week')) {
-                    const monthId = fileName.split('-week')[0];
-                    const weekFileName = fileName.split('-')[2];
-                    url = `meses/${monthId}/${weekFileName}`;
-                } else {
-                    url = fileName;
-                }
-
-                const response = await fetch(url);
-                
-                if (!response.ok) {
-                    console.warn(`Arquivo ${fileName} não encontrado, usando valor padrão`);
-                    dataCache[fileName] = defaultValue;
-                    return defaultValue;
-                }
-
-                const data = await response.json();
-                dataCache[fileName] = data;
-                return data;
-                
-            } catch (error) {
-                console.warn(`Erro ao carregar ${fileName}:`, error.message);
-                dataCache[fileName] = defaultValue;
-                return defaultValue;
-            }
-        }
-
-        function debounce(func, wait = 100) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
+            setTimeout(() => { statusDiv.style.display = 'none'; }, 2200);
         }
 
         async function loadMonths() {
-            const defaultMonths = [
-                { id: "2025-06", name: "Junho 2025", monthNumber: 6, year: 2025 },
-                { id: "2025-05", name: "Maio 2025", monthNumber: 5, year: 2025 },
-                { id: "2025-04", name: "Abril 2025", monthNumber: 4, year: 2025 }
-            ];
-            return await loadJsonFile('months.json', defaultMonths);
+            const data = await loadJsonFile('months.json', []);
+            const months = Array.isArray(data) ? data : Object.values(data || {});
+            return months.sort((a, b) => {
+                if (a.year !== b.year) return (b.year || 0) - (a.year || 0);
+                return (b.monthNumber || 0) - (a.monthNumber || 0);
+            });
         }
 
         async function loadGlobalStudents() {
-            const defaultStudents = [
-                "Ana Silva", "Bruno Costa", "Carlos Mendes", "Diana Rocha", "Eduardo Lima",
-                "Fernanda Alves", "Gabriel Santos", "Helena Martins", "Igor Pereira", "Julia Ferreira"
-            ];
-            return await loadJsonFile('globalStudents.json', defaultStudents);
+            const data = await loadJsonFile('globalStudents.json', []);
+            return Array.isArray(data) ? data : Object.values(data || {});
+        }
+
+        function sanitizeStudentData(name, raw = {}) {
+            return {
+                name: name,
+                active: raw.active !== undefined ? raw.active : false,
+                videocall: raw.videocall !== undefined ? raw.videocall : false,
+                sentToGroup: raw.sentToGroup !== undefined ? raw.sentToGroup : false,
+                tuesday: raw.tuesday !== undefined ? raw.tuesday : false,
+                thursday: raw.thursday !== undefined ? raw.thursday : false,
+                apresentacaoSemanal: raw.apresentacaoSemanal !== undefined ? raw.apresentacaoSemanal : false,
+                objective: raw.objective ? String(raw.objective).trim() : '',
+                objectiveActive: raw.objectiveActive !== undefined ? raw.objectiveActive : false,
+                presentationDay: raw.presentationDay ? String(raw.presentationDay).trim() : ''
+            };
         }
 
         async function loadStudents() {
             const week = document.getElementById('weekSelect').value;
-            if (week === 'general') {
-                return [];
-            }
+            if (week === 'general') return [];
+
             const monthId = document.getElementById('monthSelect').value;
             const weekNum = document.getElementById('weekSelect').value;
-            const fileName = `${monthId}-week${weekNum}.json`;
-            const weekData = await loadJsonFile(fileName, {});
+            const weekData = await loadJsonFile(monthId + '-week' + weekNum + '.json', {});
             const globalStudents = await loadGlobalStudents();
-            
-            return globalStudents.map(name => {
-                const student = weekData[name] || {
-                    name: name,
-                    active: false,
-                    videocall: false,
-                    sentToGroup: false,
-                    tuesday: false,
-                    thursday: false,
-                    objective: ''
-                };
-                return student;
-            });
-        }
 
-        const calculateScore = (function() {
-            const cache = new Map();
-            return function(student) {
-                if (!student.active) return 0;
-                const key = `${student.name}-${student.videocall}-${student.sentToGroup}-${student.tuesday}-${student.thursday}-${student.objective}`;
-                if (cache.has(key)) return cache.get(key);
-                let score = 0;
-                if (student.videocall || student.sentToGroup) score += 25;
-                if (student.tuesday) score += 25;
-                if (student.thursday) score += 25;
-                if (student.objective?.trim()) score += 25;
-                const result = Math.round(score);
-                cache.set(key, result);
-                return result;
-            };
-        })();
+            return globalStudents.map(name => sanitizeStudentData(name, weekData[name]));
+        }
 
         function countStudentItems(student) {
             let count = 0;
             if (student.videocall || student.sentToGroup) count++;
+            if (student.apresentacaoSemanal) count++;
             if (student.tuesday) count++;
             if (student.thursday) count++;
-            if (student.objective?.trim()) count++;
             return count;
+        }
+
+        function calculateScore(student) {
+            if (!student.active) return 0;
+            const monthSelect = document.getElementById('monthSelect');
+            const selectedMonth = monthSelect ? monthSelect.value : '';
+            const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
+
+            if (isNewSystem) {
+                let score = 0;
+                if (student.videocall || student.sentToGroup) score += 50;
+                if (student.apresentacaoSemanal) score += 50;
+                return score;
+            } else {
+                let score = 0;
+                if (student.videocall || student.sentToGroup) score += 34;
+                if (student.tuesday) score += 33;
+                if (student.thursday) score += 33;
+                return Math.min(score, 100);
+            }
         }
 
         async function loadMonthlyData() {
             const monthId = document.getElementById('monthSelect').value;
             const globalStudents = await loadGlobalStudents();
-            const monthlyStats = {};
-            
-            globalStudents.forEach(name => {
-                monthlyStats[name] = {
-                    name: name,
-                    weeks: [],
-                    totalScore: 0,
-                    weekCount: 0,
-                    objectiveCount: 0
-                };
-            });
+            const monthlyStudents = [];
 
-            for (let week = 1; week <= 4; week++) {
-                const fileName = `${monthId}-week${week}.json`;
-                const weekData = await loadJsonFile(fileName, {});
-                
-                globalStudents.forEach(name => {
-                    const studentData = weekData[name] || {
-                        name: name,
-                        active: false,
-                        videocall: false,
-                        tuesday: false,
-                        thursday: false,
-                        objective: ''
-                    };
-                    
-                    const score = calculateScore(studentData);
-                    monthlyStats[name].weeks.push({
-                        week: week,
-                        score: score,
-                        active: studentData.active
-                    });
-                    
-                   // SEMPRE somar o score (0 se inativo) e sempre contar a semana
-                    monthlyStats[name].totalScore += score;
-                    monthlyStats[name].weekCount++;
-                    
-                    if (studentData.objective?.trim()) {
-                        monthlyStats[name].objectiveCount++;
+            const weeksData = [];
+            for (let w = 1; w <= 4; w++) {
+                weeksData.push(await loadJsonFile(monthId + '-week' + w + '.json', {}));
+            }
+
+            for (const studentName of globalStudents) {
+                const weeks = [];
+                let totalScore = 0;
+                let activeWeeksCount = 0;
+                let objectiveCount = 0;
+                let presentationDay = '';
+
+                for (let w = 1; w <= 4; w++) {
+                    const studentData = sanitizeStudentData(studentName, weeksData[w - 1][studentName]);
+                    if (studentData.active) {
+                        const score = calculateScore(studentData);
+                        weeks.push({ week: w, score: score, active: true });
+                        totalScore += score;
+                        activeWeeksCount++;
+                        if (studentData.objectiveActive) objectiveCount++;
+                        if (studentData.presentationDay) presentationDay = studentData.presentationDay;
+                    } else {
+                        weeks.push({ week: w, score: 0, active: false });
                     }
+                }
+
+                const averageScore = activeWeeksCount > 0 ? Math.round(totalScore / activeWeeksCount) : 0;
+
+                monthlyStudents.push({
+                    name: studentName,
+                    weeks: weeks,
+                    weekCount: activeWeeksCount,
+                    objectiveCount: objectiveCount,
+                    averageScore: averageScore,
+                    presentationDay: presentationDay
                 });
             }
 
-            Object.values(monthlyStats).forEach(student => {
-                // Sempre divide por 4 semanas
-                student.averageScore = Math.round(student.totalScore / 4);
-            });
-
-            return Object.values(monthlyStats);
-        }
-
-        async function loadViewState() {
-            const viewState = await loadJsonFile('viewState.json', {});
-            const monthSelect = document.getElementById('monthSelect');
-            const weekSelect = document.getElementById('weekSelect');
-            
-            if (viewState.selectedMonth && monthSelect.querySelector(`option[value="${viewState.selectedMonth}"]`)) {
-                monthSelect.value = viewState.selectedMonth;
-            } else {
-                const months = await loadMonths();
-                if (months.length > 0) {
-                    monthSelect.value = months[0].id;
-                }
-            }
-            
-            if (viewState.selectedWeek) {
-                weekSelect.value = viewState.selectedWeek;
-            } else {
-                weekSelect.value = 'general';
-            }
-            
-            if (viewState.detailsView) {
-                const detailsPanel = document.getElementById('detailsGrid').parentElement;
-                detailsPanel.classList.add('active');
-            }
+            return monthlyStudents;
         }
 
         async function updateMonthSelect() {
-            const months = await loadMonths();
             const monthSelect = document.getElementById('monthSelect');
-            const currentValue = monthSelect.value;
-            
+            const months = await loadMonths();
             monthSelect.innerHTML = '';
+
             months.forEach(month => {
-                const option = new Option(month.name, month.id);
-                monthSelect.add(option);
+                const option = document.createElement('option');
+                option.value = month.id;
+                option.textContent = month.name;
+                monthSelect.appendChild(option);
             });
-            
-            if (currentValue && months.find(m => m.id === currentValue)) {
-                monthSelect.value = currentValue;
-            } else if (months.length > 0) {
+
+            if (months.length > 0) {
                 monthSelect.value = months[0].id;
             }
         }
 
-        async function updateChart() {
+        async function populateStudentSelector() {
+            const selector = document.getElementById('studentSelector');
             const week = document.getElementById('weekSelect').value;
-            const chart = document.getElementById('chart');
-            
-            // Criar fragmento para minimizar manipulações do DOM
-            const fragment = document.createDocumentFragment();
-            
+            let activeNames = [];
+
             if (week === 'general') {
                 const monthlyData = await loadMonthlyData();
-                console.log('Dados de loadMonthlyData:', JSON.stringify(monthlyData, null, 2));
-                
-                monthlyData
+                activeNames = monthlyData
+                    .filter(s => s.weekCount > 0 || s.averageScore > 0)
+                    .map(s => s.name);
+            } else {
+                const students = await loadStudents();
+                activeNames = students
+                    .filter(s => s.active)
+                    .map(s => s.name);
+            }
+
+            activeNames.sort((a, b) => a.localeCompare(b));
+            
+            selector.innerHTML = '<option value="">-- Ver todos os alunos --</option>';
+            activeNames.forEach(name => {
+                const opt = document.createElement('option');
+                opt.value = name;
+                opt.textContent = name;
+                if (name === selectedStudentName) opt.selected = true;
+                selector.appendChild(opt);
+            });
+
+            if (selectedStudentName && !activeNames.includes(selectedStudentName)) {
+                document.getElementById('personalCard').classList.remove('active');
+            }
+        }
+
+        function updatePersonalCard(studentName, studentData) {
+            const card = document.getElementById('personalCard');
+            if (!studentName || !studentData) {
+                card.classList.remove('active');
+                return;
+            }
+
+            card.classList.add('active');
+            document.getElementById('personalName').textContent = studentName;
+
+            const score = studentData.averageScore !== undefined ? studentData.averageScore : calculateScore(studentData);
+            const scoreBadge = document.getElementById('personalScoreBadge');
+            scoreBadge.textContent = `${score}% ${score === 100 ? '⭐' : ''}`;
+
+            // Objetivo
+            const objElem = document.getElementById('personalObjective');
+            if (studentData.objective) {
+                objElem.innerHTML = `<strong>🎯</strong> ${studentData.objective}`;
+            } else {
+                objElem.textContent = 'Sem objetivo definido para esta semana';
+            }
+
+            // Dia escolhido para mandar a apresentação no grupo
+            const presElem = document.getElementById('personalPresentationDay');
+            if (studentData.presentationDay) {
+                presElem.innerHTML = `🎸 <strong>${studentData.presentationDay}</strong>`;
+            } else {
+                presElem.textContent = 'Não agendado para esta semana';
+            }
+
+            // Checklist de Atividades
+            const actElem = document.getElementById('personalActivities');
+            if (studentData.weeks) {
+                const activeWeeks = studentData.weeks.filter(w => w.active).length;
+                actElem.innerHTML = `📈 <strong>${activeWeeks}/4</strong> semanas ativas no mês • Média de <strong>${score}%</strong>`;
+            } else {
+                const isNew = document.getElementById('monthSelect').value >= '2026-01';
+                let acts = [];
+                if (studentData.videocall || studentData.sentToGroup) {
+                    acts.push('✅ ' + (studentData.videocall ? 'Videochamada' : 'Mandou no Grupo'));
+                } else {
+                    acts.push('❌ Videochamada / Grupo');
+                }
+
+                if (isNew) {
+                    acts.push(studentData.apresentacaoSemanal ? '✅ Apresentação Semanal' : '❌ Apresentação Semanal');
+                } else {
+                    acts.push(studentData.tuesday ? '✅ Terça' : '❌ Terça');
+                    acts.push(studentData.thursday ? '✅ Quinta' : '❌ Quinta');
+                }
+                actElem.innerHTML = acts.map(a => `<span style="display:inline-block; margin-right:12px; margin-bottom:4px;">${a}</span>`).join('');
+            }
+        }
+
+        // Criação exata da barra conforme o modelo original do professor
+        function createBarElement(student) {
+            const score = calculateScore(student);
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            if (student.name === selectedStudentName) {
+                bar.classList.add('highlight-student');
+            }
+
+            bar.onclick = () => {
+                selectedStudentName = student.name;
+                document.getElementById('studentSelector').value = student.name;
+                localStorage.setItem('parede_selected_student', student.name);
+                updateAllViews();
+            };
+
+            const barFill = document.createElement('div');
+            barFill.className = 'bar-fill';
+            barFill.style.height = `${Math.max(score * 2.5, 20)}px`;
+
+            if (score >= 80) {
+                barFill.classList.add('high');
+                if (score === 100) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    star.textContent = '⭐';
+                    bar.appendChild(star);
+                }
+            } else if (score >= 50) {
+                barFill.classList.add('medium');
+            } else {
+                barFill.classList.add('low');
+            }
+
+            barFill.textContent = `${score}%`;
+
+            const barName = document.createElement('div');
+            barName.className = 'bar-name';
+            barName.textContent = student.name;
+
+            bar.appendChild(barFill);
+            bar.appendChild(barName);
+
+            return bar;
+        }
+
+        function createMonthlyBarElement(student) {
+            const score = student.averageScore;
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            if (student.name === selectedStudentName) {
+                bar.classList.add('highlight-student');
+            }
+
+            bar.onclick = () => {
+                selectedStudentName = student.name;
+                document.getElementById('studentSelector').value = student.name;
+                localStorage.setItem('parede_selected_student', student.name);
+                updateAllViews();
+            };
+
+            const barFill = document.createElement('div');
+            barFill.className = 'bar-fill';
+            barFill.style.height = `${Math.max(score * 2.5, 20)}px`;
+
+            if (score >= 80) {
+                barFill.classList.add('high');
+                if (score === 100) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    star.textContent = '⭐';
+                    bar.appendChild(star);
+                }
+            } else if (score >= 50) {
+                barFill.classList.add('medium');
+            } else {
+                barFill.classList.add('low');
+            }
+
+            barFill.textContent = `${score}%`;
+
+            const barName = document.createElement('div');
+            barName.className = 'bar-name';
+            barName.textContent = student.name;
+
+            bar.appendChild(barFill);
+            bar.appendChild(barName);
+
+            return bar;
+        }
+
+                async function updateChart() {
+            const week = document.getElementById('weekSelect').value;
+            const chart = document.getElementById('chart');
+            const fragment = document.createDocumentFragment();
+
+            let personalStudentFound = false;
+
+            if (week === 'general') {
+                const monthlyData = await loadMonthlyData();
+
+                const rankedMonthlyStudents = monthlyData
                     .filter(student => student.averageScore > 0)
                     .sort((a, b) => {
                         if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
                         return a.name.localeCompare(b.name);
-                    })
-                    .forEach(student => {
-                        const bar = document.createElement('div');
-                        bar.className = 'bar';
-                        
-                        const barFill = document.createElement('div');
-                        barFill.className = 'bar-fill';
-                        barFill.style.height = `${Math.max(student.averageScore * 2.5, 20)}px`;
-                        
-                        if (student.averageScore >= 80) {
-                            barFill.classList.add('high');
-                            if (student.averageScore === 100) {
-                                const star = document.createElement('div');
-                                star.className = 'star';
-                                star.textContent = '⭐';
-                                bar.appendChild(star);
-                            }
-                        } else if (student.averageScore >= 50) {
-                            barFill.classList.add('medium');
-                        } else {
-                            barFill.classList.add('low');
-                        }
-                        
-                        barFill.textContent = `${student.averageScore}%`;
-                        
-                        const barName = document.createElement('div');
-                        barName.className = 'bar-name';
-                        barName.textContent = student.name;
-                        
-                        bar.appendChild(barFill);
-                        bar.appendChild(barName);
-                        fragment.appendChild(bar);
                     });
+
+                const lowScoreStudents = rankedMonthlyStudents.filter(s => s.averageScore <= 33);
+                const otherStudents = rankedMonthlyStudents.filter(s => s.averageScore > 33);
+
+                otherStudents.forEach(student => {
+                    const bar = createMonthlyBarElement(student);
+                    fragment.appendChild(bar);
+                    if (student.name === selectedStudentName) {
+                        updatePersonalCard(student.name, student);
+                        personalStudentFound = true;
+                    }
+                });
+
+                if (lowScoreStudents.length > 3 && !chartExpanded) {
+                    const visibleLow = lowScoreStudents.slice(0, 3);
+                    const hiddenCount = lowScoreStudents.length - 3;
+
+                    visibleLow.forEach(student => {
+                        const bar = createMonthlyBarElement(student);
+                        fragment.appendChild(bar);
+                        if (student.name === selectedStudentName) {
+                            updatePersonalCard(student.name, student);
+                            personalStudentFound = true;
+                        }
+                    });
+
+                    const showMoreBtn = document.createElement('div');
+                    showMoreBtn.className = 'bar show-more-bar';
+                    showMoreBtn.style.cursor = 'pointer';
+                    showMoreBtn.onclick = () => {
+                        chartExpanded = true;
+                        updateChart();
+                    };
+
+                    const btnFill = document.createElement('div');
+                    btnFill.className = 'bar-fill low';
+                    btnFill.style.height = '20px';
+                    btnFill.style.display = 'flex';
+                    btnFill.style.alignItems = 'center';
+                    btnFill.style.justifyContent = 'center';
+                    btnFill.style.fontSize = '11px';
+                    btnFill.textContent = `▼`;
+
+                    const btnName = document.createElement('div');
+                    btnName.className = 'bar-name';
+                    btnName.textContent = `Mostrar mais (${hiddenCount})`;
+
+                    showMoreBtn.appendChild(btnFill);
+                    showMoreBtn.appendChild(btnName);
+                    fragment.appendChild(showMoreBtn);
+                } else if (lowScoreStudents.length > 0) {
+                    lowScoreStudents.forEach(student => {
+                        const bar = createMonthlyBarElement(student);
+                        fragment.appendChild(bar);
+                        if (student.name === selectedStudentName) {
+                            updatePersonalCard(student.name, student);
+                            personalStudentFound = true;
+                        }
+                    });
+
+                    if (chartExpanded && lowScoreStudents.length > 3) {
+                        const showLessBtn = document.createElement('div');
+                        showLessBtn.className = 'bar show-less-bar';
+                        showLessBtn.style.cursor = 'pointer';
+                        showLessBtn.onclick = () => {
+                            chartExpanded = false;
+                            updateChart();
+                        };
+
+                        const btnFill = document.createElement('div');
+                        btnFill.className = 'bar-fill low';
+                        btnFill.style.height = '20px';
+                        btnFill.style.display = 'flex';
+                        btnFill.style.alignItems = 'center';
+                        btnFill.style.justifyContent = 'center';
+                        btnFill.style.fontSize = '11px';
+                        btnFill.textContent = `▲`;
+
+                        const btnName = document.createElement('div');
+                        btnName.className = 'bar-name';
+                        btnName.innerHTML = `Mostrar<br>menos`;
+                        btnName.style.lineHeight = '1.2';
+
+                        showLessBtn.appendChild(btnFill);
+                        showLessBtn.appendChild(btnName);
+                        fragment.appendChild(showLessBtn);
+                    }
+                }
             } else {
                 const students = (await loadStudents()).filter(s => s.active);
-                
                 students.sort((a, b) => {
                     const scoreA = calculateScore(a);
                     const scoreB = calculateScore(b);
                     if (scoreB !== scoreA) return scoreB - scoreA;
                     return a.name.localeCompare(b.name);
                 });
-                
-                students.forEach(student => {
-                    const score = calculateScore(student);
-                    const bar = document.createElement('div');
-                    bar.className = 'bar';
-                    
-                    const barFill = document.createElement('div');
-                    barFill.className = 'bar-fill';
-                    barFill.style.height = `${Math.max(score * 2.5, 20)}px`;
-                    
-                    if (score >= 80) {
-                        barFill.classList.add('high');
-                        if (score === 100) {
-                            const star = document.createElement('div');
-                            star.className = 'star';
-                            star.textContent = '⭐';
-                            bar.appendChild(star);
-                        }
-                    } else if (score >= 50) {
-                        barFill.classList.add('medium');
-                    } else {
-                        barFill.classList.add('low');
-                    }
-                    
-                    barFill.textContent = `${score}%`;
-                    
-                    const barName = document.createElement('div');
-                    barName.className = 'bar-name';
-                    barName.textContent = student.name;
-                    
-                    bar.appendChild(barFill);
-                    bar.appendChild(barName);
+
+                const lowScoreStudents = students.filter(s => calculateScore(s) <= 33);
+                const otherStudents = students.filter(s => calculateScore(s) > 33);
+
+                otherStudents.forEach(student => {
+                    const bar = createBarElement(student);
                     fragment.appendChild(bar);
+                    if (student.name === selectedStudentName) {
+                        updatePersonalCard(student.name, student);
+                        personalStudentFound = true;
+                    }
                 });
+
+                if (lowScoreStudents.length > 3 && !chartExpanded) {
+                    const visibleLow = lowScoreStudents.slice(0, 3);
+                    const hiddenCount = lowScoreStudents.length - 3;
+
+                    visibleLow.forEach(student => {
+                        const bar = createBarElement(student);
+                        fragment.appendChild(bar);
+                        if (student.name === selectedStudentName) {
+                            updatePersonalCard(student.name, student);
+                            personalStudentFound = true;
+                        }
+                    });
+
+                    const showMoreBtn = document.createElement('div');
+                    showMoreBtn.className = 'bar show-more-bar';
+                    showMoreBtn.style.cursor = 'pointer';
+                    showMoreBtn.onclick = () => {
+                        chartExpanded = true;
+                        updateChart();
+                    };
+
+                    const btnFill = document.createElement('div');
+                    btnFill.className = 'bar-fill low';
+                    btnFill.style.height = '20px';
+                    btnFill.style.display = 'flex';
+                    btnFill.style.alignItems = 'center';
+                    btnFill.style.justifyContent = 'center';
+                    btnFill.style.fontSize = '11px';
+                    btnFill.textContent = `▼`;
+
+                    const btnName = document.createElement('div');
+                    btnName.className = 'bar-name';
+                    btnName.textContent = `Mostrar mais (${hiddenCount})`;
+
+                    showMoreBtn.appendChild(btnFill);
+                    showMoreBtn.appendChild(btnName);
+                    fragment.appendChild(showMoreBtn);
+                } else if (lowScoreStudents.length > 0) {
+                    lowScoreStudents.forEach(student => {
+                        const bar = createBarElement(student);
+                        fragment.appendChild(bar);
+                        if (student.name === selectedStudentName) {
+                            updatePersonalCard(student.name, student);
+                            personalStudentFound = true;
+                        }
+                    });
+
+                    if (chartExpanded && lowScoreStudents.length > 3) {
+                        const showLessBtn = document.createElement('div');
+                        showLessBtn.className = 'bar show-less-bar';
+                        showLessBtn.style.cursor = 'pointer';
+                        showLessBtn.onclick = () => {
+                            chartExpanded = false;
+                            updateChart();
+                        };
+
+                        const btnFill = document.createElement('div');
+                        btnFill.className = 'bar-fill low';
+                        btnFill.style.height = '20px';
+                        btnFill.style.display = 'flex';
+                        btnFill.style.alignItems = 'center';
+                        btnFill.style.justifyContent = 'center';
+                        btnFill.style.fontSize = '11px';
+                        btnFill.textContent = `▲`;
+
+                        const btnName = document.createElement('div');
+                        btnName.className = 'bar-name';
+                        btnName.innerHTML = `Mostrar<br>menos`;
+                        btnName.style.lineHeight = '1.2';
+
+                        showLessBtn.appendChild(btnFill);
+                        showLessBtn.appendChild(btnName);
+                        fragment.appendChild(showLessBtn);
+                    }
+                }
             }
-            
-            // Limpar e adicionar ao DOM de uma vez
+
+            if (!personalStudentFound && selectedStudentName) {
+                document.getElementById('personalCard').classList.remove('active');
+            } else if (!selectedStudentName) {
+                document.getElementById('personalCard').classList.remove('active');
+            }
+
             chart.innerHTML = '';
             chart.appendChild(fragment);
+            chart.style.opacity = '1';
         }
 
-        async function updateDetails() {
+                async function updateDetailsGrid() {
             const week = document.getElementById('weekSelect').value;
             const detailsGrid = document.getElementById('detailsGrid');
-            const detailsTitle = document.querySelector('.student-details h3');
-            
+            const isNewSystem = document.getElementById('monthSelect').value >= '2026-01';
+
+            if (!detailsGrid) return;
+            detailsGrid.innerHTML = '';
+
             if (week === 'general') {
-                detailsTitle.textContent = '📊 Resumo Mensal';
                 const monthlyData = await loadMonthlyData();
-                
-                if (monthlyData.length === 0 || monthlyData.every(s => s.weekCount === 0)) {
-                    detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum dado para este mês</p>';
-                    return;
-                }
-                
-                detailsGrid.innerHTML = '';
                 monthlyData
-                    .filter(student => student.averageScore > 0)
+                    .filter(s => s.averageScore > 0)
                     .sort((a, b) => {
-                        if (b.weekCount !== a.weekCount) return b.weekCount - a.weekCount;
-                        if (b.objectiveCount !== a.objectiveCount) return b.objectiveCount - a.objectiveCount;
                         if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
                         return a.name.localeCompare(b.name);
                     })
                     .forEach(student => {
+                        const isSelected = student.name === selectedStudentName;
                         const detailItem = document.createElement('div');
-                        detailItem.className = 'detail-item';
+                        detailItem.className = 'detail-item' + (isSelected ? ' highlight-student' : '');
+                        if (isSelected) {
+                            detailItem.style.border = '2px solid #fbbf24';
+                        }
+
                         const weeksInfo = student.weeks
-                            .filter(w => w.active)
-                            .map(w => `S${w.week}: ${w.score}%`)
+                            .map(w => `S${w.week}: ${w.score}%${w.active ? '' : ' (inativo)'}`)
                             .join(' | ');
+
                         detailItem.innerHTML = `
                             <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
                             <div class="detail-activities">
-                                <span class="activity-summary">
-                                    📈 ${student.weeks.filter(w => w.active).length}/4 semanas ativas
-                                </span>
-                                <span class="activity-summary">
-                                    🎯 ${student.objectiveCount} objetivo(s)
-                                </span>
-                                <span class="activity-summary">
-                                    ${weeksInfo || 'Sem dados'}
-                                </span>
+                                <span class="activity-summary">📈 ${student.weeks.filter(w => w.active).length}/4 semanas ativas</span>
+                                <span class="activity-summary">🎯 ${student.objectiveCount} objetivo(s)</span>
+                                <span class="activity-summary">${weeksInfo || 'Sem dados'}</span>
                             </div>
                         `;
                         detailsGrid.appendChild(detailItem);
                     });
             } else {
-                detailsTitle.textContent = `📊 Detalhes da Semana ${week}`;
                 const students = (await loadStudents()).filter(s => s.active);
-                
-                if (students.length === 0) {
-                    detailsGrid.innerHTML = '<p style="text-align: center; color: #888;">Nenhum aluno ativo para esta semana</p>';
-                    return;
-                }
-                
-                detailsGrid.innerHTML = '';
                 students
                     .sort((a, b) => {
                         const scoreA = calculateScore(a);
@@ -462,77 +1137,127 @@
                         return a.name.localeCompare(b.name);
                     })
                     .forEach(student => {
-                        const detailItem = document.createElement('div');
-                        detailItem.className = 'detail-item';
                         const score = calculateScore(student);
+                        const isSelected = student.name === selectedStudentName;
+
+                        let activitiesHTML = `
+                            <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
+                                ${student.videocall ? '✅ Videochamada' : student.sentToGroup ? '✅ Mandou no grupo' : '❌ Videochamada / Grupo'}
+                            </span>
+                        `;
+                        if (isNewSystem) {
+                            activitiesHTML += `<span class="activity ${student.apresentacaoSemanal ? 'done' : 'not-done'}">${student.apresentacaoSemanal ? '✅' : '❌'} Apresentação Semanal</span>`;
+                        } else {
+                            activitiesHTML += `<span class="activity ${student.tuesday ? 'done' : 'not-done'}">${student.tuesday ? '✅' : '❌'} Terça</span>`;
+                            activitiesHTML += `<span class="activity ${student.thursday ? 'done' : 'not-done'}">${student.thursday ? '✅' : '❌'} Quinta</span>`;
+                        }
+
+                        const detailItem = document.createElement('div');
+                        detailItem.className = 'detail-item' + (isSelected ? ' highlight-student' : '');
+                        if (isSelected) {
+                            detailItem.style.border = '2px solid #fbbf24';
+                        }
+
                         detailItem.innerHTML = `
                             <div class="detail-name">${student.name} - ${score}%</div>
                             ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
-                            <div class="detail-activities">
-                                <span class="activity ${(student.videocall || student.sentToGroup) ? 'done' : 'not-done'}">
-                                    ${student.videocall ? '✅ Videochamada' : 
-                                    student.sentToGroup ? '✅ Mandou no grupo' : 
-                                    '❌ Videochamada / Mandou no grupo'}
-                                </span>
-                                <span class="activity ${student.tuesday ? 'done' : 'not-done'}">
-                                    ${student.tuesday ? '✅' : '❌'} Terça
-                                </span>
-                                <span class="activity ${student.thursday ? 'done' : 'not-done'}">
-                                    ${student.thursday ? '✅' : '❌'} Quinta
-                                </span>
-                            </div>
+                            ${student.presentationDay ? `<div style="color: #a78bfa; font-size: 0.9em; margin-bottom: 8px;"><strong>🎸 Apresentação:</strong> ${student.presentationDay}</div>` : ''}
+                            <div class="detail-activities">${activitiesHTML}</div>
                         `;
                         detailsGrid.appendChild(detailItem);
                     });
             }
         }
 
-        async function onMonthOrWeekChange() {
+        async function updatePresentationsTab() {
             const monthId = document.getElementById('monthSelect').value;
             const week = document.getElementById('weekSelect').value;
+            const weekNum = week === 'general' ? '4' : week;
+
+            const weekData = await loadJsonFile(`${monthId}-week${weekNum}.json`, {});
             
-            // Limpar cache para forçar reload dos dados
-            if (week !== 'general') {
-                delete dataCache[`${monthId}-week${week}.json`];
-            }
-            
-            await debouncedUpdate();
+            const daysMap = {
+                'Domingo': { list: 'pres-domingo', count: 'count-domingo', items: [] },
+                'Segunda': { list: 'pres-segunda', count: 'count-segunda', items: [] },
+                'Terça': { list: 'pres-terca', count: 'count-terca', items: [] },
+                'Quarta': { list: 'pres-quarta', count: 'count-quarta', items: [] },
+                'Quinta': { list: 'pres-quinta', count: 'count-quinta', items: [] }
+            };
+
+            const students = Object.entries(weekData).map(([key, val]) => {
+                if (typeof val === 'object' && val !== null) {
+                    const s = { ...val };
+                    if (!s.name) s.name = key;
+                    return s;
+                }
+                return null;
+            }).filter(Boolean);
+
+            students.forEach(student => {
+                const isActive = student.active === true || student.active === 'true';
+                const day = student.presentationDay ? String(student.presentationDay).trim() : '';
+                if (isActive && day && daysMap[day]) {
+                    daysMap[day].items.push(student);
+                }
+            });
+
+            Object.entries(daysMap).forEach(([dayName, data]) => {
+                const listElem = document.getElementById(data.list);
+                const countElem = document.getElementById(data.count);
+                if (countElem) countElem.textContent = `(${data.items.length})`;
+
+                if (listElem) {
+                    if (data.items.length === 0) {
+                        listElem.innerHTML = '<div class="pres-empty-msg">Nenhum aluno</div>';
+                    } else {
+                        listElem.innerHTML = data.items.map(s => `
+                            <div class="pres-student-item">
+                                <span>👤</span>
+                                <span>${s.name}</span>
+                            </div>
+                        `).join('');
+                    }
+                }
+            });
         }
 
-        const debouncedUpdate = debounce(async () => {
+        async function updateAllViews() {
             await updateChart();
-            await updateDetails();
-        }, 100);
+            await updateDetailsGrid();
+            await updatePresentationsTab();
+        }
 
-        // Event listeners
+        async function onMonthOrWeekChange() {
+            const chart = document.getElementById('chart');
+            if (chart) {
+                chart.style.transition = 'opacity 0.2s ease-in-out';
+                chart.style.opacity = '0.3';
+            }
+            await populateStudentSelector();
+            await updateAllViews();
+        }
+
+        document.getElementById('studentSelector').addEventListener('change', (e) => {
+            selectedStudentName = e.target.value;
+            localStorage.setItem('parede_selected_student', selectedStudentName);
+            updateAllViews();
+        });
+
+        document.getElementById('monthSelect').addEventListener('change', onMonthOrWeekChange);
+        document.getElementById('weekSelect').addEventListener('change', onMonthOrWeekChange);
+
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                showSaveStatus('info', '📡 Carregando dados...');
-                
+                showSaveStatus('info', '📡 Conectando...');
                 await updateMonthSelect();
-                await loadViewState();
-                await updateChart();
-                await updateDetails();
-                
-                // Adicionar event listeners
-                document.getElementById('monthSelect').addEventListener('change', onMonthOrWeekChange);
-                document.getElementById('weekSelect').addEventListener('change', onMonthOrWeekChange);
-                
-                showSaveStatus('success', '✅ Dados carregados com sucesso!');
-            } catch (error) {
-                console.error('Erro ao inicializar:', error);
+                await populateStudentSelector();
+                await updateAllViews();
+                showSaveStatus('success', '✅ Tudo pronto!');
+            } catch (err) {
+                console.error('Erro na inicialização:', err);
                 showSaveStatus('error', '❌ Erro ao carregar dados');
             }
         });
-
-        // Função para limpar cache (útil para desenvolvimento)
-        function clearCache() {
-            dataCache = {};
-            showSaveStatus('info', '🗑️ Cache limpo');
-        }
-
-        // Expor função para depuração
-        window.clearCache = clearCache;
     </script>
 </body>
 </html>
