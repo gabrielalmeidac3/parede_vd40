@@ -50,11 +50,18 @@
 
             <button id="chartToggleTab" class="chart-toggle-tab chart-hidden" type="button" aria-controls="chartSection"
                 aria-expanded="false" title="Abrir gráfico">
-                <span class="chart-toggle-arrow" aria-hidden="true">▶</span>
-                <span class="chart-toggle-label">Abrir gráfico</span>
+                <span class="chart-toggle-icon" aria-hidden="true" style="font-size: 15px;">📊</span>
+                <span class="chart-toggle-label">Gráfico</span>
             </button>
 
-            <div id="chartSection" class="chart-container chart-container-collapsed" aria-hidden="true">
+                        <div id="chartSection" class="chart-container chart-container-collapsed" aria-hidden="true">
+                <div class="chart-modal-header">
+                    <div class="chart-modal-title-box">
+                        <h3 class="chart-modal-title">🏆 Parede da Vitória</h3>
+                        <span id="chartModalBadge" class="chart-modal-badge">Carregando...</span>
+                    </div>
+                    <button id="closeChartModalBtn" class="close-chart-modal-btn" type="button" aria-label="Fechar Gráfico">&times;</button>
+                </div>
                 <div class="chart" id="chart"></div>
             </div>
 
@@ -92,51 +99,49 @@
 
                 <div class="section">
                     <div class="section-header">
-                        <h3>👥 Alunos</h3>
-                        <div
-                            style="position: relative; flex: 1; min-width: 200px; max-width: 400px; display: flex; align-items: center; margin: 0 5px;">
-                            <input type="text" id="searchStudents" placeholder="Pesquisar alunos..."
-                                style="flex: 1; padding: 12px 30px 12px 15px; border: 1px solid #4a5568; border-radius: 8px; background: #2d3748; color: white; font-size: 16px; box-sizing: border-box;">
-                            <button id="clearSearch"
-                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #888; cursor: pointer; font-size: 18px;">×</button>
+                        <div class="section-header-top">
+                            <h3>👥 Alunos</h3>
+                            <div class="search-students-container">
+                                <input type="text" id="searchStudents" placeholder="Pesquisar alunos...">
+                                <button id="clearSearch" type="button">&times;</button>
+                            </div>
+                            <div class="compact-controls">
+                                <button id="filterDropdown" class="filter-btn" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 4px;">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                                </svg>
+                                <span id="filterLabel">Alunos Ativos</span>
+                            </button>
+                                <div id="filterMenu" class="dropdown-menu" style="display: none;">
+                                    <button class="dropdown-item" data-filter="active">Alunos Ativos</button>
+                                    <button class="dropdown-item" data-filter="all">Todos os Alunos</button>
+                                    <button class="dropdown-item" data-filter="inactive">Alunos Inativos</button>
+                                </div>
+                                <button id="menuBtn" class="toggle-btn">☰ Menu</button>
+                                <div id="menuDropdown" class="dropdown-menu" style="display: none;">
+                                    <button class="dropdown-item" id="openPresentationsBtn">📅 Ver Apresentações</button>
+                                    <button class="dropdown-item" id="copyFromPreviousBtn">📋 Copiar Ativos da semana anterior</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="compact-controls">
-                            <button id="filterDropdown" class="filter-btn"
-                                style="padding: 6px 12px; font-size: 12px;">🔽 Alunos Ativos</button>
-                            <div id="filterMenu" class="dropdown-menu" style="display: none;">
-                                <button class="dropdown-item" data-filter="active">Alunos Ativos</button>
-                                <button class="dropdown-item" data-filter="all">Todos os Alunos</button>
-                                <button class="dropdown-item" data-filter="inactive">Alunos Inativos</button>
-                            </div>
-                            <button id="menuBtn" class="toggle-btn" style="padding: 6px 12px; font-size: 12px;">☰
-                                Menu</button>
-                            <div id="menuDropdown" class="dropdown-menu" style="display: none;">
-                                <button class="dropdown-item" id="copyFromPreviousBtn">Copiar Ativos da semana
-                                    anterior</button>
-                            </div>
-                            <button id="openPresentationsBtn" class="toggle-btn"
-                                style="padding: 6px 12px; font-size: 12px;">Ver Apresentações</button>
+                        <div class="weekly-summary" id="weeklySummary">
+                            <div class="summary-item active" id="summaryActive" title="Alunos Ativos">A: 0</div>
+                            <div class="summary-item videocall" id="summaryVideocall" title="Videochamada">V: 0</div>
+                            <div class="summary-item group" id="summaryGroup" title="Mandou no Grupo">MG: 0</div>
+                            <div class="summary-item tuesday" id="summaryTuesday" title="Apresentação Semanal / Terça">T: 0</div>
+                            <div class="summary-item thursday" id="summaryThursday" title="Quinta">Q: 0</div>
                         </div>
                     </div>
 
                     <div class="students-container">
-
-                            <div class="student-list-wrapper">
-                                <div class="student-list" id="studentList"></div>
-                                <div class="summary-legend">
-                                    <strong>Legenda:</strong><br>
-                                    A: Alunos Ativos | V: Videochamada<br>
-                                    MG: Mandou no Grupo | T: Terça | Q: Quinta
-                                </div>
-                            </div>
-                            <div class="weekly-summary" id="weeklySummary">
-                                <div class="summary-item active" id="summaryActive">A: 0</div>
-                                <div class="summary-item videocall" id="summaryVideocall">V: 0</div>
-                                <div class="summary-item group" id="summaryGroup">MG: 0</div>
-                                <div class="summary-item tuesday" id="summaryTuesday">T: 0</div>
-                                <div class="summary-item thursday" id="summaryThursday">Q: 0</div>
+                        <div class="student-list-wrapper">
+                            <div class="student-list" id="studentList"></div>
+                            <div class="summary-legend">
+                                <strong>Legenda do Visor:</strong><br>
+                                <strong>A:</strong> Alunos Ativos | <strong>V:</strong> Videochamada | <strong>MG:</strong> Mandou no Grupo | <strong>AS:</strong> Apresentação Semanal
                             </div>
                         </div>
+                    </div>
 
                     </div>
 

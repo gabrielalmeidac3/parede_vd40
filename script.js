@@ -530,7 +530,19 @@ async function updateMonthSelect() {
 }
 
 // Atualizar gráfico
+function updateChartModalBadge() {
+    const badge = document.getElementById('chartModalBadge');
+    const monthSelect = document.getElementById('monthSelect');
+    const weekSelect = document.getElementById('weekSelect');
+    if (badge && monthSelect && weekSelect) {
+        const monthText = monthSelect.options[monthSelect.selectedIndex]?.textContent || monthSelect.value;
+        const weekText = weekSelect.value === 'general' ? 'Geral do Mês' : `Semana ${weekSelect.value}`;
+        badge.textContent = `${monthText} • ${weekText}`;
+    }
+}
+
 async function updateChart() {
+    updateChartModalBadge();
     const week = document.getElementById('weekSelect').value;
     const chart = document.getElementById('chart');
 
@@ -1315,9 +1327,15 @@ document.addEventListener('keydown', function (e) {
         return;
     }
 
-    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'f') {
         e.preventDefault();
         const searchInput = document.getElementById('searchStudents');
+        const sectionHeader = document.querySelector('.section-header');
+        if (sectionHeader) {
+            const headerRect = sectionHeader.getBoundingClientRect();
+            const targetTop = window.pageYOffset + headerRect.top - 8;
+            window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+        }
         if (searchInput) {
             searchInput.focus();
             searchInput.select();
@@ -1362,6 +1380,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (chartToggleTab) {
         chartToggleTab.addEventListener('click', () => toggleChartVisibility());
+    }
+
+    const closeChartModalBtn = document.getElementById('closeChartModalBtn');
+    if (closeChartModalBtn) {
+        closeChartModalBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleChartVisibility(false);
+        });
+    }
+
+    const chartSection = document.getElementById('chartSection');
+    if (chartSection) {
+        chartSection.addEventListener('click', (e) => {
+            if (e.target === chartSection && window.innerWidth <= 768) {
+                toggleChartVisibility(false);
+            }
+        });
     }
 
     syncChartTogglePosition();
@@ -2230,6 +2265,14 @@ document.addEventListener('click', () => {
 });
 // Event listener para pesquisa em tempo real
 document.getElementById('searchStudents').addEventListener('input', handleSearch);
+document.getElementById('searchStudents').addEventListener('focus', function () {
+    const sectionHeader = document.querySelector('.section-header');
+    if (sectionHeader) {
+        const headerRect = sectionHeader.getBoundingClientRect();
+        const targetTop = window.pageYOffset + headerRect.top - 8;
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+    }
+});
 document.getElementById('clearSearch').addEventListener('click', clearSearch);
 
 function setFilter(type) {
