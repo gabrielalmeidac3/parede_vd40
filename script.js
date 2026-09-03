@@ -94,38 +94,20 @@ function addGlobalEventListener() {
             const field = e.target.dataset.field;
             const value = e.target.checked;
 
-            // Atualização visual instantânea do checkbox
-            e.target.style.transform = 'scale(1.1)';
-            setTimeout(() => e.target.style.transform = 'scale(1)', 150);
-
-            // ATUALIZAÇÃO INSTANTÂNEA VISUAL
+            // Atualização visual instantânea (0ms)
             updateUIInstantly(studentName, field, value);
 
             // Mostrar indicador de salvamento
             showSaveStatus('saving', '💾 Salvando...');
 
-            // Atualizar dados
+            // Atualizar dados em segundo plano sem destruir/recarregar a lista
             if (field === 'videocall' || field === 'sentToGroup') {
                 await updateStudentWithExclusion(studentName, field, value);
             } else {
                 await updateStudent(studentName, field, value);
             }
 
-            // Atualizar gráfico imediatamente
-            const week = document.getElementById('weekSelect').value;
-            if (week !== 'general') {
-                await updateChart();
-            }
-
-            // Atualizar lista (para pontuação)
-            await updateStudentList();
-
-            // Pequeno delay para garantir que o timestamp foi salvo
-            await new Promise(resolve => setTimeout(resolve, 100));
-
-            // Atualizar status do botão de upload APÓS salvar
-            
-            // Mostrar sucesso
+            // Mostrar sucesso sem recarregar o DOM
             showSaveStatus('success', '✅ Salvo!');
         }
     }, 50);
@@ -176,16 +158,42 @@ function addGlobalEventListener() {
 
     globalListenerAdded = true;
 
-    // Toggle para Ferramentas de Adição
+    // Toggle para Ferramentas de Adição com verificação de campos preenchidos
     const addToolsToggle = document.getElementById('addToolsToggle');
     const addToolsContent = document.getElementById('addToolsContent');
     if (addToolsToggle && addToolsContent) {
         addToolsToggle.addEventListener('click', () => {
+            const isCurrentlyActive = addToolsContent.classList.contains('active');
+            if (isCurrentlyActive) {
+                const newStudent = document.getElementById('newStudentName')?.value?.trim() || '';
+                const newObjective = document.getElementById('objectiveText')?.value?.trim() || '';
+                if (newStudent.length > 0 || newObjective.length > 0) {
+                    const confirmClose = confirm('⚠️ Atenção: Você tem dados digitados que ainda não foram confirmados.\n\nDeseja realmente fechar o painel e perder o que digitou?');
+                    if (!confirmClose) {
+                        return;
+                    }
+                }
+            }
             const isActive = addToolsContent.classList.toggle('active');
             addToolsToggle.classList.toggle('active');
         });
     }
 }
+
+// Detecção global de alterações não salvas
+window.hasUnsavedInput = function() {
+    const newStudent = document.getElementById('newStudentName')?.value?.trim() || '';
+    const newObjective = document.getElementById('objectiveText')?.value?.trim() || '';
+    return newStudent.length > 0 || newObjective.length > 0;
+};
+
+window.addEventListener('beforeunload', function(e) {
+    if (window.hasUnsavedInput && window.hasUnsavedInput()) {
+        e.preventDefault();
+        e.returnValue = 'Você tem dados digitados não salvos.';
+        return e.returnValue;
+    }
+});
 
 // Dados iniciais
 const defaultStudents = [
@@ -411,7 +419,7 @@ async function loadMonthlyData() {
 }
 
 // Salvar dados específicos de mês+semana
-async function saveStudents(students) {
+async function saveStudents(students, refreshList = false) {
     const monthId = document.getElementById('monthSelect').value;
     const week = document.getElementById('weekSelect').value;
     const fileName = `${monthId}-week${week}.json`;
@@ -421,11 +429,13 @@ async function saveStudents(students) {
         weekData[student.name] = student;
     });
 
+    fileCache[fileName] = weekData;
+
     const success = await saveJsonFile(fileName, weekData);
-    if (success) {
+    if (success && refreshList) {
         await updateStudentList();
-         // Atualizar botão
     }
+    return success;
 }
 
 // Calcular pontuação
@@ -924,8 +934,8 @@ async function updateStudentList() {
                 studentHeader.insertAdjacentElement('afterend', objectiveDiv);
             }
         }
-        updateWeeklySummary();
     });
+    updateSummaryInstantly();
 }
 
 function countStudentItems(student) {
@@ -1066,9 +1076,27 @@ async function updateStudent(studentName, field, value) {
     const student = students.find(s => s.name === studentName);
     if (student) {
         student[field] = value;
-        await saveStudents(students); // Salva apenas uma vez
+        await saveStudents(students, false); // Salva sem recarregar a lista toda
     } else {
         console.error(`Aluno ${studentName} não encontrado`);
+    }
+}
+
+// Atualizar aluno com exclusão mútua entre videochamada e mandar no grupo
+async function updateStudentWithExclusion(studentName, field, value) {
+    const students = await loadStudents();
+    const student = students.find(s => s.name === studentName);
+    if (student) {
+        if (field === 'videocall') {
+            student.videocall = value;
+            if (value) student.sentToGroup = false;
+        } else if (field === 'sentToGroup') {
+            student.sentToGroup = value;
+            if (value) student.videocall = false;
+        } else {
+            student[field] = value;
+        }
+        await saveStudents(students, false);
     }
 }
 
@@ -2409,7 +2437,7 @@ function updateScoreInstantly(studentName) {
     studentItems.forEach(item => {
         if (item.dataset.studentName === studentName) {
             const checkboxes = item.querySelectorAll('input[type="checkbox"]');
-            const student = { active: false, videocall: false, sentToGroup: false, tuesday: false, thursday: false, objective: '' };
+            const student = { active: false, videocall: false, sentToGroup: false, tuesday: false, thursday: false, apresentacaoSemanal: false, objective: '', objectiveActive: false };
 
             checkboxes.forEach(checkbox => {
                 student[checkbox.dataset.field] = checkbox.checked;
@@ -2417,7 +2445,8 @@ function updateScoreInstantly(studentName) {
 
             const objectiveDiv = item.querySelector('.objective-div');
             if (objectiveDiv) {
-                student.objective = objectiveDiv.textContent.replace('🎯 Objetivo: ', '');
+                student.objective = 'tem objetivo';
+                student.objectiveActive = objectiveDiv.classList.contains('objective-active') || objectiveDiv.dataset.objectiveActive === 'true';
             }
 
             const score = calculateScore(student);
@@ -2432,9 +2461,18 @@ function updateScoreInstantly(studentName) {
 // Atualizar resumo semanal instantaneamente
 function updateSummaryInstantly() {
     const week = document.getElementById('weekSelect').value;
-    if (week === 'general') return;
+    if (week === 'general') {
+        document.getElementById('weeklySummary').style.display = 'none';
+        return;
+    } else {
+        document.getElementById('weeklySummary').style.display = 'flex';
+    }
 
-    let active = 0, videocall = 0, group = 0, tuesday = 0, thursday = 0;
+    const monthSelect = document.getElementById('monthSelect');
+    const selectedMonth = monthSelect ? monthSelect.value : '';
+    const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
+
+    let active = 0, videocall = 0, group = 0, tuesday = 0, thursday = 0, apresentacaoSemanal = 0;
 
     document.querySelectorAll('.student-item').forEach(item => {
         const checkboxes = item.querySelectorAll('input[type="checkbox"]');
@@ -2445,6 +2483,7 @@ function updateSummaryInstantly() {
             active++;
             if (student.videocall) videocall++;
             if (student.sentToGroup) group++;
+            if (student.apresentacaoSemanal) apresentacaoSemanal++;
             if (student.tuesday) tuesday++;
             if (student.thursday) thursday++;
         }
@@ -2453,8 +2492,15 @@ function updateSummaryInstantly() {
     document.getElementById('summaryActive').textContent = `A: ${active}`;
     document.getElementById('summaryVideocall').textContent = `V: ${videocall}`;
     document.getElementById('summaryGroup').textContent = `MG: ${group}`;
-    document.getElementById('summaryTuesday').textContent = `T: ${tuesday}`;
-    document.getElementById('summaryThursday').textContent = `Q: ${thursday}`;
+
+    if (isNewSystem) {
+        document.getElementById('summaryTuesday').textContent = `AS: ${apresentacaoSemanal}`;
+        document.getElementById('summaryThursday').style.display = 'none';
+    } else {
+        document.getElementById('summaryTuesday').textContent = `T: ${tuesday}`;
+        document.getElementById('summaryThursday').textContent = `Q: ${thursday}`;
+        document.getElementById('summaryThursday').style.display = 'flex';
+    }
 }
 
 // Nova função para atualizar lista visualmente (filtros)
@@ -2819,6 +2865,7 @@ async function toggleObjectiveActive(studentName) {
 // Atualizar gráfico instantaneamente
 function updateChartInstantly(studentName, field, value) {
     const chart = document.getElementById('chart');
+    if (!chart) return;
     const bars = chart.querySelectorAll('.bar');
 
     bars.forEach(bar => {
@@ -2830,13 +2877,19 @@ function updateChartInstantly(studentName, field, value) {
                 const studentItem = document.querySelector(`[data-student-name="${studentName}"]`);
                 if (studentItem) {
                     const checkboxes = studentItem.querySelectorAll('input[type="checkbox"]');
-                    const student = { objective: '' };
+                    const student = { active: false, videocall: false, sentToGroup: false, tuesday: false, thursday: false, apresentacaoSemanal: false, objective: '', objectiveActive: false };
                     checkboxes.forEach(cb => student[cb.dataset.field] = cb.checked);
 
                     const objectiveDiv = studentItem.querySelector('.objective-div');
-                    if (objectiveDiv) student.objective = 'tem objetivo';
+                    if (objectiveDiv) {
+                        student.objective = 'tem objetivo';
+                        student.objectiveActive = objectiveDiv.classList.contains('objective-active') || objectiveDiv.dataset.objectiveActive === 'true';
+                    }
 
                     const newScore = calculateScore(student);
+
+                    // Se inativo, ajusta opacidade
+                    bar.style.opacity = student.active ? '1' : '0.3';
 
                     // Atualizar visualmente
                     barFill.style.height = `${Math.max(newScore * 2.5, 20)}px`;
