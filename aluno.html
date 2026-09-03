@@ -1246,10 +1246,55 @@
         document.getElementById('monthSelect').addEventListener('change', onMonthOrWeekChange);
         document.getElementById('weekSelect').addEventListener('change', onMonthOrWeekChange);
 
+        // Função para encontrar a semana mais recente que possui dados preenchidos
+        async function getMostRecentWeekWithData() {
+            const months = await loadMonths();
+            if (!months || months.length === 0) return { monthId: null, week: '1' };
+
+            for (const month of months) {
+                for (let w = 4; w >= 1; w--) {
+                    const fileName = `${month.id}-week${w}.json`;
+                    const weekData = await loadJsonFile(fileName, {});
+                    if (weekData && typeof weekData === 'object') {
+                        const hasData = Object.values(weekData).some(s =>
+                            s && typeof s === 'object' && (
+                                s.active === true || s.active === 'true' ||
+                                s.videocall || s.sentToGroup || s.apresentacaoSemanal ||
+                                s.tuesday || s.thursday ||
+                                (s.objective && String(s.objective).trim().length > 0) ||
+                                (s.presentationDay && String(s.presentationDay).trim().length > 0)
+                            )
+                        );
+                        if (hasData) {
+                            return { monthId: month.id, week: String(w) };
+                        }
+                    }
+                }
+            }
+
+            return { monthId: months[0]?.id || null, week: '1' };
+        }
+
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 showSaveStatus('info', '📡 Conectando...');
                 await updateMonthSelect();
+
+                // Sempre seleciona a semana mais recente com dados preenchidos
+                const recent = await getMostRecentWeekWithData();
+                if (recent.monthId) {
+                    const mSelect = document.getElementById('monthSelect');
+                    if (mSelect && mSelect.querySelector(`option[value="${recent.monthId}"]`)) {
+                        mSelect.value = recent.monthId;
+                    }
+                }
+                if (recent.week) {
+                    const wSelect = document.getElementById('weekSelect');
+                    if (wSelect) {
+                        wSelect.value = recent.week;
+                    }
+                }
+
                 await populateStudentSelector();
                 await updateAllViews();
                 showSaveStatus('success', '✅ Tudo pronto!');

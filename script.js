@@ -1775,14 +1775,43 @@ async function saveViewState() {
     await saveJsonFile('viewState.json', viewState);
 }
 
-// Carregar estado salvo da visualização
+// Função para encontrar o mês e semana mais recentes com dados preenchidos
+async function getMostRecentWeekWithData() {
+    const months = await loadMonths();
+    if (!months || months.length === 0) return { monthId: null, week: '1' };
+
+    for (const month of months) {
+        for (let w = 4; w >= 1; w--) {
+            const fileName = `${month.id}-week${w}.json`;
+            const weekData = await loadJsonFile(fileName, {});
+            if (weekData && typeof weekData === 'object') {
+                const hasData = Object.values(weekData).some(s =>
+                    s && typeof s === 'object' && (
+                        s.active === true || s.active === 'true' ||
+                        s.videocall || s.sentToGroup || s.apresentacaoSemanal ||
+                        s.tuesday || s.thursday ||
+                        (s.objective && String(s.objective).trim().length > 0) ||
+                        (s.presentationDay && String(s.presentationDay).trim().length > 0)
+                    )
+                );
+                if (hasData) {
+                    return { monthId: month.id, week: String(w) };
+                }
+            }
+        }
+    }
+
+    return { monthId: months[0]?.id || null, week: '1' };
+}
+
+// Carregar estado salvo da visualização ou selecionar a semana atual com dados
 async function loadViewState() {
-    const viewState = await loadJsonFile('viewState.json', {});
     const monthSelect = document.getElementById('monthSelect');
     const weekSelect = document.getElementById('weekSelect');
 
-    if (viewState.selectedMonth && monthSelect.querySelector(`option[value="${viewState.selectedMonth}"]`)) {
-        monthSelect.value = viewState.selectedMonth;
+    const recent = await getMostRecentWeekWithData();
+    if (recent.monthId && monthSelect.querySelector(`option[value="${recent.monthId}"]`)) {
+        monthSelect.value = recent.monthId;
     } else {
         const months = await loadMonths();
         if (months.length > 0) {
@@ -1790,20 +1819,10 @@ async function loadViewState() {
         }
     }
 
-    if (viewState.selectedWeek) {
-        weekSelect.value = viewState.selectedWeek;
+    if (recent.week) {
+        weekSelect.value = recent.week;
     } else {
-        weekSelect.value = 'general';
-    }
-
-    if (viewState.detailsView) {
-        const producerPanel = document.getElementById('producerPanel');
-        const detailsPanel = document.getElementById('detailsGrid')?.parentElement;
-        if (producerPanel && detailsPanel) {
-            producerPanel.classList.remove('active');
-            detailsPanel.classList.add('active');
-            document.getElementById('toggleDetailsBtn').textContent = '🛠️ Voltar ao Modo Produtor';
-        }
+        weekSelect.value = '1';
     }
 
     if (weekSelect.value === 'general') {
@@ -2947,44 +2966,18 @@ async function checkIfCurrentWeek() {
     const monthSelect = document.getElementById('monthSelect');
     const weekSelect = document.getElementById('weekSelect');
     const warningBalloon = document.getElementById('weekWarningBalloon');
+    if (!warningBalloon || !monthSelect || !weekSelect) return;
 
     const selectedMonth = monthSelect.value;
     const selectedWeek = weekSelect.value;
 
-    // Pegar o mês mais recente
-    const months = await loadMonths();
-    if (months.length === 0) return;
+    const recent = await getMostRecentWeekWithData();
+    if (!recent.monthId) return;
 
-    const mostRecentMonth = months[0]; // Já está ordenado por data decrescente
+    // Verificar se está vendo o mês e semana mais recentes
+    const isCurrent = (selectedMonth === recent.monthId) && (selectedWeek === recent.week);
 
-    // Encontrar a semana mais recente com dados nesse mês
-    let mostRecentWeek = null;
-    for (let w = 4; w >= 1; w--) {
-        const weekData = await loadJsonFile(`${mostRecentMonth.id}-week${w}.json`, {});
-        const hasPresentations = Object.values(weekData).some(student =>
-            student.active || student.videocall || student.tuesday || student.thursday
-        );
-        if (hasPresentations) {
-            mostRecentWeek = w;
-            break;
-        }
-    }
-
-    // Se não encontrou semana com dados, usar semana 1
-    if (!mostRecentWeek) mostRecentWeek = 1;
-
-    // Verificar se está vendo o mês atual
-    const isCurrentMonth = selectedMonth === mostRecentMonth.id;
-
-    // Verificar se está vendo a semana atual (quando não está em "Geral")
-    const isCurrentWeek = selectedWeek === String(mostRecentWeek);
-    const isGeneralView = selectedWeek === 'general';
-
-    // Mostrar/ocultar balão
-    // Mostra se: não está no mês atual OU (está no mês atual mas não está na semana atual e não está em "Geral")
-    const shouldShow = !isCurrentMonth || (!isGeneralView && !isCurrentWeek);
-
-    if (shouldShow) {
+    if (!isCurrent) {
         warningBalloon.style.display = 'flex';
     } else {
         warningBalloon.style.display = 'none';
@@ -2996,34 +2989,12 @@ async function goToCurrentWeek() {
     const monthSelect = document.getElementById('monthSelect');
     const weekSelect = document.getElementById('weekSelect');
     const warningBalloon = document.getElementById('weekWarningBalloon');
+    if (warningBalloon) warningBalloon.style.display = 'none';
 
-    // Ocultar o balão imediatamente
-    warningBalloon.style.display = 'none';
+    const recent = await getMostRecentWeekWithData();
+    if (recent.monthId) monthSelect.value = recent.monthId;
+    if (recent.week) weekSelect.value = recent.week;
 
-    // Pegar o mês mais recente
-    const months = await loadMonths();
-    if (months.length === 0) return;
-
-    const mostRecentMonth = months[0];
-
-    // Encontrar a semana mais recente com dados
-    let mostRecentWeek = 1;
-    for (let w = 4; w >= 1; w--) {
-        const weekData = await loadJsonFile(`${mostRecentMonth.id}-week${w}.json`, {});
-        const hasPresentations = Object.values(weekData).some(student =>
-            student.active || student.videocall || student.tuesday || student.thursday
-        );
-        if (hasPresentations) {
-            mostRecentWeek = w;
-            break;
-        }
-    }
-
-    // Alterar seleção
-    monthSelect.value = mostRecentMonth.id;
-    weekSelect.value = String(mostRecentWeek);
-
-    // Disparar evento de mudança
     await onMonthOrWeekChange();
     await saveViewState();
 }
