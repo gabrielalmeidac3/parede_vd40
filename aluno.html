@@ -387,7 +387,7 @@
                     <option value="1">Semana 1</option>
                     <option value="2">Semana 2</option>
                     <option value="3">Semana 3</option>
-                    <option value="4" selected>Semana 4</option>
+                    <option value="4">Semana 4</option>
                 </select>
             </div>
         </div>
@@ -1277,22 +1277,39 @@
 
         document.addEventListener('DOMContentLoaded', async () => {
             try {
+                // Restaura imediatamente a última semana conhecida do cache local (0ms)
+                const cachedMonth = localStorage.getItem('parede_cached_recent_month');
+                const cachedWeek = localStorage.getItem('parede_cached_recent_week');
+                if (cachedWeek) {
+                    const wSelect = document.getElementById('weekSelect');
+                    if (wSelect) wSelect.value = cachedWeek;
+                }
+
                 showSaveStatus('info', '📡 Conectando...');
                 await updateMonthSelect();
 
-                // Sempre seleciona a semana mais recente com dados preenchidos
+                if (cachedMonth) {
+                    const mSelect = document.getElementById('monthSelect');
+                    if (mSelect && mSelect.querySelector(`option[value="${cachedMonth}"]`)) {
+                        mSelect.value = cachedMonth;
+                    }
+                }
+
+                // Sempre confirma e seleciona a semana mais recente com dados preenchidos
                 const recent = await getMostRecentWeekWithData();
                 if (recent.monthId) {
                     const mSelect = document.getElementById('monthSelect');
                     if (mSelect && mSelect.querySelector(`option[value="${recent.monthId}"]`)) {
                         mSelect.value = recent.monthId;
                     }
+                    localStorage.setItem('parede_cached_recent_month', recent.monthId);
                 }
                 if (recent.week) {
                     const wSelect = document.getElementById('weekSelect');
                     if (wSelect) {
                         wSelect.value = recent.week;
                     }
+                    localStorage.setItem('parede_cached_recent_week', recent.week);
                 }
 
                 await populateStudentSelector();
