@@ -383,11 +383,11 @@
             <div class="toolbar-item">
                 <label class="toolbar-label" for="weekSelect">📊 Semana</label>
                 <select id="weekSelect" class="toolbar-select">
-                    <option value="general">📊 Geral do Mês</option>
-                    <option value="1">Semana 1</option>
+                    <option value="1" selected>Semana 1</option>
                     <option value="2">Semana 2</option>
                     <option value="3">Semana 3</option>
                     <option value="4">Semana 4</option>
+                    <option value="general">📊 Geral do Mês</option>
                 </select>
             </div>
         </div>
@@ -612,73 +612,82 @@
             if (student.apresentacaoSemanal) count++;
             if (student.tuesday) count++;
             if (student.thursday) count++;
+            if (student.objective?.trim()) count++;
             return count;
         }
 
+        // Função de pontuação exatamente igual ao painel do professor
         function calculateScore(student) {
             if (!student.active) return 0;
             const monthSelect = document.getElementById('monthSelect');
             const selectedMonth = monthSelect ? monthSelect.value : '';
             const isNewSystem = selectedMonth && selectedMonth >= '2026-01';
 
+            let score = 0;
             if (isNewSystem) {
-                let score = 0;
-                if (student.videocall || student.sentToGroup) score += 50;
-                if (student.apresentacaoSemanal) score += 50;
-                return score;
+                // Sistema novo (≥ janeiro 2026): videochamada/grupo + apresentação semanal + objetivo = 100%
+                if (student.videocall || student.sentToGroup) score += 33.33;
+                if (student.apresentacaoSemanal) score += 33.33;
+                if (student.objectiveActive && student.objective?.trim()) score += 33.33;
             } else {
-                let score = 0;
-                if (student.videocall || student.sentToGroup) score += 34;
-                if (student.tuesday) score += 33;
-                if (student.thursday) score += 33;
-                return Math.min(score, 100);
+                // Sistema antigo (< janeiro 2026): videochamada/grupo + terça + quinta + objetivo
+                if (student.videocall || student.sentToGroup) score += 25;
+                if (student.tuesday) score += 25;
+                if (student.thursday) score += 25;
+                if (student.objectiveActive && student.objective?.trim()) score += 25;
             }
+
+            return Math.round(score);
         }
 
+        // Carregar dados gerais do mês idêntico ao painel do professor (divisão por 4 semanas)
         async function loadMonthlyData() {
             const monthId = document.getElementById('monthSelect').value;
             const globalStudents = await loadGlobalStudents();
-            const monthlyStudents = [];
+            const monthlyStats = {};
 
-            const weeksData = [];
-            for (let w = 1; w <= 4; w++) {
-                weeksData.push(await loadJsonFile(monthId + '-week' + w + '.json', {}));
-            }
+            globalStudents.forEach(name => {
+                monthlyStats[name] = {
+                    name: name,
+                    weeks: [],
+                    totalScore: 0,
+                    weekCount: 0,
+                    objectiveCount: 0,
+                    presentationDay: ''
+                };
+            });
 
-            for (const studentName of globalStudents) {
-                const weeks = [];
-                let totalScore = 0;
-                let activeWeeksCount = 0;
-                let objectiveCount = 0;
-                let presentationDay = '';
+            for (let week = 1; week <= 4; week++) {
+                const fileName = `${monthId}-week${week}.json`;
+                const weekData = await loadJsonFile(fileName, {});
 
-                for (let w = 1; w <= 4; w++) {
-                    const studentData = sanitizeStudentData(studentName, weeksData[w - 1][studentName]);
-                    if (studentData.active) {
-                        const score = calculateScore(studentData);
-                        weeks.push({ week: w, score: score, active: true });
-                        totalScore += score;
-                        activeWeeksCount++;
-                        if (studentData.objectiveActive) objectiveCount++;
-                        if (studentData.presentationDay) presentationDay = studentData.presentationDay;
-                    } else {
-                        weeks.push({ week: w, score: 0, active: false });
+                globalStudents.forEach(name => {
+                    const studentData = sanitizeStudentData(name, weekData[name]);
+                    const score = calculateScore(studentData);
+                    monthlyStats[name].weeks.push({
+                        week: week,
+                        score: score,
+                        active: studentData.active
+                    });
+
+                    monthlyStats[name].totalScore += score;
+                    monthlyStats[name].weekCount++;
+
+                    if (studentData.objective?.trim()) {
+                        monthlyStats[name].objectiveCount++;
                     }
-                }
-
-                const averageScore = activeWeeksCount > 0 ? Math.round(totalScore / activeWeeksCount) : 0;
-
-                monthlyStudents.push({
-                    name: studentName,
-                    weeks: weeks,
-                    weekCount: activeWeeksCount,
-                    objectiveCount: objectiveCount,
-                    averageScore: averageScore,
-                    presentationDay: presentationDay
+                    if (studentData.presentationDay) {
+                        monthlyStats[name].presentationDay = studentData.presentationDay;
+                    }
                 });
             }
 
-            return monthlyStudents;
+            // Calcular médias - divide sempre por 4 semanas
+            Object.values(monthlyStats).forEach(student => {
+                student.averageScore = Math.round(student.totalScore / 4);
+            });
+
+            return Object.values(monthlyStats);
         }
 
         async function updateMonthSelect() {
