@@ -496,6 +496,16 @@
             measurementId: "G-BHZ267JX4B"
         };
 
+        function escapeHtml(text) {
+            if (!text) return '';
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
 
@@ -757,7 +767,7 @@
             // Objetivo
             const objElem = document.getElementById('personalObjective');
             if (studentData.objective) {
-                objElem.innerHTML = `<strong>🎯</strong> ${studentData.objective}`;
+                objElem.innerHTML = `<strong>🎯</strong> ${escapeHtml(studentData.objective)}`;
             } else {
                 objElem.textContent = 'Sem objetivo definido para esta semana';
             }
@@ -765,7 +775,7 @@
             // Dia escolhido para mandar a apresentação no grupo
             const presElem = document.getElementById('personalPresentationDay');
             if (studentData.presentationDay) {
-                presElem.innerHTML = `🎸 <strong>${studentData.presentationDay}</strong>`;
+                presElem.innerHTML = `🎸 <strong>${escapeHtml(studentData.presentationDay)}</strong>`;
             } else {
                 presElem.textContent = 'Não agendado para esta semana';
             }
@@ -1127,7 +1137,7 @@
                             .join(' | ');
 
                         detailItem.innerHTML = `
-                            <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
+                            <div class="detail-name">${escapeHtml(student.name)} - Média: ${student.averageScore}%</div>
                             <div class="detail-activities">
                                 <span class="activity-summary">📈 ${student.weeks.filter(w => w.active).length}/4 semanas ativas</span>
                                 <span class="activity-summary">🎯 ${student.objectiveCount} objetivo(s)</span>
@@ -1168,9 +1178,9 @@
                         }
 
                         detailItem.innerHTML = `
-                            <div class="detail-name">${student.name} - ${score}%</div>
-                            ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
-                            ${student.presentationDay ? `<div style="color: #a78bfa; font-size: 0.9em; margin-bottom: 8px;"><strong>🎸 Apresentação:</strong> ${student.presentationDay}</div>` : ''}
+                            <div class="detail-name">${escapeHtml(student.name)} - ${score}%</div>
+                            ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${escapeHtml(student.objective)}</div>` : ''}
+                            ${student.presentationDay ? `<div style="color: #a78bfa; font-size: 0.9em; margin-bottom: 8px;"><strong>🎸 Apresentação:</strong> ${escapeHtml(student.presentationDay)}</div>` : ''}
                             <div class="detail-activities">${activitiesHTML}</div>
                         `;
                         detailsGrid.appendChild(detailItem);
@@ -1222,7 +1232,7 @@
                         listElem.innerHTML = data.items.map(s => `
                             <div class="pres-student-item">
                                 <span>👤</span>
-                                <span>${s.name}</span>
+                                <span>${escapeHtml(s.name)}</span>
                             </div>
                         `).join('');
                     }

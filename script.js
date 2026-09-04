@@ -1,3 +1,13 @@
+function escapeHtml(text) {
+    if (!text) return '';
+    return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 let globalListenerAdded = false;
 let currentFilter = "active"; // padrão: mostrar apenas alunos ativos
 let searchTerm = ""; // termo de pesquisa atual
@@ -862,17 +872,18 @@ async function updateStudentList() {
         const score = calculateScore(student);
 
         // Gerar HTML condicionalmente
+        const escapedName = escapeHtml(student.name);
         let checkboxesHTML = `
             <div class="checkbox-item">
-                <input type="checkbox" id="active-${index}" data-field="active" data-student="${student.name}" ${student.active ? 'checked' : ''}>
+                <input type="checkbox" id="active-${index}" data-field="active" data-student="${escapedName}" ${student.active ? 'checked' : ''}>
                 <label for="active-${index}">Ativo</label>
             </div>
             <div class="checkbox-item">
-                <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${student.name}" ${student.videocall ? 'checked' : ''}>
+                <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${escapedName}" ${student.videocall ? 'checked' : ''}>
                 <label for="videocall-${index}">Videochamada</label>
             </div>
             <div class="checkbox-item">
-                <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${student.name}" ${student.sentToGroup ? 'checked' : ''}>
+                <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${escapedName}" ${student.sentToGroup ? 'checked' : ''}>
                 <label for="sentToGroup-${index}">Mandou no grupo</label>
             </div>
         `;
@@ -881,7 +892,7 @@ async function updateStudentList() {
             // Sistema novo: mostrar apenas Apresentação Semanal
             checkboxesHTML += `
                 <div class="checkbox-item">
-                    <input type="checkbox" id="apresentacaoSemanal-${index}" data-field="apresentacaoSemanal" data-student="${student.name}" ${student.apresentacaoSemanal ? 'checked' : ''}>
+                    <input type="checkbox" id="apresentacaoSemanal-${index}" data-field="apresentacaoSemanal" data-student="${escapedName}" ${student.apresentacaoSemanal ? 'checked' : ''}>
                     <label for="apresentacaoSemanal-${index}">Apresentação Semanal</label>
                 </div>
             `;
@@ -889,11 +900,11 @@ async function updateStudentList() {
             // Sistema antigo: mostrar Terça e Quinta
             checkboxesHTML += `
                 <div class="checkbox-item">
-                    <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${student.name}" ${student.tuesday ? 'checked' : ''}>
+                    <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${escapedName}" ${student.tuesday ? 'checked' : ''}>
                     <label for="tuesday-${index}">Terça</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${student.name}" ${student.thursday ? 'checked' : ''}>
+                    <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${escapedName}" ${student.thursday ? 'checked' : ''}>
                     <label for="thursday-${index}">Quinta</label>
                 </div>
             `;
@@ -901,17 +912,17 @@ async function updateStudentList() {
 
         // Dropdown para dia de apresentação
         const presentationDayOptions = ['', 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta'];
-        let presentationDayHTML = `<select class="presentation-day-select" data-student="${student.name}">`;
+        let presentationDayHTML = `<select class="presentation-day-select" data-student="${escapedName}">`;
         presentationDayOptions.forEach(day => {
             const selected = student.presentationDay === day ? 'selected' : '';
-            presentationDayHTML += `<option value="${day}" ${selected}>${day || 'Selecionar dia'}</option>`;
+            presentationDayHTML += `<option value="${escapeHtml(day)}" ${selected}>${escapeHtml(day) || 'Selecionar dia'}</option>`;
         });
         presentationDayHTML += `</select>`;
 
         studentItem.innerHTML = `
             <div class="student-header">
                 <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                    <span class="student-name">${student.name}</span>
+                    <span class="student-name">${escapedName}</span>
                     <div style="color: #888; font-size: 0.9em;">Dia da apresentação: ${presentationDayHTML}</div>
                     <div class="checkboxes" style="display: flex; gap: 10px; flex-wrap: wrap;">
                         ${checkboxesHTML}
@@ -987,7 +998,7 @@ async function updateDetails() {
                         .join(' | ');
 
                     detailItem.innerHTML = `
-                        <div class="detail-name">${student.name} - Média: ${student.averageScore}%</div>
+                        <div class="detail-name">${escapeHtml(student.name)} - Média: ${student.averageScore}%</div>
                         <div class="detail-activities">
                             <span class="activity-summary">
                                 📈 ${student.weeks.filter(w => w.active).length}/4 semanas ativas
@@ -1055,8 +1066,8 @@ async function updateDetails() {
                 }
 
                 detailItem.innerHTML = `
-                    <div class="detail-name">${student.name} - ${score}%</div>
-                    ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${student.objective}</div>` : ''}
+                    <div class="detail-name">${escapeHtml(student.name)} - ${score}%</div>
+                    ${student.objective ? `<div style="background: rgba(74, 172, 254, 0.2); padding: 8px; border-radius: 8px; margin: 8px 0; border-left: 3px solid #4facfe; font-size: 0.9em;"><strong>🎯 Objetivo:</strong> ${escapeHtml(student.objective)}</div>` : ''}
                     <div class="detail-activities">
                         ${activitiesHTML}
                     </div>
@@ -2599,29 +2610,30 @@ function addStudentToListInstantly(name) {
     studentItem.className = 'student-item';
     studentItem.dataset.studentName = name;
 
+    const escapedName = escapeHtml(name);
     studentItem.innerHTML = `
         <div class="student-header">
             <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <span class="student-name">${name}</span>
+                <span class="student-name">${escapedName}</span>
                 <div class="checkboxes" style="display: flex; gap: 10px; flex-wrap: wrap;">
                     <div class="checkbox-item">
-                        <input type="checkbox" id="active-${index}" data-field="active" data-student="${name}" checked>
+                        <input type="checkbox" id="active-${index}" data-field="active" data-student="${escapedName}" checked>
                         <label for="active-${index}">Ativo</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${name}">
+                        <input type="checkbox" id="videocall-${index}" data-field="videocall" data-student="${escapedName}">
                         <label for="videocall-${index}">Videochamada</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${name}">
+                        <input type="checkbox" id="sentToGroup-${index}" data-field="sentToGroup" data-student="${escapedName}">
                         <label for="sentToGroup-${index}">Mandou no grupo</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${name}">
+                        <input type="checkbox" id="tuesday-${index}" data-field="tuesday" data-student="${escapedName}">
                         <label for="tuesday-${index}">Terça</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${name}">
+                        <input type="checkbox" id="thursday-${index}" data-field="thursday" data-student="${escapedName}">
                         <label for="thursday-${index}">Quinta</label>
                     </div>
                 </div>
@@ -2786,7 +2798,7 @@ function createObjectiveElement(studentName, objectiveText, isActive = true) {
 
     const textSpan = document.createElement('span');
     textSpan.className = 'objective-text';
-    textSpan.innerHTML = `<strong>Objetivo:</strong> ${objectiveText}`;
+    textSpan.innerHTML = `<strong>Objetivo:</strong> ${escapeHtml(objectiveText)}`;
 
     objectiveDiv.appendChild(emoji);
     objectiveDiv.appendChild(textSpan);

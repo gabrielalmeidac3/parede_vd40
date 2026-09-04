@@ -241,6 +241,16 @@
     </div>
 
         <script>
+        function escapeHtml(text) {
+            if (!text) return '';
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
         const dayMap = {
             'Domingo': 'sunday-list',
             'Segunda': 'monday-list',
@@ -399,8 +409,8 @@
                         const studentCard = document.createElement('div');
                         studentCard.className = 'student-card';
                         studentCard.innerHTML = `
-                            <div class="student-name">${student.name}</div>
-                            <div class="student-objective">${student.objective || 'Sem objetivo definido'}</div>
+                            <div class="student-name">${escapeHtml(student.name)}</div>
+                            <div class="student-objective">${escapeHtml(student.objective || 'Sem objetivo definido')}</div>
                         `;
                         list.appendChild(studentCard);
                     });
